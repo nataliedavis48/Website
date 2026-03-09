@@ -287,3 +287,4 @@ levelTabs.forEach(tab => {
 
 renderArticles("all");
 renderMatchingExercise();
+renderWordOfTheDay();
