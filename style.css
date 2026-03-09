@@ -5,7 +5,22 @@
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  background: #d2b48c; /* light brown */
+  background-color: #d2b48c;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.05) 2px,
+      rgba(255, 255, 255, 0.05) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
   color: #000; /* black text */
   line-height: 1.6;
 }
