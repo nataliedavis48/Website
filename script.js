@@ -2,6 +2,7 @@ const articles = [
   {
     title: "City Plants More Trees",
     level: "A2",
+    author: "City Council Reporter",
     text: `A city council started a new plan to plant 500 trees in local parks and near schools. 
     Leaders say the project will help make the city cleaner and cooler during hot weather. 
     Many students joined the first planting day and said they were happy to help the environment.`,
@@ -14,6 +15,7 @@ const articles = [
   {
     title: "Students Build a Robot",
     level: "B1",
+    author: "School News Team",
     text: `A group of middle school students built a small robot for a science fair. 
     The robot can move around the classroom and carry light objects. 
     Their teacher said the activity helped students develop problem-solving skills and teamwork.`,
@@ -26,6 +28,7 @@ const articles = [
   {
     title: "Local Market Becomes Popular Again",
     level: "B2",
+    author: "Local Market Association",
     text: `A local food market is becoming popular again as more people choose fresh fruit and vegetables. 
     Shoppers say they enjoy talking to farmers and buying food from nearby areas. 
     The market manager hopes the number of visitors will continue to rise.`,
@@ -38,6 +41,7 @@ const articles = [
   {
     title: "For a Better Future in Iran and Everywhere, Women’s Freedom is a Must",
     level: "B2",
+    author: "Dr. Cochav Elkayam Levy",
     text: `On International Women’s Day, and precisely at a time when Israeli women are on the front lines of combat and in the spotlight of international attention; female pilots, navigators, aircrew women as well as fighters, doctors, tank operators, reservists, reshaping the profile of Israeli women, it is time to pause and acknowledge a grim truth: women are not only on the front lines of combat. They are still on the front lines of harm and are struggling against a reality of unprecedented erosion of their basic rights.
 
 It is not for nothing that the faces of the brave Iranian women who led the protests in Iran, and paid with their bodies and/or their lives, are flooding social networks around the world these days. It is not for nothing that the (blurred) faces of Israeli Air Force pilots appear at the top of headlines. The world loves symbols and loves brave women. But the question arises: where does all this love disappear to when it comes to equality and women’s security? Too often, that is where admiration gives way to hesitation, skepticism, and a striking lack of attention.
@@ -170,6 +174,7 @@ function showArticle(index) {
 
   articleDisplay.innerHTML = `
     <h3>${article.title}</h3>
+    <p><em>By ${article.author || 'Unknown Author'}</em></p>
     <p>${textWithVocab}</p>
     <div id="vocab-info" class="vocab-box">Click a highlighted word to see the meaning.</div>
   `;
