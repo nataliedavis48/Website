@@ -104,6 +104,26 @@ const matchingOptions = [
   "new and not old"
 ];
 
+function renderWordOfTheDay() {
+  const dailyArticle = getArticleOfTheDay();
+  if (!dailyArticle || !dailyArticle.vocab) return;
+
+  const vocabEntries = Object.entries(dailyArticle.vocab);
+  if (vocabEntries.length === 0) return;
+
+  const today = new Date();
+  const dayNumber = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
+  const index = dayNumber % vocabEntries.length;
+
+  const [word, definition] = vocabEntries[index];
+
+  const dailyWord = document.getElementById("daily-word");
+  const dailyDefinition = document.getElementById("daily-definition");
+
+  if (dailyWord) dailyWord.textContent = word;
+  if (dailyDefinition) dailyDefinition.textContent = definition;
+}
+
 const navButtons = document.querySelectorAll(".nav-btn");
 const sections = document.querySelectorAll(".section");
 const articleList = document.getElementById("article-list");
