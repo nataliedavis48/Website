@@ -225,7 +225,7 @@ function showArticle(index) {
       `<span class="vocab-word" data-word="${word}">${word}</span>`
     );
   });
-
+}
   articleDisplay.innerHTML = `
     <h3>${article.title}</h3>
     <p><em>By ${article.author || 'Unknown Author'}</em></p>
