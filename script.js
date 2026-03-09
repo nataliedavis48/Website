@@ -106,10 +106,10 @@ const matchingOptions = [
 
 function renderWordOfTheDay() {
   const dailyArticle = getArticleOfTheDay();
+
   if (!dailyArticle || !dailyArticle.vocab) return;
 
   const vocabEntries = Object.entries(dailyArticle.vocab);
-  if (vocabEntries.length === 0) return;
 
   const today = new Date();
   const dayNumber = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
@@ -117,11 +117,8 @@ function renderWordOfTheDay() {
 
   const [word, definition] = vocabEntries[index];
 
-  const dailyWord = document.getElementById("daily-word");
-  const dailyDefinition = document.getElementById("daily-definition");
-
-  if (dailyWord) dailyWord.textContent = word;
-  if (dailyDefinition) dailyDefinition.textContent = definition;
+  document.getElementById("daily-word").textContent = word;
+  document.getElementById("daily-definition").textContent = definition;
 }
 
 const navButtons = document.querySelectorAll(".nav-btn");
