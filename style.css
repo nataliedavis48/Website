@@ -92,6 +92,19 @@ main {
   margin: 20px 0;
 }
 
+#word-of-day {
+  background: #fffdf8;
+  border: 4px solid #f5f0e6;
+}
+
+#daily-word {
+  font-size: 1.4rem;
+}
+
+#daily-definition {
+  margin-top: 8px;
+}
+
 .level-tab {
   background: #f5f0e6;
   color: black;
