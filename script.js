@@ -137,10 +137,9 @@ function renderArticles(level = 'all') {
 
   let filteredArticles;
   if (level === 'daily') {
-    const today = new Date();
-    const day = today.getDate();
-    const index = day % articles.length;
-    filteredArticles = [articles[index]];
+    // Show only the Iran women's freedom article
+    const iranArticle = articles.find(a => a.title === "For a Better Future in Iran and Everywhere, Women's Freedom is a Must");
+    filteredArticles = iranArticle ? [iranArticle] : [];
   } else {
     filteredArticles = level === 'all' ? articles : articles.filter(a => a.level === level);
   }
