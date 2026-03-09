@@ -132,36 +132,20 @@ navButtons.forEach(button => {
   });
 });
 
-function showArticle(index) {
-  const article = articles[index];
-  let textWithVocab = article.text;
+function renderArticles(level = "all") {
+  articleList.innerHTML = "";
 
-  if (article.vocab) {
-    Object.keys(article.vocab).forEach(word => {
-      const regex = new RegExp(`\\b${word}\\b`, "gi");
-      textWithVocab = textWithVocab.replace(
-        regex,
-        `<span class="vocab-word" data-word="${word}">${word}</span>`
-      );
-    });
+  let filteredArticles;
+
+  if (level === "daily") {
+    const dailyArticle = getArticleOfTheDay();
+    filteredArticles = dailyArticle ? [dailyArticle] : [];
+  } else {
+    filteredArticles =
+      level === "all"
+        ? articles
+        : articles.filter(a => a.level === level);
   }
-
-  articleDisplay.innerHTML = `
-    <h3>${article.title}</h3>
-    <p>${textWithVocab}</p>
-    <div id="vocab-info" class="vocab-box">Click a highlighted word to see the meaning.</div>
-  `;
-
-  const vocabWords = document.querySelectorAll(".vocab-word");
-  const vocabInfo = document.getElementById("vocab-info");
-
-  vocabWords.forEach(item => {
-    item.addEventListener("click", () => {
-      const word = item.dataset.word;
-      vocabInfo.innerHTML = `<strong>${word}</strong>: ${article.vocab[word]}`;
-    });
-  });
-}
 
   filteredArticles.forEach((article) => {
     const originalIndex = articles.indexOf(article);
@@ -194,6 +178,7 @@ function showArticle(index) {
 
   articleDisplay.innerHTML = `
     <h3>${article.title}</h3>
+    <p><em>By ${article.author || "Unknown Author"}</em></p>
     <p>${textWithVocab}</p>
     <div id="vocab-info" class="vocab-box">Click a highlighted word to see the meaning.</div>
   `;
@@ -208,42 +193,6 @@ function showArticle(index) {
     });
   });
 }
-  const vocabWords = document.querySelectorAll(".vocab-word");
-  const vocabInfo = document.getElementById("vocab-info");
-
-  vocabWords.forEach(item => {
-    item.addEventListener("click", () => {
-      const word = item.dataset.word;
-      vocabInfo.innerHTML = `<strong>${word}</strong>: ${article.vocab[word]}`;
-    });
-  });
-}
-  Object.keys(article.vocab).forEach(word => {
-    const regex = new RegExp(`\\b${word}\\b`, "gi");
-    textWithVocab = textWithVocab.replace(
-      regex,
-      `<span class="vocab-word" data-word="${word}">${word}</span>`
-    );
-  });
-}
-  articleDisplay.innerHTML = `
-    <h3>${article.title}</h3>
-    <p><em>By ${article.author || 'Unknown Author'}</em></p>
-    <p>${textWithVocab}</p>
-    <div id="vocab-info" class="vocab-box">Click a highlighted word to see the meaning.</div>
-  `;
-
-  const vocabWords = document.querySelectorAll(".vocab-word");
-  const vocabInfo = document.getElementById("vocab-info");
-
-  vocabWords.forEach(item => {
-    item.addEventListener("click", () => {
-      const word = item.dataset.word;
-      vocabInfo.innerHTML = `<strong>${word}</strong>: ${article.vocab[word]}`;
-    });
-  });
-}
-
 function renderMatchingExercise() {
   matchingExercise.innerHTML = "";
 
