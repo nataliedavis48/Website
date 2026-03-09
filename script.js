@@ -163,6 +163,32 @@ function showArticle(index) {
   const article = articles[index];
   let textWithVocab = article.text;
 
+  if (article.vocab) {
+    Object.keys(article.vocab).forEach(word => {
+      const regex = new RegExp(`\\b${word}\\b`, "gi");
+      textWithVocab = textWithVocab.replace(
+        regex,
+        `<span class="vocab-word" data-word="${word}">${word}</span>`
+      );
+    });
+  }
+
+  articleDisplay.innerHTML = `
+    <h3>${article.title}</h3>
+    <p>${textWithVocab}</p>
+    <div id="vocab-info" class="vocab-box">Click a highlighted word to see the meaning.</div>
+  `;
+
+  const vocabWords = document.querySelectorAll(".vocab-word");
+  const vocabInfo = document.getElementById("vocab-info");
+
+  vocabWords.forEach(item => {
+    item.addEventListener("click", () => {
+      const word = item.dataset.word;
+      vocabInfo.innerHTML = `<strong>${word}</strong>: ${article.vocab[word]}`;
+    });
+  });
+}
   Object.keys(article.vocab).forEach(word => {
     const regex = new RegExp(`\\b${word}\\b`, "gi");
     textWithVocab = textWithVocab.replace(
