@@ -256,4 +256,16 @@ levelTabs.forEach(tab => {
 });
 
 renderArticles('all');
+
+function getArticleOfTheDay() {
+  const today = new Date();
+
+  // Create a number that changes every day
+  const dayNumber = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
+
+  // Use that number to select an article
+  const index = dayNumber % articles.length;
+
+  return articles[index];
+}
 renderMatchingExercise();
