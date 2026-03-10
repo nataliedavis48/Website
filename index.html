@@ -16,12 +16,14 @@
     <button class="nav-btn" data-section="home">Home</button>
     <button class="nav-btn" data-section="articles">News Articles</button>
     <button class="nav-btn" data-section="podcast">Podcast</button>
+    <button class="nav-btn" data-section="audio-vocab">Time to Listen</button>
     <button class="nav-btn" data-section="vocab">Vocabulary Practice</button>
     <button class="nav-btn" data-section="quiz">Reading Quiz</button>
     <button class="nav-btn" data-section="vocab-videos">Vocabulary Videos</button>
   </nav>
 
   <main>
+<<<<<<< HEAD
 
 <section id="home" class="section active">
 <h2>Welcome</h2>
@@ -29,6 +31,50 @@
 This website is especially for you. You can read short news articles,
 learn useful vocabulary, and do simple exercises.
 </p>
+=======
+    <section id="home" class="section active">
+      <h2>Welcome</h2>
+      <p>
+        This website is especially for you. You can read short news articles,
+        learn useful vocabulary, and do simple exercises.
+      </p>
+
+      <div class="card">
+        <h3>How to use this site</h3>
+        <ol>
+          <li>Read one article.</li>
+          <li>Click on highlighted words to see meanings.</li>
+          <li>Try the vocabulary exercise.</li>
+          <li>Complete the quiz.</li>
+        </ol>
+      </div>
+
+      <div class="card" id="word-of-day">
+        <h3>Word of the Day</h3>
+        <p><strong id="daily-word">Loading...</strong></p>
+        <p id="daily-definition"></p>
+      </div>
+    </section>
+
+    <section id="articles" class="section">
+      <h2>News Articles</h2>
+
+      <div class="level-tabs">
+        <button class="level-tab active" data-level="all">All</button>
+        <button class="level-tab" data-level="daily">Article of the Day</button>
+        <button class="level-tab" data-level="A2">A2</button>
+        <button class="level-tab" data-level="B1">B1</button>
+        <button class="level-tab" data-level="B2">B2</button>
+      </div>
+
+      <div id="article-list" class="article-list"></div>
+
+      <div id="article-display" class="card article-display">
+        <h3>Select an article</h3>
+        <p>Your article will appear here.</p>
+      </div>
+    </section>
+>>>>>>> fd9f2e8 (Update website)
 
 <div class="card">
 <h3>How to use this site</h3>
@@ -46,6 +92,7 @@ learn useful vocabulary, and do simple exercises.
 <p id="daily-definition"></p>
 </div>
 
+<<<<<<< HEAD
 </section>
 
 
@@ -69,13 +116,75 @@ learn useful vocabulary, and do simple exercises.
 
 </section>
 
+=======
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/show/4QctJjCUuHefLzeZWDoXqc?utm_source=generator"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+    <section id="audio-vocab" class="section">
+  <h2>Time to Listen</h2>
+
+  <div class="card">
+    <h3>A Moral Dilemma</h3>
+    <p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>
+
+    <audio controls style="width:100%; margin-bottom:20px; display:block;">
+      <source src="./audio/a-moral-dilemma.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <ul class="vocab-list" style="display:block; padding-left: 20px;">
+      <li><strong>anxiety</strong> <button class="speaker-btn" onclick="speakWord('anxiety')">🔊</button> strong worry about what might happen</li>
+      <li><strong>struggle</strong> <button class="speaker-btn" onclick="speakWord('struggle')">🔊</button> a very difficult situation or effort</li>
+      <li><strong>pressure</strong> <button class="speaker-btn" onclick="speakWord('pressure')">🔊</button> stress or strong demands</li>
+      <li><strong>desperation</strong> <button class="speaker-btn" onclick="speakWord('desperation')">🔊</button> a feeling of having no hope or no options</li>
+      <li><strong>ruthless</strong> <button class="speaker-btn" onclick="speakWord('ruthless')">🔊</button> cruel and without pity</li>
+      <li><strong>trapped</strong> <button class="speaker-btn" onclick="speakWord('trapped')">🔊</button> unable to escape a difficult situation</li>
+      <li><strong>confessed</strong> <button class="speaker-btn" onclick="speakWord('confessed')">🔊</button> admitted the truth about doing something wrong</li>
+      <li><strong>responsibility</strong> <button class="speaker-btn" onclick="speakWord('responsibility')">🔊</button> accepting that something is your duty or fault</li>
+      <li><strong>sentenced</strong> <button class="speaker-btn" onclick="speakWord('sentenced')">🔊</button> officially given a punishment by a court</li>
+      <li><strong>pardon</strong> <button class="speaker-btn" onclick="speakWord('pardon')">🔊</button> official forgiveness by a president or government</li>
+      <li><strong>mercy</strong> <button class="speaker-btn" onclick="speakWord('mercy')">🔊</button> kindness or forgiveness instead of punishment</li>
+      <li><strong>justice</strong> <button class="speaker-btn" onclick="speakWord('justice')">🔊</button> fair treatment according to the law</li>
+    </ul>
+  </div>
+</section>
+
+
+    <section id="vocab" class="section">
+      <h2>Vocabulary Practice</h2>
+      <p>Match the words to their meanings.</p>
+>>>>>>> fd9f2e8 (Update website)
 
 <section id="podcast" class="section">
 <h2>Daily News Podcast</h2>
 
+<<<<<<< HEAD
 <div class="card">
 <h3>SEND7 – Simple English News Daily</h3>
 <p>Listen to short world news in simple English.</p>
+=======
+    <section id="quiz" class="section">
+      <h2>Reading Quiz</h2>
+
+      <div class="card">
+        <form id="quiz-form">
+          <div class="quiz-question">
+            <p>1. Why do cities plant more trees?</p>
+            <label><input type="radio" name="q1" value="a"> To make roads longer</label>
+            <label><input type="radio" name="q1" value="b"> To help keep areas cooler</label>
+            <label><input type="radio" name="q1" value="c"> To close parks</label>
+          </div>
+>>>>>>> fd9f2e8 (Update website)
 
 <iframe
 style="border-radius:12px"
@@ -91,6 +200,34 @@ loading="lazy">
 
 </section>
 
+<<<<<<< HEAD
+=======
+          <button type="submit">Submit Quiz</button>
+        </form>
+
+        <p id="quiz-result"></p>
+      </div>
+    </section>
+
+    <section id="vocab-videos" class="section">
+      <h2>Vocabulary Videos</h2>
+
+      <div class="card">
+        <h3>Vocabulary Video of the Day</h3>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://app.heygen.com/embeds/0974f1bd4b94475c8531f70fbd1f38ce"
+          title="SET Two-- Vocabulary for Meetings"
+          frameborder="0"
+          allow="encrypted-media; fullscreen;"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
+>>>>>>> fd9f2e8 (Update website)
 
 <section id="vocab" class="section">
 <h2>Vocabulary Practice</h2>
@@ -165,5 +302,18 @@ width="560" height="315" src="https://app.heygen.com/embeds/0974f1bd4b94475c8531
 
 <script src="script.js"></script>
 
+<<<<<<< HEAD
+=======
+  <script src="script.js"></script>
+  <script>
+    function speakWord(word) {
+      speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = "en-US";
+      utterance.rate = 0.9;
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+>>>>>>> fd9f2e8 (Update website)
 </body>
 </html>

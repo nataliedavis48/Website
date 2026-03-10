@@ -286,5 +286,9 @@ levelTabs.forEach(tab => {
 });
 
 renderArticles("all");
+<<<<<<< HEAD
 renderMatchingExercise();
 renderWordOfTheDay();
+=======
+renderMatchingExercise();
+>>>>>>> fd9f2e8 (Update website)
