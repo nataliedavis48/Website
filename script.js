@@ -58,4 +58,86 @@ document.addEventListener("DOMContentLoaded", function () {
     dailyWord.textContent = words[today].word;
     dailyDefinition.textContent = words[today].definition;
   }
+  const articleList = document.getElementById("article-list");
+
+const articles = [
+  {
+    title: "Cities Plant More Trees",
+    level: "A2",
+    summary: "Many cities are planting more trees to make streets cooler and cleaner."
+  },
+  {
+    title: "Students Build a Small Robot",
+    level: "B1",
+    summary: "A group of students created a robot for a school science project."
+  },
+  {
+    title: "Local Markets Grow in Popularity",
+    level: "B1",
+    summary: "More people are visiting local markets because they want fresh food."
+  }
+];
+
+if (articleList) {
+  articles.forEach((article) => {
+    const card = document.createElement("div");
+    card.className = "article-card";
+    card.innerHTML = `
+      <h3>${article.title}</h3>
+      <p><strong>Level:</strong> ${article.level}</p>
+      <p>${article.summary}</p>
+    `;
+    articleList.appendChild(card);
+  });
+}
+
+const matchingExercise = document.getElementById("matching-exercise");
+
+const vocabItems = [
+  { word: "resilient", correct: "able to recover quickly from difficulties" },
+  { word: "predict", correct: "to say what you think will happen" },
+  { word: "improve", correct: "to become better" }
+];
+
+if (matchingExercise) {
+  const options = [
+    "able to recover quickly from difficulties",
+    "to say what you think will happen",
+    "to become better"
+  ];
+
+  vocabItems.forEach((item, index) => {
+    const row = document.createElement("div");
+    row.className = "match-row";
+
+    row.innerHTML = `
+      <label>${item.word}</label>
+      <select data-answer="${item.correct}">
+        <option value="">Choose a meaning</option>
+        ${options.map(option => `<option value="${option}">${option}</option>`).join("")}
+      </select>
+    `;
+
+    matchingExercise.appendChild(row);
+  });
+}
+
+const checkMatchingBtn = document.getElementById("check-matching");
+if (checkMatchingBtn) {
+  checkMatchingBtn.addEventListener("click", function () {
+    const selects = matchingExercise.querySelectorAll("select");
+    let correctCount = 0;
+
+    selects.forEach((select) => {
+      if (select.value === select.getAttribute("data-answer")) {
+        correctCount++;
+      }
+    });
+
+    const result = document.getElementById("matching-result");
+    if (result) {
+      result.textContent = `You got ${correctCount} out of ${selects.length} correct.`;
+    }
+  });
+}
 });
