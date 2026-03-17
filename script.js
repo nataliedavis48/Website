@@ -143,26 +143,188 @@ if (articleList) {
 // --- LISTENING FILES --- add new audio files here ---
 const listeningFiles = [
   // A1
-  { title: "Inflation in Iran", level: "A1", src: "Audio/A1/Inflation in Iran.mp3", vocab: [] },
-  { title: "Public Transport", level: "A1", src: "Audio/A1/Public Transport.mpeg", vocab: [] },
+  { title: "Inflation in Iran", level: "A1", src: "Audio/A1/Inflation in Iran.mp3", vocab: [
+    { word: "money", definition: "coins and paper used to buy things" },
+    { word: "price", definition: "how much something costs" },
+    { word: "expensive", definition: "costs a lot of money" },
+    { word: "cheap", definition: "does not cost much money" },
+    { word: "buy", definition: "to pay money for something" },
+    { word: "food", definition: "things we eat" },
+    { word: "poor", definition: "not having much money" },
+    { word: "market", definition: "a place where people buy and sell things" }
+  ]},
+  { title: "Public Transport", level: "A1", src: "Audio/A1/Public Transport.mpeg", vocab: [
+    { word: "bus", definition: "a large vehicle that carries many people" },
+    { word: "train", definition: "a vehicle that travels on rails" },
+    { word: "ticket", definition: "a small piece of paper that lets you travel" },
+    { word: "station", definition: "a place where buses or trains stop" },
+    { word: "travel", definition: "to go from one place to another" },
+    { word: "city", definition: "a large town where many people live" },
+    { word: "late", definition: "not arriving at the right time" },
+    { word: "walk", definition: "to move on foot" }
+  ]},
   // A2
-  { title: "Fall of Assad", level: "A2", src: "Audio/A2/Fall of Assad.mpeg", vocab: [] },
-  { title: "Iran Protests: Economic Discontent", level: "A2", src: "Audio/A2/Iran Protests_ Economic Discontent.mp3", vocab: [] },
-  { title: "Iron Beam", level: "A2", src: "Audio/A2/Iron Beam.mp3", vocab: [] },
-  { title: "Mossad's Secret Agent Yael", level: "A2", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [] },
-  { title: "Public Transport", level: "A2", src: "Audio/A2/Public Transport.mpeg", vocab: [] },
+  { title: "Fall of Assad", level: "A2", src: "Audio/A2/Fall of Assad.mpeg", vocab: [
+    { word: "leader", definition: "a person who is in charge of a country or group" },
+    { word: "government", definition: "the group of people who control a country" },
+    { word: "escape", definition: "to get away from a dangerous place" },
+    { word: "army", definition: "a large group of soldiers" },
+    { word: "war", definition: "a fight between countries or groups" },
+    { word: "power", definition: "control over people or a country" },
+    { word: "fall", definition: "to lose control or position" },
+    { word: "people", definition: "men, women, and children in a place" }
+  ]},
+  { title: "Iran Protests: Economic Discontent", level: "A2", src: "Audio/A2/Iran Protests_ Economic Discontent.mp3", vocab: [
+    { word: "protest", definition: "when people gather to show they are unhappy" },
+    { word: "angry", definition: "feeling very unhappy about something" },
+    { word: "price", definition: "how much something costs" },
+    { word: "street", definition: "a road in a town or city" },
+    { word: "police", definition: "people whose job is to keep order" },
+    { word: "change", definition: "to become different" },
+    { word: "work", definition: "a job or activity done to earn money" },
+    { word: "difficult", definition: "not easy; needing a lot of effort" }
+  ]},
+  { title: "Iron Beam", level: "A2", src: "Audio/A2/Iron Beam.mp3", vocab: [
+    { word: "weapon", definition: "something used to hurt people or destroy things" },
+    { word: "protect", definition: "to keep someone or something safe" },
+    { word: "attack", definition: "to try to hurt someone or something" },
+    { word: "laser", definition: "a very strong and narrow beam of light" },
+    { word: "sky", definition: "the space above the earth" },
+    { word: "shoot", definition: "to send something through the air at high speed" },
+    { word: "new", definition: "made or discovered recently" },
+    { word: "fast", definition: "moving or happening quickly" }
+  ]},
+  { title: "Mossad's Secret Agent Yael", level: "A2", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [
+    { word: "spy", definition: "a person who secretly collects information" },
+    { word: "secret", definition: "something that only a few people know" },
+    { word: "mission", definition: "an important job someone is sent to do" },
+    { word: "danger", definition: "a situation where someone might get hurt" },
+    { word: "enemy", definition: "a person or country that wants to harm you" },
+    { word: "discover", definition: "to find something for the first time" },
+    { word: "safe", definition: "not in danger" },
+    { word: "country", definition: "an area of land with its own government" }
+  ]},
+  { title: "Public Transport", level: "A2", src: "Audio/A2/Public Transport.mpeg", vocab: [
+    { word: "transport", definition: "a way of moving people from place to place" },
+    { word: "passenger", definition: "a person travelling in a vehicle" },
+    { word: "journey", definition: "travel from one place to another" },
+    { word: "route", definition: "the path taken to get somewhere" },
+    { word: "delay", definition: "when something happens later than expected" },
+    { word: "crowded", definition: "full of too many people" },
+    { word: "service", definition: "a system that provides something to the public" },
+    { word: "platform", definition: "the raised area at a station where you board a train" }
+  ]},
   // B1
-  { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [] },
-  { title: "Cross-Border Mysteries: Ahmad Shukr's Story", level: "B1", src: "Audio/B1/Cross-Border Mysteries_ Ahmad Shukr's Story.mp3", vocab: [] },
-  { title: "Fall of Assad", level: "B1", src: "Audio/B1/Fall of Assad.mpeg", vocab: [] },
-  { title: "Hidden Jewish History of Somaliland", level: "B1", src: "Audio/B1/Hidden Jewish History of Somaliland.mp3", vocab: [] },
-  { title: "Iran Protests and Potential Changes", level: "B1", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [] },
-  { title: "Iran Protests: Economic Origins and Beyond", level: "B1", src: "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3", vocab: [] },
-  { title: "Oron Shaul", level: "B1", src: "Audio/B1/Oron Shaul.mpeg", vocab: [] },
-  { title: "Public Transport", level: "B1", src: "Audio/B1/Public Transport.mpeg", vocab: [] },
-  { title: "Secrets of the Night", level: "B1", src: "Audio/B1/Secrets of the Night.mp3", vocab: [] },
-  { title: "Somaliland's Quest for Recognition", level: "B1", src: "Audio/B1/Somaliland's Quest for Recognition.mp3", vocab: [] },
-  { title: "Understanding the Iran Protests", level: "B1", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [] },
+  { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [
+    { word: "missile", definition: "a weapon that flies through the air and explodes" },
+    { word: "cluster", definition: "a group of things close together" },
+    { word: "civilian", definition: "a person who is not in the military" },
+    { word: "conflict", definition: "a serious disagreement or fight between groups" },
+    { word: "launch", definition: "to send something into the air with force" },
+    { word: "damage", definition: "harm or injury caused to something" },
+    { word: "military", definition: "relating to an army or armed forces" },
+    { word: "target", definition: "a person or place that is aimed at" }
+  ]},
+  { title: "Cross-Border Mysteries: Ahmad Shukr's Story", level: "B1", src: "Audio/B1/Cross-Border Mysteries_ Ahmad Shukr's Story.mp3", vocab: [
+    { word: "border", definition: "the line dividing two countries" },
+    { word: "mystery", definition: "something that is difficult to explain or understand" },
+    { word: "identity", definition: "who a person is" },
+    { word: "investigate", definition: "to try to find out the truth about something" },
+    { word: "evidence", definition: "information that helps prove something is true" },
+    { word: "suspect", definition: "a person thought to have done something wrong" },
+    { word: "disappear", definition: "to become impossible to find or see" },
+    { word: "escape", definition: "to get away from a dangerous situation" }
+  ]},
+  { title: "Fall of Assad", level: "B1", src: "Audio/B1/Fall of Assad.mpeg", vocab: [
+    { word: "regime", definition: "a government that controls a country strictly" },
+    { word: "collapse", definition: "to suddenly fall down or fail completely" },
+    { word: "rebel", definition: "a person who fights against the government" },
+    { word: "opposition", definition: "people or groups who disagree with those in power" },
+    { word: "exile", definition: "being forced to live outside your own country" },
+    { word: "uprising", definition: "when people rise up against those in power" },
+    { word: "authority", definition: "the power to give orders and make decisions" },
+    { word: "negotiate", definition: "to try to reach an agreement by discussion" }
+  ]},
+  { title: "Hidden Jewish History of Somaliland", level: "B1", src: "Audio/B1/Hidden Jewish History of Somaliland.mp3", vocab: [
+    { word: "heritage", definition: "traditions and history passed down through generations" },
+    { word: "ancient", definition: "belonging to a very long time ago" },
+    { word: "community", definition: "a group of people living in the same area" },
+    { word: "tradition", definition: "a custom passed down through generations" },
+    { word: "identity", definition: "the qualities that make a person or group who they are" },
+    { word: "preserve", definition: "to keep something in its original state" },
+    { word: "discover", definition: "to find or learn something for the first time" },
+    { word: "culture", definition: "the beliefs and customs of a group of people" }
+  ]},
+  { title: "Iran Protests and Potential Changes", level: "B1", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [
+    { word: "protest", definition: "a public event where people show disagreement" },
+    { word: "reform", definition: "a change made to improve a system" },
+    { word: "demand", definition: "a strong request for something" },
+    { word: "movement", definition: "a group of people working together for a cause" },
+    { word: "crackdown", definition: "strong action taken to stop something" },
+    { word: "potential", definition: "having the possibility to develop or happen" },
+    { word: "unrest", definition: "a situation of public anger and disorder" },
+    { word: "political", definition: "relating to the government and power" }
+  ]},
+  { title: "Iran Protests: Economic Origins and Beyond", level: "B1", src: "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3", vocab: [
+    { word: "inflation", definition: "a rise in prices over time" },
+    { word: "unemployment", definition: "the state of not having a job" },
+    { word: "corruption", definition: "dishonest behaviour by people in power" },
+    { word: "inequality", definition: "an unfair difference between groups of people" },
+    { word: "demonstrate", definition: "to take part in a public protest" },
+    { word: "suppress", definition: "to stop something by force" },
+    { word: "consequence", definition: "a result of an action" },
+    { word: "economic", definition: "relating to money and how a country manages it" }
+  ]},
+  { title: "Oron Shaul", level: "B1", src: "Audio/B1/Oron Shaul.mpeg", vocab: [
+    { word: "soldier", definition: "a person who serves in an army" },
+    { word: "capture", definition: "to take someone as a prisoner" },
+    { word: "hostage", definition: "a person held prisoner to force others to act" },
+    { word: "mourn", definition: "to feel and show great sadness after a loss" },
+    { word: "remains", definition: "the body of a person who has died" },
+    { word: "conflict", definition: "a serious fight or war between groups" },
+    { word: "honor", definition: "great respect shown to someone" },
+    { word: "family", definition: "a group of people related to each other" }
+  ]},
+  { title: "Public Transport", level: "B1", src: "Audio/B1/Public Transport.mpeg", vocab: [
+    { word: "infrastructure", definition: "basic systems a country needs, like roads and transport" },
+    { word: "commute", definition: "to travel regularly to and from work" },
+    { word: "sustainable", definition: "able to continue without harming the environment" },
+    { word: "efficient", definition: "working well without wasting time or energy" },
+    { word: "network", definition: "a system of connected routes or services" },
+    { word: "investment", definition: "money spent to get a future benefit" },
+    { word: "urban", definition: "relating to a town or city" },
+    { word: "congestion", definition: "too much traffic causing slow movement" }
+  ]},
+  { title: "Secrets of the Night", level: "B1", src: "Audio/B1/Secrets of the Night.mp3", vocab: [
+    { word: "shadow", definition: "a dark shape made when light is blocked" },
+    { word: "reveal", definition: "to show or make known something hidden" },
+    { word: "mysterious", definition: "difficult to explain or understand" },
+    { word: "investigate", definition: "to look carefully into something" },
+    { word: "hidden", definition: "kept out of sight; not known" },
+    { word: "danger", definition: "a situation where harm is possible" },
+    { word: "silence", definition: "a complete lack of sound" },
+    { word: "suspicious", definition: "feeling that something is wrong or dishonest" }
+  ]},
+  { title: "Somaliland's Quest for Recognition", level: "B1", src: "Audio/B1/Somaliland's Quest for Recognition.mp3", vocab: [
+    { word: "recognition", definition: "official acceptance that something exists or is true" },
+    { word: "independence", definition: "freedom from outside control" },
+    { word: "territory", definition: "an area of land belonging to a country" },
+    { word: "negotiate", definition: "to discuss something to reach an agreement" },
+    { word: "declare", definition: "to officially announce something" },
+    { word: "stability", definition: "a situation that is not likely to change suddenly" },
+    { word: "govern", definition: "to control and manage a country" },
+    { word: "international", definition: "involving more than one country" }
+  ]},
+  { title: "Understanding the Iran Protests", level: "B1", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [
+    { word: "cause", definition: "the reason why something happens" },
+    { word: "freedom", definition: "the right to do or say what you want" },
+    { word: "youth", definition: "young people" },
+    { word: "movement", definition: "a group of people working together for change" },
+    { word: "suppress", definition: "to stop something by using force" },
+    { word: "demand", definition: "a strong request that must be answered" },
+    { word: "government", definition: "the group of people who run a country" },
+    { word: "rights", definition: "things every person is entitled to have" }
+  ]},
   { title: "Moral", level: "B1", src: "Audio/B1/moral.mp3", vocab: [
     { word: "anxiety", definition: "strong worry about what might happen" },
     { word: "struggle", definition: "a very difficult situation or effort" },
@@ -178,23 +340,167 @@ const listeningFiles = [
     { word: "justice", definition: "fair treatment according to the law" }
   ]},
   // B2
-  { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [] },
-  { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [] },
-  { title: "Fall of Assad", level: "B2", src: "Audio/B2/Fall of Assad.mpeg", vocab: [] },
-  { title: "Giving Advice", level: "B2", src: "Audio/B2/Giving Advice.mpeg", vocab: [] },
-  { title: "Iran Protests and Potential Changes", level: "B2", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [] },
-  { title: "Iron Beam: The Future of Laser Weapons", level: "B2", src: "Audio/B2/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [] },
-  { title: "Lost Jewish Connections of Somaliland", level: "B2", src: "Audio/B2/Lost Jewish Connections of Somaliland.mp3", vocab: [] },
-  { title: "Mossad's Secret Agent Yael", level: "B2", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [] },
-  { title: "Oron Shaul", level: "B2", src: "Audio/B2/Oron Shaul.mpeg", vocab: [] },
-  { title: "Somaliland's Quest for Recognition", level: "B2", src: "Audio/B2/Somaliland's Quest for Recognition.mp3", vocab: [] },
+  { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
+    { word: "proliferation", definition: "a rapid increase in the number of something" },
+    { word: "indiscriminate", definition: "not careful about who or what is harmed" },
+    { word: "humanitarian", definition: "concerned with reducing human suffering" },
+    { word: "convention", definition: "an international agreement between countries" },
+    { word: "deploy", definition: "to move troops or weapons into position for use" },
+    { word: "accountability", definition: "being responsible for your actions" },
+    { word: "fragmentation", definition: "breaking into small sharp pieces" },
+    { word: "violation", definition: "breaking a rule or agreement" }
+  ]},
+  { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [
+    { word: "autonomous", definition: "having the freedom to govern itself" },
+    { word: "nomadic", definition: "moving from place to place without a permanent home" },
+    { word: "hospitality", definition: "the friendly and generous treatment of guests" },
+    { word: "infrastructure", definition: "the basic systems needed for a place to function" },
+    { word: "diplomatic", definition: "relating to official relations between countries" },
+    { word: "flourishing", definition: "developing quickly and successfully" },
+    { word: "diverse", definition: "showing a great deal of variety" },
+    { word: "undiscovered", definition: "not yet found or known about" }
+  ]},
+  { title: "Fall of Assad", level: "B2", src: "Audio/B2/Fall of Assad.mpeg", vocab: [
+    { word: "authoritarian", definition: "demanding complete obedience to authority" },
+    { word: "insurgency", definition: "an armed rebellion against a government" },
+    { word: "geopolitical", definition: "relating to politics and geography of countries" },
+    { word: "sanctions", definition: "penalties applied to a country to force change" },
+    { word: "propaganda", definition: "information used to promote a political cause" },
+    { word: "militia", definition: "a military group that is not a regular army" },
+    { word: "transitional", definition: "relating to a change from one state to another" },
+    { word: "disintegrate", definition: "to break apart into small pieces" }
+  ]},
+  { title: "Giving Advice", level: "B2", src: "Audio/B2/Giving Advice.mpeg", vocab: [
+    { word: "perspective", definition: "a particular way of thinking about something" },
+    { word: "consequence", definition: "a result or effect of an action" },
+    { word: "evaluate", definition: "to carefully consider something before deciding" },
+    { word: "alternative", definition: "a different option or choice" },
+    { word: "persuade", definition: "to convince someone to do or believe something" },
+    { word: "constructive", definition: "helpful and likely to lead to improvement" },
+    { word: "reflect", definition: "to think carefully about something" },
+    { word: "recommend", definition: "to suggest something as being good or suitable" }
+  ]},
+  { title: "Iran Protests and Potential Changes", level: "B2", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [
+    { word: "disillusionment", definition: "disappointment when something is not as good as expected" },
+    { word: "mobilize", definition: "to organize people for a purpose" },
+    { word: "repression", definition: "the use of force to control people" },
+    { word: "polarize", definition: "to divide into two completely opposite groups" },
+    { word: "escalate", definition: "to become more serious or intense" },
+    { word: "legitimacy", definition: "the quality of being accepted as right and proper" },
+    { word: "demographic", definition: "relating to the population of a place" },
+    { word: "transformative", definition: "causing a complete change" }
+  ]},
+  { title: "Iron Beam: The Future of Laser Weapons", level: "B2", src: "Audio/B2/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
+    { word: "electromagnetic", definition: "relating to electric and magnetic forces" },
+    { word: "precision", definition: "the quality of being exact and accurate" },
+    { word: "intercept", definition: "to stop something before it reaches its target" },
+    { word: "trajectory", definition: "the path of a moving object through the air" },
+    { word: "sophisticated", definition: "highly developed and complex" },
+    { word: "countermeasure", definition: "an action taken to reduce a threat" },
+    { word: "strategic", definition: "carefully planned to achieve a goal" },
+    { word: "autonomous", definition: "able to operate independently without human control" }
+  ]},
+  { title: "Lost Jewish Connections of Somaliland", level: "B2", src: "Audio/B2/Lost Jewish Connections of Somaliland.mp3", vocab: [
+    { word: "diaspora", definition: "people who have spread from their original homeland" },
+    { word: "ancestral", definition: "relating to family members from long ago" },
+    { word: "assimilation", definition: "the process of becoming part of a different culture" },
+    { word: "remnant", definition: "a small remaining part of something larger" },
+    { word: "archaeological", definition: "relating to the study of ancient remains" },
+    { word: "chronicle", definition: "a detailed record of events in time order" },
+    { word: "artifact", definition: "an object made by humans from an earlier time" },
+    { word: "indigenous", definition: "originating naturally in a particular place" }
+  ]},
+  { title: "Mossad's Secret Agent Yael", level: "B2", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [
+    { word: "infiltrate", definition: "to secretly enter an organization or place" },
+    { word: "intelligence", definition: "secret information gathered about an enemy" },
+    { word: "covert", definition: "not openly acknowledged; secret" },
+    { word: "surveillance", definition: "close observation of a person or group" },
+    { word: "operative", definition: "a person who carries out secret work" },
+    { word: "clandestine", definition: "kept secret, especially for a harmful purpose" },
+    { word: "recruit", definition: "to find and persuade someone to join a group" },
+    { word: "compromise", definition: "to expose someone to danger or suspicion" }
+  ]},
+  { title: "Oron Shaul", level: "B2", src: "Audio/B2/Oron Shaul.mpeg", vocab: [
+    { word: "commemorate", definition: "to honour the memory of someone or something" },
+    { word: "bereaved", definition: "suffering the loss of a loved one" },
+    { word: "captivity", definition: "the state of being kept as a prisoner" },
+    { word: "repatriate", definition: "to return someone to their home country" },
+    { word: "accountability", definition: "the fact of being responsible for your actions" },
+    { word: "dignity", definition: "the quality of being worthy of respect" },
+    { word: "memorial", definition: "something created to remember a person or event" },
+    { word: "negotiate", definition: "to reach an agreement through discussion" }
+  ]},
+  { title: "Somaliland's Quest for Recognition", level: "B2", src: "Audio/B2/Somaliland's Quest for Recognition.mp3", vocab: [
+    { word: "sovereignty", definition: "full power and authority over a country" },
+    { word: "self-determination", definition: "the right of a people to choose their government" },
+    { word: "legitimacy", definition: "the quality of being accepted as lawful or proper" },
+    { word: "geopolitical", definition: "relating to politics influenced by geography" },
+    { word: "constitutional", definition: "relating to the rules that govern a country" },
+    { word: "referendum", definition: "a public vote on a single political question" },
+    { word: "territorial", definition: "relating to the land belonging to a country" },
+    { word: "stabilize", definition: "to make something less likely to change or fail" }
+  ]},
   // C1
-  { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [] },
-  { title: "Cluster Missiles", level: "C1", src: "Audio/C1/Cluster Missiles.mp4", vocab: [] },
-  { title: "Giving Advice", level: "C1", src: "Audio/C1/Giving Advice.mpeg", vocab: [] },
-  { title: "Iran's Turmoil and Economic Strife", level: "C1", src: "Audio/C1/Iran's Turmoil and Economic Strife.mp3", vocab: [] },
-  { title: "Iron Beam: The Future of Laser Weapons", level: "C1", src: "Audio/C1/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [] },
-  { title: "Somaliland's Quest for Recognition", level: "C1", src: "Audio/C1/Somaliland's Quest for Recognition.mp3", vocab: [] }
+  { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
+    { word: "authoritarian", definition: "enforcing strict obedience at the expense of freedom" },
+    { word: "disintegration", definition: "the process of losing unity and falling apart" },
+    { word: "ramifications", definition: "complex and unwanted consequences of an action" },
+    { word: "ideological", definition: "relating to a set of political or social beliefs" },
+    { word: "perpetuate", definition: "to make something continue indefinitely" },
+    { word: "disenfranchise", definition: "to deprive someone of their rights or power" },
+    { word: "insurgency", definition: "an organized rebellion against an established authority" },
+    { word: "accountability", definition: "the obligation to accept responsibility for one's actions" }
+  ]},
+  { title: "Cluster Missiles", level: "C1", src: "Audio/C1/Cluster Missiles.mp4", vocab: [
+    { word: "indiscriminate", definition: "done without careful judgement, harming innocent people" },
+    { word: "moratorium", definition: "a temporary ban on an activity" },
+    { word: "asymmetric", definition: "involving forces of very different size or strength" },
+    { word: "disproportionate", definition: "too large or too small in comparison to something" },
+    { word: "deterrence", definition: "the prevention of action through fear of consequences" },
+    { word: "jurisdiction", definition: "the authority to make legal decisions in an area" },
+    { word: "proliferation", definition: "a rapid spread or increase in number" },
+    { word: "humanitarian law", definition: "international rules to limit suffering in war" }
+  ]},
+  { title: "Giving Advice", level: "C1", src: "Audio/C1/Giving Advice.mpeg", vocab: [
+    { word: "nuanced", definition: "taking account of subtle differences; not simplistic" },
+    { word: "pragmatic", definition: "dealing with things in a practical, realistic way" },
+    { word: "judicious", definition: "having or showing good judgement" },
+    { word: "circumspect", definition: "careful to consider all circumstances before acting" },
+    { word: "impartial", definition: "treating all sides equally; not favouring one side" },
+    { word: "discerning", definition: "having or showing good taste and judgement" },
+    { word: "articulate", definition: "able to express ideas clearly and effectively" },
+    { word: "meticulous", definition: "showing great attention to detail" }
+  ]},
+  { title: "Iran's Turmoil and Economic Strife", level: "C1", src: "Audio/C1/Iran's Turmoil and Economic Strife.mp3", vocab: [
+    { word: "turmoil", definition: "a state of great confusion or disorder" },
+    { word: "hyperinflation", definition: "extremely rapid and uncontrolled price increases" },
+    { word: "disenfranchisement", definition: "the state of being deprived of rights or power" },
+    { word: "systemic", definition: "relating to a whole system rather than individual parts" },
+    { word: "socioeconomic", definition: "relating to both social and economic factors" },
+    { word: "destabilize", definition: "to make a country or government less secure" },
+    { word: "sanctions", definition: "official penalties imposed on a country" },
+    { word: "civil unrest", definition: "public disorder caused by political dissatisfaction" }
+  ]},
+  { title: "Iron Beam: The Future of Laser Weapons", level: "C1", src: "Audio/C1/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
+    { word: "preemptive", definition: "done to prevent an anticipated situation from occurring" },
+    { word: "proliferation", definition: "rapid spread of something, especially weapons" },
+    { word: "deterrence", definition: "discouraging action through the threat of consequences" },
+    { word: "asymmetric warfare", definition: "conflict between opponents of very unequal strength" },
+    { word: "countermeasure", definition: "an action taken to neutralize a threat" },
+    { word: "geopolitical", definition: "relating to politics shaped by geographical factors" },
+    { word: "electromagnetic pulse", definition: "a burst of energy that can disable electronics" },
+    { word: "autonomous system", definition: "a system that operates independently without human control" }
+  ]},
+  { title: "Somaliland's Quest for Recognition", level: "C1", src: "Audio/C1/Somaliland's Quest for Recognition.mp3", vocab: [
+    { word: "self-determination", definition: "the right of a people to freely choose their governance" },
+    { word: "de facto", definition: "existing in reality, though not officially recognised" },
+    { word: "territorial integrity", definition: "the principle that a state's borders must be respected" },
+    { word: "diplomatic recognition", definition: "official acceptance of a state by other countries" },
+    { word: "governance", definition: "the way in which a country or organisation is managed" },
+    { word: "legitimacy", definition: "the right to govern, accepted by the people" },
+    { word: "geopolitical", definition: "political activity influenced by geography" },
+    { word: "constitutional framework", definition: "the set of rules that define how a state is governed" }
+  ]}
 ];
 // -----------------------------------------------------
 
