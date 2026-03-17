@@ -142,27 +142,59 @@ if (articleList) {
 
 // --- LISTENING FILES --- add new audio files here ---
 const listeningFiles = [
-  {
-    title: "Moral",
-    level: "B1",
-    src: "Audio/moral.mp3",
-    vocab: [
-      { word: "anxiety", definition: "strong worry about what might happen" },
-      { word: "struggle", definition: "a very difficult situation or effort" },
-      { word: "pressure", definition: "stress or strong demands" },
-      { word: "desperation", definition: "a feeling of having no hope or no options" },
-      { word: "ruthless", definition: "cruel and without pity" },
-      { word: "trapped", definition: "unable to escape a difficult situation" },
-      { word: "confessed", definition: "admitted the truth about doing something wrong" },
-      { word: "responsibility", definition: "accepting that something is your duty or fault" },
-      { word: "sentenced", definition: "officially given a punishment by a court" },
-      { word: "pardon", definition: "official forgiveness by a president or government" },
-      { word: "mercy", definition: "kindness or forgiveness instead of punishment" },
-      { word: "justice", definition: "fair treatment according to the law" }
-    ]
-  }
-  // Add more files here, e.g.:
-  // { title: "My Title", level: "A1", src: "Audio/filename.mp3", vocab: [] }
+  // A1
+  { title: "Inflation in Iran", level: "A1", src: "Audio/A1/Inflation in Iran.mp3", vocab: [] },
+  { title: "Public Transport", level: "A1", src: "Audio/A1/Public Transport.mpeg", vocab: [] },
+  // A2
+  { title: "Fall of Assad", level: "A2", src: "Audio/A2/Fall of Assad.mpeg", vocab: [] },
+  { title: "Iran Protests: Economic Discontent", level: "A2", src: "Audio/A2/Iran Protests_ Economic Discontent.mp3", vocab: [] },
+  { title: "Iron Beam", level: "A2", src: "Audio/A2/Iron Beam.mp3", vocab: [] },
+  { title: "Mossad's Secret Agent Yael", level: "A2", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [] },
+  { title: "Public Transport", level: "A2", src: "Audio/A2/Public Transport.mpeg", vocab: [] },
+  // B1
+  { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [] },
+  { title: "Cross-Border Mysteries: Ahmad Shukr's Story", level: "B1", src: "Audio/B1/Cross-Border Mysteries_ Ahmad Shukr's Story.mp3", vocab: [] },
+  { title: "Fall of Assad", level: "B1", src: "Audio/B1/Fall of Assad.mpeg", vocab: [] },
+  { title: "Hidden Jewish History of Somaliland", level: "B1", src: "Audio/B1/Hidden Jewish History of Somaliland.mp3", vocab: [] },
+  { title: "Iran Protests and Potential Changes", level: "B1", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [] },
+  { title: "Iran Protests: Economic Origins and Beyond", level: "B1", src: "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3", vocab: [] },
+  { title: "Oron Shaul", level: "B1", src: "Audio/B1/Oron Shaul.mpeg", vocab: [] },
+  { title: "Public Transport", level: "B1", src: "Audio/B1/Public Transport.mpeg", vocab: [] },
+  { title: "Secrets of the Night", level: "B1", src: "Audio/B1/Secrets of the Night.mp3", vocab: [] },
+  { title: "Somaliland's Quest for Recognition", level: "B1", src: "Audio/B1/Somaliland's Quest for Recognition.mp3", vocab: [] },
+  { title: "Understanding the Iran Protests", level: "B1", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [] },
+  { title: "Moral", level: "B1", src: "Audio/B1/moral.mp3", vocab: [
+    { word: "anxiety", definition: "strong worry about what might happen" },
+    { word: "struggle", definition: "a very difficult situation or effort" },
+    { word: "pressure", definition: "stress or strong demands" },
+    { word: "desperation", definition: "a feeling of having no hope or no options" },
+    { word: "ruthless", definition: "cruel and without pity" },
+    { word: "trapped", definition: "unable to escape a difficult situation" },
+    { word: "confessed", definition: "admitted the truth about doing something wrong" },
+    { word: "responsibility", definition: "accepting that something is your duty or fault" },
+    { word: "sentenced", definition: "officially given a punishment by a court" },
+    { word: "pardon", definition: "official forgiveness by a president or government" },
+    { word: "mercy", definition: "kindness or forgiveness instead of punishment" },
+    { word: "justice", definition: "fair treatment according to the law" }
+  ]},
+  // B2
+  { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [] },
+  { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [] },
+  { title: "Fall of Assad", level: "B2", src: "Audio/B2/Fall of Assad.mpeg", vocab: [] },
+  { title: "Giving Advice", level: "B2", src: "Audio/B2/Giving Advice.mpeg", vocab: [] },
+  { title: "Iran Protests and Potential Changes", level: "B2", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [] },
+  { title: "Iron Beam: The Future of Laser Weapons", level: "B2", src: "Audio/B2/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [] },
+  { title: "Lost Jewish Connections of Somaliland", level: "B2", src: "Audio/B2/Lost Jewish Connections of Somaliland.mp3", vocab: [] },
+  { title: "Mossad's Secret Agent Yael", level: "B2", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [] },
+  { title: "Oron Shaul", level: "B2", src: "Audio/B2/Oron Shaul.mpeg", vocab: [] },
+  { title: "Somaliland's Quest for Recognition", level: "B2", src: "Audio/B2/Somaliland's Quest for Recognition.mp3", vocab: [] },
+  // C1
+  { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [] },
+  { title: "Cluster Missiles", level: "C1", src: "Audio/C1/Cluster Missiles.mp4", vocab: [] },
+  { title: "Giving Advice", level: "C1", src: "Audio/C1/Giving Advice.mpeg", vocab: [] },
+  { title: "Iran's Turmoil and Economic Strife", level: "C1", src: "Audio/C1/Iran's Turmoil and Economic Strife.mp3", vocab: [] },
+  { title: "Iron Beam: The Future of Laser Weapons", level: "C1", src: "Audio/C1/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [] },
+  { title: "Somaliland's Quest for Recognition", level: "C1", src: "Audio/C1/Somaliland's Quest for Recognition.mp3", vocab: [] }
 ];
 // -----------------------------------------------------
 
