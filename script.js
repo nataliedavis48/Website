@@ -152,6 +152,9 @@ const listeningFiles = [
     { word: "food", definition: "things we eat" },
     { word: "poor", definition: "not having much money" },
     { word: "market", definition: "a place where people buy and sell things" }
+  ], questions: [
+    "Is food expensive in your country? What do people buy most?",
+    "What do you do when you do not have much money?"
   ]},
   { title: "Public Transport", level: "A1", src: "Audio/A1/Public Transport.mpeg", vocab: [
     { word: "bus", definition: "a large vehicle that carries many people" },
@@ -162,6 +165,9 @@ const listeningFiles = [
     { word: "city", definition: "a large town where many people live" },
     { word: "late", definition: "not arriving at the right time" },
     { word: "walk", definition: "to move on foot" }
+  ], questions: [
+    "How do you travel to school or work? Do you take a bus or train?",
+    "Is public transport good in your city? Why or why not?"
   ]},
   // A2
   { title: "Fall of Assad", level: "A2", src: "Audio/A2/Fall of Assad.mpeg", vocab: [
@@ -173,6 +179,9 @@ const listeningFiles = [
     { word: "power", definition: "control over people or a country" },
     { word: "fall", definition: "to lose control or position" },
     { word: "people", definition: "men, women, and children in a place" }
+  ], questions: [
+    "What do you think happens to a country when its leader leaves suddenly?",
+    "Have you heard about Syria in the news? What do you know about it?"
   ]},
   { title: "Iran Protests: Economic Discontent", level: "A2", src: "Audio/A2/Iran Protests_ Economic Discontent.mp3", vocab: [
     { word: "protest", definition: "when people gather to show they are unhappy" },
@@ -183,6 +192,9 @@ const listeningFiles = [
     { word: "change", definition: "to become different" },
     { word: "work", definition: "a job or activity done to earn money" },
     { word: "difficult", definition: "not easy; needing a lot of effort" }
+  ], questions: [
+    "Why do you think people go to the streets to protest?",
+    "Have you ever seen a protest? What was it about?"
   ]},
   { title: "Iron Beam", level: "A2", src: "Audio/A2/Iron Beam.mp3", vocab: [
     { word: "weapon", definition: "something used to hurt people or destroy things" },
@@ -193,6 +205,9 @@ const listeningFiles = [
     { word: "shoot", definition: "to send something through the air at high speed" },
     { word: "new", definition: "made or discovered recently" },
     { word: "fast", definition: "moving or happening quickly" }
+  ], questions: [
+    "Do you think new weapons make countries safer or more dangerous?",
+    "What other technologies do you know that help protect people?"
   ]},
   { title: "Mossad's Secret Agent Yael", level: "A2", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [
     { word: "spy", definition: "a person who secretly collects information" },
@@ -203,6 +218,9 @@ const listeningFiles = [
     { word: "discover", definition: "to find something for the first time" },
     { word: "safe", definition: "not in danger" },
     { word: "country", definition: "an area of land with its own government" }
+  ], questions: [
+    "Would you like to work as a spy? Why or why not?",
+    "Why do you think countries need secret agents?"
   ]},
   { title: "Public Transport", level: "A2", src: "Audio/A2/Public Transport.mpeg", vocab: [
     { word: "transport", definition: "a way of moving people from place to place" },
@@ -213,6 +231,9 @@ const listeningFiles = [
     { word: "crowded", definition: "full of too many people" },
     { word: "service", definition: "a system that provides something to the public" },
     { word: "platform", definition: "the raised area at a station where you board a train" }
+  ], questions: [
+    "What is the most common type of transport in your city?",
+    "What would you change about public transport where you live?"
   ]},
   // B1
   { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [
@@ -224,6 +245,9 @@ const listeningFiles = [
     { word: "damage", definition: "harm or injury caused to something" },
     { word: "military", definition: "relating to an army or armed forces" },
     { word: "target", definition: "a person or place that is aimed at" }
+  ], questions: [
+    "Why do you think cluster missiles are considered especially dangerous to civilians?",
+    "Should there be international rules about which weapons countries can use? Why?"
   ]},
   { title: "Cross-Border Mysteries: Ahmad Shukr's Story", level: "B1", src: "Audio/B1/Cross-Border Mysteries_ Ahmad Shukr's Story.mp3", vocab: [
     { word: "border", definition: "the line dividing two countries" },
@@ -234,6 +258,9 @@ const listeningFiles = [
     { word: "suspect", definition: "a person thought to have done something wrong" },
     { word: "disappear", definition: "to become impossible to find or see" },
     { word: "escape", definition: "to get away from a dangerous situation" }
+  ], questions: [
+    "Why do you think crossing borders can be dangerous for some people?",
+    "What challenges do you think investigators face when solving cross-border cases?"
   ]},
   { title: "Fall of Assad", level: "B1", src: "Audio/B1/Fall of Assad.mpeg", vocab: [
     { word: "regime", definition: "a government that controls a country strictly" },
@@ -244,6 +271,9 @@ const listeningFiles = [
     { word: "uprising", definition: "when people rise up against those in power" },
     { word: "authority", definition: "the power to give orders and make decisions" },
     { word: "negotiate", definition: "to try to reach an agreement by discussion" }
+  ], questions: [
+    "What do you think leads people to rebel against their government?",
+    "What challenges does a country face after its leader suddenly loses power?"
   ]},
   { title: "Hidden Jewish History of Somaliland", level: "B1", src: "Audio/B1/Hidden Jewish History of Somaliland.mp3", vocab: [
     { word: "heritage", definition: "traditions and history passed down through generations" },
@@ -254,6 +284,9 @@ const listeningFiles = [
     { word: "preserve", definition: "to keep something in its original state" },
     { word: "discover", definition: "to find or learn something for the first time" },
     { word: "culture", definition: "the beliefs and customs of a group of people" }
+  ], questions: [
+    "Why do you think some communities have hidden or forgotten their history?",
+    "How important is it to preserve the history of minority communities? Why?"
   ]},
   { title: "Iran Protests and Potential Changes", level: "B1", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [
     { word: "protest", definition: "a public event where people show disagreement" },
@@ -264,6 +297,9 @@ const listeningFiles = [
     { word: "potential", definition: "having the possibility to develop or happen" },
     { word: "unrest", definition: "a situation of public anger and disorder" },
     { word: "political", definition: "relating to the government and power" }
+  ], questions: [
+    "What changes do you think the protesters in Iran were hoping for?",
+    "Do you think protests can lead to real change in a country? Give an example."
   ]},
   { title: "Iran Protests: Economic Origins and Beyond", level: "B1", src: "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3", vocab: [
     { word: "inflation", definition: "a rise in prices over time" },
@@ -274,6 +310,9 @@ const listeningFiles = [
     { word: "suppress", definition: "to stop something by force" },
     { word: "consequence", definition: "a result of an action" },
     { word: "economic", definition: "relating to money and how a country manages it" }
+  ], questions: [
+    "How does economic hardship like unemployment affect people's daily lives?",
+    "Why do you think corruption makes economic problems worse for ordinary people?"
   ]},
   { title: "Oron Shaul", level: "B1", src: "Audio/B1/Oron Shaul.mpeg", vocab: [
     { word: "soldier", definition: "a person who serves in an army" },
@@ -284,6 +323,9 @@ const listeningFiles = [
     { word: "conflict", definition: "a serious fight or war between groups" },
     { word: "honor", definition: "great respect shown to someone" },
     { word: "family", definition: "a group of people related to each other" }
+  ], questions: [
+    "How do you think a family feels when a loved one is taken as a hostage?",
+    "Why is it important for a country to bring home the remains of its fallen soldiers?"
   ]},
   { title: "Public Transport", level: "B1", src: "Audio/B1/Public Transport.mpeg", vocab: [
     { word: "infrastructure", definition: "basic systems a country needs, like roads and transport" },
@@ -294,6 +336,9 @@ const listeningFiles = [
     { word: "investment", definition: "money spent to get a future benefit" },
     { word: "urban", definition: "relating to a town or city" },
     { word: "congestion", definition: "too much traffic causing slow movement" }
+  ], questions: [
+    "How could better public transport improve life in a city?",
+    "Do you think governments should invest more in public transport or in roads? Why?"
   ]},
   { title: "Secrets of the Night", level: "B1", src: "Audio/B1/Secrets of the Night.mp3", vocab: [
     { word: "shadow", definition: "a dark shape made when light is blocked" },
@@ -304,6 +349,9 @@ const listeningFiles = [
     { word: "danger", definition: "a situation where harm is possible" },
     { word: "silence", definition: "a complete lack of sound" },
     { word: "suspicious", definition: "feeling that something is wrong or dishonest" }
+  ], questions: [
+    "Have you ever been in a situation that felt mysterious or suspicious? What happened?",
+    "Why do you think some secrets stay hidden for a long time?"
   ]},
   { title: "Somaliland's Quest for Recognition", level: "B1", src: "Audio/B1/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "recognition", definition: "official acceptance that something exists or is true" },
@@ -314,6 +362,9 @@ const listeningFiles = [
     { word: "stability", definition: "a situation that is not likely to change suddenly" },
     { word: "govern", definition: "to control and manage a country" },
     { word: "international", definition: "involving more than one country" }
+  ], questions: [
+    "Why do you think it is important for a country to be recognised by other nations?",
+    "What do you think makes a region stable enough to become an independent country?"
   ]},
   { title: "Understanding the Iran Protests", level: "B1", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [
     { word: "cause", definition: "the reason why something happens" },
@@ -324,6 +375,9 @@ const listeningFiles = [
     { word: "demand", definition: "a strong request that must be answered" },
     { word: "government", definition: "the group of people who run a country" },
     { word: "rights", definition: "things every person is entitled to have" }
+  ], questions: [
+    "Why do you think young people often lead protest movements?",
+    "What rights do you think are most important for people to have? Why?"
   ]},
   { title: "Moral", level: "B1", src: "Audio/B1/moral.mp3", vocab: [
     { word: "anxiety", definition: "strong worry about what might happen" },
@@ -338,6 +392,9 @@ const listeningFiles = [
     { word: "pardon", definition: "official forgiveness by a president or government" },
     { word: "mercy", definition: "kindness or forgiveness instead of punishment" },
     { word: "justice", definition: "fair treatment according to the law" }
+  ], questions: [
+    "Do you think a person who confesses their crime deserves more mercy? Why or why not?",
+    "Is there a difference between justice and mercy? Can a person deserve both?"
   ]},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
@@ -349,6 +406,9 @@ const listeningFiles = [
     { word: "accountability", definition: "being responsible for your actions" },
     { word: "fragmentation", definition: "breaking into small sharp pieces" },
     { word: "violation", definition: "breaking a rule or agreement" }
+  ], questions: [
+    "Why do you think some countries refuse to sign international weapons conventions?",
+    "Who should be held accountable when cluster weapons harm civilians — the soldiers, commanders, or governments?"
   ]},
   { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [
     { word: "autonomous", definition: "having the freedom to govern itself" },
@@ -359,6 +419,9 @@ const listeningFiles = [
     { word: "flourishing", definition: "developing quickly and successfully" },
     { word: "diverse", definition: "showing a great deal of variety" },
     { word: "undiscovered", definition: "not yet found or known about" }
+  ], questions: [
+    "What do you think are the advantages and disadvantages of visiting an undiscovered travel destination?",
+    "How can tourism help or harm a place that is not used to many visitors?"
   ]},
   { title: "Fall of Assad", level: "B2", src: "Audio/B2/Fall of Assad.mpeg", vocab: [
     { word: "authoritarian", definition: "demanding complete obedience to authority" },
@@ -369,6 +432,9 @@ const listeningFiles = [
     { word: "militia", definition: "a military group that is not a regular army" },
     { word: "transitional", definition: "relating to a change from one state to another" },
     { word: "disintegrate", definition: "to break apart into small pieces" }
+  ], questions: [
+    "How do international sanctions affect ordinary citizens, and is that a fair consequence?",
+    "What role do you think neighbouring countries play in the rise or fall of an authoritarian government?"
   ]},
   { title: "Giving Advice", level: "B2", src: "Audio/B2/Giving Advice.mpeg", vocab: [
     { word: "perspective", definition: "a particular way of thinking about something" },
@@ -379,6 +445,9 @@ const listeningFiles = [
     { word: "constructive", definition: "helpful and likely to lead to improvement" },
     { word: "reflect", definition: "to think carefully about something" },
     { word: "recommend", definition: "to suggest something as being good or suitable" }
+  ], questions: [
+    "When someone asks for your advice, how do you decide what to say?",
+    "Is there a difference between giving advice to a close friend and to a colleague? How do you adjust your approach?"
   ]},
   { title: "Iran Protests and Potential Changes", level: "B2", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [
     { word: "disillusionment", definition: "disappointment when something is not as good as expected" },
@@ -389,6 +458,9 @@ const listeningFiles = [
     { word: "legitimacy", definition: "the quality of being accepted as right and proper" },
     { word: "demographic", definition: "relating to the population of a place" },
     { word: "transformative", definition: "causing a complete change" }
+  ], questions: [
+    "At what point does a government lose its legitimacy in the eyes of its people?",
+    "How does social media change the way protest movements mobilize and grow?"
   ]},
   { title: "Iron Beam: The Future of Laser Weapons", level: "B2", src: "Audio/B2/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
     { word: "electromagnetic", definition: "relating to electric and magnetic forces" },
@@ -399,6 +471,9 @@ const listeningFiles = [
     { word: "countermeasure", definition: "an action taken to reduce a threat" },
     { word: "strategic", definition: "carefully planned to achieve a goal" },
     { word: "autonomous", definition: "able to operate independently without human control" }
+  ], questions: [
+    "Should weapons systems be allowed to operate autonomously without human decision-making? Why or why not?",
+    "How might laser weapon technology change the balance of power between countries?"
   ]},
   { title: "Lost Jewish Connections of Somaliland", level: "B2", src: "Audio/B2/Lost Jewish Connections of Somaliland.mp3", vocab: [
     { word: "diaspora", definition: "people who have spread from their original homeland" },
@@ -409,6 +484,9 @@ const listeningFiles = [
     { word: "chronicle", definition: "a detailed record of events in time order" },
     { word: "artifact", definition: "an object made by humans from an earlier time" },
     { word: "indigenous", definition: "originating naturally in a particular place" }
+  ], questions: [
+    "What does it mean for a community to lose its connection to its ancestral homeland?",
+    "How can archaeological evidence change the way we understand history and identity?"
   ]},
   { title: "Mossad's Secret Agent Yael", level: "B2", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [
     { word: "infiltrate", definition: "to secretly enter an organization or place" },
@@ -419,6 +497,9 @@ const listeningFiles = [
     { word: "clandestine", definition: "kept secret, especially for a harmful purpose" },
     { word: "recruit", definition: "to find and persuade someone to join a group" },
     { word: "compromise", definition: "to expose someone to danger or suspicion" }
+  ], questions: [
+    "What personal qualities do you think make someone suited to covert intelligence work?",
+    "Where do you think the line should be drawn between national security and individual privacy?"
   ]},
   { title: "Oron Shaul", level: "B2", src: "Audio/B2/Oron Shaul.mpeg", vocab: [
     { word: "commemorate", definition: "to honour the memory of someone or something" },
@@ -429,6 +510,9 @@ const listeningFiles = [
     { word: "dignity", definition: "the quality of being worthy of respect" },
     { word: "memorial", definition: "something created to remember a person or event" },
     { word: "negotiate", definition: "to reach an agreement through discussion" }
+  ], questions: [
+    "Why is the repatriation of soldiers' remains considered so important to their families and country?",
+    "What moral obligations do governments have towards soldiers who are captured or killed in conflict?"
   ]},
   { title: "Somaliland's Quest for Recognition", level: "B2", src: "Audio/B2/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "sovereignty", definition: "full power and authority over a country" },
@@ -439,6 +523,9 @@ const listeningFiles = [
     { word: "referendum", definition: "a public vote on a single political question" },
     { word: "territorial", definition: "relating to the land belonging to a country" },
     { word: "stabilize", definition: "to make something less likely to change or fail" }
+  ], questions: [
+    "What criteria should a region have to meet before being recognised as an independent state?",
+    "How do geopolitical interests of powerful nations affect the recognition of smaller states?"
   ]},
   // C1
   { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
@@ -450,6 +537,9 @@ const listeningFiles = [
     { word: "disenfranchise", definition: "to deprive someone of their rights or power" },
     { word: "insurgency", definition: "an organized rebellion against an established authority" },
     { word: "accountability", definition: "the obligation to accept responsibility for one's actions" }
+  ], questions: [
+    "To what extent should leaders of authoritarian regimes be held personally accountable for the actions of their state?",
+    "How does the disintegration of a state affect the civilian population, and what responsibility do neighbouring countries have?"
   ]},
   { title: "Cluster Missiles", level: "C1", src: "Audio/C1/Cluster Missiles.mp4", vocab: [
     { word: "indiscriminate", definition: "done without careful judgement, harming innocent people" },
@@ -460,6 +550,9 @@ const listeningFiles = [
     { word: "jurisdiction", definition: "the authority to make legal decisions in an area" },
     { word: "proliferation", definition: "a rapid spread or increase in number" },
     { word: "humanitarian law", definition: "international rules to limit suffering in war" }
+  ], questions: [
+    "How effective is international humanitarian law in practice when powerful states refuse to comply?",
+    "Can the use of indiscriminate weapons ever be strategically or morally justified? Under what circumstances?"
   ]},
   { title: "Giving Advice", level: "C1", src: "Audio/C1/Giving Advice.mpeg", vocab: [
     { word: "nuanced", definition: "taking account of subtle differences; not simplistic" },
@@ -470,6 +563,9 @@ const listeningFiles = [
     { word: "discerning", definition: "having or showing good taste and judgement" },
     { word: "articulate", definition: "able to express ideas clearly and effectively" },
     { word: "meticulous", definition: "showing great attention to detail" }
+  ], questions: [
+    "How do cultural differences affect the way advice is given and received across different societies?",
+    "Is it ever more judicious to withhold advice even when you can see someone making a serious mistake?"
   ]},
   { title: "Iran's Turmoil and Economic Strife", level: "C1", src: "Audio/C1/Iran's Turmoil and Economic Strife.mp3", vocab: [
     { word: "turmoil", definition: "a state of great confusion or disorder" },
@@ -480,6 +576,9 @@ const listeningFiles = [
     { word: "destabilize", definition: "to make a country or government less secure" },
     { word: "sanctions", definition: "official penalties imposed on a country" },
     { word: "civil unrest", definition: "public disorder caused by political dissatisfaction" }
+  ], questions: [
+    "To what extent are international sanctions a legitimate tool, given their socioeconomic impact on ordinary citizens?",
+    "How do systemic economic failures contribute to the erosion of civil society and political stability?"
   ]},
   { title: "Iron Beam: The Future of Laser Weapons", level: "C1", src: "Audio/C1/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
     { word: "preemptive", definition: "done to prevent an anticipated situation from occurring" },
@@ -490,6 +589,9 @@ const listeningFiles = [
     { word: "geopolitical", definition: "relating to politics shaped by geographical factors" },
     { word: "electromagnetic pulse", definition: "a burst of energy that can disable electronics" },
     { word: "autonomous system", definition: "a system that operates independently without human control" }
+  ], questions: [
+    "How might the development of autonomous weapons systems fundamentally alter the ethics of warfare?",
+    "Does superior defensive technology like the Iron Beam reduce conflict or simply shift the nature of the threat?"
   ]},
   { title: "Somaliland's Quest for Recognition", level: "C1", src: "Audio/C1/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "self-determination", definition: "the right of a people to freely choose their governance" },
@@ -500,6 +602,9 @@ const listeningFiles = [
     { word: "legitimacy", definition: "the right to govern, accepted by the people" },
     { word: "geopolitical", definition: "political activity influenced by geography" },
     { word: "constitutional framework", definition: "the set of rules that define how a state is governed" }
+  ], questions: [
+    "How does the tension between self-determination and territorial integrity play out in cases like Somaliland?",
+    "What does Somaliland's de facto independence reveal about the limitations of the current international system of state recognition?"
   ]}
 ];
 // -----------------------------------------------------
@@ -517,6 +622,9 @@ function showAudioFile(file) {
   const vocabHTML = file.vocab.map(v =>
     `<li><strong>${v.word}</strong> <button class="speaker-btn" onclick="speakWord('${v.word}')">🔊</button> ${v.definition}</li>`
   ).join("");
+  const questionsHTML = file.questions && file.questions.length > 0
+    ? `<div style="margin-top:16px"><h4>Discussion Questions</h4><ol>${file.questions.map(q => `<li style="margin-bottom:8px">${q}</li>`).join("")}</ol></div>`
+    : "";
   card.innerHTML = `
     <h3>${file.title}</h3>
     <p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>
@@ -525,6 +633,7 @@ function showAudioFile(file) {
       Your browser does not support the audio element.
     </audio>
     ${file.vocab.length > 0 ? `<ul style="display:block;padding-left:20px;margin-top:12px">${vocabHTML}</ul>` : ""}
+    ${questionsHTML}
   `;
   audioList.appendChild(card);
 }
