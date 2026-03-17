@@ -89,32 +89,13 @@
     <section id="audio-vocab" class="section">
       <h2>Time to Listen</h2>
 
-      <div class="card">
-        <h3>moral</h3>
-        <p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>
-
-        <audio controls>
-          <source src="audio/moral.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-
-        <p><a href="audio.moral.mp3" target="_blank">Open audio file</a></p>
-
-        <ul class="vocab-list" style="display:block; padding-left:20px;">
-          <li><strong>anxiety</strong> <button class="speaker-btn" onclick="speakWord('anxiety')">🔊</button> strong worry about what might happen</li>
-          <li><strong>struggle</strong> <button class="speaker-btn" onclick="speakWord('struggle')">🔊</button> a very difficult situation or effort</li>
-          <li><strong>pressure</strong> <button class="speaker-btn" onclick="speakWord('pressure')">🔊</button> stress or strong demands</li>
-          <li><strong>desperation</strong> <button class="speaker-btn" onclick="speakWord('desperation')">🔊</button> a feeling of having no hope or no options</li>
-          <li><strong>ruthless</strong> <button class="speaker-btn" onclick="speakWord('ruthless')">🔊</button> cruel and without pity</li>
-          <li><strong>trapped</strong> <button class="speaker-btn" onclick="speakWord('trapped')">🔊</button> unable to escape a difficult situation</li>
-          <li><strong>confessed</strong> <button class="speaker-btn" onclick="speakWord('confessed')">🔊</button> admitted the truth about doing something wrong</li>
-          <li><strong>responsibility</strong> <button class="speaker-btn" onclick="speakWord('responsibility')">🔊</button> accepting that something is your duty or fault</li>
-          <li><strong>sentenced</strong> <button class="speaker-btn" onclick="speakWord('sentenced')">🔊</button> officially given a punishment by a court</li>
-          <li><strong>pardon</strong> <button class="speaker-btn" onclick="speakWord('pardon')">🔊</button> official forgiveness by a president or government</li>
-          <li><strong>mercy</strong> <button class="speaker-btn" onclick="speakWord('mercy')">🔊</button> kindness or forgiveness instead of punishment</li>
-          <li><strong>justice</strong> <button class="speaker-btn" onclick="speakWord('justice')">🔊</button> fair treatment according to the law</li>
-        </ul>
+      <div class="level-tabs">
+        <button class="level-tab active" data-audio-level="A1">A1</button>
+        <button class="level-tab" data-audio-level="A2">A2</button>
+        <button class="level-tab" data-audio-level="B1">B1</button>
       </div>
+
+      <div id="audio-list"></div>
     </section>
 
     <section id="vocab" class="section">
