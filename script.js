@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   navButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const target = button.getAttribute("data-section");
+      if (!target) return;
 
       sections.forEach((section) => {
         section.classList.remove("active");
@@ -527,6 +528,17 @@ const listeningFiles = [
     "What criteria should a region have to meet before being recognised as an independent state?",
     "How do geopolitical interests of powerful nations affect the recognition of smaller states?"
   ]},
+  { title: "Rachel Goldberg-Polin: A Voice for the Unthinkable", level: "B2", src: "Audio/B2/rachel-goldberg-polin.mp3.mp3", vocab: [
+    { word: "hostage", definition: "a person held captive to force others to meet demands" },
+    { word: "advocate", definition: "to publicly support or recommend a cause or policy" },
+    { word: "resilience", definition: "the ability to recover from difficult situations" },
+    { word: "negotiation", definition: "formal discussion to reach an agreement" },
+    { word: "grief", definition: "deep sadness caused by loss or tragedy" }
+  ], questions: [
+    "What does it mean to speak out publicly about a personal tragedy?",
+    "How can one person's voice influence a political situation?",
+    "What emotions did you notice in the speaker's voice or words?"
+  ]},
   // C1
   { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
     { word: "authoritarian", definition: "enforcing strict obedience at the expense of freedom" },
@@ -608,73 +620,9 @@ const listeningFiles = [
   ]}
 ];
 // -----------------------------------------------------
+window._listeningFiles = listeningFiles;
 
-const audioList = document.getElementById("audio-list");
-
-function showAudioFile(file) {
-  const existing = document.getElementById("audio-display");
-  if (existing) existing.remove();
-  if (!file) return;
-
-  const card = document.createElement("div");
-  card.className = "card";
-  card.id = "audio-display";
-  const vocabHTML = file.vocab.map(v =>
-    `<li><strong>${v.word}</strong> <button class="speaker-btn" onclick="speakWord('${v.word}')">🔊</button> ${v.definition}</li>`
-  ).join("");
-  const questionsHTML = file.questions && file.questions.length > 0
-    ? `<div style="margin-top:16px"><h4>Discussion Questions</h4><ol>${file.questions.map(q => `<li style="margin-bottom:8px">${q}</li>`).join("")}</ol></div>`
-    : "";
-  card.innerHTML = `
-    <h3>${file.title}</h3>
-    <p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>
-    <audio controls style="width:100%;margin:10px 0">
-      <source src="${file.src}" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    ${file.vocab.length > 0 ? `<ul style="display:block;padding-left:20px;margin-top:12px">${vocabHTML}</ul>` : ""}
-    ${questionsHTML}
-  `;
-  audioList.appendChild(card);
-}
-
-function renderAudioLevel(level) {
-  audioList.innerHTML = "";
-  const filtered = listeningFiles.filter(f => f.level === level);
-
-  const select = document.createElement("select");
-  select.style.marginTop = "16px";
-  const defaultOption = document.createElement("option");
-  defaultOption.value = "";
-  defaultOption.textContent = filtered.length === 0 ? "No files for this level yet" : "Select a listening file...";
-  select.appendChild(defaultOption);
-
-  filtered.forEach((file, i) => {
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = file.title;
-    select.appendChild(option);
-  });
-
-  select.addEventListener("change", () => {
-    const file = filtered[parseInt(select.value)];
-    showAudioFile(file || null);
-  });
-
-  audioList.appendChild(select);
-}
-
-if (audioList) {
-  renderAudioLevel("A1");
-
-  document.querySelectorAll("[data-audio-level]").forEach((tab) => {
-    tab.addEventListener("click", () => {
-      document.querySelectorAll("[data-audio-level]").forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-      renderAudioLevel(tab.getAttribute("data-audio-level"));
-    });
-  });
-}
+// audio functions defined at page level below DOMContentLoaded
 
 const matchingExercise = document.getElementById("matching-exercise");
 
@@ -725,4 +673,315 @@ if (checkMatchingBtn) {
     }
   });
 }
+
+// ---- SECTION NAVIGATION ----
+function showSection(sectionId, activeBtnId) {
+  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+  const target = document.getElementById(sectionId);
+  if (target) target.classList.add("active");
+
+  document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+  const btn = activeBtnId
+    ? document.getElementById(activeBtnId)
+    : document.querySelector(`.nav-btn[data-section="${sectionId}"]`);
+  if (btn) btn.classList.add("active");
+}
+
+// ---- AUDIO LEVEL TAB ----
+function activateAudioTab(level) {
+  document.querySelectorAll("[data-audio-level]").forEach(t => {
+    t.classList.toggle("active", t.getAttribute("data-audio-level") === level);
+  });
+}
+
+// ---- LISTENING SPOTLIGHT ----
+window.openFeaturedListening = function () {
+  showSection("listening", "spotlight-btn");
+
+  const spotlightArea = document.getElementById("spotlight-area");
+  if (!spotlightArea) return;
+
+  const featured = listeningFiles.find(
+    file => file.title === "Rachel Goldberg-Polin: A Voice for the Unthinkable"
+  );
+
+  if (!featured) return;
+
+  spotlightArea.innerHTML = "";
+
+  const featuredCard = document.createElement("div");
+  featuredCard.className = "card";
+  featuredCard.id = "featured-audio-display";
+
+  featuredCard.innerHTML = `
+    <h3>Listening Spotlight</h3>
+    <p>${featured.title}</p>
+    <audio controls style="width:100%;margin:10px 0">
+      <source src="${featured.src}" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="vocab-box">
+      <h4>Key Vocabulary</h4>
+      <ul>
+        ${featured.vocab.map(v => `<li><strong>${v.word}</strong> ${v.definition}</li>`).join("")}
+      </ul>
+    </div>
+    <div class="discussion-box">
+      <h4>Discussion Questions</h4>
+      <ol>
+        ${featured.questions.map(q => `<li>${q}</li>`).join("")}
+      </ol>
+    </div>
+  `;
+
+  spotlightArea.appendChild(featuredCard);
+  activateAudioTab("B2");
+  renderAudioLevel("B2");
+};
+
+// ---- HOME LEVEL QUICK-LINKS ----
+document.querySelectorAll("[data-go]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const parts = btn.getAttribute("data-go").split("-"); // e.g. "listening-b2"
+    const section = parts[0];
+    const level = parts[1].toUpperCase();
+    showSection(section);
+    activateAudioTab(level);
+    renderAudioLevel(level);
+  });
 });
+
+// ---- READ SECTION ----
+window.showReadLevel = function (levelId) {
+  document.querySelectorAll(".read-level").forEach(el => { el.style.display = "none"; });
+  const target = document.getElementById(levelId);
+  if (target) target.style.display = "";
+
+  document.querySelectorAll("[data-read-level]").forEach(b => {
+    b.classList.toggle("active", b.getAttribute("data-read-level") === levelId);
+  });
+};
+
+const readingArticles = {
+  "a2-market": {
+    title: "Local Markets Become Popular Again",
+    level: "A2",
+    text: `<p>Many people are going to local markets again. They like fresh food and friendly people.</p>
+           <p>Local markets sell fruit, vegetables, and bread. The prices are often good. You can talk to the person who made the food.</p>
+           <p>Some markets are open every weekend. People bring their families and enjoy the day.</p>`,
+    vocab: [
+      { word: "market", definition: "a place where people buy and sell things" },
+      { word: "fresh", definition: "recently made or picked" },
+      { word: "community", definition: "a group of people who live or work together" }
+    ],
+    questions: [
+      "Do you like shopping at local markets? Why?",
+      "What do people sell at local markets?",
+      "Why do people prefer local markets to supermarkets?"
+    ]
+  },
+  "a2-trees": {
+    title: "Why Cities Plant More Trees",
+    level: "A2",
+    text: `<p>Cities around the world are planting more trees. Trees make streets cooler and cleaner.</p>
+           <p>Trees give us fresh air. They also make cities look beautiful. Children can play in the shade.</p>
+           <p>Some cities have a plan to plant thousands of new trees every year.</p>`,
+    vocab: [
+      { word: "plant", definition: "to put something in the ground so it grows" },
+      { word: "shade", definition: "a cool dark area made by something blocking the sun" },
+      { word: "air", definition: "what we breathe" }
+    ],
+    questions: [
+      "Why are trees important in cities?",
+      "How do trees help people?",
+      "Does your city have many trees?"
+    ]
+  },
+  "b1-robot": {
+    title: "Students Build a Small Robot",
+    level: "B1",
+    text: `<p>A group of students from a secondary school built a small robot for a science project. The robot can move forward, turn, and pick up small objects.</p>
+           <p>The students worked together for three months. They learned about engineering, coding, and problem-solving. When things went wrong, they had to find creative solutions.</p>
+           <p>Their teacher said the project helped them develop real skills that they can use in the future.</p>`,
+    vocab: [
+      { word: "engineering", definition: "the work of designing and building machines or structures" },
+      { word: "creative", definition: "able to think of new and original ideas" },
+      { word: "solution", definition: "an answer to a problem" }
+    ],
+    questions: [
+      "What could the robot do?",
+      "What skills did the students develop?",
+      "Have you ever worked on a team project? What happened?"
+    ]
+  },
+  "b2-ai": {
+    title: "How AI Is Changing Workplace Communication",
+    level: "B2",
+    text: `<p>Artificial intelligence tools are now being used in offices to help employees write emails, summarise documents, and translate messages. Many workers say these tools save them time and reduce stress.</p>
+           <p>However, some communication experts are concerned. They argue that relying too heavily on AI can reduce clarity and personal connection in professional writing. An email written entirely by an AI may be grammatically correct but lack the individual voice that builds trust with colleagues.</p>
+           <p>Most companies are encouraging staff to use AI as a tool to support their writing, rather than replace it entirely. The key, experts say, is knowing when a human touch is essential.</p>`,
+    vocab: [
+      { word: "artificial intelligence", definition: "computer systems that can perform tasks that normally require human intelligence" },
+      { word: "clarity", definition: "the quality of being clear and easy to understand" },
+      { word: "relying", definition: "depending on someone or something for support" }
+    ],
+    questions: [
+      "How are AI tools being used in workplaces?",
+      "What are the concerns about AI in professional writing?",
+      "Do you think AI will improve or harm workplace communication?"
+    ]
+  }
+};
+
+window.openArticle = function (articleId) {
+  const article = readingArticles[articleId];
+  if (!article) return;
+
+  const displayId = article.level.toLowerCase() + "-article-display";
+  const display = document.getElementById(displayId);
+  if (!display) return;
+
+  display.innerHTML = `
+    <h3>${article.title}</h3>
+    <span class="article-meta">${article.level}</span>
+    ${article.text}
+    <div class="vocab-box" style="margin-top:16px">
+      <h4>Key Vocabulary</h4>
+      <ul>
+        ${article.vocab.map(v => `<li><strong>${v.word}</strong> — ${v.definition}</li>`).join("")}
+      </ul>
+    </div>
+    <div class="discussion-box" style="margin-top:16px">
+      <h4>Discussion Questions</h4>
+      <ol>
+        ${article.questions.map(q => `<li>${q}</li>`).join("")}
+      </ol>
+    </div>
+  `;
+  display.scrollIntoView({ behavior: "smooth" });
+};
+});
+
+// ---- IDIOM OF THE DAY ----
+// Runs outside DOMContentLoaded — script is at bottom of body so DOM is ready
+(function () {
+  var idioms = [
+    { name: "Break the ice", meaning: "To do something to relieve tension and make people feel comfortable" },
+    { name: "Hit the nail on the head", meaning: "To describe something exactly right" },
+    { name: "Under the weather", meaning: "Feeling ill or unwell" },
+    { name: "Bite the bullet", meaning: "To endure a painful or difficult situation with courage" },
+    { name: "Piece of cake", meaning: "Something very easy to do" },
+    { name: "Spill the beans", meaning: "To reveal a secret or surprise by accident" },
+    { name: "Hit the sack", meaning: "To go to bed" },
+    { name: "Once in a blue moon", meaning: "Something that happens very rarely" },
+    { name: "Burn the midnight oil", meaning: "To work late into the night" },
+    { name: "The ball is in your court", meaning: "It is your decision or responsibility now" },
+    { name: "Bite off more than you can chew", meaning: "To take on more than you can handle" },
+    { name: "Cost an arm and a leg", meaning: "Very expensive" },
+    { name: "Miss the boat", meaning: "To miss an opportunity" },
+    { name: "On the fence", meaning: "Undecided or neutral about something" },
+    { name: "Pull someone's leg", meaning: "To joke or tease someone" },
+    { name: "See eye to eye", meaning: "To agree with someone" },
+    { name: "Speak of the devil", meaning: "Said when someone appears just as they are being talked about" },
+    { name: "The last straw", meaning: "The final problem that makes a situation unbearable" },
+    { name: "Under someone's thumb", meaning: "Completely controlled by someone" },
+    { name: "Up in the air", meaning: "Uncertain or undecided" },
+    { name: "Actions speak louder than words", meaning: "What you do is more important than what you say" },
+    { name: "Add fuel to the fire", meaning: "To make a bad situation worse" },
+    { name: "Beat around the bush", meaning: "To avoid talking about the main point" },
+    { name: "Every cloud has a silver lining", meaning: "Every negative situation has a positive aspect" },
+    { name: "Get out of hand", meaning: "To become out of control" },
+    { name: "Hit the ground running", meaning: "To start something with full energy and enthusiasm" },
+    { name: "In the heat of the moment", meaning: "Said or done in an emotional state without thinking" }
+  ];
+  var today = idioms[new Date().getDate() % idioms.length];
+  var html = '<span class="idiom-label">Idiom of the Day</span> <span class="idiom-name">' + today.name + '</span> \u2014 ' + today.meaning;
+  var el1 = document.getElementById("idiom-of-day-1");
+  var el2 = document.getElementById("idiom-of-day-2");
+  if (el1) el1.innerHTML = html;
+  if (el2) el2.innerHTML = html;
+}());
+
+// ---- SONG SELECTOR ----
+window.selectSong = function(id) {
+  document.querySelectorAll(".song-card").forEach(function(card) {
+    card.style.display = "none";
+  });
+  if (id) {
+    var card = document.getElementById(id);
+    if (card) card.style.display = "block";
+  }
+};
+
+// ---- AUDIO LEVEL FUNCTIONS (global scope — no closure issues) ----
+function showAudioFile(file) {
+  var audioList = document.getElementById("audio-list");
+  var existing = document.getElementById("audio-display");
+  if (existing) existing.remove();
+  if (!file || !audioList) return;
+
+  var card = document.createElement("div");
+  card.className = "card";
+  card.id = "audio-display";
+  var vocabHTML = file.vocab.map(function(v) {
+    return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+  }).join("");
+  var questionsHTML = (file.questions && file.questions.length > 0)
+    ? "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + file.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>"
+    : "";
+  card.innerHTML = "<h3>" + file.title + "</h3>"
+    + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
+    + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
+    + (file.vocab.length > 0 ? "<ul style='display:block;padding-left:20px;margin-top:12px'>" + vocabHTML + "</ul>" : "")
+    + questionsHTML;
+  audioList.appendChild(card);
+}
+
+function renderAudioLevel(level) {
+  var audioList = document.getElementById("audio-list");
+  if (!audioList) return;
+  audioList.innerHTML = "";
+  var files = window._listeningFiles || [];
+  var filtered = files.filter(function(f) { return f.level === level; });
+
+  var select = document.createElement("select");
+  select.style.marginTop = "16px";
+  var defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = filtered.length === 0 ? "No files for this level yet" : "Select a listening file...";
+  select.appendChild(defaultOption);
+
+  filtered.forEach(function(file, i) {
+    var option = document.createElement("option");
+    option.value = i;
+    option.textContent = file.title;
+    select.appendChild(option);
+  });
+
+  select.addEventListener("change", function() {
+    showAudioFile(filtered[parseInt(select.value)] || null);
+  });
+
+  audioList.appendChild(select);
+}
+
+window.selectAudioLevel = function(level) {
+  document.querySelectorAll("[data-audio-level]").forEach(function(t) {
+    t.classList.toggle("active", t.getAttribute("data-audio-level") === level);
+  });
+  var spotlightArea = document.getElementById("spotlight-area");
+  if (spotlightArea) spotlightArea.innerHTML = "";
+  renderAudioLevel(level);
+};
+
+// Initialise audio list on page load
+(function() {
+  var audioList = document.getElementById("audio-list");
+  if (audioList) renderAudioLevel("A1");
+
+  document.querySelectorAll("[data-audio-level]").forEach(function(tab) {
+    tab.addEventListener("click", function() {
+      window.selectAudioLevel(tab.getAttribute("data-audio-level"));
+    });
+  });
+}());

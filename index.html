@@ -3,75 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ESL News and Vocabulary</title>
+  <title>English News Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>ESL News and Vocabulary</h1>
-    <p>Read, learn new words, and check your understanding.</p>
+    <h1>English News Studio</h1>
+    <p class="site-tagline">English for Professionals</p>
   </header>
 
   <nav>
-    <button class="nav-btn" data-section="home">Home</button>
-    <button class="nav-btn" data-section="articles">News Articles</button>
-    <button class="nav-btn" data-section="podcast">Podcast</button>
-    <button class="nav-btn" data-section="audio-vocab">Time to Listen</button>
-    <button class="nav-btn" data-section="vocab">Vocabulary Practice</button>
-    <button class="nav-btn" data-section="quiz">Reading Quiz</button>
-    <button class="nav-btn" data-section="vocab-videos">Vocabulary Videos</button>
-  </nav>
+  <button class="nav-btn active" type="button" data-section="home">Home</button>
+  <button class="nav-btn" type="button" id="spotlight-btn" onclick="openFeaturedListening()">Listening Spotlight</button>
+  <button class="nav-btn" type="button" data-section="listening">Listening Library</button>
+  <button class="nav-btn" type="button" data-section="songs">Learning Through Song</button>
+  <button class="nav-btn" type="button" data-section="podcast">Podcast</button>
+  <button class="nav-btn" type="button" data-section="videos">Vocabulary Videos</button>
+</nav>
 
   <main>
     <section id="home" class="section active">
-      <h2>Welcome</h2>
-      <p>
-        This website is especially for you. You can read short news articles,
-        learn useful vocabulary, and do simple exercises.
-      </p>
+      <div class="card hero-card">
+        <div class="tagline idiom-banner">
+          <div class="idiom-track">
+            <span id="idiom-of-day-1" class="idiom-item-1">Loading idiom of the day...</span>
+            <span id="idiom-of-day-2" class="idiom-item-2">Loading idiom of the day...</span>
+          </div>
+        </div>
+      </div>
 
       <div class="card">
-        <h3>How to use this site</h3>
-        <ol>
-          <li>Read one article.</li>
-          <li>Click on highlighted words to see meanings.</li>
-          <li>Try the vocabulary exercise.</li>
-          <li>Complete the quiz.</li>
-        </ol>
-      </div>
+  <h3>Listening Spotlight</h3>
+  <p>Open the featured listening file with vocabulary and discussion questions.</p>
+<button class="level-tab" type="button" onclick="openFeaturedListening()">Open Listening Spotlight</button>
+</div>
 
       <div class="card" id="word-of-day">
         <h3>Word of the Day</h3>
         <p><strong id="daily-word">Loading...</strong></p>
         <p id="daily-definition"></p>
       </div>
-    </section>
 
-    <section id="articles" class="section">
-      <h2>News Articles</h2>
-
-      <div class="level-tabs">
-        <button class="level-tab active" data-level="all">All</button>
-        <button class="level-tab" data-level="daily">Article of the Day</button>
-        <button class="level-tab" data-level="A2">A2</button>
-        <button class="level-tab" data-level="B1">B1</button>
-        <button class="level-tab" data-level="B2">B2</button>
+      <div class="card">
+        <h3>Start with Listening</h3>
+        <p>Choose a level and go straight to the listening library.</p>
+        <div class="level-tabs">
+          <button class="level-tab" type="button" data-go="listening-a1">A1</button>
+          <button class="level-tab" type="button" data-go="listening-a2">A2</button>
+          <button class="level-tab" type="button" data-go="listening-b1">B1</button>
+          <button class="level-tab" type="button" data-go="listening-b2">B2</button>
+          <button class="level-tab" type="button" data-go="listening-c1">C1</button>
+        </div>
       </div>
 
-      <div id="article-list" class="article-list"></div>
+    </section>
 
-      <div id="article-display" class="card article-display">
-        <h3>Select an article</h3>
-        <p>Your article will appear here.</p>
+    <section id="listening" class="section">
+      <h2>Listening Library</h2>
+      <p>Choose a level, then select a listening file.</p>
+
+      <div class="level-tabs">
+        <button class="level-tab" type="button" data-audio-level="A1" onclick="selectAudioLevel('A1')">A1</button>
+        <button class="level-tab active" type="button" data-audio-level="A2" onclick="selectAudioLevel('A2')">A2</button>
+        <button class="level-tab" type="button" data-audio-level="B1" onclick="selectAudioLevel('B1')">B1</button>
+        <button class="level-tab" type="button" data-audio-level="B2" onclick="selectAudioLevel('B2')">B2</button>
+        <button class="level-tab" type="button" data-audio-level="C1" onclick="selectAudioLevel('C1')">C1</button>
+      </div>
+
+      <div id="spotlight-area"></div>
+      <div id="audio-list"></div>
+    </section>
+
+    <section id="songs" class="section">
+      <h2>Learning Through Song</h2>
+      <p>Choose a song, listen, and follow the lyrics.</p>
+
+      <select id="song-select" onchange="selectSong(this.value)">
+        <option value="">Select a song...</option>
+        <option value="song-hand-in-my-pocket">Hand in My Pocket – Alanis Morissette</option>
+        <option value="song-count-on-me">Count on Me – Bruno Mars</option>
+      </select>
+
+      <div id="song-hand-in-my-pocket" class="card song-card" style="display:none">
+        <div class="song-header">
+          <h3>Hand in My Pocket</h3>
+          <span class="song-artist">Alanis Morissette</span>
+        </div>
+        <div class="song-body">
+          <div class="song-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/78kkknD87Eor8RDGY9Gyuv?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="song-lyrics">
+            <p>I'm broke but I'm happy<br>I'm poor but I'm kind<br>I'm short but I'm healthy, yeah<br>I'm high but I'm grounded<br>I'm sane but I'm overwhelmed<br>I'm lost but I'm hopeful, baby.</p>
+            <p>And what it all comes down to<br>Is that everything's gonna be fine, fine, fine<br>I've got one hand in my pocket<br>And the other one is giving a high five.</p>
+            <p>I feel drunk but I'm sober<br>I'm young and I'm underpaid<br>I'm tired but I'm working, yeah<br>I care but I'm restless<br>I'm here but I'm really gone<br>I'm wrong and I'm sorry, baby.</p>
+            <p>What it all comes down to<br>Is that everything's gonna be quite all right<br>I've got one hand in my pocket<br>And the other one is flicking a cigarette.</p>
+            <p>What it all comes down to<br>Is that I haven't got it all figured out just yet<br>I've got one hand in my pocket<br>And the other is giving the peace sign.</p>
+            <p>I'm free but I'm focused<br>I'm green but I'm wise<br>I'm hard but I'm friendly, baby<br>I'm sad but I'm laughin'<br>I'm brave but I'm chicken shit<br>I'm sick but I'm pretty baby.</p>
+            <p>What it all boils down to<br>Is that no one's really got it figured out just yet<br>I've got one hand in my pocket<br>And the other is playing the piano.</p>
+            <p>What it all comes down to, my friends<br>Is that everything is just fine, fine, fine<br>I've got one hand in my pocket<br>And the other one is hailing a taxi cab.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="song-count-on-me" class="card song-card" style="display:none">
+        <div class="song-header">
+          <h3>Count on Me</h3>
+          <span class="song-artist">Bruno Mars</span>
+        </div>
+        <div class="song-body">
+          <div class="song-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3B5UbSndRz907IZhhmUfLi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="song-lyrics">
+            <p>Oh-oh-oh<br>If you ever find yourself stuck in the middle of the sea<br>I'll sail the world to find you<br>If you ever find yourself lost in the dark and you can't see<br>I'll be the light to guide you<br>We find out what we're made of<br>When we are called to help our friends in need</p>
+            <p>You can count on me like one, two, three, I'll be there<br>And I know when I need it<br>I can count on you like four, three, two and you'll be there<br>'Cause that's what friends are supposed to do, oh, yeah</p>
+            <p>Ooh-ooh-ooh, ooh-ooh-ooh<br>Yeah, yeah</p>
+            <p>If you're tossin' and you're turnin' and you just can't fall asleep<br>I'll sing a song beside you<br>And if you ever forget how much you really mean to me<br>Every day, I will remind you, oh<br>We find out what we're made of<br>When we are called to help our friends in need</p>
+            <p>You can count on me like one, two, three, I'll be there<br>And I know when I need it<br>I can count on you like four, three, two and you'll be there<br>'Cause that's what friends are supposed to do, oh, yeah</p>
+            <p>Ooh-ooh-ooh, ooh-ooh-ooh<br>Yeah, yeah</p>
+            <p>You'll always have my shoulder when you cry<br>I'll never let go, never say goodbye<br>You know you can count on me like one, two, three, I'll be there<br>And I know when I need it<br>I can count on you like four, three, two and you'll be there<br>'Cause that's what friends are supposed to do, oh, yeah</p>
+            <p>Ooh-ooh-ooh, ooh-ooh-ooh<br>You can count on me 'cause I can count on you</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="podcast" class="section">
-      <h2>Daily News Podcast</h2>
+      <h2>Podcast</h2>
+      <p>Listen to simple world news in English.</p>
 
       <div class="card">
         <h3>SEND7 – Simple English News Daily</h3>
-        <p>Listen to short world news in simple English.</p>
+        <p>A short daily podcast with clear global news in accessible English.</p>
 
         <iframe
           style="border-radius:12px"
@@ -86,75 +153,17 @@
       </div>
     </section>
 
-    <section id="audio-vocab" class="section">
-      <h2>Time to Listen</h2>
-
-      <div class="level-tabs">
-        <button class="level-tab active" data-audio-level="A1">A1</button>
-        <button class="level-tab" data-audio-level="A2">A2</button>
-        <button class="level-tab" data-audio-level="B1">B1</button>
-        <button class="level-tab" data-audio-level="B2">B2</button>
-        <button class="level-tab" data-audio-level="C1">C1</button>
-      </div>
-
-      <div id="audio-list"></div>
-    </section>
-
-    <section id="vocab" class="section">
-      <h2>Vocabulary Practice</h2>
-      <p>Match the words to their meanings.</p>
-
-      <div class="card">
-        <div id="matching-exercise"></div>
-        <button id="check-matching">Check Answers</button>
-        <p id="matching-result"></p>
-      </div>
-    </section>
-
-    <section id="quiz" class="section">
-      <h2>Reading Quiz</h2>
-
-      <div class="card">
-        <form id="quiz-form">
-          <div class="quiz-question">
-            <p>1. Why do cities plant more trees?</p>
-            <label><input type="radio" name="q1" value="a"> To make roads longer</label>
-            <label><input type="radio" name="q1" value="b"> To help keep areas cooler</label>
-            <label><input type="radio" name="q1" value="c"> To close parks</label>
-          </div>
-
-          <div class="quiz-question">
-            <p>2. What did students build in the science project?</p>
-            <label><input type="radio" name="q2" value="a"> A small robot</label>
-            <label><input type="radio" name="q2" value="b"> A new school</label>
-            <label><input type="radio" name="q2" value="c"> A bus station</label>
-          </div>
-
-          <div class="quiz-question">
-            <p>3. Why are local markets becoming popular again?</p>
-            <label><input type="radio" name="q3" value="a"> People want fresher food</label>
-            <label><input type="radio" name="q3" value="b"> They sell fewer products</label>
-            <label><input type="radio" name="q3" value="c"> They are open only at night</label>
-          </div>
-
-          <button type="submit">Submit Quiz</button>
-        </form>
-
-        <p id="quiz-result"></p>
-      </div>
-    </section>
-
-    <section id="vocab-videos" class="section">
+    <section id="videos" class="section">
       <h2>Vocabulary Videos</h2>
+      <p>Short video support for vocabulary building.</p>
 
       <div class="card">
-        <h3>Vocabulary Video of the Day</h3>
-
+        <h3>Vocabulary Video Spotlight</h3>
         <iframe
-          width="560"
+          width="100%"
           height="315"
           src="https://app.heygen.com/embeds/0974f1bd4b94475c8531f70fbd1f38ce"
-          title="SET Two-- Vocabulary for Meetings"
+          title="Vocabulary Video"
           frameborder="0"
           allow="encrypted-media; fullscreen;"
           allowfullscreen>
@@ -164,18 +173,9 @@
   </main>
 
   <footer>
-    <p>Created for ESL learners</p>
+    <p>English News Studio</p>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    function speakWord(word) {
-      speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(word);
-      utterance.lang = "en-US";
-      utterance.rate = 0.9;
-      speechSynthesis.speak(utterance);
-    }
-  </script>
 </body>
 </html>
