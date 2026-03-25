@@ -951,15 +951,20 @@ function showAudioFile(file) {
   var questionsHTML = (file.questions && file.questions.length > 0)
     ? "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + file.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>"
     : "";
-  var transcriptHTML = file.transcriptSrc
-    ? "<div style='margin-top:16px'><button class='level-tab' id='transcript-toggle-btn' onclick='toggleTranscript(\"" + file.transcriptSrc + "\")'>Show Transcript</button><div id='transcript-box' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+  var vocabCol = file.vocab.length > 0
+    ? "<div style='flex:1;min-width:200px'><ul style='display:block;padding-left:20px;margin:0'>" + vocabHTML + "</ul></div>"
+    : "";
+  var transcriptCol = file.transcriptSrc
+    ? "<div style='flex:1;min-width:200px;text-align:right'><button class='level-tab' id='transcript-toggle-btn' onclick='toggleTranscript(\"" + file.transcriptSrc + "\")'>Show Transcript</button><div id='transcript-box' style='display:none;margin-top:12px;text-align:left;white-space:pre-wrap;line-height:1.7'></div></div>"
+    : "";
+  var columnsHTML = (vocabCol || transcriptCol)
+    ? "<div style='display:flex;gap:24px;align-items:flex-start;margin-top:12px;flex-wrap:wrap'>" + vocabCol + transcriptCol + "</div>"
     : "";
   card.innerHTML = "<h3>" + file.title + "</h3>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
-    + (file.vocab.length > 0 ? "<ul style='display:block;padding-left:20px;margin-top:12px'>" + vocabHTML + "</ul>" : "")
-    + questionsHTML
-    + transcriptHTML;
+    + columnsHTML
+    + questionsHTML;
   audioList.appendChild(card);
 }
 
