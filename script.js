@@ -539,6 +539,20 @@ const listeningFiles = [
     "How can one person's voice influence a political situation?",
     "What emotions did you notice in the speaker's voice or words?"
   ], transcriptSrc: "Transcripts/B2/rachel-goldberg-polin.txt"},
+  { title: "Shulamit Cohen", level: "B2", src: "Audio/B2/Shulamit Cohen.mp4", vocab: [
+    { word: "testimony", definition: "a formal statement about what someone experienced" },
+    { word: "survivor", definition: "a person who continues to live after a dangerous event" },
+    { word: "trauma", definition: "a deeply distressing experience and its lasting effect" },
+    { word: "captivity", definition: "the state of being kept as a prisoner" },
+    { word: "resilience", definition: "the ability to recover from difficult situations" },
+    { word: "ordeal", definition: "a very difficult or painful experience" },
+    { word: "commemorate", definition: "to remember and honour an important event or person" },
+    { word: "harrowing", definition: "intensely distressing or disturbing" }
+  ], questions: [
+    "Why is it important for survivors to share their personal stories publicly?",
+    "How can listening to someone's testimony change the way we understand a historical event?",
+    "What does it take for a person to speak about a traumatic experience in front of others?"
+  ], transcriptSrc: "Transcripts/B2/Shulamit-Cohen.txt"},
   // C1
   { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
     { word: "authoritarian", definition: "enforcing strict obedience at the expense of freedom" },
