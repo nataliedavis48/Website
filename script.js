@@ -927,6 +927,14 @@ window.selectSong = function(id) {
   }
 };
 
+function speakWord(word) {
+  if (!window.speechSynthesis) return;
+  var utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-US";
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utterance);
+}
+
 // ---- AUDIO LEVEL FUNCTIONS (global scope — no closure issues) ----
 function showAudioFile(file) {
   var audioList = document.getElementById("audio-list");
