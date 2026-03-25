@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plain Sailing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #1B2838;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #1B2838;
+      padding: 30px 40px 20px;
+      border-bottom: 2px solid #4A9EE8;
+      text-align: center;
+    }
+
+    /* ---- LOGO ---- */
+    .logo {
+      display: inline-flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant', Georgia, serif;
+      font-size: 42px;
+      font-style: italic;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .anchor-icon {
+      display: inline-flex;
+      align-items: flex-end;
+      margin-bottom: 3px;
+    }
+
+    .tagline {
+      font-size: 11px;
+      color: #94A3B8;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    /* ---- NAVIGATION ---- */
+    nav {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 13px;
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid #4A5568;
+      color: #94A3B8;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover { border-color: #4A9EE8; color: #ffffff; }
+    nav a.active { background-color: #4A9EE8; color: #ffffff; border-color: #4A9EE8; }
+  </style>
+</head>
+<body>
+
+<header>
+
+  <!-- Logo -->
+  <div class="logo">
+    <span class="logo-text">Plain Sail</span>
+    <span class="anchor-icon">
+      <svg width="12" height="40" viewBox="0 0 12 40" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6" cy="5" r="3" fill="none" stroke="#4A9EE8" stroke-width="1.8"/>
+        <line x1="6" y1="8" x2="6" y2="33" stroke="#4A9EE8" stroke-width="2"/>
+        <line x1="0" y1="16" x2="12" y2="16" stroke="#4A9EE8" stroke-width="2"/>
+        <path d="M0,33 Q6,27 12,33" fill="none" stroke="#4A9EE8" stroke-width="2"/>
+        <circle cx="0" cy="33" r="2" fill="#4A9EE8"/>
+        <circle cx="12" cy="33" r="2" fill="#4A9EE8"/>
+      </svg>
+    </span>
+    <span class="logo-text">ng</span>
+  </div>
+
+  <!-- Tagline -->
+  <div class="tagline">Your English Anchor</div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="active">Home</a>
+    <a href="#">Listening Spotlight</a>
+    <a href="#">Listening Library</a>
+    <a href="#">Learning Through Song</a>
+    <a href="#">Podcast</a>
+    <a href="#">Vocabulary Videos</a>
+  </nav>
+
+</header>
+
+</body>
+</html>
