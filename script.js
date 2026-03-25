@@ -156,7 +156,7 @@ const listeningFiles = [
   ], questions: [
     "Is food expensive in your country? What do people buy most?",
     "What do you do when you do not have much money?"
-  ]},
+  ], transcriptSrc: "Transcripts/A1/Inflation-in-Iran.txt"},
   { title: "Public Transport", level: "A1", src: "Audio/A1/Public Transport.mpeg", vocab: [
     { word: "bus", definition: "a large vehicle that carries many people" },
     { word: "train", definition: "a vehicle that travels on rails" },
@@ -538,7 +538,7 @@ const listeningFiles = [
     "What does it mean to speak out publicly about a personal tragedy?",
     "How can one person's voice influence a political situation?",
     "What emotions did you notice in the speaker's voice or words?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/rachel-goldberg-polin.txt"},
   // C1
   { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
     { word: "authoritarian", definition: "enforcing strict obedience at the expense of freedom" },
@@ -929,12 +929,49 @@ function showAudioFile(file) {
   var questionsHTML = (file.questions && file.questions.length > 0)
     ? "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + file.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>"
     : "";
+  var transcriptHTML = file.transcriptSrc
+    ? "<div style='margin-top:16px'><button class='level-tab' id='transcript-toggle-btn' onclick='toggleTranscript(\"" + file.transcriptSrc + "\")'>Show Transcript</button><div id='transcript-box' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+    : "";
   card.innerHTML = "<h3>" + file.title + "</h3>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
     + (file.vocab.length > 0 ? "<ul style='display:block;padding-left:20px;margin-top:12px'>" + vocabHTML + "</ul>" : "")
-    + questionsHTML;
+    + questionsHTML
+    + transcriptHTML;
   audioList.appendChild(card);
+}
+
+function toggleTranscript(src) {
+  var box = document.getElementById("transcript-box");
+  var btn = document.getElementById("transcript-toggle-btn");
+  if (!box || !btn) return;
+  if (box.style.display !== "none") {
+    box.style.display = "none";
+    btn.textContent = "Show Transcript";
+    return;
+  }
+  if (box.dataset.loaded) {
+    box.style.display = "block";
+    btn.textContent = "Hide Transcript";
+    return;
+  }
+  btn.textContent = "Loading...";
+  fetch(src)
+    .then(function(r) {
+      if (!r.ok) throw new Error("Could not load transcript.");
+      return r.text();
+    })
+    .then(function(text) {
+      box.textContent = text;
+      box.dataset.loaded = "true";
+      box.style.display = "block";
+      btn.textContent = "Hide Transcript";
+    })
+    .catch(function(err) {
+      box.textContent = err.message;
+      box.style.display = "block";
+      btn.textContent = "Hide Transcript";
+    });
 }
 
 function renderAudioLevel(level) {
