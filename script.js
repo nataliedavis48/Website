@@ -927,6 +927,18 @@ window.selectSong = function(id) {
   }
 };
 
+function toggleLyrics(id, btn) {
+  var box = document.getElementById(id);
+  if (!box) return;
+  if (box.style.display === "none") {
+    box.style.display = "block";
+    btn.textContent = "Hide Lyrics";
+  } else {
+    box.style.display = "none";
+    btn.textContent = "Show Lyrics";
+  }
+}
+
 function speakWord(word) {
   if (!window.speechSynthesis) return;
   var utterance = new SpeechSynthesisUtterance(word);
