@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plain Sailing</title>
+  <title>Plain Sailing English</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background-color: #1B2838;
-      font-family: Arial, sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1B2838;
+      color: #ffffff;
+    }
+
+    /* ---- HEADER ---- */
     header {
       background-color: #1B2838;
       padding: 30px 40px 20px;
@@ -40,9 +46,10 @@
     .anchor-icon {
       display: inline-flex;
       align-items: flex-end;
-      margin-bottom: 3px;
+      margin-bottom: 0px;
     }
 
+    /* ---- TAGLINE ---- */
     .tagline {
       font-size: 11px;
       color: #94A3B8;
@@ -71,44 +78,74 @@
       transition: all 0.2s ease;
     }
 
-    nav a:hover { border-color: #4A9EE8; color: #ffffff; }
-    nav a.active { background-color: #4A9EE8; color: #ffffff; border-color: #4A9EE8; }
+    nav a:hover {
+      border-color: #4A9EE8;
+      color: #ffffff;
+    }
+
+    nav a.active {
+      background-color: #4A9EE8;
+      color: #ffffff;
+      border-color: #4A9EE8;
+    }
+
+    /* ---- WELCOME BANNER ---- */
+    .welcome-banner {
+      background-color: #1E2D3D;
+      border-bottom: 0.5px solid #2D3F55;
+      padding: 16px 40px;
+      text-align: center;
+    }
+
+    .welcome-banner p {
+      color: #94A3B8;
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
 
-<header>
+  <!-- ---- HEADER ---- -->
+  <header>
 
-  <!-- Logo -->
-  <div class="logo">
-    <span class="logo-text">Plain Sail</span>
-    <span class="anchor-icon">
-      <svg width="12" height="40" viewBox="0 0 12 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="6" cy="5" r="3" fill="none" stroke="#4A9EE8" stroke-width="1.8"/>
-        <line x1="6" y1="8" x2="6" y2="33" stroke="#4A9EE8" stroke-width="2"/>
-        <line x1="0" y1="16" x2="12" y2="16" stroke="#4A9EE8" stroke-width="2"/>
-        <path d="M0,33 Q6,27 12,33" fill="none" stroke="#4A9EE8" stroke-width="2"/>
-        <circle cx="0" cy="33" r="2" fill="#4A9EE8"/>
-        <circle cx="12" cy="33" r="2" fill="#4A9EE8"/>
-      </svg>
-    </span>
-    <span class="logo-text">ng</span>
+    <!-- Logo -->
+    <div class="logo">
+      <span class="logo-text">Plain Sail</span>
+      <span class="anchor-icon">
+        <svg width="12" height="28" viewBox="0 0 12 28" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6" cy="4" r="2.5" fill="none" stroke="#4A9EE8" stroke-width="1.8"/>
+          <line x1="6" y1="6.5" x2="6" y2="22" stroke="#4A9EE8" stroke-width="1.8"/>
+          <line x1="0" y1="12" x2="12" y2="12" stroke="#4A9EE8" stroke-width="1.8"/>
+          <path d="M0,22 Q6,17 12,22" fill="none" stroke="#4A9EE8" stroke-width="1.8"/>
+          <circle cx="0" cy="22" r="2" fill="#4A9EE8"/>
+          <circle cx="12" cy="22" r="2" fill="#4A9EE8"/>
+        </svg>
+      </span>
+      <span class="logo-text">ng</span>
+    </div>
+
+    <!-- Tagline -->
+    <div class="tagline">Your English Anchor</div>
+
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="listening-spotlight.html">Listening Spotlight</a>
+      <a href="listening-library.html">Listening Library</a>
+      <a href="learning-through-song.html">Learning Through Song</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="vocabulary-videos.html">Vocabulary Videos</a>
+    </nav>
+
+  </header>
+
+  <!-- ---- WELCOME BANNER ---- -->
+  <div class="welcome-banner">
+    <p>Welcome to Plain Sailing English — your go-to resource for busy professionals. Level up your English with podcasts, articles, listening practice and vocabulary videos designed just for you.</p>
   </div>
-
-  <!-- Tagline -->
-  <div class="tagline">Your English Anchor</div>
-
-  <!-- Navigation -->
-  <nav>
-    <a href="#" class="active">Home</a>
-    <a href="#">Listening Spotlight</a>
-    <a href="#">Listening Library</a>
-    <a href="#">Learning Through Song</a>
-    <a href="#">Podcast</a>
-    <a href="#">Vocabulary Videos</a>
-  </nav>
-
-</header>
 
 </body>
 </html>
