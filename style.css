@@ -83,6 +83,22 @@ header h1 {
   letter-spacing: 0.04em;
 }
 
+/* WELCOME BANNER */
+.welcome-banner {
+  background-color: #1E2D3D;
+  border-bottom: 0.5px solid #2D3F55;
+  padding: 16px 40px;
+  text-align: center;
+}
+
+.welcome-banner p {
+  color: #94A3B8;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* NAV */
 nav {
   display: flex;
