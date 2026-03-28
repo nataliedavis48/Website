@@ -275,7 +275,7 @@ const listeningFiles = [
   ], questions: [
     "What do you think leads people to rebel against their government?",
     "What challenges does a country face after its leader suddenly loses power?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Fall-of-Assad.txt"},
   { title: "Hidden Jewish History of Somaliland", level: "B1", src: "Audio/B1/Hidden Jewish History of Somaliland.mp3", vocab: [
     { word: "heritage", definition: "traditions and history passed down through generations" },
     { word: "ancient", definition: "belonging to a very long time ago" },
