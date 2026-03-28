@@ -222,7 +222,7 @@ const listeningFiles = [
   ], questions: [
     "Would you like to work as a spy? Why or why not?",
     "Why do you think countries need secret agents?"
-  ]},
+  ], transcriptSrc: "Transcripts/A2/Mossads-Secret-Agent-Yael.txt"},
   { title: "Public Transport", level: "A2", src: "Audio/A2/Public Transport.mpeg", vocab: [
     { word: "transport", definition: "a way of moving people from place to place" },
     { word: "passenger", definition: "a person travelling in a vehicle" },
