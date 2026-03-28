@@ -314,7 +314,7 @@ const listeningFiles = [
   ], questions: [
     "How does economic hardship like unemployment affect people's daily lives?",
     "Why do you think corruption makes economic problems worse for ordinary people?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Iran-Protests-Economic-Origins-and-Beyond.txt"},
   { title: "Oron Shaul", level: "B1", src: "Audio/B1/Oron Shaul.mpeg", vocab: [
     { word: "soldier", definition: "a person who serves in an army" },
     { word: "capture", definition: "to take someone as a prisoner" },
