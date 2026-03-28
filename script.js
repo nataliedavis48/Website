@@ -514,7 +514,7 @@ const listeningFiles = [
   ], questions: [
     "Why is the repatriation of soldiers' remains considered so important to their families and country?",
     "What moral obligations do governments have towards soldiers who are captured or killed in conflict?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/Oron-Shaul.txt"},
   { title: "Somaliland's Quest for Recognition", level: "B2", src: "Audio/B2/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "sovereignty", definition: "full power and authority over a country" },
     { word: "self-determination", definition: "the right of a people to choose their government" },
