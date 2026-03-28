@@ -462,7 +462,7 @@ const listeningFiles = [
   ], questions: [
     "At what point does a government lose its legitimacy in the eyes of its people?",
     "How does social media change the way protest movements mobilize and grow?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/Iran-Protests-and-Potential-Changes.txt"},
   { title: "Iron Beam: The Future of Laser Weapons", level: "B2", src: "Audio/B2/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
     { word: "electromagnetic", definition: "relating to electric and magnetic forces" },
     { word: "precision", definition: "the quality of being exact and accurate" },
