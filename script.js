@@ -196,7 +196,7 @@ const listeningFiles = [
   ], questions: [
     "Why do you think people go to the streets to protest?",
     "Have you ever seen a protest? What was it about?"
-  ]},
+  ], transcriptSrc: "Transcripts/A2/Iran-Protests-Economic-Discontent.txt"},
   { title: "Iron Beam", level: "A2", src: "Audio/A2/Iron Beam.mp3", vocab: [
     { word: "weapon", definition: "something used to hurt people or destroy things" },
     { word: "protect", definition: "to keep someone or something safe" },
