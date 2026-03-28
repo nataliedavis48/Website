@@ -410,7 +410,7 @@ const listeningFiles = [
   ], questions: [
     "Why do you think some countries refuse to sign international weapons conventions?",
     "Who should be held accountable when cluster weapons harm civilians — the soldiers, commanders, or governments?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/Cluster-Missiles.txt"},
   { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [
     { word: "autonomous", definition: "having the freedom to govern itself" },
     { word: "nomadic", definition: "moving from place to place without a permanent home" },
