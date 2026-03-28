@@ -288,7 +288,7 @@ const listeningFiles = [
   ], questions: [
     "Why do you think some communities have hidden or forgotten their history?",
     "How important is it to preserve the history of minority communities? Why?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Hidden-Jewish-History-of-Somaliland.txt"},
   { title: "Iran Protests and Potential Changes", level: "B1", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [
     { word: "protest", definition: "a public event where people show disagreement" },
     { word: "reform", definition: "a change made to improve a system" },
