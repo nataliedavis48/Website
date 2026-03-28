@@ -437,7 +437,7 @@ const listeningFiles = [
     "How do international sanctions affect ordinary citizens, and is that a fair consequence?",
     "What role do you think neighbouring countries play in the rise or fall of an authoritarian government?"
   ], transcriptSrc: "Transcripts/B2/Fall-of-Assad.txt"},
-  { title: "Giving Advice", level: "B2", src: "Audio/B2/Giving Advice.mpeg", vocab: [
+  { title: "Giving Advice", level: "B1", src: "Audio/B1/Giving Advice.mpeg", vocab: [
     { word: "perspective", definition: "a particular way of thinking about something" },
     { word: "consequence", definition: "a result or effect of an action" },
     { word: "evaluate", definition: "to carefully consider something before deciding" },
