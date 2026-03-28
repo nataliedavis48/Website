@@ -619,6 +619,19 @@ const listeningFiles = [
     "What does it take for a person to speak about a traumatic experience in front of others?"
   ], transcriptSrc: "Transcripts/B2/Shulamit-Cohen.txt"},
   // C1
+  { title: "Pros and Cons of TV", level: "C1", src: "Audio/C1/Pros and Cons of TV.mp4", vocab: [
+    { word: "polarisation", definition: "the division of society into opposing groups" },
+    { word: "desensitisation", definition: "the process of becoming less affected by something through repeated exposure" },
+    { word: "hegemony", definition: "dominance or leadership of one group over others" },
+    { word: "subliminal", definition: "affecting the mind without being consciously noticed" },
+    { word: "commodification", definition: "the process of treating something as a product to be bought and sold" },
+    { word: "discourse", definition: "written or spoken communication and debate on a subject" },
+    { word: "proliferation", definition: "a rapid increase in the amount of something" },
+    { word: "incumbency", definition: "the holding of an official position or advantage" }
+  ], questions: [
+    "To what extent does mass media perpetuate social inequality and cultural hegemony?",
+    "How has the fragmentation of television audiences through streaming platforms affected public discourse and shared cultural experience?"
+  ], transcriptSrc: "Transcripts/C1/Pros-and-Cons-of-TV.txt"},
   { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
     { word: "authoritarian", definition: "enforcing strict obedience at the expense of freedom" },
     { word: "disintegration", definition: "the process of losing unity and falling apart" },
