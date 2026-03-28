@@ -527,7 +527,7 @@ const listeningFiles = [
   ], questions: [
     "What criteria should a region have to meet before being recognised as an independent state?",
     "How do geopolitical interests of powerful nations affect the recognition of smaller states?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/Somalilands-Quest-for-Recognition.txt"},
   { title: "Rachel Goldberg-Polin: A Voice for the Unthinkable", level: "B2", src: "Audio/B2/rachel-goldberg-polin.mp3.mp3", vocab: [
     { word: "hostage", definition: "a person held captive to force others to meet demands" },
     { word: "advocate", definition: "to publicly support or recommend a cause or policy" },
