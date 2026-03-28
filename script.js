@@ -449,7 +449,7 @@ const listeningFiles = [
   ], questions: [
     "When someone asks for your advice, how do you decide what to say?",
     "Is there a difference between giving advice to a close friend and to a colleague? How do you adjust your approach?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Giving-Advice.txt"},
   { title: "Iran Protests and Potential Changes", level: "B2", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [
     { word: "disillusionment", definition: "disappointment when something is not as good as expected" },
     { word: "mobilize", definition: "to organize people for a purpose" },
