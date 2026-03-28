@@ -410,6 +410,19 @@ const listeningFiles = [
     "Why do you think some countries want to develop nuclear weapons?",
     "Do you think sanctions are an effective way to change a country's behaviour? Why or why not?"
   ], transcriptSrc: "Transcripts/B1/US-Iran-Nuclear-Tensions.txt"},
+  { title: "Black Rain in Tehran", level: "B1", src: "Audio/B1/Black Rain in Tehran.mpeg", vocab: [
+    { word: "pollution", definition: "harmful substances in the air, water, or land" },
+    { word: "smog", definition: "a thick mixture of smoke and fog in the air" },
+    { word: "toxic", definition: "poisonous and harmful to people or the environment" },
+    { word: "industry", definition: "businesses that make products or provide services" },
+    { word: "health", definition: "the condition of a person's body or mind" },
+    { word: "environment", definition: "the natural world around us" },
+    { word: "crisis", definition: "a time of great danger or difficulty" },
+    { word: "atmosphere", definition: "the layer of gases surrounding the Earth" }
+  ], questions: [
+    "What do you think are the main causes of air pollution in big cities?",
+    "What can governments and individuals do to improve air quality?"
+  ], transcriptSrc: "Transcripts/B1/Black-Rain-in-Tehran.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
