@@ -327,7 +327,7 @@ const listeningFiles = [
   ], questions: [
     "How do you think a family feels when a loved one is taken as a hostage?",
     "Why is it important for a country to bring home the remains of its fallen soldiers?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Oron-Shaul.txt"},
   { title: "Public Transport", level: "B1", src: "Audio/B1/Public Transport.mpeg", vocab: [
     { word: "infrastructure", definition: "basic systems a country needs, like roads and transport" },
     { word: "commute", definition: "to travel regularly to and from work" },
