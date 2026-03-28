@@ -236,6 +236,19 @@ const listeningFiles = [
     "What is the most common type of transport in your city?",
     "What would you change about public transport where you live?"
   ], transcriptSrc: "Transcripts/A2/Public-Transport.txt"},
+  { title: "Pros and Cons of TV", level: "A2", src: "Audio/A2/Pros and Cons of TV.mp4", vocab: [
+    { word: "television", definition: "a device that shows moving pictures and sound" },
+    { word: "entertainment", definition: "things that people enjoy watching or doing" },
+    { word: "programme", definition: "a show on television or radio" },
+    { word: "channel", definition: "a TV station that broadcasts programmes" },
+    { word: "advertisement", definition: "a short message that tries to sell something" },
+    { word: "influence", definition: "to have an effect on someone's thoughts or behaviour" },
+    { word: "screen", definition: "the flat surface on a TV or computer that shows images" },
+    { word: "remote control", definition: "a small device used to operate a TV from a distance" }
+  ], questions: [
+    "How many hours of TV do you watch each day? What do you like to watch?",
+    "Do you think watching TV is a good way to learn English? Why?"
+  ], transcriptSrc: "Transcripts/A2/Pros-and-Cons-of-TV.txt"},
   // B1
   { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [
     { word: "missile", definition: "a weapon that flies through the air and explodes" },
