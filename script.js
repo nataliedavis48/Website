@@ -169,7 +169,7 @@ const listeningFiles = [
   ], questions: [
     "How do you travel to school or work? Do you take a bus or train?",
     "Is public transport good in your city? Why or why not?"
-  ]},
+  ], transcriptSrc: "Transcripts/A1/Public-Transport.txt"},
   // A2
   { title: "Fall of Assad", level: "A2", src: "Audio/A2/Fall of Assad.mpeg", vocab: [
     { word: "leader", definition: "a person who is in charge of a country or group" },
