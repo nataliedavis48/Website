@@ -366,7 +366,7 @@ const listeningFiles = [
   ], questions: [
     "Why do you think it is important for a country to be recognised by other nations?",
     "What do you think makes a region stable enough to become an independent country?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Somalilands-Quest-for-Recognition.txt"},
   { title: "Understanding the Iran Protests", level: "B1", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [
     { word: "cause", definition: "the reason why something happens" },
     { word: "freedom", definition: "the right to do or say what you want" },
