@@ -463,6 +463,19 @@ const listeningFiles = [
     "Why do you think some countries refuse to sign international weapons conventions?",
     "Who should be held accountable when cluster weapons harm civilians — the soldiers, commanders, or governments?"
   ], transcriptSrc: "Transcripts/B2/Cluster-Missiles.txt"},
+  { title: "Pros and Cons of TV", level: "B2", src: "Audio/B2/Pros and Cons of TV.mp4", vocab: [
+    { word: "algorithm", definition: "a set of rules used by a computer to recommend content" },
+    { word: "binge-watching", definition: "watching many episodes of a show in one sitting" },
+    { word: "censorship", definition: "the suppression of content considered harmful or offensive" },
+    { word: "propaganda", definition: "information used to promote a political cause or viewpoint" },
+    { word: "sedentary", definition: "spending a lot of time sitting and being physically inactive" },
+    { word: "stereotype", definition: "an oversimplified fixed idea about a group of people" },
+    { word: "subscription", definition: "a payment made regularly to access a service" },
+    { word: "critique", definition: "a detailed analysis and assessment of something" }
+  ], questions: [
+    "To what extent do you think television shapes public opinion and political views?",
+    "Is streaming killing traditional television, or simply evolving it? Give your view."
+  ], transcriptSrc: "Transcripts/B2/Pros-and-Cons-of-TV.txt"},
   { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [
     { word: "autonomous", definition: "having the freedom to govern itself" },
     { word: "nomadic", definition: "moving from place to place without a permanent home" },
