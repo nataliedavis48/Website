@@ -262,7 +262,7 @@ const listeningFiles = [
   ], questions: [
     "Why do you think crossing borders can be dangerous for some people?",
     "What challenges do you think investigators face when solving cross-border cases?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Cross-Border-Mysteries.txt"},
   { title: "Fall of Assad", level: "B1", src: "Audio/B1/Fall of Assad.mpeg", vocab: [
     { word: "regime", definition: "a government that controls a country strictly" },
     { word: "collapse", definition: "to suddenly fall down or fail completely" },
