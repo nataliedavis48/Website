@@ -501,7 +501,7 @@ const listeningFiles = [
   ], questions: [
     "What personal qualities do you think make someone suited to covert intelligence work?",
     "Where do you think the line should be drawn between national security and individual privacy?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/Mossads-Secret-Agent-Yael.txt"},
   { title: "Oron Shaul", level: "B2", src: "Audio/B2/Oron Shaul.mpeg", vocab: [
     { word: "commemorate", definition: "to honour the memory of someone or something" },
     { word: "bereaved", definition: "suffering the loss of a loved one" },
