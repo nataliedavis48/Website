@@ -423,7 +423,7 @@ const listeningFiles = [
   ], questions: [
     "What do you think are the advantages and disadvantages of visiting an undiscovered travel destination?",
     "How can tourism help or harm a place that is not used to many visitors?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/Exploring-Somaliland.txt"},
   { title: "Fall of Assad", level: "B2", src: "Audio/B2/Fall of Assad.mpeg", vocab: [
     { word: "authoritarian", definition: "demanding complete obedience to authority" },
     { word: "insurgency", definition: "an armed rebellion against a government" },
