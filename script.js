@@ -488,7 +488,7 @@ const listeningFiles = [
   ], questions: [
     "What does it mean for a community to lose its connection to its ancestral homeland?",
     "How can archaeological evidence change the way we understand history and identity?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/Lost-Jewish-Connections-of-Somaliland.txt"},
   { title: "Mossad's Secret Agent Yael", level: "B2", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [
     { word: "infiltrate", definition: "to secretly enter an organization or place" },
     { word: "intelligence", definition: "secret information gathered about an enemy" },
