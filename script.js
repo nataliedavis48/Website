@@ -379,7 +379,7 @@ const listeningFiles = [
   ], questions: [
     "Why do you think young people often lead protest movements?",
     "What rights do you think are most important for people to have? Why?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Understanding-the-Iran-Protests.txt"},
   { title: "Moral", level: "B1", src: "Audio/B1/moral.mp3", vocab: [
     { word: "anxiety", definition: "strong worry about what might happen" },
     { word: "struggle", definition: "a very difficult situation or effort" },
