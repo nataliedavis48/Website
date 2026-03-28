@@ -475,7 +475,7 @@ const listeningFiles = [
   ], questions: [
     "Should weapons systems be allowed to operate autonomously without human decision-making? Why or why not?",
     "How might laser weapon technology change the balance of power between countries?"
-  ]},
+  ], transcriptSrc: "Transcripts/B2/Iron-Beam-The-Future-of-Laser-Weapons.txt"},
   { title: "Lost Jewish Connections of Somaliland", level: "B2", src: "Audio/B2/Lost Jewish Connections of Somaliland.mp3", vocab: [
     { word: "diaspora", definition: "people who have spread from their original homeland" },
     { word: "ancestral", definition: "relating to family members from long ago" },
