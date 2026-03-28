@@ -397,6 +397,19 @@ const listeningFiles = [
     "Do you think a person who confesses their crime deserves more mercy? Why or why not?",
     "Is there a difference between justice and mercy? Can a person deserve both?"
   ], transcriptSrc: "Transcripts/B1/Moral.txt"},
+  { title: "US Iran Nuclear Tensions", level: "B1", src: "Audio/B1/US Iran Nuclear Tensions.mpeg", vocab: [
+    { word: "nuclear", definition: "relating to the energy released when atoms are split or joined" },
+    { word: "tension", definition: "a state of worry or unfriendliness between groups" },
+    { word: "sanctions", definition: "penalties applied to a country to force it to change" },
+    { word: "negotiate", definition: "to try to reach an agreement through discussion" },
+    { word: "threat", definition: "a warning that you will harm someone if they don't comply" },
+    { word: "uranium", definition: "a radioactive metal used to make nuclear energy or weapons" },
+    { word: "diplomat", definition: "a person who represents their country in foreign affairs" },
+    { word: "conflict", definition: "a serious disagreement or fight between groups" }
+  ], questions: [
+    "Why do you think some countries want to develop nuclear weapons?",
+    "Do you think sanctions are an effective way to change a country's behaviour? Why or why not?"
+  ], transcriptSrc: "Transcripts/B1/US-Iran-Nuclear-Tensions.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
