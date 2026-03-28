@@ -380,7 +380,7 @@ const listeningFiles = [
     "Why do you think young people often lead protest movements?",
     "What rights do you think are most important for people to have? Why?"
   ], transcriptSrc: "Transcripts/B1/Understanding-the-Iran-Protests.txt"},
-  { title: "Moral", level: "B1", src: "Audio/B1/moral.mp3", vocab: [
+  { title: "A Moral Dilemma", level: "B1", src: "Audio/B1/moral.mp3", vocab: [
     { word: "anxiety", definition: "strong worry about what might happen" },
     { word: "struggle", definition: "a very difficult situation or effort" },
     { word: "pressure", definition: "stress or strong demands" },
@@ -396,7 +396,7 @@ const listeningFiles = [
   ], questions: [
     "Do you think a person who confesses their crime deserves more mercy? Why or why not?",
     "Is there a difference between justice and mercy? Can a person deserve both?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Moral.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
