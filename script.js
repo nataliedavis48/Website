@@ -353,7 +353,7 @@ const listeningFiles = [
   ], questions: [
     "Have you ever been in a situation that felt mysterious or suspicious? What happened?",
     "Why do you think some secrets stay hidden for a long time?"
-  ]},
+  ], transcriptSrc: "Transcripts/B1/Secrets-of-the-Night.txt"},
   { title: "Somaliland's Quest for Recognition", level: "B1", src: "Audio/B1/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "recognition", definition: "official acceptance that something exists or is true" },
     { word: "independence", definition: "freedom from outside control" },
