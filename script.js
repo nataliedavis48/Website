@@ -209,7 +209,7 @@ const listeningFiles = [
   ], questions: [
     "Do you think new weapons make countries safer or more dangerous?",
     "What other technologies do you know that help protect people?"
-  ]},
+  ], transcriptSrc: "Transcripts/A2/Iron-Beam.txt"},
   { title: "Mossad's Secret Agent Yael", level: "A2", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [
     { word: "spy", definition: "a person who secretly collects information" },
     { word: "secret", definition: "something that only a few people know" },
