@@ -436,6 +436,19 @@ const listeningFiles = [
     "What do you think are the main causes of air pollution in big cities?",
     "What can governments and individuals do to improve air quality?"
   ], transcriptSrc: "Transcripts/B1/Black-Rain-in-Tehran.txt"},
+  { title: "Pros and Cons of TV", level: "B1", src: "Audio/B1/Pros and Cons of TV.mp4", vocab: [
+    { word: "broadcast", definition: "to send out a programme on TV or radio" },
+    { word: "documentary", definition: "a film or programme about real events or people" },
+    { word: "influence", definition: "the power to affect someone's thoughts or behaviour" },
+    { word: "addiction", definition: "the inability to stop doing something harmful" },
+    { word: "passive", definition: "accepting things without taking action" },
+    { word: "media", definition: "television, newspapers, and other sources of information" },
+    { word: "debate", definition: "a formal discussion about a topic where people disagree" },
+    { word: "consumption", definition: "the amount of something that is used or watched" }
+  ], questions: [
+    "Do you think too much TV is bad for children? Why or why not?",
+    "How has streaming changed the way people watch television?"
+  ], transcriptSrc: "Transcripts/B1/Pros-and-Cons-of-TV.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
