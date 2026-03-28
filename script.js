@@ -235,7 +235,7 @@ const listeningFiles = [
   ], questions: [
     "What is the most common type of transport in your city?",
     "What would you change about public transport where you live?"
-  ]},
+  ], transcriptSrc: "Transcripts/A2/Public-Transport.txt"},
   // B1
   { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [
     { word: "missile", definition: "a weapon that flies through the air and explodes" },
