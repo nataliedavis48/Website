@@ -249,6 +249,19 @@ const listeningFiles = [
     "How many hours of TV do you watch each day? What do you like to watch?",
     "Do you think watching TV is a good way to learn English? Why?"
   ], transcriptSrc: "Transcripts/A2/Pros-and-Cons-of-TV.txt"},
+  { title: "Is Europe Ready for War with Tehran?", level: "A2", src: "Audio/A2/Is Europe Ready for War with Tehran.mp4", vocab: [
+    { word: "war", definition: "a serious fight between countries using armies" },
+    { word: "army", definition: "a large group of soldiers who fight for a country" },
+    { word: "danger", definition: "a situation where someone might get hurt" },
+    { word: "enemy", definition: "a country or person that wants to harm you" },
+    { word: "leader", definition: "a person who is in charge of a group or country" },
+    { word: "peace", definition: "a time when there is no war or fighting" },
+    { word: "country", definition: "an area of land with its own government" },
+    { word: "agree", definition: "to have the same opinion as someone else" }
+  ], questions: [
+    "Do you think war is ever the right answer? Why or why not?",
+    "What can ordinary people do to help keep peace in the world?"
+  ], transcriptSrc: "Transcripts/A2/Is-Europe-Ready-for-War-with-Tehran.txt"},
   // B1
   { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [
     { word: "missile", definition: "a weapon that flies through the air and explodes" },
