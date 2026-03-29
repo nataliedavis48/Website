@@ -671,6 +671,19 @@ const listeningFiles = [
     "To what extent does mass media perpetuate social inequality and cultural hegemony?",
     "How has the fragmentation of television audiences through streaming platforms affected public discourse and shared cultural experience?"
   ], transcriptSrc: "Transcripts/C1/Pros-and-Cons-of-TV.txt"},
+  { title: "Is Europe Ready for War with Tehran?", level: "C1", src: "Audio/C1/Is Europe Ready for War with Tehran.mp4", vocab: [
+    { word: "geopolitical", definition: "relating to politics as influenced by geography and power" },
+    { word: "deterrence", definition: "the prevention of action through the threat of consequences" },
+    { word: "non-proliferation", definition: "the prevention of the spread of nuclear weapons" },
+    { word: "asymmetric", definition: "involving parties with unequal power or different strategies" },
+    { word: "sovereignty", definition: "the full authority of a state to govern itself" },
+    { word: "multilateral", definition: "involving three or more countries or parties" },
+    { word: "doctrine", definition: "a set of principles that guide military or political action" },
+    { word: "belligerent", definition: "hostile and aggressive; engaged in conflict" }
+  ], questions: [
+    "To what extent has Europe's strategic autonomy been undermined by its dependence on NATO and US foreign policy?",
+    "How does the concept of asymmetric warfare complicate traditional European military doctrine in the context of a conflict with Iran?"
+  ], transcriptSrc: "Transcripts/C1/Is-Europe-Ready-for-War-with-Tehran.txt"},
   { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
     { word: "authoritarian", definition: "enforcing strict obedience at the expense of freedom" },
     { word: "disintegration", definition: "the process of losing unity and falling apart" },
