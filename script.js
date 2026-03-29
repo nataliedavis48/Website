@@ -476,6 +476,19 @@ const listeningFiles = [
     "To what extent do you think television shapes public opinion and political views?",
     "Is streaming killing traditional television, or simply evolving it? Give your view."
   ], transcriptSrc: "Transcripts/B2/Pros-and-Cons-of-TV.txt"},
+  { title: "Is Europe Ready for War with Tehran?", level: "B2", src: "Audio/B2/Is Europe Ready for War with Tehran.mp4", vocab: [
+    { word: "deterrence", definition: "the use of threat to discourage an enemy from acting" },
+    { word: "alliance", definition: "a union between countries for mutual benefit" },
+    { word: "escalation", definition: "a rapid increase in the severity of a conflict" },
+    { word: "retaliation", definition: "an action taken in response to an attack" },
+    { word: "arsenal", definition: "a collection of weapons held by a country" },
+    { word: "sovereignty", definition: "the full power of a country to govern itself" },
+    { word: "diplomacy", definition: "managing relations between countries through negotiation" },
+    { word: "proxy", definition: "a country or group acting on behalf of another in a conflict" }
+  ], questions: [
+    "Do you think European countries have a responsibility to respond militarily to threats in the Middle East? Why or why not?",
+    "What is the difference between deterrence and provocation in international relations?"
+  ], transcriptSrc: "Transcripts/B2/Is-Europe-Ready-for-War-with-Tehran.txt"},
   { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [
     { word: "autonomous", definition: "having the freedom to govern itself" },
     { word: "nomadic", definition: "moving from place to place without a permanent home" },
