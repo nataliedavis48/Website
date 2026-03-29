@@ -449,6 +449,19 @@ const listeningFiles = [
     "Do you think too much TV is bad for children? Why or why not?",
     "How has streaming changed the way people watch television?"
   ], transcriptSrc: "Transcripts/B1/Pros-and-Cons-of-TV.txt"},
+  { title: "Is Europe Ready for War with Tehran?", level: "B1", src: "Audio/B1/Is Europe Ready for War with Tehran.mp4", vocab: [
+    { word: "military", definition: "relating to an army or armed forces" },
+    { word: "conflict", definition: "a serious fight or war between groups" },
+    { word: "threat", definition: "a warning that harm may come" },
+    { word: "alliance", definition: "an agreement between countries to support each other" },
+    { word: "weapon", definition: "something used to hurt people or destroy things" },
+    { word: "tension", definition: "a feeling of worry between groups or countries" },
+    { word: "nuclear", definition: "relating to powerful energy from atoms" },
+    { word: "response", definition: "an action taken because of something that happened" }
+  ], questions: [
+    "Do you think countries should help each other if one is attacked? Why?",
+    "What do you think is the best way to avoid war between countries?"
+  ], transcriptSrc: "Transcripts/B1/Is-Europe-Ready-for-War-with-Tehran.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
