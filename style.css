@@ -213,8 +213,8 @@ main {
 
 .idiom-name { color: #fde68a; font-weight: 800; }
 
-@keyframes idiom-scroll-1 { 0% { left: 100%; } 100% { left: -220%; } }
-@keyframes idiom-scroll-2 { 0% { left: 220%; } 100% { left: -100%; } }
+@keyframes idiom-scroll-1 { 0% { left: 100%; } 100% { left: -320%; } }
+@keyframes idiom-scroll-2 { 0% { left: 320%; } 100% { left: -100%; } }
 
 /* WORD OF THE DAY */
 #word-of-day h3 { margin-top: 0; }
