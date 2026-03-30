@@ -79,7 +79,6 @@ body {
   margin-top: 4px;
   line-height: 1;
 }
-
 /* WELCOME BANNER */
 .welcome-banner {
   background-color: #1E2D3D;
@@ -89,12 +88,14 @@ body {
 }
 
 .welcome-banner p {
-  color: #94A3B8;
+  color: #c8a96e;
+  font-weight: bold;
   font-size: 15px;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
 }
+
 
 /* NAV */
 nav {
