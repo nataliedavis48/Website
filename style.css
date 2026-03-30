@@ -348,7 +348,10 @@ footer {
   .card, .article-card, .article-display { padding: 20px; }
   .idiom-track { height: 34px; }
   .idiom-item-1, .idiom-item-2 { font-size: 0.92rem; }
-  .welcome-banner { padding: 16px 20px; }
+ .welcome-banner {
+    padding: 16px 20px;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 @media (max-width: 600px) {
