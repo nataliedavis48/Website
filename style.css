@@ -96,6 +96,12 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 600px) {
+  .welcome-banner p {
+    font-size: 13px;
+    padding: 0 16px;
+  }
+}
 
 /* NAV */
 nav {
