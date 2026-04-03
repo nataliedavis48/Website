@@ -898,7 +898,7 @@ window.openFeaturedListening = function () {
   if (!spotlightArea) return;
 
   const featured = listeningFiles.find(
-    file => file.title === "Rachel Goldberg-Polin: A Voice for the Unthinkable"
+    file => file.title === "The Happiest Countries 2026" && file.level === "B1"
   );
 
   if (!featured) return;
