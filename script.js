@@ -262,6 +262,19 @@ const listeningFiles = [
     "Do you think war is ever the right answer? Why or why not?",
     "What can ordinary people do to help keep peace in the world?"
   ], transcriptSrc: "Transcripts/A2/Is-Europe-Ready-for-War-with-Tehran.txt"},
+  { title: "The Happiest Countries 2026", level: "A2", src: "Audio/A2/The Happiest Countries 2026.mp4", vocab: [
+    { word: "happy", definition: "feeling pleasure and contentment" },
+    { word: "country", definition: "a nation with its own government and land" },
+    { word: "list", definition: "a number of things written one after another" },
+    { word: "rank", definition: "a position in a list ordered by quality or importance" },
+    { word: "money", definition: "coins and notes used to buy things" },
+    { word: "health", definition: "the condition of your body and mind" },
+    { word: "family", definition: "a group of people related to each other" },
+    { word: "life", definition: "the period of time you are alive" }
+  ], questions: [
+    "Which country do you think is the happiest? Why?",
+    "What makes you happy in your daily life?"
+  ], transcriptSrc: "Transcripts/A2/The Happiest Countries 2026.txt"},
   // B1
   { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [
     { word: "missile", definition: "a weapon that flies through the air and explodes" },
@@ -475,6 +488,19 @@ const listeningFiles = [
     "Do you think countries should help each other if one is attacked? Why?",
     "What do you think is the best way to avoid war between countries?"
   ], transcriptSrc: "Transcripts/B1/Is-Europe-Ready-for-War-with-Tehran.txt"},
+  { title: "The Happiest Countries 2026", level: "B1", src: "Audio/B1/The Happiest Countries 2026.mp4", vocab: [
+    { word: "wellbeing", definition: "the state of being comfortable, healthy, and happy" },
+    { word: "satisfaction", definition: "a feeling of pleasure when you get what you wanted" },
+    { word: "income", definition: "money received regularly from work or investments" },
+    { word: "community", definition: "a group of people living in the same area or sharing interests" },
+    { word: "freedom", definition: "the power to act or speak without restriction" },
+    { word: "equality", definition: "the state of being equal in rights and opportunities" },
+    { word: "quality of life", definition: "the standard of health, comfort, and happiness in a person's life" },
+    { word: "survey", definition: "a study that collects information from a group of people" }
+  ], questions: [
+    "Do you think money is the most important factor for happiness? Why?",
+    "Would you move to another country if it meant being happier?"
+  ], transcriptSrc: "Transcripts/B1/The Happiest Countries 2026.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
@@ -657,6 +683,19 @@ const listeningFiles = [
     "How can listening to someone's testimony change the way we understand a historical event?",
     "What does it take for a person to speak about a traumatic experience in front of others?"
   ], transcriptSrc: "Transcripts/B2/Shulamit-Cohen.txt"},
+  { title: "The Happiest Countries 2026", level: "B2", src: "Audio/B2/The Happiest Countries 2026.mp4", vocab: [
+    { word: "prosperity", definition: "the state of being successful and financially secure" },
+    { word: "social support", definition: "the help and comfort provided by friends, family, and community" },
+    { word: "corruption", definition: "dishonest behaviour by people in positions of power" },
+    { word: "generosity", definition: "the quality of being kind and giving to others" },
+    { word: "life expectancy", definition: "the average number of years a person is expected to live" },
+    { word: "inequality", definition: "unfair differences in wealth, opportunities, or treatment" },
+    { word: "index", definition: "a system used to measure or compare something" },
+    { word: "perception", definition: "the way something is understood or interpreted" }
+  ], questions: [
+    "How reliable do you think happiness surveys are? What are their limitations?",
+    "Is it the government's responsibility to make its citizens happy?"
+  ], transcriptSrc: "Transcripts/B2/The Happiest Countries 2026.txt"},
   // C1
   { title: "Pros and Cons of TV", level: "C1", src: "Audio/C1/Pros and Cons of TV.mp4", vocab: [
     { word: "polarisation", definition: "the division of society into opposing groups" },
@@ -749,6 +788,19 @@ const listeningFiles = [
     "How might the development of autonomous weapons systems fundamentally alter the ethics of warfare?",
     "Does superior defensive technology like the Iron Beam reduce conflict or simply shift the nature of the threat?"
   ]},
+  { title: "The Happiest Countries 2026", level: "C1", src: "Audio/C1/The Happiest Countries 2026.mp4", vocab: [
+    { word: "subjective wellbeing", definition: "a person's own assessment of their happiness and life satisfaction" },
+    { word: "socioeconomic", definition: "relating to both social and economic factors" },
+    { word: "autonomy", definition: "the right or condition of self-governance" },
+    { word: "civic engagement", definition: "participation in community and political life" },
+    { word: "institutional trust", definition: "confidence in public institutions such as government and courts" },
+    { word: "disparity", definition: "a great difference or inequality between groups" },
+    { word: "benchmark", definition: "a standard or reference point used for comparison" },
+    { word: "flourishing", definition: "developing in a healthy, vigorous way; thriving" }
+  ], questions: [
+    "To what extent do cultural values shape how happiness is defined and measured across different societies?",
+    "Critically evaluate whether GDP per capita is a useful predictor of national happiness."
+  ], transcriptSrc: "Transcripts/C1/The Happiest Countries 2026.txt"},
   { title: "Somaliland's Quest for Recognition", level: "C1", src: "Audio/C1/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "self-determination", definition: "the right of a people to freely choose their governance" },
     { word: "de facto", definition: "existing in reality, though not officially recognised" },
