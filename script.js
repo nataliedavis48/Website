@@ -1090,7 +1090,9 @@ window.openArticle = function (articleId) {
     { name: "Hit the ground running", meaning: "To start something with full energy and enthusiasm" },
     { name: "In the heat of the moment", meaning: "Said or done in an emotional state without thinking" }
   ];
-  var today = idioms[new Date().getDate() % idioms.length];
+  var now = new Date();
+  var dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+  var today = idioms[(now.getFullYear() * 1000 + dayOfYear) % idioms.length];
   var html = '<span class="idiom-label">Idiom of the Day</span> <span class="idiom-name">' + today.name + '</span> \u2014 ' + today.meaning;
   var el1 = document.getElementById("idiom-of-day-1");
   var el2 = document.getElementById("idiom-of-day-2");
