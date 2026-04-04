@@ -501,6 +501,19 @@ const listeningFiles = [
     "Do you think money is the most important factor for happiness? Why?",
     "Would you move to another country if it meant being happier?"
   ], transcriptSrc: "Transcripts/B1/The Happiest Countries 2026.txt"},
+  { title: "Martha's Journey to Mental Wellness", level: "B1", src: "Audio/B1/Martha's Journey to Mental Wellness.mpeg", vocab: [
+    { word: "mental health", definition: "the condition of a person's psychological and emotional wellbeing" },
+    { word: "wellness", definition: "the state of being in good health, especially as a goal" },
+    { word: "therapy", definition: "treatment intended to help someone recover from a problem" },
+    { word: "anxiety", definition: "a feeling of worry and nervousness about uncertain events" },
+    { word: "recovery", definition: "the process of getting better after an illness or difficulty" },
+    { word: "support", definition: "help and encouragement given to someone in need" },
+    { word: "struggle", definition: "to have difficulty with something; a hard effort" },
+    { word: "mindset", definition: "the way a person thinks about and approaches situations" }
+  ], questions: [
+    "Why do you think it is sometimes difficult for people to talk about mental health?",
+    "What do you think is the most important factor in recovering from a mental health challenge?"
+  ], transcriptSrc: "Transcripts/B1/Martha's Journey to Mental Wellness.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
