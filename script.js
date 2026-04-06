@@ -514,6 +514,19 @@ const listeningFiles = [
     "Why do you think it is sometimes difficult for people to talk about mental health?",
     "What do you think is the most important factor in recovering from a mental health challenge?"
   ], transcriptSrc: "Transcripts/B1/Martha's Journey to Mental Wellness.txt"},
+  { title: "Rescuing the American Navigator in Iran", level: "B1", src: "Audio/B1/Rescuing the American Navigator in Iran.mpeg", vocab: [
+    { word: "navigator", definition: "a person who plans or guides the route of a journey" },
+    { word: "rescue", definition: "to save someone from a dangerous situation" },
+    { word: "mission", definition: "an important task or assignment" },
+    { word: "hostage", definition: "a person held by another as security for demands" },
+    { word: "diplomat", definition: "a person who represents their country in foreign affairs" },
+    { word: "border", definition: "the line that separates two countries" },
+    { word: "secret", definition: "kept hidden from others" },
+    { word: "operation", definition: "a planned activity involving many people" }
+  ], questions: [
+    "Why do you think some countries choose secret operations instead of public diplomacy?",
+    "What risks do people face when they try to help someone in a dangerous country?"
+  ], transcriptSrc: "Transcripts/B1/Rescuing the American Navigator in Iran.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
@@ -826,7 +839,20 @@ const listeningFiles = [
   ], questions: [
     "How does the tension between self-determination and territorial integrity play out in cases like Somaliland?",
     "What does Somaliland's de facto independence reveal about the limitations of the current international system of state recognition?"
-  ]}
+  ]},
+  { title: "Rescuing an American Navigator in Iran", level: "C1", src: "Audio/C1/Rescuing an American Navigator in Iran.mpeg", vocab: [
+    { word: "clandestine", definition: "kept secret, especially because it is illicit" },
+    { word: "extraction", definition: "the action of removing someone from a difficult situation" },
+    { word: "jurisdiction", definition: "the authority to make legal decisions in a particular area" },
+    { word: "sovereignty", definition: "the full power of a state to govern itself without interference" },
+    { word: "espionage", definition: "the practice of spying to obtain secret information" },
+    { word: "covert", definition: "not openly acknowledged; secret" },
+    { word: "bilateral", definition: "involving two parties, especially two countries" },
+    { word: "sanctions", definition: "official penalties imposed on a country to force change" }
+  ], questions: [
+    "To what extent does a government have a moral obligation to rescue its citizens from foreign detention, regardless of diplomatic consequences?",
+    "How does the use of covert operations affect international trust and bilateral relations between states?"
+  ], transcriptSrc: "Transcripts/C1/Rescuing an American Navigator in Iran.txt"}
 ];
 // -----------------------------------------------------
 window._listeningFiles = listeningFiles;
