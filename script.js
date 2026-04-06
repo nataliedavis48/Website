@@ -1114,6 +1114,18 @@ window.openArticle = function (articleId) {
 }());
 
 // ---- SONG SELECTOR ----
+window.selectVideoLevel = function(level) {
+  document.querySelectorAll("[id^='video-level-']").forEach(function(el) {
+    el.style.display = "none";
+  });
+  var target = document.getElementById("video-level-" + level);
+  if (target) target.style.display = "block";
+  document.querySelectorAll("#videos .level-tab").forEach(function(btn) {
+    btn.classList.remove("active");
+    if (btn.getAttribute("onclick") === "selectVideoLevel('" + level + "')") btn.classList.add("active");
+  });
+};
+
 window.selectSong = function(id) {
   document.querySelectorAll(".song-card").forEach(function(card) {
     card.style.display = "none";
