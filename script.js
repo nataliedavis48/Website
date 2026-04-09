@@ -262,6 +262,19 @@ const listeningFiles = [
     "Do you think war is ever the right answer? Why or why not?",
     "What can ordinary people do to help keep peace in the world?"
   ], transcriptSrc: "Transcripts/A2/Is-Europe-Ready-for-War-with-Tehran.txt"},
+  { title: "Peace Talks between Iran and USA", level: "A2", src: "Audio/A2/Peace Talks between Iran and USA.mp4", vocab: [
+    { word: "talk", definition: "a conversation or discussion between people" },
+    { word: "peace", definition: "a time when there is no war or fighting" },
+    { word: "leader", definition: "a person who is in charge of a group or country" },
+    { word: "agree", definition: "to have the same opinion or make a decision together" },
+    { word: "problem", definition: "a situation that is difficult to deal with" },
+    { word: "war", definition: "a serious fight between countries using armies" },
+    { word: "meet", definition: "to come together with someone for a purpose" },
+    { word: "hope", definition: "a feeling that something good will happen" }
+  ], questions: [
+    "Do you think talking is always better than fighting? Why?",
+    "What do you hope will happen between Iran and the USA?"
+  ], transcriptSrc: "Transcripts/A2/Peace Talks between Iran and USA.txt"},
   { title: "The Happiest Countries 2026", level: "A2", src: "Audio/A2/The Happiest Countries 2026.mp4", vocab: [
     { word: "happy", definition: "feeling pleasure and contentment" },
     { word: "country", definition: "a nation with its own government and land" },
@@ -580,6 +593,19 @@ const listeningFiles = [
     "Do you think European countries have a responsibility to respond militarily to threats in the Middle East? Why or why not?",
     "What is the difference between deterrence and provocation in international relations?"
   ], transcriptSrc: "Transcripts/B2/Is-Europe-Ready-for-War-with-Tehran.txt"},
+  { title: "Peace Talks Between Iran and USA", level: "B2", src: "Audio/B2/Peace Talks between Iran and USA.mp4", vocab: [
+    { word: "diplomacy", definition: "managing relations between countries through negotiation" },
+    { word: "nuclear", definition: "relating to the powerful energy released from atoms" },
+    { word: "concession", definition: "something given up in order to reach an agreement" },
+    { word: "bilateral", definition: "involving two parties or countries" },
+    { word: "de-escalation", definition: "the reduction of intensity in a conflict or dispute" },
+    { word: "leverage", definition: "power or advantage used to achieve a goal" },
+    { word: "mediation", definition: "intervention by a neutral party to help resolve a dispute" },
+    { word: "breakthrough", definition: "a sudden important development or achievement" }
+  ], questions: [
+    "To what extent can economic sanctions be used as a tool to bring countries to the negotiating table?",
+    "What role do third-party mediators play in peace negotiations between hostile states?"
+  ], transcriptSrc: "Transcripts/B2/Peace Talks Between Iran and USA.txt"},
   { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [
     { word: "autonomous", definition: "having the freedom to govern itself" },
     { word: "nomadic", definition: "moving from place to place without a permanent home" },
