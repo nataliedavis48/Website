@@ -976,7 +976,7 @@ window.openFeaturedListening = function () {
   if (!spotlightArea) return;
 
   const featured = listeningFiles.find(
-    file => file.title === "The Happiest Countries 2026" && file.level === "B1"
+    file => file.title === "Peace Talks Between Iran and USA" && file.level === "B1"
   );
 
   if (!featured) return;
