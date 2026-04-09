@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)file:///C:/Users/Natalie%20Davis/Downloads/podcast_banner_generator_6.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Podcast Banner Generator – Plain Sailing English</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1b2e; font-family: sans-serif; color: #c8d8e8; min-height: 100vh; padding: 24px; }
+  h1 { color: #e8d98a; font-size: 22px; font-style: italic; margin-bottom: 4px; }
+  .subtitle { color: #5aabf5; font-size: 13px; margin-bottom: 24px; }
+  .layout { display: flex; gap: 24px; flex-wrap: wrap; }
+  .panel { flex: 1; min-width: 280px; }
+  .form-group { margin-bottom: 16px; }
+  label { display: block; font-size: 13px; color: #a0b8cc; margin-bottom: 6px; }
+  input, textarea { width: 100%; padding: 10px 12px; background: #1a2a4a; border: 1px solid #2a4060; border-radius: 8px; color: #e8d8e8; font-size: 15px; outline: none; }
+  input:focus, textarea:focus { border-color: #5aabf5; }
+  textarea { resize: vertical; min-height: 80px; }
+  .btn { width: 100%; padding: 12px; background: #5aabf5; color: #0d1b2e; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 8px; }
+  .btn:hover { background: #7ac0f8; }
+  .btn-dl { background: #e8d98a; color: #0d1b2e; margin-top: 10px; }
+  .btn-dl:hover { background: #f0e8a0; }
+  .preview-wrap { flex: 1.2; min-width: 280px; }
+  canvas { width: 100%; border-radius: 10px; display: block; }
+  .tip { font-size: 12px; color: #5a7898; margin-top: 8px; }
+  .fb-box { margin-top: 24px; background: #1a2a4a; border: 1px solid #2a4060; border-radius: 10px; padding: 16px; }
+  .fb-box h2 { color: #e8d98a; font-size: 15px; font-weight: 500; margin-bottom: 10px; }
+  .fb-blurb { width: 100%; min-height: 160px; background: #0d1b2e; border: 1px solid #2a4060; border-radius: 8px; color: #c8d8e8; font-size: 14px; line-height: 1.7; padding: 12px; resize: vertical; outline: none; font-family: sans-serif; }
+  .fb-blurb:focus { border-color: #5aabf5; }
+  .btn-copy { width: 100%; padding: 10px; background: #3b5998; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+  .btn-copy:hover { background: #4a6bbf; }
+</style>
+</head>
+<body>
+
+<h1>Plain Sailing English</h1>
+<p class="subtitle">Podcast Banner Generator (1080×1200)</p>
+
+<div class="layout">
+  <div class="panel">
+    <div class="form-group">
+      <label>Podcast Topic / Title</label>
+      <input id="topic" type="text" value="The Rise of Artificial Intelligence" placeholder="e.g. The Rise of Artificial Intelligence">
+    </div>
+    <div class="form-group">
+      <label>Short description (1-2 sentences)</label>
+      <textarea id="description" placeholder="e.g. In today&#39;s podcast we explore how AI is changing the world around us.">In today's podcast we explore how AI is changing the world around us.</textarea>
+    </div>
+    <div class="form-group">
+      <label>Key vocabulary word (optional)</label>
+      <input id="vocab" type="text" value="" placeholder="e.g. Innovation">
+    </div>
+    <button class="btn" onclick="drawBanner()">Generate Banner</button>
+    <button class="btn btn-dl" onclick="downloadBanner()">Download PNG (1080×1200)</button>
+    <p class="tip">Fill in the fields above and click Generate, then Download.</p>
+
+    <div class="fb-box">
+      <h2>📘 Facebook &amp; YouTube Post Blurb</h2>
+      <textarea class="fb-blurb" id="fb-blurb" readonly=""></textarea>
+      <button class="btn-copy" onclick="copyBlurb(this)">Copy to Clipboard</button>
+    </div>
+  </div>
+
+  <div class="preview-wrap">
+    <canvas id="c" width="1080" height="1200"></canvas>
+  </div>
+</div>
+
+<script>
+const W = 1080, H = 1200;
+const VW = 680;
+const VH = Math.round(H * VW / W);
+const scale = W / VW;
+
+function wrapText(ctx, text, maxWidth) {
+  const words = text.replace(/\u201c/g,'"').replace(/\u201d/g,'"').split(' ');
+  let line = '';
+  const lines = [];
+  for (let w of words) {
+    const test = line + (line ? ' ' : '') + w;
+    if (ctx.measureText(test).width > maxWidth && line) {
+      lines.push(line);
+      line = w;
+    } else {
+      line = test;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+function drawBanner() {
+  const topic       = document.getElementById('topic').value || 'Podcast Topic';
+  const description = document.getElementById('description').value || '';
+  const vocab       = document.getElementById('vocab').value || '';
+
+  const canvas = document.getElementById('c');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, W, H);
+  ctx.save();
+  ctx.scale(scale, scale);
+
+  const g = VW;
+
+  // ── SKY ──
+  ctx.fillStyle = '#1a2a4a';
+  ctx.fillRect(0, 0, g, 340);
+
+  // Grid lines
+  ctx.strokeStyle = '#c8a84b'; ctx.globalAlpha = 0.35; ctx.lineWidth = 0.4;
+  for (let y = 60; y <= 300; y += 60) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(g,y); ctx.stroke(); }
+  for (let x = 68; x < g; x += 68)   { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,340); ctx.stroke(); }
+  ctx.globalAlpha = 1;
+
+  // Dashed border
+  ctx.strokeStyle = '#c8a84b'; ctx.lineWidth = 1.2;
+  ctx.setLineDash([6,5]);
+  ctx.strokeRect(8, 8, 664, 740);
+  ctx.setLineDash([]);
+
+  // Stars
+  [[100,30,1.5],[210,18,1],[310,45,1.5],[430,22,1],[500,12,1.5],[570,36,1],[160,65,1],[460,55,1],[260,14,1],[370,75,1]]
+    .forEach(([x,y,r]) => { ctx.globalAlpha=0.75; ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill(); });
+  ctx.globalAlpha = 1;
+
+  // Moon
+  ctx.fillStyle = '#e8d98a';
+  ctx.beginPath(); ctx.arc(608,52,40,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#1a2a4a';
+  ctx.beginPath(); ctx.arc(626,38,34,0,Math.PI*2); ctx.fill();
+
+  // Rigging lines
+  ctx.strokeStyle = '#c8a84b'; ctx.globalAlpha = 0.4; ctx.lineWidth = 0.6;
+  [[340,110,60,340],[340,110,160,340],[340,110,560,340],[340,110,640,220],[340,110,20,240]]
+    .forEach(([x1,y1,x2,y2]) => { ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); });
+  ctx.globalAlpha = 1;
+
+  // Sea
+  ctx.fillStyle = '#1a3a5c'; ctx.fillRect(0,295,g,45);
+  ctx.fillStyle = '#1e4a7a';
+  ctx.beginPath(); ctx.moveTo(0,300);
+  for (let x=0; x<=g; x+=68) ctx.quadraticCurveTo(x+34, x%136===0?294:308, x+68, 300);
+  ctx.lineTo(g,340); ctx.lineTo(0,340); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#163458';
+  ctx.beginPath(); ctx.moveTo(0,312);
+  for (let x=0; x<=g; x+=68) ctx.quadraticCurveTo(x+34, x%136===0?306:318, x+68, 312);
+  ctx.lineTo(g,340); ctx.lineTo(0,340); ctx.closePath(); ctx.fill();
+
+  // Hull
+  ctx.fillStyle = '#5c3310';
+  ctx.beginPath(); ctx.moveTo(275,294); ctx.quadraticCurveTo(340,308,405,294); ctx.lineTo(396,312); ctx.quadraticCurveTo(340,320,284,312); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#7a4520';
+  ctx.beginPath(); ctx.roundRect(284,292,112,7,3); ctx.fill();
+
+  // Mast
+  ctx.fillStyle = '#e8dcc8'; ctx.fillRect(338,110,4,186);
+
+  // Main sail
+  ctx.fillStyle = '#f0ebe0';
+  ctx.beginPath(); ctx.moveTo(340,114); ctx.lineTo(340,282); ctx.lineTo(248,268); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#e8e0d0';
+  ctx.beginPath(); ctx.moveTo(340,118); ctx.lineTo(340,274); ctx.lineTo(256,262); ctx.closePath(); ctx.fill();
+
+  // Jib
+  ctx.fillStyle = '#f0ebe0';
+  ctx.beginPath(); ctx.moveTo(340,148); ctx.lineTo(340,270); ctx.lineTo(412,244); ctx.closePath(); ctx.fill();
+
+  // Flag
+  ctx.fillStyle = '#c8a84b';
+  ctx.beginPath(); ctx.moveTo(342,110); ctx.lineTo(342,124); ctx.lineTo(356,117); ctx.closePath(); ctx.fill();
+
+  // Compass
+  ctx.strokeStyle = '#c8a84b'; ctx.lineWidth = 1.2; ctx.globalAlpha = 0.7;
+  ctx.beginPath(); ctx.arc(58,272,15,0,Math.PI*2); ctx.stroke();
+  ctx.fillStyle = '#c8a84b'; ctx.beginPath(); ctx.arc(58,272,3,0,Math.PI*2); ctx.fill();
+  [[58,257,58,248],[58,287,58,296],[43,272,34,272],[73,272,82,272]]
+    .forEach(([x1,y1,x2,y2]) => { ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); });
+
+  // Anchor
+  ctx.beginPath(); ctx.arc(614,262,6,0,Math.PI*2); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(614,268); ctx.lineTo(614,283); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(601,283); ctx.lineTo(627,283); ctx.stroke();
+  ctx.globalAlpha = 1;
+
+  // ── BOTTOM PANEL ──
+  ctx.fillStyle = '#0a1628';
+  ctx.fillRect(0,338,g,418);
+
+  // Corner decorative lines
+  ctx.strokeStyle = '#c8a84b'; ctx.lineWidth = 0.8; ctx.globalAlpha = 0.5;
+  [[18,378,46,342],[25,385,46,350],[32,392,46,358]]
+    .forEach(([x1,y1,x2,y2]) => { ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); });
+  ctx.globalAlpha = 1;
+
+  // Presents line
+  ctx.fillStyle = '#a0b8cc';
+  ctx.font = 'italic 14px serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Plain Sailing English presents', 340, 358);
+
+  // Podcast pill badge — purple to stand out
+  ctx.fillStyle = '#7F77DD';
+  ctx.beginPath(); ctx.roundRect(180,364,300,32,16); ctx.fill();
+  ctx.fillStyle = '#ffffff';
+  ctx.font = 'bold 13px sans-serif';
+  ctx.fillText('A SHORT PODCAST ON CURRENT EVENTS', 340, 385);
+
+  // Level badge
+  ctx.fillStyle = '#1aaa7a';
+  ctx.beginPath(); ctx.roundRect(256,402,188,26,13); ctx.fill();
+  ctx.fillStyle = '#ffffff';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.fillText('INTERMEDIATE LEVEL', 340, 420);
+
+  // Gold divider
+  ctx.strokeStyle = '#c8a84b'; ctx.lineWidth = 0.8;
+  ctx.beginPath(); ctx.moveTo(80,436); ctx.lineTo(600,436); ctx.stroke();
+
+  // Topic title — large gold italic
+  ctx.fillStyle = '#e8d98a';
+  ctx.textAlign = 'center';
+  let fontSize = 46;
+  ctx.font = `italic bold ${fontSize}px serif`;
+  while (ctx.measureText(topic).width > 610 && fontSize > 24) {
+    fontSize -= 2;
+    ctx.font = `italic bold ${fontSize}px serif`;
+  }
+  const topicWords = topic.split(' ');
+  let topicLines = [];
+  if (ctx.measureText(topic).width <= 610) {
+    topicLines = [topic];
+  } else {
+    const mid = Math.ceil(topicWords.length / 2);
+    topicLines = [topicWords.slice(0,mid).join(' '), topicWords.slice(mid).join(' ')];
+  }
+  const topicStartY = topicLines.length === 1 ? 474 : 458;
+  topicLines.forEach((line, i) => ctx.fillText(line, 340, topicStartY + i * (fontSize + 6)));
+  const afterTopic = topicStartY + topicLines.length * (fontSize + 6) - 6;
+
+  // 🎧 Listen button — sits right below the topic title
+  ctx.fillStyle = '#e8d98a';
+  ctx.beginPath(); ctx.roundRect(220, afterTopic + 10, 240, 32, 16); ctx.fill();
+  ctx.fillStyle = '#0a1628';
+  ctx.font = 'bold 13px sans-serif';
+  ctx.fillText('🎧  PRESS PLAY TO LISTEN', 340, afterTopic + 31);
+  const afterButton = afterTopic + 46;
+
+  // Gold divider
+  ctx.strokeStyle = '#c8a84b';
+  ctx.beginPath(); ctx.moveTo(80, afterButton + 8); ctx.lineTo(600, afterButton + 8); ctx.stroke();
+
+  // Description
+  ctx.fillStyle = '#c8d8e8';
+  ctx.font = '18px sans-serif';
+  const dLines = wrapText(ctx, description, 560);
+  const dStartY = afterButton + 30;
+  dLines.forEach((line, i) => ctx.fillText(line, 340, dStartY + i * 26));
+  const afterDesc = dStartY + dLines.length * 26;
+
+  // Vocab word if provided
+  if (vocab) {
+    ctx.strokeStyle = '#c8a84b';
+    ctx.beginPath(); ctx.moveTo(80, afterDesc + 10); ctx.lineTo(600, afterDesc + 10); ctx.stroke();
+    ctx.fillStyle = '#7ac8b0';
+    ctx.font = 'italic 16px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(`🎧 Key word: ${vocab}`, 340, afterDesc + 30);
+  }
+
+  // Gold divider before branding
+  ctx.strokeStyle = '#c8a84b';
+  const divY = vocab ? afterDesc + 50 : afterDesc + 20;
+  ctx.beginPath(); ctx.moveTo(80, divY); ctx.lineTo(600, divY); ctx.stroke();
+
+  // Plain Sailing English — flows after content with good spacing
+  ctx.fillStyle = '#e8d98a';
+  ctx.font = 'italic bold 26px serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Plain Sailing English', 340, divY + 38);
+
+  // URL — in the wave area at bottom right, larger font
+  ctx.fillStyle = '#5aabf5';
+  ctx.font = '13px sans-serif';
+  ctx.textAlign = 'right';
+  ctx.fillText('www.plainsailingenglish.com', 650, 330);
+
+  ctx.restore();
+}
+
+function generateBlurb() {
+  const topic       = document.getElementById('topic').value || '';
+  const description = document.getElementById('description').value || '';
+  const vocab       = document.getElementById('vocab').value || '';
+  if (!topic) return;
+
+  const blurb =
+`🎙️ New Podcast from Plain Sailing English!
+
+🌊 "${topic}"
+
+${description}
+
+This short listening podcast is perfect for intermediate level English learners who want to improve their listening skills while keeping up with current events!
+${vocab ? `\n🎧 Key vocabulary word to listen out for: "${vocab}"\n` : ''}
+🔔 Follow our page so you never miss an episode!
+
+#PlainSailingEnglish #EnglishPodcast #LearnEnglish #ListeningPractice #IntermediateEnglish #EnglishLearning #CurrentEvents`;
+
+  document.getElementById('fb-blurb').value = blurb.replace(/\n\n\n/g, '\n\n');
+}
+
+function copyBlurb(btn) {
+  const text = document.getElementById('fb-blurb').value;
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✅ Copied!';
+    btn.style.background = '#1aaa7a';
+    setTimeout(() => { btn.textContent = 'Copy to Clipboard'; btn.style.background = '#3b5998'; }, 2000);
+  });
+}
+
+function downloadBanner() {
+  drawBanner();
+  const topic = document.getElementById('topic').value || 'podcast';
+  const filename = topic.toLowerCase().replace(/\s+/g, '_') + '_1080x1200.png';
+  const a = document.createElement('a');
+  a.download = filename;
+  a.href = document.getElementById('c').toDataURL('image/png');
+  a.click();
+}
+
+drawBanner();
+generateBlurb();
+
+['topic','description','vocab'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => { drawBanner(); generateBlurb(); });
+});
+</script>
+
+
+</body></html>
