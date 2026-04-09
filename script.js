@@ -527,6 +527,19 @@ const listeningFiles = [
     "Why do you think some countries choose secret operations instead of public diplomacy?",
     "What risks do people face when they try to help someone in a dangerous country?"
   ], transcriptSrc: "Transcripts/B1/Rescuing the American Navigator in Iran.txt"},
+  { title: "Peace Talks Between Iran and USA", level: "B1", src: "Audio/B1/Peace Talks Between Iran and USA.mp4", vocab: [
+    { word: "negotiation", definition: "a discussion aimed at reaching an agreement" },
+    { word: "ceasefire", definition: "an agreement to stop fighting temporarily" },
+    { word: "agreement", definition: "a decision reached by two or more parties" },
+    { word: "diplomat", definition: "a person who represents their country in foreign affairs" },
+    { word: "tension", definition: "a state of worry or unfriendliness between groups" },
+    { word: "sanction", definition: "a penalty imposed on a country to force change" },
+    { word: "compromise", definition: "an agreement where both sides give up something" },
+    { word: "treaty", definition: "a formal agreement between two or more countries" }
+  ], questions: [
+    "Do you think it is possible for Iran and the USA to reach a lasting peace agreement? Why or why not?",
+    "What do you think are the biggest obstacles to peace between two countries that have been in conflict for a long time?"
+  ], transcriptSrc: "Transcripts/B1/Peace Talks between Iran and USA.txt"},
   // B2
   { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
