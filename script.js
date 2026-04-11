@@ -898,7 +898,7 @@ window._listeningFiles = listeningFiles;
 
 // --- AMERICA'S DEFINING MOMENTS ---
 const admEpisodes = [
-  { title: "Episode 1 - The American Revolution", src: "Audio/B1/America's Defining Moments/Episode 1 - The American Revolution.mp4", vocab: [
+  { title: "Episode 1 - The American Revolution", src: "Audio/B1/Americas Defining Moments/Episode 1 - The American Revolution.mp4", vocab: [
     { word: "revolution", definition: "a sudden and complete change in government or society" },
     { word: "independence", definition: "freedom from control by another country or person" },
     { word: "colony", definition: "a country or area under the control of another country" },
@@ -910,7 +910,7 @@ const admEpisodes = [
   ], questions: [
     "Why do you think the American colonies decided to fight for independence from Britain?",
     "How do you think the American Revolution changed the world beyond the USA?"
-  ], transcriptSrc: "Transcripts/B1/America's Defining Moments/Episode 1 - The American Revolution.txt"}
+  ], transcriptSrc: "Transcripts/B1/Americas Defining Moments/Episode 1 - The American Revolution.txt"}
 ];
 
 (function renderADM() {
