@@ -910,7 +910,7 @@ const admEpisodes = [
   ], questions: [
     "Why do you think the American colonies decided to fight for independence from Britain?",
     "How do you think the American Revolution changed the world beyond the USA?"
-  ]}
+  ], transcriptSrc: "Transcripts/B1/America's Defining Moments/Episode 1 - The American Revolution.txt"}
 ];
 
 (function renderADM() {
@@ -923,7 +923,10 @@ const admEpisodes = [
       return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
     }).join("");
     var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
-    card.innerHTML = "<h3>" + ep.title + "</h3><audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "' type='audio/mpeg'></audio><h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>" + questionsHTML;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:16px'><button class='level-tab' onclick='toggleTranscript(\"" + ep.transcriptSrc + "\")'>Show Transcript</button><div id='transcript-box' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    card.innerHTML = "<h3>" + ep.title + "</h3><audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "' type='audio/mpeg'></audio><h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>" + questionsHTML + transcriptHTML;
     admList.appendChild(card);
   });
 }());
