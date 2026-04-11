@@ -896,6 +896,38 @@ const listeningFiles = [
 // -----------------------------------------------------
 window._listeningFiles = listeningFiles;
 
+// --- AMERICA'S DEFINING MOMENTS ---
+const admEpisodes = [
+  { title: "Episode 1 - The American Revolution", src: "Audio/B1/America's Defining Moments/Episode 1 - The American Revolution.mp4", vocab: [
+    { word: "revolution", definition: "a sudden and complete change in government or society" },
+    { word: "independence", definition: "freedom from control by another country or person" },
+    { word: "colony", definition: "a country or area under the control of another country" },
+    { word: "rebellion", definition: "an act of resistance or fighting against authority" },
+    { word: "democracy", definition: "a system of government chosen by the people" },
+    { word: "freedom", definition: "the right to act, speak, or think without restriction" },
+    { word: "declare", definition: "to announce something officially and publicly" },
+    { word: "founding", definition: "relating to the establishment of something new" }
+  ], questions: [
+    "Why do you think the American colonies decided to fight for independence from Britain?",
+    "How do you think the American Revolution changed the world beyond the USA?"
+  ]}
+];
+
+(function renderADM() {
+  var admList = document.getElementById("adm-list");
+  if (!admList) return;
+  admEpisodes.forEach(function(ep) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    card.innerHTML = "<h3>" + ep.title + "</h3><audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "' type='audio/mpeg'></audio><h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>" + questionsHTML;
+    admList.appendChild(card);
+  });
+}());
+
 // audio functions defined at page level below DOMContentLoaded
 
 const matchingExercise = document.getElementById("matching-exercise");
