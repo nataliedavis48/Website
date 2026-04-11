@@ -1356,7 +1356,14 @@ window.selectAudioLevel = function(level) {
   });
   var spotlightArea = document.getElementById("spotlight-area");
   if (spotlightArea) spotlightArea.innerHTML = "";
+  var admArea = document.getElementById("adm-area");
+  if (admArea) admArea.style.display = level === "B1" ? "block" : "none";
   renderAudioLevel(level);
+};
+
+window.showADM = function() {
+  var admArea = document.getElementById("adm-area");
+  if (admArea) admArea.style.display = "block";
 };
 
 // Initialise audio list on page load
