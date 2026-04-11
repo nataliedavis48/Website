@@ -1366,6 +1366,11 @@ window.showADM = function() {
   if (admArea) admArea.style.display = "block";
 };
 
+window.toggleADM = function() {
+  var content = document.getElementById("adm-content");
+  if (content) content.style.display = content.style.display === "none" ? "block" : "none";
+};
+
 // Initialise audio list on page load
 (function() {
   var audioList = document.getElementById("audio-list");
