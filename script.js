@@ -1213,6 +1213,60 @@ window.openArticle = function (articleId) {
   if (el2) el2.innerHTML = html;
 }());
 
+// ---- LEVEL TEST MODAL ----
+var levelTestQuestions = [
+  { q: "She ___ a teacher.", options: ["are", "is", "be", "am"], answer: 1, level: "A1" },
+  { q: "I ___ to the cinema yesterday.", options: ["go", "goes", "going", "went"], answer: 3, level: "A1" },
+  { q: "She is taller ___ her brother.", options: ["as", "then", "than", "that"], answer: 2, level: "A2" },
+  { q: "We ___ here for two hours.", options: ["are", "were", "have been", "be"], answer: 2, level: "A2" },
+  { q: "If I ___ more money, I would travel the world.", options: ["have", "has", "had", "having"], answer: 2, level: "B1" },
+  { q: "The report ___ by the manager before the meeting.", options: ["wrote", "was written", "has written", "is writing"], answer: 1, level: "B1" },
+  { q: "Despite ___ tired, she continued working.", options: ["be", "been", "being", "to be"], answer: 2, level: "B2" },
+  { q: "The politician's speech was full of ___, designed to mislead the public.", options: ["commentary", "propaganda", "narration", "advertisement"], answer: 1, level: "B2" },
+  { q: "The new legislation will ___ significant changes to the healthcare system.", options: ["say", "tell", "entail", "speak"], answer: 2, level: "C1" },
+  { q: "Her argument was so ___ that even her opponents were convinced.", options: ["persuasive", "persuading", "persuaded", "persuasion"], answer: 0, level: "C1" }
+];
+
+window.startLevelTest = function() {
+  document.getElementById("modal-intro").style.display = "none";
+  var qDiv = document.getElementById("modal-questions");
+  qDiv.style.display = "block";
+  var html = "<h3 style='color:#4A9EE8;margin-bottom:20px'>Choose the best answer for each question.</h3>";
+  levelTestQuestions.forEach(function(q, i) {
+    html += "<div style='margin-bottom:20px'><p style='color:#fff;margin-bottom:8px'><strong>" + (i+1) + ".</strong> " + q.q + "</p>";
+    q.options.forEach(function(opt, j) {
+      html += "<label style='display:block;color:#94A3B8;margin-bottom:6px;cursor:pointer'><input type='radio' name='q" + i + "' value='" + j + "' style='margin-right:8px'>" + opt + "</label>";
+    });
+    html += "</div>";
+  });
+  html += "<button class='level-tab' onclick='submitLevelTest()' style='margin-top:8px'>See My Level</button>";
+  html += "<button class='level-tab' onclick='closeModal()' style='background:transparent;border-color:#4A5568;color:#94A3B8;margin-left:12px'>Skip</button>";
+  qDiv.innerHTML = html;
+};
+
+window.submitLevelTest = function() {
+  var score = 0;
+  levelTestQuestions.forEach(function(q, i) {
+    var selected = document.querySelector("input[name='q" + i + "']:checked");
+    if (selected && parseInt(selected.value) === q.answer) score++;
+  });
+  var level, msg;
+  if (score <= 2) { level = "A1"; msg = "Beginner — start with our A1 listening files."; }
+  else if (score <= 4) { level = "A2"; msg = "Elementary — our A2 files are a great fit for you."; }
+  else if (score <= 6) { level = "B1"; msg = "Intermediate — try our B1 listening library."; }
+  else if (score <= 8) { level = "B2"; msg = "Upper Intermediate — challenge yourself with B2."; }
+  else { level = "C1"; msg = "Advanced — dive into our C1 content!"; }
+  document.getElementById("modal-questions").style.display = "none";
+  var result = document.getElementById("modal-result");
+  result.style.display = "block";
+  result.innerHTML = "<h2 style='color:#4A9EE8;margin-bottom:12px'>Your Level: " + level + "</h2><p style='color:#94A3B8;margin-bottom:24px'>" + msg + "</p><button class='level-tab' onclick='closeModal()'>Go to the site</button>";
+};
+
+window.closeModal = function() {
+  var modal = document.getElementById("level-test-modal");
+  if (modal) modal.style.display = "none";
+};
+
 // ---- SONG SELECTOR ----
 window.selectVideoLevel = function(level) {
   document.querySelectorAll("[id^='video-level-']").forEach(function(el) {
