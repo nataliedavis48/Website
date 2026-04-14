@@ -1259,12 +1259,22 @@ window.submitLevelTest = function() {
   document.getElementById("modal-questions").style.display = "none";
   var result = document.getElementById("modal-result");
   result.style.display = "block";
-  result.innerHTML = "<h2 style='color:#4A9EE8;margin-bottom:12px'>Your Level: " + level + "</h2><p style='color:#94A3B8;margin-bottom:24px'>" + msg + "</p><button class='level-tab' onclick='closeModal()'>Go to the site</button>";
+  result.innerHTML = "<h2 style='color:#4A9EE8;margin-bottom:12px'>Your Level: " + level + "</h2><p style='color:#94A3B8;margin-bottom:24px'>" + msg + "</p><button class='level-tab' onclick='goToLevel(\"" + level + "\")'>Go to my content</button>";
 };
 
 window.closeModal = function() {
   var modal = document.getElementById("level-test-modal");
   if (modal) modal.style.display = "none";
+};
+
+window.goToLevel = function(level) {
+  closeModal();
+  document.querySelectorAll(".section").forEach(function(s) { s.classList.remove("active"); });
+  var listeningSection = document.getElementById("listening");
+  if (listeningSection) listeningSection.classList.add("active");
+  document.querySelectorAll(".nav-btn").forEach(function(b) { b.classList.remove("active"); });
+  document.querySelectorAll(".nav-btn[data-section='listening']").forEach(function(b) { b.classList.add("active"); });
+  window.selectAudioLevel(level);
 };
 
 // ---- SONG SELECTOR ----
