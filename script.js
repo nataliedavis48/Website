@@ -144,7 +144,7 @@ if (articleList) {
 // --- LISTENING FILES --- add new audio files here ---
 const listeningFiles = [
   // A1
-  { title: "Inflation in Iran", level: "A1", src: "Audio/A1/Inflation in Iran.mp3", vocab: [
+  { title: "Inflation in Iran", level: "A1", category: "Current Affairs", src: "Audio/A1/Inflation in Iran.mp3", vocab: [
     { word: "money", definition: "coins and paper used to buy things" },
     { word: "price", definition: "how much something costs" },
     { word: "expensive", definition: "costs a lot of money" },
@@ -157,7 +157,7 @@ const listeningFiles = [
     "Is food expensive in your country? What do people buy most?",
     "What do you do when you do not have much money?"
   ], transcriptSrc: "Transcripts/A1/Inflation-in-Iran.txt"},
-  { title: "Public Transport", level: "A1", src: "Audio/A1/Public Transport.mpeg", vocab: [
+  { title: "Public Transport", level: "A1", category: "Society & Culture", src: "Audio/A1/Public Transport.mpeg", vocab: [
     { word: "bus", definition: "a large vehicle that carries many people" },
     { word: "train", definition: "a vehicle that travels on rails" },
     { word: "ticket", definition: "a small piece of paper that lets you travel" },
@@ -171,7 +171,7 @@ const listeningFiles = [
     "Is public transport good in your city? Why or why not?"
   ], transcriptSrc: "Transcripts/A1/Public-Transport.txt"},
   // A2
-  { title: "Fall of Assad", level: "A2", src: "Audio/A2/Fall of Assad.mpeg", vocab: [
+  { title: "Fall of Assad", level: "A2", category: "Current Affairs", src: "Audio/A2/Fall of Assad.mpeg", vocab: [
     { word: "leader", definition: "a person who is in charge of a country or group" },
     { word: "government", definition: "the group of people who control a country" },
     { word: "escape", definition: "to get away from a dangerous place" },
@@ -184,7 +184,7 @@ const listeningFiles = [
     "What do you think happens to a country when its leader leaves suddenly?",
     "Have you heard about Syria in the news? What do you know about it?"
   ]},
-  { title: "Iran Protests: Economic Discontent", level: "A2", src: "Audio/A2/Iran Protests_ Economic Discontent.mp3", vocab: [
+  { title: "Iran Protests: Economic Discontent", level: "A2", category: "Current Affairs", src: "Audio/A2/Iran Protests_ Economic Discontent.mp3", vocab: [
     { word: "protest", definition: "when people gather to show they are unhappy" },
     { word: "angry", definition: "feeling very unhappy about something" },
     { word: "price", definition: "how much something costs" },
@@ -197,7 +197,7 @@ const listeningFiles = [
     "Why do you think people go to the streets to protest?",
     "Have you ever seen a protest? What was it about?"
   ], transcriptSrc: "Transcripts/A2/Iran-Protests-Economic-Discontent.txt"},
-  { title: "Iron Beam", level: "A2", src: "Audio/A2/Iron Beam.mp3", vocab: [
+  { title: "Iron Beam", level: "A2", category: "Science & Technology", src: "Audio/A2/Iron Beam.mp3", vocab: [
     { word: "weapon", definition: "something used to hurt people or destroy things" },
     { word: "protect", definition: "to keep someone or something safe" },
     { word: "attack", definition: "to try to hurt someone or something" },
@@ -210,7 +210,7 @@ const listeningFiles = [
     "Do you think new weapons make countries safer or more dangerous?",
     "What other technologies do you know that help protect people?"
   ], transcriptSrc: "Transcripts/A2/Iron-Beam.txt"},
-  { title: "Mossad's Secret Agent Yael", level: "A2", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [
+  { title: "Mossad's Secret Agent Yael", level: "A2", category: "History", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [
     { word: "spy", definition: "a person who secretly collects information" },
     { word: "secret", definition: "something that only a few people know" },
     { word: "mission", definition: "an important job someone is sent to do" },
@@ -223,7 +223,7 @@ const listeningFiles = [
     "Would you like to work as a spy? Why or why not?",
     "Why do you think countries need secret agents?"
   ], transcriptSrc: "Transcripts/A2/Mossads-Secret-Agent-Yael.txt"},
-  { title: "Public Transport", level: "A2", src: "Audio/A2/Public Transport.mpeg", vocab: [
+  { title: "Public Transport", level: "A2", category: "Society & Culture", src: "Audio/A2/Public Transport.mpeg", vocab: [
     { word: "transport", definition: "a way of moving people from place to place" },
     { word: "passenger", definition: "a person travelling in a vehicle" },
     { word: "journey", definition: "travel from one place to another" },
@@ -236,7 +236,7 @@ const listeningFiles = [
     "What is the most common type of transport in your city?",
     "What would you change about public transport where you live?"
   ], transcriptSrc: "Transcripts/A2/Public-Transport.txt"},
-  { title: "Pros and Cons of TV", level: "A2", src: "Audio/A2/Pros and Cons of TV.mp4", vocab: [
+  { title: "Pros and Cons of TV", level: "A2", category: "Society & Culture", src: "Audio/A2/Pros and Cons of TV.mp4", vocab: [
     { word: "television", definition: "a device that shows moving pictures and sound" },
     { word: "entertainment", definition: "things that people enjoy watching or doing" },
     { word: "programme", definition: "a show on television or radio" },
@@ -249,7 +249,7 @@ const listeningFiles = [
     "How many hours of TV do you watch each day? What do you like to watch?",
     "Do you think watching TV is a good way to learn English? Why?"
   ], transcriptSrc: "Transcripts/A2/Pros-and-Cons-of-TV.txt"},
-  { title: "Is Europe Ready for War with Tehran?", level: "A2", src: "Audio/A2/Is Europe Ready for War with Tehran.mp4", vocab: [
+  { title: "Is Europe Ready for War with Tehran?", level: "A2", category: "Current Affairs", src: "Audio/A2/Is Europe Ready for War with Tehran.mp4", vocab: [
     { word: "war", definition: "a serious fight between countries using armies" },
     { word: "army", definition: "a large group of soldiers who fight for a country" },
     { word: "danger", definition: "a situation where someone might get hurt" },
@@ -262,7 +262,7 @@ const listeningFiles = [
     "Do you think war is ever the right answer? Why or why not?",
     "What can ordinary people do to help keep peace in the world?"
   ], transcriptSrc: "Transcripts/A2/Is-Europe-Ready-for-War-with-Tehran.txt"},
-  { title: "Peace Talks between Iran and USA", level: "A2", src: "Audio/A2/Peace Talks between Iran and USA.mp4", vocab: [
+  { title: "Peace Talks between Iran and USA", level: "A2", category: "Current Affairs", src: "Audio/A2/Peace Talks between Iran and USA.mp4", vocab: [
     { word: "talk", definition: "a conversation or discussion between people" },
     { word: "peace", definition: "a time when there is no war or fighting" },
     { word: "leader", definition: "a person who is in charge of a group or country" },
@@ -275,7 +275,7 @@ const listeningFiles = [
     "Do you think talking is always better than fighting? Why?",
     "What do you hope will happen between Iran and the USA?"
   ], transcriptSrc: "Transcripts/A2/Peace Talks between Iran and USA.txt"},
-  { title: "The Happiest Countries 2026", level: "A2", src: "Audio/A2/The Happiest Countries 2026.mp4", vocab: [
+  { title: "The Happiest Countries 2026", level: "A2", category: "Society & Culture", src: "Audio/A2/The Happiest Countries 2026.mp4", vocab: [
     { word: "happy", definition: "feeling pleasure and contentment" },
     { word: "country", definition: "a nation with its own government and land" },
     { word: "list", definition: "a number of things written one after another" },
@@ -289,7 +289,7 @@ const listeningFiles = [
     "What makes you happy in your daily life?"
   ], transcriptSrc: "Transcripts/A2/The Happiest Countries 2026.txt"},
   // B1
-  { title: "Cluster Missiles", level: "B1", src: "Audio/B1/Cluster Missiles.mp4", vocab: [
+  { title: "Cluster Missiles", level: "B1", category: "Science & Technology", src: "Audio/B1/Cluster Missiles.mp4", vocab: [
     { word: "missile", definition: "a weapon that flies through the air and explodes" },
     { word: "cluster", definition: "a group of things close together" },
     { word: "civilian", definition: "a person who is not in the military" },
@@ -302,7 +302,7 @@ const listeningFiles = [
     "Why do you think cluster missiles are considered especially dangerous to civilians?",
     "Should there be international rules about which weapons countries can use? Why?"
   ], transcriptSrc: "Transcripts/B1/Cluster-Missiles.txt"},
-  { title: "Cross-Border Mysteries: Ahmad Shukr's Story", level: "B1", src: "Audio/B1/Cross-Border Mysteries_ Ahmad Shukrs Story.mp3", vocab: [
+  { title: "Cross-Border Mysteries: Ahmad Shukr's Story", level: "B1", category: "History", src: "Audio/B1/Cross-Border Mysteries_ Ahmad Shukrs Story.mp3", vocab: [
     { word: "border", definition: "the line dividing two countries" },
     { word: "mystery", definition: "something that is difficult to explain or understand" },
     { word: "identity", definition: "who a person is" },
@@ -315,7 +315,7 @@ const listeningFiles = [
     "Why do you think crossing borders can be dangerous for some people?",
     "What challenges do you think investigators face when solving cross-border cases?"
   ], transcriptSrc: "Transcripts/B1/Cross-Border-Mysteries.txt"},
-  { title: "Fall of Assad", level: "B1", src: "Audio/B1/Fall of Assad.mpeg", vocab: [
+  { title: "Fall of Assad", level: "B1", category: "Current Affairs", src: "Audio/B1/Fall of Assad.mpeg", vocab: [
     { word: "regime", definition: "a government that controls a country strictly" },
     { word: "collapse", definition: "to suddenly fall down or fail completely" },
     { word: "rebel", definition: "a person who fights against the government" },
@@ -328,7 +328,7 @@ const listeningFiles = [
     "What do you think leads people to rebel against their government?",
     "What challenges does a country face after its leader suddenly loses power?"
   ], transcriptSrc: "Transcripts/B1/Fall-of-Assad.txt"},
-  { title: "Hidden Jewish History of Somaliland", level: "B1", src: "Audio/B1/Hidden Jewish History of Somaliland.mp3", vocab: [
+  { title: "Hidden Jewish History of Somaliland", level: "B1", category: "History", src: "Audio/B1/Hidden Jewish History of Somaliland.mp3", vocab: [
     { word: "heritage", definition: "traditions and history passed down through generations" },
     { word: "ancient", definition: "belonging to a very long time ago" },
     { word: "community", definition: "a group of people living in the same area" },
@@ -341,7 +341,7 @@ const listeningFiles = [
     "Why do you think some communities have hidden or forgotten their history?",
     "How important is it to preserve the history of minority communities? Why?"
   ], transcriptSrc: "Transcripts/B1/Hidden-Jewish-History-of-Somaliland.txt"},
-  { title: "Iran Protests and Potential Changes", level: "B1", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [
+  { title: "Iran Protests and Potential Changes", level: "B1", category: "Current Affairs", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [
     { word: "protest", definition: "a public event where people show disagreement" },
     { word: "reform", definition: "a change made to improve a system" },
     { word: "demand", definition: "a strong request for something" },
@@ -354,7 +354,7 @@ const listeningFiles = [
     "What changes do you think the protesters in Iran were hoping for?",
     "Do you think protests can lead to real change in a country? Give an example."
   ], transcriptSrc: "Transcripts/B1/Iran-Protests-and-Potential-Changes.txt"},
-  { title: "Iran Protests: Economic Origins and Beyond", level: "B1", src: "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3", vocab: [
+  { title: "Iran Protests: Economic Origins and Beyond", level: "B1", category: "Current Affairs", src: "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3", vocab: [
     { word: "inflation", definition: "a rise in prices over time" },
     { word: "unemployment", definition: "the state of not having a job" },
     { word: "corruption", definition: "dishonest behaviour by people in power" },
@@ -367,7 +367,7 @@ const listeningFiles = [
     "How does economic hardship like unemployment affect people's daily lives?",
     "Why do you think corruption makes economic problems worse for ordinary people?"
   ], transcriptSrc: "Transcripts/B1/Iran-Protests-Economic-Origins-and-Beyond.txt"},
-  { title: "Oron Shaul", level: "B1", src: "Audio/B1/Oron Shaul.mpeg", vocab: [
+  { title: "Oron Shaul", level: "B1", category: "History", src: "Audio/B1/Oron Shaul.mpeg", vocab: [
     { word: "soldier", definition: "a person who serves in an army" },
     { word: "capture", definition: "to take someone as a prisoner" },
     { word: "hostage", definition: "a person held prisoner to force others to act" },
@@ -380,7 +380,7 @@ const listeningFiles = [
     "How do you think a family feels when a loved one is taken as a hostage?",
     "Why is it important for a country to bring home the remains of its fallen soldiers?"
   ], transcriptSrc: "Transcripts/B1/Oron-Shaul.txt"},
-  { title: "Public Transport", level: "B1", src: "Audio/B1/Public Transport.mpeg", vocab: [
+  { title: "Public Transport", level: "B1", category: "Society & Culture", src: "Audio/B1/Public Transport.mpeg", vocab: [
     { word: "infrastructure", definition: "basic systems a country needs, like roads and transport" },
     { word: "commute", definition: "to travel regularly to and from work" },
     { word: "sustainable", definition: "able to continue without harming the environment" },
@@ -393,7 +393,7 @@ const listeningFiles = [
     "How could better public transport improve life in a city?",
     "Do you think governments should invest more in public transport or in roads? Why?"
   ], transcriptSrc: "Transcripts/B1/Public-Transport.txt"},
-  { title: "Secrets of the Night", level: "B1", src: "Audio/B1/Secrets of the Night.mp3", vocab: [
+  { title: "Secrets of the Night", level: "B1", category: "Environment", src: "Audio/B1/Secrets of the Night.mp3", vocab: [
     { word: "shadow", definition: "a dark shape made when light is blocked" },
     { word: "reveal", definition: "to show or make known something hidden" },
     { word: "mysterious", definition: "difficult to explain or understand" },
@@ -406,7 +406,7 @@ const listeningFiles = [
     "Have you ever been in a situation that felt mysterious or suspicious? What happened?",
     "Why do you think some secrets stay hidden for a long time?"
   ], transcriptSrc: "Transcripts/B1/Secrets-of-the-Night.txt"},
-  { title: "Somaliland's Quest for Recognition", level: "B1", src: "Audio/B1/Somaliland's Quest for Recognition.mp3", vocab: [
+  { title: "Somaliland's Quest for Recognition", level: "B1", category: "Travel & Places", src: "Audio/B1/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "recognition", definition: "official acceptance that something exists or is true" },
     { word: "independence", definition: "freedom from outside control" },
     { word: "territory", definition: "an area of land belonging to a country" },
@@ -419,7 +419,7 @@ const listeningFiles = [
     "Why do you think it is important for a country to be recognised by other nations?",
     "What do you think makes a region stable enough to become an independent country?"
   ], transcriptSrc: "Transcripts/B1/Somalilands-Quest-for-Recognition.txt"},
-  { title: "Understanding the Iran Protests", level: "B1", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [
+  { title: "Understanding the Iran Protests", level: "B1", category: "Current Affairs", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [
     { word: "cause", definition: "the reason why something happens" },
     { word: "freedom", definition: "the right to do or say what you want" },
     { word: "youth", definition: "young people" },
@@ -432,7 +432,7 @@ const listeningFiles = [
     "Why do you think young people often lead protest movements?",
     "What rights do you think are most important for people to have? Why?"
   ], transcriptSrc: "Transcripts/B1/Understanding-the-Iran-Protests.txt"},
-  { title: "A Moral Dilemma", level: "B1", src: "Audio/B1/moral.mp3", vocab: [
+  { title: "A Moral Dilemma", level: "B1", category: "Society & Culture", src: "Audio/B1/moral.mp3", vocab: [
     { word: "anxiety", definition: "strong worry about what might happen" },
     { word: "struggle", definition: "a very difficult situation or effort" },
     { word: "pressure", definition: "stress or strong demands" },
@@ -449,7 +449,7 @@ const listeningFiles = [
     "Do you think a person who confesses their crime deserves more mercy? Why or why not?",
     "Is there a difference between justice and mercy? Can a person deserve both?"
   ], transcriptSrc: "Transcripts/B1/Moral.txt"},
-  { title: "US Iran Nuclear Tensions", level: "B1", src: "Audio/B1/US Iran Nuclear Tensions.mpeg", vocab: [
+  { title: "US Iran Nuclear Tensions", level: "B1", category: "Current Affairs", src: "Audio/B1/US Iran Nuclear Tensions.mpeg", vocab: [
     { word: "nuclear", definition: "relating to the energy released when atoms are split or joined" },
     { word: "tension", definition: "a state of worry or unfriendliness between groups" },
     { word: "sanctions", definition: "penalties applied to a country to force it to change" },
@@ -462,7 +462,7 @@ const listeningFiles = [
     "Why do you think some countries want to develop nuclear weapons?",
     "Do you think sanctions are an effective way to change a country's behaviour? Why or why not?"
   ], transcriptSrc: "Transcripts/B1/US-Iran-Nuclear-Tensions.txt"},
-  { title: "Black Rain in Tehran", level: "B1", src: "Audio/B1/Black Rain in Tehran.mpeg", vocab: [
+  { title: "Black Rain in Tehran", level: "B1", category: "Environment", src: "Audio/B1/Black Rain in Tehran.mpeg", vocab: [
     { word: "pollution", definition: "harmful substances in the air, water, or land" },
     { word: "smog", definition: "a thick mixture of smoke and fog in the air" },
     { word: "toxic", definition: "poisonous and harmful to people or the environment" },
@@ -475,7 +475,7 @@ const listeningFiles = [
     "What do you think are the main causes of air pollution in big cities?",
     "What can governments and individuals do to improve air quality?"
   ], transcriptSrc: "Transcripts/B1/Black-Rain-in-Tehran.txt"},
-  { title: "Pros and Cons of TV", level: "B1", src: "Audio/B1/Pros and Cons of TV.mp4", vocab: [
+  { title: "Pros and Cons of TV", level: "B1", category: "Society & Culture", src: "Audio/B1/Pros and Cons of TV.mp4", vocab: [
     { word: "broadcast", definition: "to send out a programme on TV or radio" },
     { word: "documentary", definition: "a film or programme about real events or people" },
     { word: "influence", definition: "the power to affect someone's thoughts or behaviour" },
@@ -488,7 +488,7 @@ const listeningFiles = [
     "Do you think too much TV is bad for children? Why or why not?",
     "How has streaming changed the way people watch television?"
   ], transcriptSrc: "Transcripts/B1/Pros-and-Cons-of-TV.txt"},
-  { title: "Is Europe Ready for War with Tehran?", level: "B1", src: "Audio/B1/Is Europe Ready for War with Tehran.mp4", vocab: [
+  { title: "Is Europe Ready for War with Tehran?", level: "B1", category: "Current Affairs", src: "Audio/B1/Is Europe Ready for War with Tehran.mp4", vocab: [
     { word: "military", definition: "relating to an army or armed forces" },
     { word: "conflict", definition: "a serious fight or war between groups" },
     { word: "threat", definition: "a warning that harm may come" },
@@ -501,7 +501,7 @@ const listeningFiles = [
     "Do you think countries should help each other if one is attacked? Why?",
     "What do you think is the best way to avoid war between countries?"
   ], transcriptSrc: "Transcripts/B1/Is-Europe-Ready-for-War-with-Tehran.txt"},
-  { title: "The Happiest Countries 2026", level: "B1", src: "Audio/B1/The Happiest Countries 2026.mp4", vocab: [
+  { title: "The Happiest Countries 2026", level: "B1", category: "Society & Culture", src: "Audio/B1/The Happiest Countries 2026.mp4", vocab: [
     { word: "wellbeing", definition: "the state of being comfortable, healthy, and happy" },
     { word: "satisfaction", definition: "a feeling of pleasure when you get what you wanted" },
     { word: "income", definition: "money received regularly from work or investments" },
@@ -514,7 +514,7 @@ const listeningFiles = [
     "Do you think money is the most important factor for happiness? Why?",
     "Would you move to another country if it meant being happier?"
   ], transcriptSrc: "Transcripts/B1/The Happiest Countries 2026.txt"},
-  { title: "Martha's Journey to Mental Wellness", level: "B1", src: "Audio/B1/Martha's Journey to Mental Wellness.mpeg", vocab: [
+  { title: "Martha's Journey to Mental Wellness", level: "B1", category: "Mental Health", src: "Audio/B1/Martha's Journey to Mental Wellness.mpeg", vocab: [
     { word: "mental health", definition: "the condition of a person's psychological and emotional wellbeing" },
     { word: "wellness", definition: "the state of being in good health, especially as a goal" },
     { word: "therapy", definition: "treatment intended to help someone recover from a problem" },
@@ -527,7 +527,7 @@ const listeningFiles = [
     "Why do you think it is sometimes difficult for people to talk about mental health?",
     "What do you think is the most important factor in recovering from a mental health challenge?"
   ], transcriptSrc: "Transcripts/B1/Martha's Journey to Mental Wellness.txt"},
-  { title: "Rescuing the American Navigator in Iran", level: "B1", src: "Audio/B1/Rescuing the American Navigator in Iran.mpeg", vocab: [
+  { title: "Rescuing the American Navigator in Iran", level: "B1", category: "History", src: "Audio/B1/Rescuing the American Navigator in Iran.mpeg", vocab: [
     { word: "navigator", definition: "a person who plans or guides the route of a journey" },
     { word: "rescue", definition: "to save someone from a dangerous situation" },
     { word: "mission", definition: "an important task or assignment" },
@@ -540,7 +540,7 @@ const listeningFiles = [
     "Why do you think some countries choose secret operations instead of public diplomacy?",
     "What risks do people face when they try to help someone in a dangerous country?"
   ], transcriptSrc: "Transcripts/B1/Rescuing the American Navigator in Iran.txt"},
-  { title: "Peace Talks Between Iran and USA", level: "B1", src: "Audio/B1/Peace Talks Between Iran and USA.mp4", vocab: [
+  { title: "Peace Talks Between Iran and USA", level: "B1", category: "Current Affairs", src: "Audio/B1/Peace Talks Between Iran and USA.mp4", vocab: [
     { word: "negotiation", definition: "a discussion aimed at reaching an agreement" },
     { word: "ceasefire", definition: "an agreement to stop fighting temporarily" },
     { word: "agreement", definition: "a decision reached by two or more parties" },
@@ -554,7 +554,7 @@ const listeningFiles = [
     "What do you think are the biggest obstacles to peace between two countries that have been in conflict for a long time?"
   ], transcriptSrc: "Transcripts/B1/Peace Talks between Iran and USA.txt"},
   // B2
-  { title: "Cluster Missiles", level: "B2", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
+  { title: "Cluster Missiles", level: "B2", category: "Science & Technology", src: "Audio/B2/Cluster Missiles.mp4", vocab: [
     { word: "proliferation", definition: "a rapid increase in the number of something" },
     { word: "indiscriminate", definition: "not careful about who or what is harmed" },
     { word: "humanitarian", definition: "concerned with reducing human suffering" },
@@ -567,7 +567,7 @@ const listeningFiles = [
     "Why do you think some countries refuse to sign international weapons conventions?",
     "Who should be held accountable when cluster weapons harm civilians — the soldiers, commanders, or governments?"
   ], transcriptSrc: "Transcripts/B2/Cluster-Missiles.txt"},
-  { title: "Pros and Cons of TV", level: "B2", src: "Audio/B2/Pros and Cons of TV.mp4", vocab: [
+  { title: "Pros and Cons of TV", level: "B2", category: "Society & Culture", src: "Audio/B2/Pros and Cons of TV.mp4", vocab: [
     { word: "algorithm", definition: "a set of rules used by a computer to recommend content" },
     { word: "binge-watching", definition: "watching many episodes of a show in one sitting" },
     { word: "censorship", definition: "the suppression of content considered harmful or offensive" },
@@ -580,7 +580,7 @@ const listeningFiles = [
     "To what extent do you think television shapes public opinion and political views?",
     "Is streaming killing traditional television, or simply evolving it? Give your view."
   ], transcriptSrc: "Transcripts/B2/Pros-and-Cons-of-TV.txt"},
-  { title: "Is Europe Ready for War with Tehran?", level: "B2", src: "Audio/B2/Is Europe Ready for War with Tehran.mp4", vocab: [
+  { title: "Is Europe Ready for War with Tehran?", level: "B2", category: "Current Affairs", src: "Audio/B2/Is Europe Ready for War with Tehran.mp4", vocab: [
     { word: "deterrence", definition: "the use of threat to discourage an enemy from acting" },
     { word: "alliance", definition: "a union between countries for mutual benefit" },
     { word: "escalation", definition: "a rapid increase in the severity of a conflict" },
@@ -593,7 +593,7 @@ const listeningFiles = [
     "Do you think European countries have a responsibility to respond militarily to threats in the Middle East? Why or why not?",
     "What is the difference between deterrence and provocation in international relations?"
   ], transcriptSrc: "Transcripts/B2/Is-Europe-Ready-for-War-with-Tehran.txt"},
-  { title: "Peace Talks Between Iran and USA", level: "B2", src: "Audio/B2/Peace Talks between Iran and USA.mp4", vocab: [
+  { title: "Peace Talks Between Iran and USA", level: "B2", category: "Current Affairs", src: "Audio/B2/Peace Talks between Iran and USA.mp4", vocab: [
     { word: "diplomacy", definition: "managing relations between countries through negotiation" },
     { word: "nuclear", definition: "relating to the powerful energy released from atoms" },
     { word: "concession", definition: "something given up in order to reach an agreement" },
@@ -606,7 +606,7 @@ const listeningFiles = [
     "To what extent can economic sanctions be used as a tool to bring countries to the negotiating table?",
     "What role do third-party mediators play in peace negotiations between hostile states?"
   ], transcriptSrc: "Transcripts/B2/Peace Talks Between Iran and USA.txt"},
-  { title: "Exploring Somaliland: A Hidden Gem", level: "B2", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [
+  { title: "Exploring Somaliland: A Hidden Gem", level: "B2", category: "Travel & Places", src: "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3", vocab: [
     { word: "autonomous", definition: "having the freedom to govern itself" },
     { word: "nomadic", definition: "moving from place to place without a permanent home" },
     { word: "hospitality", definition: "the friendly and generous treatment of guests" },
@@ -619,7 +619,7 @@ const listeningFiles = [
     "What do you think are the advantages and disadvantages of visiting an undiscovered travel destination?",
     "How can tourism help or harm a place that is not used to many visitors?"
   ], transcriptSrc: "Transcripts/B2/Exploring-Somaliland.txt"},
-  { title: "Fall of Assad", level: "B2", src: "Audio/B2/Fall of Assad.mpeg", vocab: [
+  { title: "Fall of Assad", level: "B2", category: "Current Affairs", src: "Audio/B2/Fall of Assad.mpeg", vocab: [
     { word: "authoritarian", definition: "demanding complete obedience to authority" },
     { word: "insurgency", definition: "an armed rebellion against a government" },
     { word: "geopolitical", definition: "relating to politics and geography of countries" },
@@ -632,7 +632,7 @@ const listeningFiles = [
     "How do international sanctions affect ordinary citizens, and is that a fair consequence?",
     "What role do you think neighbouring countries play in the rise or fall of an authoritarian government?"
   ], transcriptSrc: "Transcripts/B2/Fall-of-Assad.txt"},
-  { title: "Giving Advice", level: "B1", src: "Audio/B1/Giving Advice.mpeg", vocab: [
+  { title: "Giving Advice", level: "B1", category: "Society & Culture", src: "Audio/B1/Giving Advice.mpeg", vocab: [
     { word: "perspective", definition: "a particular way of thinking about something" },
     { word: "consequence", definition: "a result or effect of an action" },
     { word: "evaluate", definition: "to carefully consider something before deciding" },
@@ -645,7 +645,7 @@ const listeningFiles = [
     "When someone asks for your advice, how do you decide what to say?",
     "Is there a difference between giving advice to a close friend and to a colleague? How do you adjust your approach?"
   ], transcriptSrc: "Transcripts/B1/Giving-Advice.txt"},
-  { title: "Iran Protests and Potential Changes", level: "B2", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [
+  { title: "Iran Protests and Potential Changes", level: "B2", category: "Current Affairs", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [
     { word: "disillusionment", definition: "disappointment when something is not as good as expected" },
     { word: "mobilize", definition: "to organize people for a purpose" },
     { word: "repression", definition: "the use of force to control people" },
@@ -658,7 +658,7 @@ const listeningFiles = [
     "At what point does a government lose its legitimacy in the eyes of its people?",
     "How does social media change the way protest movements mobilize and grow?"
   ], transcriptSrc: "Transcripts/B2/Iran-Protests-and-Potential-Changes.txt"},
-  { title: "Iron Beam: The Future of Laser Weapons", level: "B2", src: "Audio/B2/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
+  { title: "Iron Beam: The Future of Laser Weapons", level: "B2", category: "Science & Technology", src: "Audio/B2/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
     { word: "electromagnetic", definition: "relating to electric and magnetic forces" },
     { word: "precision", definition: "the quality of being exact and accurate" },
     { word: "intercept", definition: "to stop something before it reaches its target" },
@@ -671,7 +671,7 @@ const listeningFiles = [
     "Should weapons systems be allowed to operate autonomously without human decision-making? Why or why not?",
     "How might laser weapon technology change the balance of power between countries?"
   ], transcriptSrc: "Transcripts/B2/Iron-Beam-The-Future-of-Laser-Weapons.txt"},
-  { title: "Lost Jewish Connections of Somaliland", level: "B2", src: "Audio/B2/Lost Jewish Connections of Somaliland.mp3", vocab: [
+  { title: "Lost Jewish Connections of Somaliland", level: "B2", category: "History", src: "Audio/B2/Lost Jewish Connections of Somaliland.mp3", vocab: [
     { word: "diaspora", definition: "people who have spread from their original homeland" },
     { word: "ancestral", definition: "relating to family members from long ago" },
     { word: "assimilation", definition: "the process of becoming part of a different culture" },
@@ -684,7 +684,7 @@ const listeningFiles = [
     "What does it mean for a community to lose its connection to its ancestral homeland?",
     "How can archaeological evidence change the way we understand history and identity?"
   ], transcriptSrc: "Transcripts/B2/Lost-Jewish-Connections-of-Somaliland.txt"},
-  { title: "Mossad's Secret Agent Yael", level: "B2", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [
+  { title: "Mossad's Secret Agent Yael", level: "B2", category: "History", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [
     { word: "infiltrate", definition: "to secretly enter an organization or place" },
     { word: "intelligence", definition: "secret information gathered about an enemy" },
     { word: "covert", definition: "not openly acknowledged; secret" },
@@ -697,7 +697,7 @@ const listeningFiles = [
     "What personal qualities do you think make someone suited to covert intelligence work?",
     "Where do you think the line should be drawn between national security and individual privacy?"
   ], transcriptSrc: "Transcripts/B2/Mossads-Secret-Agent-Yael.txt"},
-  { title: "Oron Shaul", level: "B2", src: "Audio/B2/Oron Shaul.mpeg", vocab: [
+  { title: "Oron Shaul", level: "B2", category: "History", src: "Audio/B2/Oron Shaul.mpeg", vocab: [
     { word: "commemorate", definition: "to honour the memory of someone or something" },
     { word: "bereaved", definition: "suffering the loss of a loved one" },
     { word: "captivity", definition: "the state of being kept as a prisoner" },
@@ -710,7 +710,7 @@ const listeningFiles = [
     "Why is the repatriation of soldiers' remains considered so important to their families and country?",
     "What moral obligations do governments have towards soldiers who are captured or killed in conflict?"
   ], transcriptSrc: "Transcripts/B2/Oron-Shaul.txt"},
-  { title: "Somaliland's Quest for Recognition", level: "B2", src: "Audio/B2/Somaliland's Quest for Recognition.mp3", vocab: [
+  { title: "Somaliland's Quest for Recognition", level: "B2", category: "Travel & Places", src: "Audio/B2/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "sovereignty", definition: "full power and authority over a country" },
     { word: "self-determination", definition: "the right of a people to choose their government" },
     { word: "legitimacy", definition: "the quality of being accepted as lawful or proper" },
@@ -723,7 +723,7 @@ const listeningFiles = [
     "What criteria should a region have to meet before being recognised as an independent state?",
     "How do geopolitical interests of powerful nations affect the recognition of smaller states?"
   ], transcriptSrc: "Transcripts/B2/Somalilands-Quest-for-Recognition.txt"},
-  { title: "Rachel Goldberg-Polin: A Voice for the Unthinkable", level: "B2", src: "Audio/B2/rachel-goldberg-polin.mp3.mp3", vocab: [
+  { title: "Rachel Goldberg-Polin: A Voice for the Unthinkable", level: "B2", category: "History", src: "Audio/B2/rachel-goldberg-polin.mp3.mp3", vocab: [
     { word: "hostage", definition: "a person held captive to force others to meet demands" },
     { word: "advocate", definition: "to publicly support or recommend a cause or policy" },
     { word: "resilience", definition: "the ability to recover from difficult situations" },
@@ -734,7 +734,7 @@ const listeningFiles = [
     "How can one person's voice influence a political situation?",
     "What emotions did you notice in the speaker's voice or words?"
   ], transcriptSrc: "Transcripts/B2/rachel-goldberg-polin.txt"},
-  { title: "Shulamit Cohen", level: "B2", src: "Audio/B2/Shulamit Cohen.mp4", vocab: [
+  { title: "Shulamit Cohen", level: "B2", category: "History", src: "Audio/B2/Shulamit Cohen.mp4", vocab: [
     { word: "testimony", definition: "a formal statement about what someone experienced" },
     { word: "survivor", definition: "a person who continues to live after a dangerous event" },
     { word: "trauma", definition: "a deeply distressing experience and its lasting effect" },
@@ -748,7 +748,7 @@ const listeningFiles = [
     "How can listening to someone's testimony change the way we understand a historical event?",
     "What does it take for a person to speak about a traumatic experience in front of others?"
   ], transcriptSrc: "Transcripts/B2/Shulamit-Cohen.txt"},
-  { title: "The Happiest Countries 2026", level: "B2", src: "Audio/B2/The Happiest Countries 2026.mp4", vocab: [
+  { title: "The Happiest Countries 2026", level: "B2", category: "Society & Culture", src: "Audio/B2/The Happiest Countries 2026.mp4", vocab: [
     { word: "prosperity", definition: "the state of being successful and financially secure" },
     { word: "social support", definition: "the help and comfort provided by friends, family, and community" },
     { word: "corruption", definition: "dishonest behaviour by people in positions of power" },
@@ -762,7 +762,7 @@ const listeningFiles = [
     "Is it the government's responsibility to make its citizens happy?"
   ], transcriptSrc: "Transcripts/B2/The Happiest Countries 2026.txt"},
   // C1
-  { title: "Pros and Cons of TV", level: "C1", src: "Audio/C1/Pros and Cons of TV.mp4", vocab: [
+  { title: "Pros and Cons of TV", level: "C1", category: "Society & Culture", src: "Audio/C1/Pros and Cons of TV.mp4", vocab: [
     { word: "polarisation", definition: "the division of society into opposing groups" },
     { word: "desensitisation", definition: "the process of becoming less affected by something through repeated exposure" },
     { word: "hegemony", definition: "dominance or leadership of one group over others" },
@@ -775,7 +775,7 @@ const listeningFiles = [
     "To what extent does mass media perpetuate social inequality and cultural hegemony?",
     "How has the fragmentation of television audiences through streaming platforms affected public discourse and shared cultural experience?"
   ], transcriptSrc: "Transcripts/C1/Pros-and-Cons-of-TV.txt"},
-  { title: "Is Europe Ready for War with Tehran?", level: "C1", src: "Audio/C1/Is Europe Ready for War with Tehran.mp4", vocab: [
+  { title: "Is Europe Ready for War with Tehran?", level: "C1", category: "Current Affairs", src: "Audio/C1/Is Europe Ready for War with Tehran.mp4", vocab: [
     { word: "geopolitical", definition: "relating to politics as influenced by geography and power" },
     { word: "deterrence", definition: "the prevention of action through the threat of consequences" },
     { word: "non-proliferation", definition: "the prevention of the spread of nuclear weapons" },
@@ -788,7 +788,7 @@ const listeningFiles = [
     "To what extent has Europe's strategic autonomy been undermined by its dependence on NATO and US foreign policy?",
     "How does the concept of asymmetric warfare complicate traditional European military doctrine in the context of a conflict with Iran?"
   ], transcriptSrc: "Transcripts/C1/Is-Europe-Ready-for-War-with-Tehran.txt"},
-  { title: "Assad: Last Days in Power", level: "C1", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
+  { title: "Assad: Last Days in Power", level: "C1", category: "Current Affairs", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
     { word: "authoritarian", definition: "enforcing strict obedience at the expense of freedom" },
     { word: "disintegration", definition: "the process of losing unity and falling apart" },
     { word: "ramifications", definition: "complex and unwanted consequences of an action" },
@@ -801,7 +801,7 @@ const listeningFiles = [
     "To what extent should leaders of authoritarian regimes be held personally accountable for the actions of their state?",
     "How does the disintegration of a state affect the civilian population, and what responsibility do neighbouring countries have?"
   ]},
-  { title: "Cluster Missiles", level: "C1", src: "Audio/C1/Cluster Missiles.mp4", vocab: [
+  { title: "Cluster Missiles", level: "C1", category: "Science & Technology", src: "Audio/C1/Cluster Missiles.mp4", vocab: [
     { word: "indiscriminate", definition: "done without careful judgement, harming innocent people" },
     { word: "moratorium", definition: "a temporary ban on an activity" },
     { word: "asymmetric", definition: "involving forces of very different size or strength" },
@@ -814,7 +814,7 @@ const listeningFiles = [
     "How effective is international humanitarian law in practice when powerful states refuse to comply?",
     "Can the use of indiscriminate weapons ever be strategically or morally justified? Under what circumstances?"
   ]},
-  { title: "Giving Advice", level: "C1", src: "Audio/C1/Giving Advice.mpeg", vocab: [
+  { title: "Giving Advice", level: "C1", category: "Society & Culture", src: "Audio/C1/Giving Advice.mpeg", vocab: [
     { word: "nuanced", definition: "taking account of subtle differences; not simplistic" },
     { word: "pragmatic", definition: "dealing with things in a practical, realistic way" },
     { word: "judicious", definition: "having or showing good judgement" },
@@ -827,7 +827,7 @@ const listeningFiles = [
     "How do cultural differences affect the way advice is given and received across different societies?",
     "Is it ever more judicious to withhold advice even when you can see someone making a serious mistake?"
   ]},
-  { title: "Iran's Turmoil and Economic Strife", level: "C1", src: "Audio/C1/Iran's Turmoil and Economic Strife.mp3", vocab: [
+  { title: "Iran's Turmoil and Economic Strife", level: "C1", category: "Current Affairs", src: "Audio/C1/Iran's Turmoil and Economic Strife.mp3", vocab: [
     { word: "turmoil", definition: "a state of great confusion or disorder" },
     { word: "hyperinflation", definition: "extremely rapid and uncontrolled price increases" },
     { word: "disenfranchisement", definition: "the state of being deprived of rights or power" },
@@ -840,7 +840,7 @@ const listeningFiles = [
     "To what extent are international sanctions a legitimate tool, given their socioeconomic impact on ordinary citizens?",
     "How do systemic economic failures contribute to the erosion of civil society and political stability?"
   ]},
-  { title: "Iron Beam: The Future of Laser Weapons", level: "C1", src: "Audio/C1/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
+  { title: "Iron Beam: The Future of Laser Weapons", level: "C1", category: "Science & Technology", src: "Audio/C1/Iron Beam_ The Future of Laser Weapons.mp3", vocab: [
     { word: "preemptive", definition: "done to prevent an anticipated situation from occurring" },
     { word: "proliferation", definition: "rapid spread of something, especially weapons" },
     { word: "deterrence", definition: "discouraging action through the threat of consequences" },
@@ -853,7 +853,7 @@ const listeningFiles = [
     "How might the development of autonomous weapons systems fundamentally alter the ethics of warfare?",
     "Does superior defensive technology like the Iron Beam reduce conflict or simply shift the nature of the threat?"
   ]},
-  { title: "The Happiest Countries 2026", level: "C1", src: "Audio/C1/The Happiest Countries 2026.mp4", vocab: [
+  { title: "The Happiest Countries 2026", level: "C1", category: "Society & Culture", src: "Audio/C1/The Happiest Countries 2026.mp4", vocab: [
     { word: "subjective wellbeing", definition: "a person's own assessment of their happiness and life satisfaction" },
     { word: "socioeconomic", definition: "relating to both social and economic factors" },
     { word: "autonomy", definition: "the right or condition of self-governance" },
@@ -866,7 +866,7 @@ const listeningFiles = [
     "To what extent do cultural values shape how happiness is defined and measured across different societies?",
     "Critically evaluate whether GDP per capita is a useful predictor of national happiness."
   ], transcriptSrc: "Transcripts/C1/The Happiest Countries 2026.txt"},
-  { title: "Somaliland's Quest for Recognition", level: "C1", src: "Audio/C1/Somaliland's Quest for Recognition.mp3", vocab: [
+  { title: "Somaliland's Quest for Recognition", level: "C1", category: "Travel & Places", src: "Audio/C1/Somaliland's Quest for Recognition.mp3", vocab: [
     { word: "self-determination", definition: "the right of a people to freely choose their governance" },
     { word: "de facto", definition: "existing in reality, though not officially recognised" },
     { word: "territorial integrity", definition: "the principle that a state's borders must be respected" },
@@ -879,7 +879,7 @@ const listeningFiles = [
     "How does the tension between self-determination and territorial integrity play out in cases like Somaliland?",
     "What does Somaliland's de facto independence reveal about the limitations of the current international system of state recognition?"
   ]},
-  { title: "Rescuing an American Navigator in Iran", level: "C1", src: "Audio/C1/Rescuing an American Navigator in Iran.mpeg", vocab: [
+  { title: "Rescuing an American Navigator in Iran", level: "C1", category: "History", src: "Audio/C1/Rescuing an American Navigator in Iran.mpeg", vocab: [
     { word: "clandestine", definition: "kept secret, especially because it is illicit" },
     { word: "extraction", definition: "the action of removing someone from a difficult situation" },
     { word: "jurisdiction", definition: "the authority to make legal decisions in a particular area" },
@@ -1386,12 +1386,27 @@ function toggleTranscript(src) {
     });
 }
 
+var _currentCategory = "All";
+
+window.selectCategory = function(cat) {
+  _currentCategory = cat;
+  document.querySelectorAll("[data-category]").forEach(function(btn) {
+    btn.classList.toggle("active", btn.getAttribute("data-category") === cat);
+  });
+  var activeLevel = document.querySelector("[data-audio-level].active");
+  if (activeLevel) renderAudioLevel(activeLevel.getAttribute("data-audio-level"));
+};
+
 function renderAudioLevel(level) {
   var audioList = document.getElementById("audio-list");
   if (!audioList) return;
   audioList.innerHTML = "";
   var files = window._listeningFiles || [];
-  var filtered = files.filter(function(f) { return f.level === level; });
+  var filtered = files.filter(function(f) {
+    if (f.level !== level) return false;
+    if (_currentCategory === "All") return true;
+    return f.category === _currentCategory;
+  });
 
   var select = document.createElement("select");
   select.style.marginTop = "16px";

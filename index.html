@@ -223,13 +223,23 @@
 
     <section id="listening" class="section">
       <h2>Listening Library</h2>
-      <p>Choose a level, then select a listening file.</p>
+      <p>Choose a level and topic to find your listening file.</p>
       <div class="level-tabs">
         <button class="level-tab" type="button" data-audio-level="A1" onclick="selectAudioLevel('A1')">A1</button>
         <button class="level-tab active" type="button" data-audio-level="A2" onclick="selectAudioLevel('A2')">A2</button>
         <button class="level-tab" type="button" data-audio-level="B1" onclick="selectAudioLevel('B1')">B1</button>
         <button class="level-tab" type="button" data-audio-level="B2" onclick="selectAudioLevel('B2')">B2</button>
         <button class="level-tab" type="button" data-audio-level="C1" onclick="selectAudioLevel('C1')">C1</button>
+      </div>
+      <div id="category-filters" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">
+        <button class="level-tab active" type="button" data-category="All" onclick="selectCategory('All')">All Topics</button>
+        <button class="level-tab" type="button" data-category="Current Affairs" onclick="selectCategory('Current Affairs')">Current Affairs</button>
+        <button class="level-tab" type="button" data-category="History" onclick="selectCategory('History')">History</button>
+        <button class="level-tab" type="button" data-category="Society & Culture" onclick="selectCategory('Society & Culture')">Society & Culture</button>
+        <button class="level-tab" type="button" data-category="Science & Technology" onclick="selectCategory('Science & Technology')">Science & Technology</button>
+        <button class="level-tab" type="button" data-category="Travel & Places" onclick="selectCategory('Travel & Places')">Travel & Places</button>
+        <button class="level-tab" type="button" data-category="Environment" onclick="selectCategory('Environment')">Environment</button>
+        <button class="level-tab" type="button" data-category="Mental Health" onclick="selectCategory('Mental Health')">Mental Health</button>
       </div>
       <div id="spotlight-area"></div>
       <div id="audio-list"></div>
