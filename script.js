@@ -1474,13 +1474,12 @@ function showAudioFile(file) {
     ? "<div style='display:flex;gap:24px;align-items:flex-start;margin-top:12px;flex-wrap:wrap'>" + vocabCol + transcriptCol + "</div>"
     : "";
   var fileContext = JSON.stringify({ title: file.title, level: file.level, vocab: file.vocab, questions: file.questions || [] }).replace(/"/g, "&quot;");
-  var chatBtn = "<div style='margin-top:16px'><button class='level-tab' onclick='openChatBot(this)' data-context=\"" + fileContext + "\">🎙️ Chat with Skipper</button></div>";
-  card.innerHTML = "<h3>" + file.title + "</h3>"
+  var chatBtn = "<button onclick='openChatBot(this)' data-context=\"" + fileContext + "\" style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+  card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + file.title + "</h3>" + chatBtn + "</div>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
     + columnsHTML
-    + questionsHTML
-    + chatBtn;
+    + questionsHTML;
   audioList.appendChild(card);
 }
 
