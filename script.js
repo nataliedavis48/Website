@@ -1626,12 +1626,37 @@ function sendChatText(text) {
   });
 }
 
+function pickBestVoice() {
+  var voices = window.speechSynthesis.getVoices();
+  // Prefer natural/neural voices in this order
+  var preferred = [
+    "Microsoft Aria Online (Natural) - English (United States)",
+    "Microsoft Jenny Online (Natural) - English (United States)",
+    "Microsoft Sonia Online (Natural) - English (United Kingdom)",
+    "Microsoft Libby Online (Natural) - English (United Kingdom)",
+    "Google US English",
+    "Google UK English Female"
+  ];
+  for (var i = 0; i < preferred.length; i++) {
+    var match = voices.find(function(v) { return v.name === preferred[i]; });
+    if (match) return match;
+  }
+  // Fallback: any online English female voice
+  var online = voices.find(function(v) { return v.lang.startsWith("en") && v.name.toLowerCase().includes("online"); });
+  if (online) return online;
+  // Fallback: any English voice
+  return voices.find(function(v) { return v.lang.startsWith("en"); }) || null;
+}
+
 function speakChatReply(text) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
   var utter = new SpeechSynthesisUtterance(text);
   utter.lang = "en-US";
-  utter.rate = 0.95;
+  utter.rate = 0.92;
+  utter.pitch = 1.05;
+  var voice = pickBestVoice();
+  if (voice) utter.voice = voice;
   utter.onstart = function() { setChatStatus("🔊 Speaking..."); };
   utter.onend = function() { setChatStatus(""); };
   window.speechSynthesis.speak(utter);
