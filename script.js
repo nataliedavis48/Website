@@ -393,7 +393,7 @@ const listeningFiles = [
     "How could better public transport improve life in a city?",
     "Do you think governments should invest more in public transport or in roads? Why?"
   ], transcriptSrc: "Transcripts/B1/Public-Transport.txt"},
-  { title: "Secrets of the Night", level: "B1", category: "Environment", src: "Audio/B1/Secrets of the Night.mp3", vocab: [
+  { title: "Secrets of the Night", level: "B1", category: "Real Stories", src: "Audio/B1/Secrets of the Night.mp3", vocab: [
     { word: "shadow", definition: "a dark shape made when light is blocked" },
     { word: "reveal", definition: "to show or make known something hidden" },
     { word: "mysterious", definition: "difficult to explain or understand" },
