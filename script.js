@@ -897,38 +897,166 @@ const listeningFiles = [
 window._listeningFiles = listeningFiles;
 
 // --- AMERICA'S DEFINING MOMENTS ---
-const admEpisodes = [
-  { title: "Episode 1 - The American Revolution", src: "Audio/B1/Americas Defining Moments/Episode 1 - The American Revolution.mp4", vocab: [
-    { word: "revolution", definition: "a sudden and complete change in government or society" },
-    { word: "independence", definition: "freedom from control by another country or person" },
-    { word: "colony", definition: "a country or area under the control of another country" },
-    { word: "rebellion", definition: "an act of resistance or fighting against authority" },
-    { word: "democracy", definition: "a system of government chosen by the people" },
-    { word: "freedom", definition: "the right to act, speak, or think without restriction" },
-    { word: "declare", definition: "to announce something officially and publicly" },
-    { word: "founding", definition: "relating to the establishment of something new" }
-  ], questions: [
-    "Why do you think the American colonies decided to fight for independence from Britain?",
-    "How do you think the American Revolution changed the world beyond the USA?"
-  ], transcriptSrc: "Transcripts/B1/Americas Defining Moments/Episode 1 - The American Revolution.txt"}
-];
+const admEpisodes = {
+  B1: [
+    { title: "Episode 1 - The American Revolution", src: "Audio/B1/Americas Defining Moments/B1/Episode 1 - The American Revolution.mp4", vocab: [
+      { word: "revolution", definition: "a sudden and complete change in government or society" },
+      { word: "independence", definition: "freedom from control by another country or person" },
+      { word: "colony", definition: "a country or area under the control of another country" },
+      { word: "rebellion", definition: "an act of resistance or fighting against authority" },
+      { word: "democracy", definition: "a system of government chosen by the people" },
+      { word: "freedom", definition: "the right to act, speak, or think without restriction" },
+      { word: "declare", definition: "to announce something officially and publicly" },
+      { word: "founding", definition: "relating to the establishment of something new" }
+    ], questions: [
+      "Why do you think the American colonies decided to fight for independence from Britain?",
+      "How do you think the American Revolution changed the world beyond the USA?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 1 - The American Revolution.txt"},
+    { title: "Episode 2 - American Declaration of Independence", src: "Audio/B1/Americas Defining Moments/B1/Episode 2 - American Declaration of Independence.mp4", vocab: [
+      { word: "declare", definition: "to announce something officially and publicly" },
+      { word: "independence", definition: "freedom from control by another country or person" },
+      { word: "rights", definition: "things you are allowed to do or have by law" },
+      { word: "freedom", definition: "the right to act, speak, or think without restriction" },
+      { word: "equality", definition: "the state of being equal in rights and opportunities" },
+      { word: "government", definition: "the group of people who control a country" },
+      { word: "liberty", definition: "the freedom to live as you choose" },
+      { word: "document", definition: "an official piece of writing" }
+    ], questions: [
+      "Why do you think the Declaration of Independence was such an important document?",
+      "Do you think the values in the Declaration apply to all people equally today?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 2 - American Declaration of Independence.txt"},
+    { title: "Episode 3 - The American Constitution", src: "Audio/B1/Americas Defining Moments/B1/Episode 3 - The American Constitution.mp4", vocab: [
+      { word: "constitution", definition: "a set of laws that describe how a country is governed" },
+      { word: "law", definition: "a rule made by the government that everyone must follow" },
+      { word: "rights", definition: "things you are legally allowed to do or have" },
+      { word: "amendment", definition: "a change made to a law or document" },
+      { word: "congress", definition: "the group of elected people who make laws in the USA" },
+      { word: "power", definition: "the ability to control people or events" },
+      { word: "citizen", definition: "a person who legally belongs to a country" },
+      { word: "senate", definition: "one of the two parts of the US Congress" }
+    ], questions: [
+      "Why is it important for a country to have a written constitution?",
+      "What do you think is the most important right that a constitution should protect?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 3 - The American Constitution.txt"},
+    { title: "Episode 4 - The American Civil War", src: "Audio/B1/Americas Defining Moments/B1/Episode 4 - The American Civil War.mp4", vocab: [
+      { word: "slavery", definition: "the system of owning people and forcing them to work" },
+      { word: "union", definition: "the northern states that stayed together during the Civil War" },
+      { word: "conflict", definition: "a serious fight or war between groups" },
+      { word: "soldier", definition: "a person who fights in an army" },
+      { word: "abolish", definition: "to officially end a law or practice" },
+      { word: "president", definition: "the elected leader of a country like the USA" },
+      { word: "battle", definition: "a fight between two armies" },
+      { word: "freedom", definition: "the right to live without being controlled by others" }
+    ], questions: [
+      "Why do you think the issue of slavery led to such a serious conflict?",
+      "What do you think were the most important results of the Civil War?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 4 - The American Civil War.txt"},
+    { title: "Episode 5 - The Role of the US in WWI", src: "Audio/B1/Americas Defining Moments/B1/Episode 5 - The Role of the US in WWI.mp4", vocab: [
+      { word: "war", definition: "a serious fight between countries using armies" },
+      { word: "ally", definition: "a country that supports another in a war" },
+      { word: "trench", definition: "a long narrow hole dug in the ground for soldiers" },
+      { word: "weapon", definition: "something used to hurt people or destroy things" },
+      { word: "neutral", definition: "not supporting either side in a conflict" },
+      { word: "victory", definition: "winning a war or battle" },
+      { word: "soldier", definition: "a person who fights in an army" },
+      { word: "president", definition: "the elected leader of a country like the USA" }
+    ], questions: [
+      "Why do you think the USA waited before joining the First World War?",
+      "How do you think American involvement changed the outcome of WWI?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 5 - The Role of US in WWI.txt"}
+  ],
+  B2: [
+    { title: "Episode 1 - The American Revolution", src: "Audio/B1/Americas Defining Moments/B2/Episode 1 - The American Revolution.mpeg", vocab: [
+      { word: "sovereignty", definition: "the full power of a state to govern itself" },
+      { word: "taxation", definition: "the system of collecting money from citizens for government use" },
+      { word: "rebellion", definition: "organised resistance or uprising against authority" },
+      { word: "manifesto", definition: "a public declaration of intentions or beliefs" },
+      { word: "parliament", definition: "the group of elected representatives that makes laws" },
+      { word: "colonial", definition: "relating to a colony or system of colonial rule" },
+      { word: "militia", definition: "a group of civilians trained to fight as soldiers" },
+      { word: "declaration", definition: "a formal public announcement" }
+    ], questions: [
+      "To what extent was the American Revolution driven by economic rather than political motivations?",
+      "How did Enlightenment ideas influence the founding of the United States?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 1 -The American Revolution.txt"},
+    { title: "Episode 2 - Declaration of Independence", src: "Audio/B1/Americas Defining Moments/B2/Episode 2 - Declaration of Independence.mp4", vocab: [
+      { word: "self-evident", definition: "obvious and requiring no proof or explanation" },
+      { word: "inalienable", definition: "unable to be taken away or given up" },
+      { word: "tyranny", definition: "cruel and oppressive government or rule" },
+      { word: "consent", definition: "agreement or permission given by those affected" },
+      { word: "grievance", definition: "a cause of complaint or resentment" },
+      { word: "assertion", definition: "a confident statement of fact or belief" },
+      { word: "principles", definition: "fundamental rules or beliefs guiding behaviour" },
+      { word: "legitimacy", definition: "the right to govern accepted by the people" }
+    ], questions: [
+      "How radical were the ideas in the Declaration of Independence for their time?",
+      "To what extent does the Declaration of Independence still reflect American values today?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 2 - American Declaration of Independence.txt"},
+    { title: "Episode 3 - The American Constitution", src: "Audio/B1/Americas Defining Moments/B2/Episode 3 - The American Constitution.mp4", vocab: [
+      { word: "ratification", definition: "the formal approval of an agreement or document" },
+      { word: "separation of powers", definition: "the division of government into independent branches" },
+      { word: "checks and balances", definition: "a system preventing any one branch of government from gaining too much power" },
+      { word: "amendment", definition: "a formal change or addition to a law or document" },
+      { word: "federal", definition: "relating to a system where power is shared between central and regional governments" },
+      { word: "veto", definition: "the right to reject a decision made by others" },
+      { word: "judiciary", definition: "the part of government responsible for the legal system" },
+      { word: "sovereignty", definition: "the authority of a state to govern itself" }
+    ], questions: [
+      "Why did the Founding Fathers build a system of checks and balances into the Constitution?",
+      "Is the US Constitution still fit for purpose in the 21st century?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 3 - The American Constitution.txt"},
+    { title: "Episode 4 - The American Civil War", src: "Audio/B1/Americas Defining Moments/B2/Episode 4 - The American Civil War.mp4", vocab: [
+      { word: "secession", definition: "the act of withdrawing from a union or alliance" },
+      { word: "abolitionist", definition: "a person who campaigned to end slavery" },
+      { word: "emancipation", definition: "the fact of being freed from legal, social, or political restrictions" },
+      { word: "confederacy", definition: "the alliance of southern states that left the Union" },
+      { word: "reconstruction", definition: "the period of rebuilding the South after the Civil War" },
+      { word: "ideology", definition: "a system of ideas forming the basis of political theory" },
+      { word: "casualties", definition: "people killed or injured in a war or accident" },
+      { word: "sovereignty", definition: "supreme authority within a territory" }
+    ], questions: [
+      "Was the American Civil War inevitable, or could it have been avoided through political compromise?",
+      "How did the Civil War reshape the political and social identity of the United States?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 4 - The American Civil War.txt"},
+    { title: "Episode 5 - The Role of the US in WWI", src: "Audio/B1/Americas Defining Moments/B2/Episode 5 - The Role of the US in WWI.mp4", vocab: [
+      { word: "isolationism", definition: "a policy of remaining apart from the affairs of other countries" },
+      { word: "propaganda", definition: "information used to promote a political cause" },
+      { word: "mobilisation", definition: "the action of organising resources for war" },
+      { word: "armistice", definition: "an agreement to stop fighting" },
+      { word: "diplomacy", definition: "managing international relations through negotiation" },
+      { word: "intervention", definition: "the action of becoming involved in a conflict" },
+      { word: "conscription", definition: "compulsory enlistment for military service" },
+      { word: "neutrality", definition: "the state of not supporting either side in a conflict" }
+    ], questions: [
+      "How did the First World War mark a turning point in American foreign policy?",
+      "To what extent was Woodrow Wilson's vision for the post-war world achieved?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 5 - The Role of the US in WWI.txt"}
+  ]
+};
 
-(function renderADM() {
-  var admList = document.getElementById("adm-list");
+window.renderADMLevel = function renderADMLevel(level, listId) {
+  var admList = document.getElementById(listId);
   if (!admList) return;
-  admEpisodes.forEach(function(ep) {
+  admList.innerHTML = "";
+  var episodes = admEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
     var card = document.createElement("div");
     card.className = "card";
     var vocabHTML = ep.vocab.map(function(v) {
       return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
     }).join("");
     var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "adm-transcript-" + level + "-" + idx;
     var transcriptHTML = ep.transcriptSrc
-      ? "<div style='margin-top:16px'><button class='level-tab' onclick='toggleTranscript(\"" + ep.transcriptSrc + "\")'>Show Transcript</button><div id='transcript-box' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      ? "<div style='margin-top:16px'><button class='level-tab' onclick='toggleTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
       : "";
-    card.innerHTML = "<h3>" + ep.title + "</h3><audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "' type='audio/mpeg'></audio><h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>" + questionsHTML + transcriptHTML;
+    card.innerHTML = "<h3>" + ep.title + "</h3><audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio><h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>" + questionsHTML + transcriptHTML;
     admList.appendChild(card);
   });
+}
+
+(function() {
+  renderADMLevel("B1", "adm-list");
 }());
 
 // audio functions defined at page level below DOMContentLoaded
@@ -1447,7 +1575,22 @@ window.showADM = function() {
 
 window.toggleADM = function() {
   var content = document.getElementById("adm-content");
-  if (content) content.style.display = content.style.display === "none" ? "block" : "none";
+  if (!content) return;
+  var showing = content.style.display !== "none";
+  content.style.display = showing ? "none" : "block";
+  if (!showing) {
+    var activeLevel = document.querySelector("[data-audio-level].active");
+    var level = activeLevel ? activeLevel.getAttribute("data-audio-level") : "B1";
+    if (level === "B2") {
+      document.getElementById("adm-list").innerHTML = "";
+      var b2area = document.getElementById("adm-b2-area");
+      if (b2area) { b2area.style.display = "block"; renderADMLevel("B2", "adm-b2-list"); }
+    } else {
+      renderADMLevel("B1", "adm-list");
+      var b2area = document.getElementById("adm-b2-area");
+      if (b2area) b2area.style.display = "none";
+    }
+  }
 };
 
 // Initialise audio list on page load
