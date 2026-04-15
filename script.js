@@ -1474,7 +1474,7 @@ function showAudioFile(file) {
     ? "<div style='display:flex;gap:24px;align-items:flex-start;margin-top:12px;flex-wrap:wrap'>" + vocabCol + transcriptCol + "</div>"
     : "";
   var fileContext = JSON.stringify({ title: file.title, level: file.level, vocab: file.vocab, questions: file.questions || [] }).replace(/"/g, "&quot;");
-  var chatBtn = "<div style='margin-top:16px'><button class='level-tab' onclick='openChatBot(this)' data-context=\"" + fileContext + "\">🎙️ Chat about this with AI</button></div>";
+  var chatBtn = "<div style='margin-top:16px'><button class='level-tab' onclick='openChatBot(this)' data-context=\"" + fileContext + "\">🎙️ Chat with Skipper</button></div>";
   card.innerHTML = "<h3>" + file.title + "</h3>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
@@ -1540,14 +1540,14 @@ function openChatBot(btn) {
   panel.innerHTML = [
     "<div style='display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #2D3F55;background:#162030;border-radius:12px 12px 0 0'>",
       "<div>",
-        "<div style='font-weight:bold;font-size:14px;color:#fff'>🎙️ AI English Tutor</div>",
+        "<div style='font-weight:bold;font-size:14px;color:#fff'>🎙️ Skipper — AI English Tutor</div>",
         "<div style='font-size:11px;color:#94A3B8;margin-top:2px'>" + (_chatFileContext.title || "Listening file") + "</div>",
       "</div>",
       "<button onclick='closeChatBot()' style='background:none;border:none;color:#94A3B8;font-size:20px;cursor:pointer;padding:4px 8px' title='Close'>✕</button>",
     "</div>",
     "<div id='chat-messages' style='flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px'>",
       "<div class='chat-msg bot' style='background:#162030;border:1px solid #2D3F55;border-radius:10px;padding:10px 14px;font-size:13px;color:#CBD5E1;max-width:90%;align-self:flex-start'>",
-        "Hi! I'm your English tutor. Ask me anything about what you just listened to, or I can ask you some questions to check your understanding. What would you like to do?",
+        "Hi! I'm Skipper, your English tutor. Ask me anything about what you just listened to, or I can ask you some questions to check your understanding. What would you like to do?",
       "</div>",
     "</div>",
     "<div id='chat-status' style='padding:4px 16px;font-size:11px;color:#94A3B8;min-height:20px'></div>",
