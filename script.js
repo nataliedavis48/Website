@@ -1473,11 +1473,14 @@ function showAudioFile(file) {
   var columnsHTML = (vocabCol || transcriptCol)
     ? "<div style='display:flex;gap:24px;align-items:flex-start;margin-top:12px;flex-wrap:wrap'>" + vocabCol + transcriptCol + "</div>"
     : "";
+  var fileContext = JSON.stringify({ title: file.title, level: file.level, vocab: file.vocab, questions: file.questions || [] }).replace(/"/g, "&quot;");
+  var chatBtn = "<div style='margin-top:16px'><button class='level-tab' onclick='openChatBot(this)' data-context=\"" + fileContext + "\">🎙️ Chat about this with AI</button></div>";
   card.innerHTML = "<h3>" + file.title + "</h3>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
     + columnsHTML
-    + questionsHTML;
+    + questionsHTML
+    + chatBtn;
   audioList.appendChild(card);
 }
 
@@ -1513,6 +1516,180 @@ function toggleTranscript(src) {
       btn.textContent = "Hide Transcript";
     });
 }
+
+// ---- AI VOICE CHAT BOT ----
+
+var _chatMessages = [];
+var _chatFileContext = null;
+var _chatRecognition = null;
+var _chatSpeaking = false;
+
+function openChatBot(btn) {
+  var rawContext = btn.getAttribute("data-context");
+  try { _chatFileContext = JSON.parse(rawContext); } catch(e) { _chatFileContext = {}; }
+  _chatMessages = [];
+
+  // Remove existing chat panel if any
+  var existing = document.getElementById("chat-panel");
+  if (existing) existing.remove();
+
+  var panel = document.createElement("div");
+  panel.id = "chat-panel";
+  panel.style.cssText = "position:fixed;bottom:0;right:0;width:380px;max-width:100vw;height:520px;background:#1E2D3D;border:1px solid #4A9EE8;border-radius:12px 12px 0 0;display:flex;flex-direction:column;z-index:9999;box-shadow:0 -4px 24px rgba(0,0,0,0.5)";
+
+  panel.innerHTML = [
+    "<div style='display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #2D3F55;background:#162030;border-radius:12px 12px 0 0'>",
+      "<div>",
+        "<div style='font-weight:bold;font-size:14px;color:#fff'>🎙️ AI English Tutor</div>",
+        "<div style='font-size:11px;color:#94A3B8;margin-top:2px'>" + (_chatFileContext.title || "Listening file") + "</div>",
+      "</div>",
+      "<button onclick='closeChatBot()' style='background:none;border:none;color:#94A3B8;font-size:20px;cursor:pointer;padding:4px 8px' title='Close'>✕</button>",
+    "</div>",
+    "<div id='chat-messages' style='flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px'>",
+      "<div class='chat-msg bot' style='background:#162030;border:1px solid #2D3F55;border-radius:10px;padding:10px 14px;font-size:13px;color:#CBD5E1;max-width:90%;align-self:flex-start'>",
+        "Hi! I'm your English tutor. Ask me anything about what you just listened to, or I can ask you some questions to check your understanding. What would you like to do?",
+      "</div>",
+    "</div>",
+    "<div id='chat-status' style='padding:4px 16px;font-size:11px;color:#94A3B8;min-height:20px'></div>",
+    "<div style='padding:12px 16px;border-top:1px solid #2D3F55;display:flex;gap:8px;align-items:flex-end'>",
+      "<textarea id='chat-input' placeholder='Type a message...' rows='2' style='flex:1;background:#162030;border:1px solid #4A5568;border-radius:8px;color:#fff;padding:8px 10px;font-size:13px;resize:none;font-family:inherit;outline:none'></textarea>",
+      "<div style='display:flex;flex-direction:column;gap:6px'>",
+        "<button id='chat-mic-btn' onclick='toggleChatMic()' title='Speak' style='width:40px;height:40px;border-radius:50%;border:none;background:#2D3F55;color:#fff;font-size:18px;cursor:pointer'>🎤</button>",
+        "<button onclick='sendChatMessage()' style='width:40px;height:40px;border-radius:50%;border:none;background:#4A9EE8;color:#fff;font-size:16px;cursor:pointer' title='Send'>➤</button>",
+      "</div>",
+    "</div>"
+  ].join("");
+
+  document.body.appendChild(panel);
+
+  // Allow sending with Enter (Shift+Enter for new line)
+  document.getElementById("chat-input").addEventListener("keydown", function(e) {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChatMessage(); }
+  });
+}
+
+function closeChatBot() {
+  stopChatMic();
+  window.speechSynthesis && window.speechSynthesis.cancel();
+  var panel = document.getElementById("chat-panel");
+  if (panel) panel.remove();
+  _chatMessages = [];
+}
+
+function appendChatMessage(role, text) {
+  var container = document.getElementById("chat-messages");
+  if (!container) return;
+  var div = document.createElement("div");
+  var isBot = role === "assistant";
+  div.style.cssText = "background:" + (isBot ? "#162030" : "#1a3a5c") + ";border:1px solid " + (isBot ? "#2D3F55" : "#4A9EE8") + ";border-radius:10px;padding:10px 14px;font-size:13px;color:#CBD5E1;max-width:90%;align-self:" + (isBot ? "flex-start" : "flex-end");
+  div.textContent = text;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function setChatStatus(text) {
+  var el = document.getElementById("chat-status");
+  if (el) el.textContent = text;
+}
+
+function sendChatMessage() {
+  var input = document.getElementById("chat-input");
+  if (!input) return;
+  var text = input.value.trim();
+  if (!text) return;
+  input.value = "";
+  sendChatText(text);
+}
+
+function sendChatText(text) {
+  appendChatMessage("user", text);
+  _chatMessages.push({ role: "user", content: text });
+  setChatStatus("Thinking...");
+
+  var context = _chatFileContext || {};
+  fetch("https://plain-sailing-chat.natalie-davis48.workers.dev", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages: _chatMessages, fileContext: context })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var reply = data.reply || "Sorry, I didn't get a response.";
+    _chatMessages.push({ role: "assistant", content: reply });
+    appendChatMessage("assistant", reply);
+    setChatStatus("");
+    speakChatReply(reply);
+  })
+  .catch(function() {
+    appendChatMessage("assistant", "Sorry, there was a connection error. Please try again.");
+    setChatStatus("");
+  });
+}
+
+function speakChatReply(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var utter = new SpeechSynthesisUtterance(text);
+  utter.lang = "en-US";
+  utter.rate = 0.95;
+  utter.onstart = function() { setChatStatus("🔊 Speaking..."); };
+  utter.onend = function() { setChatStatus(""); };
+  window.speechSynthesis.speak(utter);
+}
+
+function toggleChatMic() {
+  if (_chatRecognition) { stopChatMic(); return; }
+  startChatMic();
+}
+
+function startChatMic() {
+  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    setChatStatus("Sorry, your browser doesn't support voice input.");
+    return;
+  }
+  window.speechSynthesis && window.speechSynthesis.cancel();
+  _chatRecognition = new SpeechRecognition();
+  _chatRecognition.lang = "en-US";
+  _chatRecognition.interimResults = false;
+  _chatRecognition.continuous = false;
+
+  var micBtn = document.getElementById("chat-mic-btn");
+  if (micBtn) { micBtn.textContent = "⏹"; micBtn.style.background = "#e74c3c"; }
+  setChatStatus("🎤 Listening...");
+
+  _chatRecognition.onresult = function(e) {
+    var transcript = e.results[0][0].transcript;
+    stopChatMic();
+    var input = document.getElementById("chat-input");
+    if (input) input.value = transcript;
+    sendChatText(transcript);
+  };
+  _chatRecognition.onerror = function() {
+    stopChatMic();
+    setChatStatus("Couldn't hear that. Try again.");
+  };
+  _chatRecognition.onend = function() { stopChatMic(); };
+  _chatRecognition.start();
+}
+
+function stopChatMic() {
+  if (_chatRecognition) {
+    try { _chatRecognition.stop(); } catch(e) {}
+    _chatRecognition = null;
+  }
+  var micBtn = document.getElementById("chat-mic-btn");
+  if (micBtn) { micBtn.textContent = "🎤"; micBtn.style.background = "#2D3F55"; }
+  var status = document.getElementById("chat-status");
+  if (status && status.textContent === "🎤 Listening...") status.textContent = "";
+}
+
+window.openChatBot = openChatBot;
+window.closeChatBot = closeChatBot;
+window.sendChatMessage = sendChatMessage;
+window.toggleChatMic = toggleChatMic;
+
+// ---- END AI VOICE CHAT BOT ----
 
 var _currentCategory = "All";
 
