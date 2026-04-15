@@ -1648,10 +1648,14 @@ function pickBestVoice() {
   return voices.find(function(v) { return v.lang.startsWith("en"); }) || null;
 }
 
+function stripEmoji(text) {
+  return text.replace(/[\u{1F000}-\u{1FFFF}]|[\u{2600}-\u{27FF}]|[\u{2300}-\u{23FF}]|[\u{FE00}-\u{FE0F}]|[\u{1F900}-\u{1F9FF}]|[\u{1FA00}-\u{1FA9F}]/gu, "").trim();
+}
+
 function speakChatReply(text) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
-  var utter = new SpeechSynthesisUtterance(text);
+  var utter = new SpeechSynthesisUtterance(stripEmoji(text));
   utter.lang = "en-US";
   utter.rate = 0.92;
   utter.pitch = 1.05;
