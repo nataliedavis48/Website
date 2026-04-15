@@ -1626,9 +1626,12 @@ function sendChatText(text) {
   });
 }
 
+var _cachedVoice = null;
+
 function pickBestVoice() {
+  if (_cachedVoice) return _cachedVoice;
   var voices = window.speechSynthesis.getVoices();
-  // Prefer natural/neural voices in this order
+  if (!voices.length) return null;
   var preferred = [
     "Microsoft Aria Online (Natural) - English (United States)",
     "Microsoft Jenny Online (Natural) - English (United States)",
@@ -1639,13 +1642,19 @@ function pickBestVoice() {
   ];
   for (var i = 0; i < preferred.length; i++) {
     var match = voices.find(function(v) { return v.name === preferred[i]; });
-    if (match) return match;
+    if (match) { _cachedVoice = match; return match; }
   }
-  // Fallback: any online English female voice
   var online = voices.find(function(v) { return v.lang.startsWith("en") && v.name.toLowerCase().includes("online"); });
-  if (online) return online;
-  // Fallback: any English voice
-  return voices.find(function(v) { return v.lang.startsWith("en"); }) || null;
+  if (online) { _cachedVoice = online; return online; }
+  var english = voices.find(function(v) { return v.lang.startsWith("en"); });
+  if (english) { _cachedVoice = english; return english; }
+  return null;
+}
+
+// Pre-load voices as soon as they're available
+if (window.speechSynthesis) {
+  window.speechSynthesis.onvoiceschanged = function() { _cachedVoice = null; pickBestVoice(); };
+  pickBestVoice();
 }
 
 function stripEmoji(text) {
@@ -1655,15 +1664,29 @@ function stripEmoji(text) {
 function speakChatReply(text) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
-  var utter = new SpeechSynthesisUtterance(stripEmoji(text));
-  utter.lang = "en-US";
-  utter.rate = 0.92;
-  utter.pitch = 1.05;
-  var voice = pickBestVoice();
-  if (voice) utter.voice = voice;
-  utter.onstart = function() { setChatStatus("🔊 Speaking..."); };
-  utter.onend = function() { setChatStatus(""); };
-  window.speechSynthesis.speak(utter);
+
+  function doSpeak() {
+    var utter = new SpeechSynthesisUtterance(stripEmoji(text));
+    var voice = pickBestVoice();
+    if (voice) {
+      utter.voice = voice;
+      utter.lang = voice.lang;
+    } else {
+      utter.lang = "en-US";
+    }
+    utter.rate = 0.88;
+    utter.pitch = 1.0;
+    utter.volume = 1.0;
+    utter.onstart = function() { setChatStatus("🔊 Speaking..."); };
+    utter.onend = function() { setChatStatus(""); };
+    window.speechSynthesis.speak(utter);
+  }
+
+  if (!pickBestVoice()) {
+    setTimeout(doSpeak, 300);
+  } else {
+    doSpeak();
+  }
 }
 
 function toggleChatMic() {
