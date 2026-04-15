@@ -1034,8 +1034,8 @@ const admEpisodes = {
   ]
 };
 
-window.renderADMLevel = function renderADMLevel(level, listId) {
-  var admList = document.getElementById(listId);
+window.renderADMLevel = function renderADMLevel(level) {
+  var admList = document.getElementById("adm-list");
   if (!admList) return;
   admList.innerHTML = "";
   var episodes = admEpisodes[level] || [];
@@ -1053,11 +1053,19 @@ window.renderADMLevel = function renderADMLevel(level, listId) {
     card.innerHTML = "<h3>" + ep.title + "</h3><audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio><h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>" + questionsHTML + transcriptHTML;
     admList.appendChild(card);
   });
-}
+};
 
-(function() {
-  renderADMLevel("B1", "adm-list");
-}());
+window.selectADMLevel = function(level) {
+  document.querySelectorAll("#listening-series .level-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.textContent === level);
+  });
+  renderADMLevel(level);
+};
+
+// Render B1 by default when section first loads
+document.addEventListener("DOMContentLoaded", function() {
+  renderADMLevel("B1");
+});
 
 // audio functions defined at page level below DOMContentLoaded
 
@@ -1811,34 +1819,7 @@ window.selectAudioLevel = function(level) {
   });
   var spotlightArea = document.getElementById("spotlight-area");
   if (spotlightArea) spotlightArea.innerHTML = "";
-  var admArea = document.getElementById("adm-area");
-  if (admArea) admArea.style.display = level === "B1" ? "block" : "none";
   renderAudioLevel(level);
-};
-
-window.showADM = function() {
-  var admArea = document.getElementById("adm-area");
-  if (admArea) admArea.style.display = "block";
-};
-
-window.toggleADM = function() {
-  var content = document.getElementById("adm-content");
-  if (!content) return;
-  var showing = content.style.display !== "none";
-  content.style.display = showing ? "none" : "block";
-  if (!showing) {
-    var activeLevel = document.querySelector("[data-audio-level].active");
-    var level = activeLevel ? activeLevel.getAttribute("data-audio-level") : "B1";
-    if (level === "B2") {
-      document.getElementById("adm-list").innerHTML = "";
-      var b2area = document.getElementById("adm-b2-area");
-      if (b2area) { b2area.style.display = "block"; renderADMLevel("B2", "adm-b2-list"); }
-    } else {
-      renderADMLevel("B1", "adm-list");
-      var b2area = document.getElementById("adm-b2-area");
-      if (b2area) b2area.style.display = "none";
-    }
-  }
 };
 
 // Initialise audio list on page load

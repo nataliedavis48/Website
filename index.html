@@ -160,6 +160,7 @@
     <button class="nav-btn active" type="button" data-section="home">Home</button>
     <button class="nav-btn" type="button" id="spotlight-btn" onclick="openFeaturedListening()">Listening Spotlight</button>
     <button class="nav-btn" type="button" data-section="listening">Listening Library</button>
+    <button class="nav-btn" type="button" data-section="listening-series">Listening Series</button>
     <button class="nav-btn" type="button" data-section="songs">Learning Through Song</button>
     <button class="nav-btn" type="button" data-section="videos">Vocabulary Videos</button>
     <button class="nav-btn" type="button" data-section="grammar">Grammar Explained</button>
@@ -276,16 +277,20 @@
       </div>
       <div id="spotlight-area"></div>
       <div id="audio-list"></div>
-      <div id="adm-area" style="display:none;margin-top:24px">
-        <button class="level-tab" type="button" onclick="toggleADM()">America's Defining Moments</button>
-        <div id="adm-content" style="display:none;margin-top:12px">
-          <p>A podcast series exploring the key events that shaped the United States.</p>
-          <div id="adm-list"></div>
-          <div id="adm-b2-area" style="display:none;margin-top:16px">
-            <h4 style="color:#4A9EE8;margin-bottom:8px">B2 Episodes</h4>
-            <div id="adm-b2-list"></div>
-          </div>
+    </section>
+
+    <section id="listening-series" class="section">
+      <h2>Listening Series</h2>
+      <p>Full podcast series to follow from episode to episode.</p>
+
+      <div class="card" style="margin-top:20px">
+        <h3>America's Defining Moments</h3>
+        <p style="color:#94A3B8;margin-bottom:16px">A podcast series exploring the key events that shaped the United States.</p>
+        <div class="level-tabs" style="margin-bottom:16px">
+          <button class="level-tab active" type="button" onclick="selectADMLevel('B1')">B1</button>
+          <button class="level-tab" type="button" onclick="selectADMLevel('B2')">B2</button>
         </div>
+        <div id="adm-list"></div>
       </div>
     </section>
 
