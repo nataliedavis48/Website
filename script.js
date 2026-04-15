@@ -1658,18 +1658,31 @@ function startChatMic() {
   if (micBtn) { micBtn.textContent = "⏹"; micBtn.style.background = "#e74c3c"; }
   setChatStatus("🎤 Listening...");
 
+  var _gotResult = false;
+
   _chatRecognition.onresult = function(e) {
+    _gotResult = true;
     var transcript = e.results[0][0].transcript;
     stopChatMic();
     var input = document.getElementById("chat-input");
     if (input) input.value = transcript;
     sendChatText(transcript);
   };
-  _chatRecognition.onerror = function() {
+  _chatRecognition.onerror = function(e) {
+    _gotResult = true;
     stopChatMic();
-    setChatStatus("Couldn't hear that. Try again.");
+    if (e.error === "not-allowed") {
+      setChatStatus("Microphone access denied. Please allow mic in your browser.");
+    } else if (e.error === "network") {
+      setChatStatus("Network error — Chrome needs internet for voice recognition.");
+    } else {
+      setChatStatus("Couldn't hear that (" + e.error + "). Try again.");
+    }
   };
-  _chatRecognition.onend = function() { stopChatMic(); };
+  _chatRecognition.onend = function() {
+    if (!_gotResult) setChatStatus("Nothing heard. Try speaking more clearly or type instead.");
+    stopChatMic();
+  };
   _chatRecognition.start();
 }
 
