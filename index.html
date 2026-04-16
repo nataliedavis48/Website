@@ -316,6 +316,7 @@
         <option value="song-sound-of-silence">The Sound of Silence – Simon &amp; Garfunkel</option>
         <option value="song-someone-like-you">Someone Like You – Adele</option>
         <option value="song-fix-you">Fix You – Coldplay</option>
+        <option value="song-imagine">Imagine – John Lennon</option>
       </select>
 
       <div id="song-hand-in-my-pocket" class="card song-card" style="display:none">
@@ -911,6 +912,39 @@
             <p>Tears stream down your face<br>When you lose something you cannot replace<br>Tears stream down your face, and I</p>
             <p>I promise you I will learn from my mistakes<br>Tears stream down your face, and I</p>
             <p>Lights will guide you home<br>And ignite your bones<br>And I will try to fix you</p>
+          </div>
+        </div>
+      </div>
+      <div id="song-imagine" class="card song-card" style="display:none">
+        <div class="song-header">
+          <h3>Imagine</h3>
+          <span class="song-artist">John Lennon</span>
+        </div>
+        <div class="song-body">
+          <div class="song-player">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7pKfPomDEeI4TPT6EOYjn9?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div style="display:flex;gap:24px;align-items:flex-start;margin-top:16px;flex-wrap:wrap">
+            <div style="flex:1;min-width:200px">
+              <h4>Vocabulary</h4>
+              <ul style="padding-left:20px;margin-top:8px">
+                <li><strong>imagine</strong> <button class="speaker-btn" onclick="speakWord('imagine')">🔊</button> to picture something in your mind that doesn't exist yet</li>
+                <li><strong>possession</strong> <button class="speaker-btn" onclick="speakWord('possession')">🔊</button> something you own; here Lennon suggests owning things causes conflict</li>
+                <li><strong>brotherhood</strong> <button class="speaker-btn" onclick="speakWord('brotherhood')">🔊</button> a feeling of friendship and unity between all people</li>
+                <li><strong>greed</strong> <button class="speaker-btn" onclick="speakWord('greed')">🔊</button> wanting more than you need, especially money or power</li>
+                <li><strong>hunger</strong> <button class="speaker-btn" onclick="speakWord('hunger')">🔊</button> the feeling of needing food; here used to represent suffering in the world</li>
+              </ul>
+            </div>
+            <div style="flex:1;min-width:200px;text-align:right">
+              <button class="level-tab" onclick="toggleLyrics('lyrics-imagine', this)">Show Lyrics</button>
+            </div>
+          </div>
+          <div id="lyrics-imagine" style="display:none;margin-top:16px">
+            <p>Imagine there's no heaven<br>It's easy if you try<br>No hell below us<br>Above us, only sky<br>Imagine all the people<br>Livin' for today</p>
+            <p>Imagine there's no countries<br>It isn't hard to do<br>Nothing to kill or die for<br>And no religion, too<br>Imagine all the people<br>Livin' life in peace</p>
+            <p>You may say I'm a dreamer<br>But I'm not the only one<br>I hope someday you'll join us<br>And the world will be as one</p>
+            <p>Imagine no possessions<br>I wonder if you can<br>No need for greed or hunger<br>A brotherhood of man<br>Imagine all the people<br>Sharing all the world</p>
+            <p>You may say I'm a dreamer<br>But I'm not the only one<br>I hope someday you'll join us<br>And the world will live as one</p>
           </div>
         </div>
       </div>
