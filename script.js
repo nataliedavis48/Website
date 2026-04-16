@@ -210,7 +210,7 @@ const listeningFiles = [
     "Do you think new weapons make countries safer or more dangerous?",
     "What other technologies do you know that help protect people?"
   ], transcriptSrc: "Transcripts/A2/Iron-Beam.txt"},
-  { title: "Mossad's Secret Agent Yael", level: "A2", category: "History", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [
+  { title: "The Story of a Spy", level: "A2", category: "Real Stories", src: "Audio/A2/Mossad's Secret Agent Yael.mp3", vocab: [
     { word: "spy", definition: "a person who secretly collects information" },
     { word: "secret", definition: "something that only a few people know" },
     { word: "mission", definition: "an important job someone is sent to do" },
@@ -684,7 +684,7 @@ const listeningFiles = [
     "What does it mean for a community to lose its connection to its ancestral homeland?",
     "How can archaeological evidence change the way we understand history and identity?"
   ], transcriptSrc: "Transcripts/B2/Lost-Jewish-Connections-of-Somaliland.txt"},
-  { title: "Mossad's Secret Agent Yael", level: "B2", category: "History", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [
+  { title: "The Story of a Spy", level: "B2", category: "Real Stories", src: "Audio/B2/Mossad's Secret Agent Yael.mp3", vocab: [
     { word: "infiltrate", definition: "to secretly enter an organization or place" },
     { word: "intelligence", definition: "secret information gathered about an enemy" },
     { word: "covert", definition: "not openly acknowledged; secret" },
