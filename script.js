@@ -1491,7 +1491,7 @@ function showAudioFile(file) {
   audioList.appendChild(card);
 }
 
-function toggleTranscript(src) {
+window.toggleTranscript = function toggleTranscript(src) {
   var box = document.getElementById("transcript-box");
   var btn = document.getElementById("transcript-toggle-btn");
   if (!box || !btn) return;
@@ -1522,7 +1522,7 @@ function toggleTranscript(src) {
       box.style.display = "block";
       btn.textContent = "Hide Transcript";
     });
-}
+};
 
 // ---- AI VOICE CHAT BOT ----
 
