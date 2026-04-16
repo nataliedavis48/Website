@@ -1481,8 +1481,10 @@ function showAudioFile(file) {
   var columnsHTML = (vocabCol || transcriptCol)
     ? "<div style='display:flex;gap:24px;align-items:flex-start;margin-top:12px;flex-wrap:wrap'>" + vocabCol + transcriptCol + "</div>"
     : "";
-  var fileContext = JSON.stringify({ title: file.title, level: file.level, vocab: file.vocab, questions: file.questions || [] }).replace(/"/g, "&quot;");
-  var chatBtn = "<button onclick='openChatBot(this)' data-context=\"" + fileContext + "\" style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+  var contextKey = "ctx_" + Date.now();
+  window._chatContexts = window._chatContexts || {};
+  window._chatContexts[contextKey] = { title: file.title, level: file.level, vocab: file.vocab, questions: file.questions || [] };
+  var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
   card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + file.title + "</h3>" + chatBtn + "</div>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
@@ -1531,9 +1533,8 @@ var _chatFileContext = null;
 var _chatRecognition = null;
 var _chatSpeaking = false;
 
-function openChatBot(btn) {
-  var rawContext = btn.getAttribute("data-context");
-  try { _chatFileContext = JSON.parse(rawContext); } catch(e) { _chatFileContext = {}; }
+function openChatBot(contextKey) {
+  _chatFileContext = (window._chatContexts && window._chatContexts[contextKey]) || {};
   _chatMessages = [];
 
   // Remove existing chat panel if any
