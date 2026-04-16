@@ -1120,7 +1120,7 @@ if (checkMatchingBtn) {
 }
 
 // ---- SECTION NAVIGATION ----
-function showSection(sectionId, activeBtnId) {
+window.showSection = function showSection(sectionId, activeBtnId) {
   document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
   const target = document.getElementById(sectionId);
   if (target) target.classList.add("active");
@@ -1130,14 +1130,14 @@ function showSection(sectionId, activeBtnId) {
     ? document.getElementById(activeBtnId)
     : document.querySelector(`.nav-btn[data-section="${sectionId}"]`);
   if (btn) btn.classList.add("active");
-}
+};
 
 // ---- AUDIO LEVEL TAB ----
-function activateAudioTab(level) {
+window.activateAudioTab = function activateAudioTab(level) {
   document.querySelectorAll("[data-audio-level]").forEach(t => {
     t.classList.toggle("active", t.getAttribute("data-audio-level") === level);
   });
-}
+};
 
 // ---- LISTENING SPOTLIGHT ----
 window.openFeaturedListening = function () {
