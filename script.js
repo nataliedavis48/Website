@@ -1048,11 +1048,39 @@ window.renderADMLevel = function renderADMLevel(level) {
     var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
     var tId = "adm-transcript-" + level + "-" + idx;
     var transcriptHTML = ep.transcriptSrc
-      ? "<div style='margin-top:16px'><button class='level-tab' onclick='toggleTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
       : "";
-    card.innerHTML = "<h3>" + ep.title + "</h3><audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio><h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>" + questionsHTML + transcriptHTML;
+    var contextKey = "ctx_adm_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
     admList.appendChild(card);
   });
+};
+
+window.toggleADMTranscript = function(src, tId) {
+  var box = document.getElementById(tId);
+  var btn = document.getElementById("transcript-toggle-btn-" + tId);
+  if (!box || !btn) return;
+  if (box.style.display !== "none") {
+    box.style.display = "none";
+    btn.textContent = "Show Transcript";
+    return;
+  }
+  if (box.dataset.loaded) {
+    box.style.display = "block";
+    btn.textContent = "Hide Transcript";
+    return;
+  }
+  btn.textContent = "Loading...";
+  fetch(src)
+    .then(function(r) { if (!r.ok) throw new Error("Could not load transcript."); return r.text(); })
+    .then(function(text) { box.textContent = text; box.dataset.loaded = "true"; box.style.display = "block"; btn.textContent = "Hide Transcript"; })
+    .catch(function(err) { box.textContent = err.message; box.style.display = "block"; btn.textContent = "Hide Transcript"; });
 };
 
 window.selectADMLevel = function(level) {
