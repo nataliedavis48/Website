@@ -1062,6 +1062,19 @@ window.renderADMLevel = function renderADMLevel(level) {
   });
 };
 
+window.toggleVocabTranscript = function(src, id) {
+  var box = document.getElementById("transcript-box-" + id);
+  var btn = document.getElementById("transcript-toggle-btn-" + id);
+  if (!box || !btn) return;
+  if (box.style.display !== "none") { box.style.display = "none"; btn.textContent = "Show Transcript"; return; }
+  if (box.dataset.loaded) { box.style.display = "block"; btn.textContent = "Hide Transcript"; return; }
+  btn.textContent = "Loading...";
+  fetch(src)
+    .then(function(r) { if (!r.ok) throw new Error("Could not load transcript."); return r.text(); })
+    .then(function(text) { box.textContent = text; box.dataset.loaded = "true"; box.style.display = "block"; btn.textContent = "Hide Transcript"; })
+    .catch(function(err) { box.textContent = err.message; box.style.display = "block"; btn.textContent = "Hide Transcript"; });
+};
+
 window.toggleADMTranscript = function(src, tId) {
   var box = document.getElementById(tId);
   var btn = document.getElementById("transcript-toggle-btn-" + tId);
