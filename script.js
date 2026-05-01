@@ -963,7 +963,27 @@ const admEpisodes = {
     ], questions: [
       "Why do you think the USA waited before joining the First World War?",
       "How do you think American involvement changed the outcome of WWI?"
-    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 5 - The Role of US in WWI.txt"}
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 5 - The Role of US in WWI.txt"},
+    { title: "Episode 6 - The Great Depression", src: "Audio/B1/Americas Defining Moments/B1/America's Defining Moments Epi 6 Great Depression.mp4", vocab: [
+      { word: "depression", definition: "a period of very low economic activity and high unemployment" },
+      { word: "stock market", definition: "a place where shares in companies are bought and sold" },
+      { word: "poverty", definition: "the state of being extremely poor" },
+      { word: "relief", definition: "help given to people in need" },
+      { word: "recovery", definition: "a return to a normal or better condition" }
+    ], questions: [
+      "What do you think caused the Great Depression?",
+      "How do you think the Great Depression changed the way Americans felt about their government?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 6 - The Great Depression.txt"},
+    { title: "Episode 7 - US Role in WWII", src: "Audio/B1/Americas Defining Moments/B1/Episode 7 US Role in WWII.mp4", vocab: [
+      { word: "attack", definition: "a violent act against a person or place" },
+      { word: "alliance", definition: "an agreement between countries to work together" },
+      { word: "victory", definition: "success in a battle or war" },
+      { word: "surrender", definition: "to stop fighting and admit defeat" },
+      { word: "superpower", definition: "a country with great military and economic strength" }
+    ], questions: [
+      "Why do you think the attack on Pearl Harbor changed American public opinion about the war?",
+      "How did World War II change America's role in the world?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 7 - US Role in WWII.txt"}
   ],
   B2: [
     { title: "Episode 1 - The American Revolution", src: "Audio/B1/Americas Defining Moments/B2/Episode 1 - The American Revolution.mpeg", vocab: [
@@ -1030,7 +1050,27 @@ const admEpisodes = {
     ], questions: [
       "How did the First World War mark a turning point in American foreign policy?",
       "To what extent was Woodrow Wilson's vision for the post-war world achieved?"
-    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 5 - The Role of the US in WWI.txt"}
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 5 - The Role of the US in WWI.txt"},
+    { title: "Episode 6 - The Great Depression", src: "Audio/B1/Americas Defining Moments/B2/Episode 6 The Great Depression.mp4", vocab: [
+      { word: "collapse", definition: "a sudden failure of a system or institution" },
+      { word: "unemployment", definition: "the state of not having a job" },
+      { word: "speculation", definition: "buying assets hoping to make a profit from future price changes" },
+      { word: "intervention", definition: "the act of a government becoming involved to change a situation" },
+      { word: "breadline", definition: "a queue of people waiting for free food during hard times" }
+    ], questions: [
+      "To what extent was the Great Depression caused by failures in the financial system?",
+      "How did Roosevelt's New Deal redefine the relationship between the US government and its citizens?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 6 - The Great Depression.txt"},
+    { title: "Episode 7 - US Role in WWII", src: "Audio/B1/Americas Defining Moments/B2/Episode 7 - US Role in WWII.mp4", vocab: [
+      { word: "isolationism", definition: "a policy of not getting involved in other countries' affairs" },
+      { word: "mobilisation", definition: "organising a country's resources for war" },
+      { word: "atomic bomb", definition: "a weapon of mass destruction using nuclear energy" },
+      { word: "occupation", definition: "taking control of a country with military force" },
+      { word: "Cold War", definition: "a state of political tension between the US and USSR after WWII" }
+    ], questions: [
+      "Was the use of atomic bombs on Japan justified? Consider different perspectives.",
+      "How did World War II lay the foundations for the Cold War?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 7 - US Role in WWII.txt"}
   ]
 };
 
