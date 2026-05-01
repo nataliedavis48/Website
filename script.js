@@ -891,7 +891,78 @@ const listeningFiles = [
   ], questions: [
     "To what extent does a government have a moral obligation to rescue its citizens from foreign detention, regardless of diplomatic consequences?",
     "How does the use of covert operations affect international trust and bilateral relations between states?"
-  ], transcriptSrc: "Transcripts/C1/Rescuing an American Navigator in Iran.txt"}
+  ], transcriptSrc: "Transcripts/C1/Rescuing an American Navigator in Iran.txt"},
+  // ---- NEW MENTAL HEALTH FILES ----
+  { title: "8 Tiny Japanese Habits that Make a Difference", level: "A1", category: "Mental Health", src: "Audio/A1/8 Tiny Japanese Habits that Make a Difference.mp4", vocab: [
+    { word: "habit", definition: "something you do regularly without thinking" },
+    { word: "tiny", definition: "very small" },
+    { word: "routine", definition: "a set of things you do every day at the same time" },
+    { word: "energy", definition: "the strength and ability to do things" },
+    { word: "calm", definition: "quiet and relaxed" }
+  ], questions: [
+    "Do you have any daily habits that make you feel better?",
+    "Which of the Japanese habits would you like to try?"
+  ], transcriptSrc: "Transcripts/A1/8 Tiny Japanese Habit that Make a Difference.txt"},
+  { title: "8 Tiny Japanese Habits that Make a Difference", level: "A2", category: "Mental Health", src: "Audio/A2/8 Tiny Japanese Habits that Make a Difference.mp4", vocab: [
+    { word: "habit", definition: "something you do regularly, often without thinking" },
+    { word: "wellbeing", definition: "the state of being comfortable, healthy and happy" },
+    { word: "mindful", definition: "being aware and paying attention to the present moment" },
+    { word: "improve", definition: "to make something better" },
+    { word: "balance", definition: "giving equal attention to different parts of your life" }
+  ], questions: [
+    "Which of the habits mentioned do you think is most useful for busy people?",
+    "How do small habits make a difference to your mental health?"
+  ], transcriptSrc: "Transcripts/A2/8 Tiny Japanese Habits that Make a Difference.txt"},
+  { title: "8 Tiny Japanese Habits that Make a Difference", level: "B1", category: "Mental Health", src: "Audio/B1/8 Tiny Japanese Habits that Make a Difference.mp4", vocab: [
+    { word: "discipline", definition: "the ability to control your behaviour and follow rules" },
+    { word: "intentional", definition: "done on purpose, with a clear goal in mind" },
+    { word: "consistency", definition: "doing something in the same way over time" },
+    { word: "simplicity", definition: "the quality of being easy and uncomplicated" },
+    { word: "ritual", definition: "a set of actions done regularly in a particular way" }
+  ], questions: [
+    "Why do you think small habits can have a big impact on our lives?",
+    "How does Japanese culture influence ideas about daily routines and self-improvement?"
+  ], transcriptSrc: "Transcripts/B1/8 Tiny Japanese Habits that Make a Difference.txt"},
+  { title: "8 Tiny Japanese Habits that Make a Difference", level: "B2", category: "Mental Health", src: "Audio/B2/8 Tiny Japanese Habits that Make a Difference.mp4", vocab: [
+    { word: "incremental", definition: "relating to small, gradual changes that add up over time" },
+    { word: "philosophy", definition: "a set of beliefs or values that guides how someone lives" },
+    { word: "productivity", definition: "the efficiency with which tasks are completed" },
+    { word: "sustainable", definition: "able to be maintained over a long period" },
+    { word: "kaizen", definition: "a Japanese philosophy of continuous improvement through small changes" }
+  ], questions: [
+    "To what extent can adopting foreign cultural practices genuinely improve wellbeing?",
+    "How do the concepts of kaizen and mindfulness overlap in their approach to self-improvement?"
+  ], transcriptSrc: "Transcripts/B2/8 Tiny Japanese Habits that Make a Difference.txt"},
+  { title: "Creating a Routine for Mental Well-Being", level: "B1", category: "Mental Health", src: "Audio/B1/Creating a Routine for Mental Well-Being.mpeg", vocab: [
+    { word: "routine", definition: "a regular sequence of actions you follow every day" },
+    { word: "mental health", definition: "the condition of your mind and how you cope with daily life" },
+    { word: "structure", definition: "an organised plan or system that helps you manage your time" },
+    { word: "self-care", definition: "the practice of looking after your own health and happiness" },
+    { word: "wellbeing", definition: "the state of being comfortable, healthy and happy" }
+  ], questions: [
+    "Do you have a daily routine that helps your mental health?",
+    "Why do you think structure is important for mental wellbeing?"
+  ], transcriptSrc: "Transcripts/B1/Creating a Routine for Mental Well-Being.txt"},
+  { title: "Daily Habits", level: "B1", category: "Mental Health", src: "Audio/B1/Daily Habits.mpeg", vocab: [
+    { word: "habit", definition: "a regular behaviour that becomes automatic over time" },
+    { word: "motivation", definition: "the reason or desire that makes you want to do something" },
+    { word: "consistency", definition: "doing something regularly in the same way" },
+    { word: "progress", definition: "gradual improvement or development" },
+    { word: "goal", definition: "something you are trying to achieve" }
+  ], questions: [
+    "What daily habits do you think are most important for a healthy lifestyle?",
+    "How do you stay motivated to keep good habits?"
+  ], transcriptSrc: "Transcripts/B1/Power of Habits.txt"},
+  { title: "The Power of Mindful Habits", level: "B2", category: "Mental Health", src: "Audio/B2/Power of Mindful Habits.mpeg", vocab: [
+    { word: "mindfulness", definition: "the practice of focusing fully on the present moment" },
+    { word: "awareness", definition: "knowledge and understanding of a situation or feeling" },
+    { word: "intention", definition: "a plan or aim to do something in a particular way" },
+    { word: "neuroplasticity", definition: "the brain's ability to change and adapt through experience" },
+    { word: "compounding", definition: "a process where small changes build on each other over time" }
+  ], questions: [
+    "How does mindfulness differ from simply having a daily routine?",
+    "To what extent can changing your habits change your mindset?"
+  ], transcriptSrc: "Transcripts/B2/Power of Mindful Habits.txt"}
 ];
 // -----------------------------------------------------
 window._listeningFiles = listeningFiles;
@@ -983,7 +1054,37 @@ const admEpisodes = {
     ], questions: [
       "Why do you think the attack on Pearl Harbor changed American public opinion about the war?",
       "How did World War II change America's role in the world?"
-    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 7 - US Role in WWII.txt"}
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 7 - US Role in WWII.txt"},
+    { title: "Episode 8 - The American Civil Rights Movement", src: "Audio/B1/Americas Defining Moments/B1/Episode 8 - American Civil Rights Movement.mp4", vocab: [
+      { word: "civil rights", definition: "the rights of citizens to have equal treatment under the law" },
+      { word: "segregation", definition: "the practice of separating people of different races" },
+      { word: "protest", definition: "an action taken to show disagreement with something" },
+      { word: "equality", definition: "the state of being treated the same as others" },
+      { word: "movement", definition: "a group of people working together to achieve a shared goal" }
+    ], questions: [
+      "Why do you think the Civil Rights Movement happened in the 1950s and 60s?",
+      "Who do you think was the most important figure in the Civil Rights Movement and why?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 8 - American Civil Rights Movement.txt"},
+    { title: "Episode 9 - Landing on the Moon", src: "Audio/B1/Americas Defining Moments/B1/Episode 9 Landing on the Moon.mp4", vocab: [
+      { word: "astronaut", definition: "a person trained to travel into space" },
+      { word: "orbit", definition: "the curved path of an object around a planet or star" },
+      { word: "mission", definition: "an important task or journey" },
+      { word: "launch", definition: "to send a rocket or spacecraft into the air" },
+      { word: "achievement", definition: "something great that has been done successfully" }
+    ], questions: [
+      "Why do you think landing on the moon was so important to the United States?",
+      "Do you think space exploration is still important today? Why or why not?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 9 - Landing on the Moon.txt"},
+    { title: "Episode 10 - 9/11", src: "Audio/B1/Americas Defining Moments/B1/Episode 10 - 9_11.mp4", vocab: [
+      { word: "terrorist", definition: "a person who uses violence to frighten people for political reasons" },
+      { word: "attack", definition: "a violent act against a person or place" },
+      { word: "collapse", definition: "to fall down suddenly" },
+      { word: "security", definition: "measures taken to keep people safe" },
+      { word: "memorial", definition: "something built to remember an important event or person" }
+    ], questions: [
+      "How do you think 9/11 changed everyday life in the United States?",
+      "Why do you think it is important to remember events like 9/11?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B1/Episode 10 - 9_11.txt"}
   ],
   B2: [
     { title: "Episode 1 - The American Revolution", src: "Audio/B1/Americas Defining Moments/B2/Episode 1 - The American Revolution.mpeg", vocab: [
@@ -1070,7 +1171,37 @@ const admEpisodes = {
     ], questions: [
       "Was the use of atomic bombs on Japan justified? Consider different perspectives.",
       "How did World War II lay the foundations for the Cold War?"
-    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 7 - US Role in WWII.txt"}
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 7 - US Role in WWII.txt"},
+    { title: "Episode 8 - The American Civil Rights Movement", src: "Audio/B1/Americas Defining Moments/B2/Episode 8 American Civil Rights Movement.mp4", vocab: [
+      { word: "discrimination", definition: "unfair treatment of people based on race, gender or other factors" },
+      { word: "nonviolent resistance", definition: "a method of protest that does not use violence" },
+      { word: "legislation", definition: "laws made by a government" },
+      { word: "activism", definition: "taking action to bring about political or social change" },
+      { word: "landmark", definition: "an important event or achievement that marks a turning point" }
+    ], questions: [
+      "How did nonviolent protest tactics shape the success of the Civil Rights Movement?",
+      "To what extent did the Civil Rights Act of 1964 achieve genuine equality for Black Americans?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 8 - American Civil Rights Movement.txt"},
+    { title: "Episode 9 - Landing on the Moon", src: "Audio/B1/Americas Defining Moments/B2/Episode 9 Landing on the Moon.mp4", vocab: [
+      { word: "geopolitical", definition: "relating to politics as influenced by geography" },
+      { word: "Cold War", definition: "the political tension between the US and USSR after WWII" },
+      { word: "technological", definition: "relating to the development and use of technology" },
+      { word: "rivalry", definition: "competition between two people, groups or countries" },
+      { word: "legacy", definition: "something left behind that has a lasting impact" }
+    ], questions: [
+      "To what extent was the Space Race driven by political rather than scientific motivations?",
+      "What has been the long-term legacy of the Apollo programme for science and technology?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 9 - Landing on the Moon.txt"},
+    { title: "Episode 10 - 9/11", src: "Audio/B1/Americas Defining Moments/B2/Episode 10 9_11.mp4", vocab: [
+      { word: "intelligence", definition: "secret information gathered about an enemy or threat" },
+      { word: "retaliation", definition: "action taken in response to an attack" },
+      { word: "surveillance", definition: "close monitoring of a person or group" },
+      { word: "radicalisation", definition: "the process by which someone adopts extreme views" },
+      { word: "consequences", definition: "the results or effects of an action" }
+    ], questions: [
+      "How did 9/11 reshape US foreign policy and international relations?",
+      "To what extent did the War on Terror achieve its aims?"
+    ], transcriptSrc: "Transcripts/America's Defining Moments/B2/Episode 10 9_11.txt"}
   ]
 };
 
@@ -1137,15 +1268,66 @@ window.toggleADMTranscript = function(src, tId) {
 };
 
 window.selectADMLevel = function(level) {
-  document.querySelectorAll("#listening-series .level-tab").forEach(function(btn) {
+  document.querySelectorAll("#adm-tabs .level-tab").forEach(function(btn) {
     btn.classList.toggle("active", btn.textContent === level);
   });
   renderADMLevel(level);
 };
 
+const inventionEpisodes = {
+  A1: [
+    { title: "Episode 1 - Gutenberg and the Printing Press", src: "Audio/Inventions/A1/Guttenberg and the Printing Press.mp4", vocab: [
+      { word: "invention", definition: "something new that someone has made or designed for the first time" },
+      { word: "printing press", definition: "a machine used to print text on paper" },
+      { word: "knowledge", definition: "information and understanding that you have" },
+      { word: "spread", definition: "to move or share something across a wider area" },
+      { word: "revolution", definition: "a very important change in the way something works" }
+    ], questions: [
+      "Why was the printing press such an important invention?",
+      "How do you think the world would be different without the printing press?"
+    ], transcriptSrc: "Transcripts/Important Inventions and Inventors/A1/Gutenberg and the Printing Press.txt"}
+  ]
+};
+
+window.renderInventionsLevel = function(level) {
+  var list = document.getElementById("inventions-list");
+  if (!list) return;
+  list.innerHTML = "";
+  var episodes = inventionEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "inv-transcript-" + level + "-" + idx;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    var contextKey = "ctx_inv_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
+    list.appendChild(card);
+  });
+};
+
+window.selectInventionsLevel = function(level) {
+  document.querySelectorAll("#inventions-tabs .level-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.textContent === level);
+  });
+  renderInventionsLevel(level);
+};
+
 // Render B1 by default when section first loads
 document.addEventListener("DOMContentLoaded", function() {
   renderADMLevel("B1");
+  renderInventionsLevel("A1");
 });
 
 // audio functions defined at page level below DOMContentLoaded
