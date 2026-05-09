@@ -962,7 +962,47 @@ const listeningFiles = [
   ], questions: [
     "How does mindfulness differ from simply having a daily routine?",
     "To what extent can changing your habits change your mindset?"
-  ], transcriptSrc: "Transcripts/B2/Power of Mindful Habits.txt"}
+  ], transcriptSrc: "Transcripts/B2/Power of Mindful Habits.txt"},
+  { title: "Hezbollah's New Drones", level: "A2", category: "Current Affairs", src: "Audio/A2/Hezbollah's New Drones.mp4", vocab: [
+    { word: "drone", definition: "an aircraft that flies without a pilot, controlled by remote" },
+    { word: "attack", definition: "an act of using force against someone or something" },
+    { word: "military", definition: "relating to soldiers and the armed forces" },
+    { word: "border", definition: "the line that separates two countries or regions" },
+    { word: "threat", definition: "something that could cause harm or danger" }
+  ], questions: [
+    "Why do you think drones have become important in modern conflicts?",
+    "How do you think countries should respond to drone attacks?"
+  ], transcriptSrc: "Transcripts/A2/Hezbollah's New Drones.txt"},
+  { title: "Hezbollah's New Drones", level: "B2", category: "Current Affairs", src: "Audio/B2/Hezbollah's New Drones.mp4", vocab: [
+    { word: "tactical", definition: "relating to carefully planned actions to achieve a specific goal" },
+    { word: "surveillance", definition: "careful observation of an area or group, especially by military or security forces" },
+    { word: "escalation", definition: "an increase in the intensity or seriousness of a conflict" },
+    { word: "deterrence", definition: "the use of threat or capability to prevent an enemy from attacking" },
+    { word: "precision-guided", definition: "designed to hit a very specific target accurately" }
+  ], questions: [
+    "How has drone warfare changed the nature of modern conflict?",
+    "To what extent do armed non-state groups change the balance of power in a region?"
+  ], transcriptSrc: "Transcripts/B2/Hezbollah's New Drones.txt"},
+  { title: "The Super Revolutionaries of Iran", level: "B1", category: "Current Affairs", src: "Audio/B1/The Super Revolutionaries of Iran.mp4", vocab: [
+    { word: "revolution", definition: "a complete change in the way a country is governed" },
+    { word: "ideology", definition: "a set of beliefs or ideas that guide a political system" },
+    { word: "regime", definition: "a government, especially one that uses strict control" },
+    { word: "resistance", definition: "the refusal to accept or comply with something" },
+    { word: "suppress", definition: "to stop or prevent something by force" }
+  ], questions: [
+    "What do you think motivates people to fight for political change?",
+    "How can ordinary people influence the government of a country?"
+  ], transcriptSrc: "Transcripts/B1/The Super Revolutionaries of Iran.txt"},
+  { title: "The Super Revolutionaries of Iran", level: "B2", category: "Current Affairs", src: "Audio/B2/The Super Revolutionaries of Iran.mp4", vocab: [
+    { word: "theocracy", definition: "a system of government based on religious law and leadership" },
+    { word: "dissident", definition: "a person who opposes official government policy" },
+    { word: "repression", definition: "the use of force or authority to control people's freedom" },
+    { word: "geopolitical", definition: "relating to politics and power as affected by geography" },
+    { word: "faction", definition: "a small group within a larger group, with different ideas or goals" }
+  ], questions: [
+    "How does ideology shape the way a government exercises power?",
+    "To what extent do internal divisions within a revolutionary movement affect its long-term success?"
+  ], transcriptSrc: "Transcripts/B2/The Super Revolutionaries of Iran.txt"}
 ];
 // -----------------------------------------------------
 window._listeningFiles = listeningFiles;
@@ -1286,6 +1326,30 @@ const inventionEpisodes = {
       "Why was the printing press such an important invention?",
       "How do you think the world would be different without the printing press?"
     ], transcriptSrc: "Transcripts/Important Inventions and Inventors/A1/Gutenberg and the Printing Press.txt"}
+  ],
+  A2: [
+    { title: "Episode 2 - The Steam Engine", src: "Audio/Inventions/A2/The Steam Engine.mp4", vocab: [
+      { word: "steam", definition: "hot water vapour produced when water boils" },
+      { word: "engine", definition: "a machine that uses energy to produce movement or power" },
+      { word: "power", definition: "the energy or ability to make things work or move" },
+      { word: "factory", definition: "a building where goods are made in large quantities" },
+      { word: "fuel", definition: "a material like coal or oil that is burned to produce energy" }
+    ], questions: [
+      "How do you think the steam engine changed everyday life for people?",
+      "Can you think of any modern machines that work in a similar way to the steam engine?"
+    ], transcriptSrc: "Transcripts/Important Inventions and Inventors/A2/The Steam Engine.txt"}
+  ],
+  B1: [
+    { title: "Episode 2 - The Steam Engine", src: "Audio/Inventions/B1/The Steam Engine.mp4", vocab: [
+      { word: "industrial revolution", definition: "the period when production moved from hand tools to machines in factories" },
+      { word: "mechanism", definition: "a system of parts that work together to perform a function" },
+      { word: "efficiency", definition: "the ability to achieve results without wasting time or resources" },
+      { word: "combustion", definition: "the process of burning fuel to produce energy" },
+      { word: "innovation", definition: "the introduction of new ideas, methods or inventions" }
+    ], questions: [
+      "How did the steam engine transform society and the economy in the 19th century?",
+      "Do you think the industrial revolution had more positive or negative effects on people's lives?"
+    ], transcriptSrc: "Transcripts/Important Inventions and Inventors/B1/The Steam Engine.txt"}
   ]
 };
 
@@ -1324,10 +1388,257 @@ window.selectInventionsLevel = function(level) {
   renderInventionsLevel(level);
 };
 
+const ukEpisodes = {
+  A1: [
+    { title: "All About Catholics and Protestants", src: "Audio/All About the UK/A1/All About Catholics and Protestants.mp4", vocab: [
+      { word: "Catholic", definition: "a member of the Roman Catholic church" },
+      { word: "Protestant", definition: "a member of a Christian church that separated from Rome" },
+      { word: "religion", definition: "the belief in and worship of a god or gods" },
+      { word: "church", definition: "a building where Christians go to worship" },
+      { word: "faith", definition: "strong belief in a religion or set of ideas" }
+    ], questions: [
+      "What do you know about the difference between Catholics and Protestants?",
+      "Why do you think religion has been important in British history?"
+    ], transcriptSrc: "Transcripts/All About the UK/A1/All About Catholics and Protestants.txt"},
+    { title: "All About Scotland", src: "Audio/All About the UK/A1/All About Scotland.mp4", vocab: [
+      { word: "Scotland", definition: "a country that is part of the United Kingdom, in the north of Great Britain" },
+      { word: "capital", definition: "the most important city in a country, where the government is" },
+      { word: "culture", definition: "the way of life and traditions of a group of people" },
+      { word: "highland", definition: "an area of high land with hills or mountains" },
+      { word: "independent", definition: "free from the control or rule of another country" }
+    ], questions: [
+      "What do you already know about Scotland?",
+      "Would you like to visit Scotland? Why or why not?"
+    ], transcriptSrc: "Transcripts/All About the UK/A1/All About Svotland.txt"},
+    { title: "All About Wales", src: "Audio/All About the UK/A1/All About Wales.mp4", vocab: [
+      { word: "Wales", definition: "a country that is part of the United Kingdom, in the west of Great Britain" },
+      { word: "language", definition: "a system of communication used by people in a country or region" },
+      { word: "dragon", definition: "a mythical fire-breathing creature, used as a symbol of Wales" },
+      { word: "coast", definition: "the land along the edge of the sea" },
+      { word: "tradition", definition: "a custom or activity passed down through generations" }
+    ], questions: [
+      "What surprised you most about Wales?",
+      "Why do you think keeping a regional language alive is important?"
+    ], transcriptSrc: "Transcripts/All About the UK/A1/All About Wales.txt"},
+    { title: "Five Cities Worth Visiting in England", src: "Audio/All About the UK/A1/Five Cities Worth Visiting in England.mp4", vocab: [
+      { word: "city", definition: "a large and important town" },
+      { word: "visit", definition: "to go to a place for a period of time" },
+      { word: "museum", definition: "a building where objects of historical or artistic interest are kept" },
+      { word: "cathedral", definition: "a large and important Christian church" },
+      { word: "recommend", definition: "to suggest something as being good or useful" }
+    ], questions: [
+      "Which of the five cities would you most like to visit?",
+      "What do you look for when you visit a new city?"
+    ], transcriptSrc: "Transcripts/All About the UK/A1/Five Cities Worth Visiting in England.txt"},
+    { title: "The British Royal Family", src: "Audio/All About the UK/A1/The British Royal Family.mp4", vocab: [
+      { word: "royal", definition: "relating to a king, queen or their family" },
+      { word: "monarch", definition: "a king or queen who rules a country" },
+      { word: "palace", definition: "a large and grand house where a king or queen lives" },
+      { word: "crown", definition: "a circular object worn on the head of a king or queen" },
+      { word: "ceremony", definition: "a formal public event with special activities and traditions" }
+    ], questions: [
+      "What do you know about the British royal family?",
+      "Do you think having a royal family is a good thing for a country?"
+    ], transcriptSrc: "Transcripts/All About the UK/A1/The British Royal Family.txt"}
+  ],
+  A2: [
+    { title: "All About Catholics and Protestants", src: "Audio/All About the UK/A2/All About Catrholics and Protestants.mp4", vocab: [
+      { word: "reformation", definition: "the 16th century movement that created Protestant churches" },
+      { word: "divide", definition: "a difference that separates two groups" },
+      { word: "worship", definition: "to show respect and love for a god, often by praying" },
+      { word: "conflict", definition: "a serious disagreement or fight between groups" },
+      { word: "unity", definition: "the state of being joined together as one" }
+    ], questions: [
+      "How do you think religious differences affect people's daily lives?",
+      "Can you think of any other countries where religious divisions have caused conflict?"
+    ], transcriptSrc: "Transcripts/All About the UK/A2/All About Catholics and Protestants.txt"},
+    { title: "All About Scotland", src: "Audio/All About the UK/A2/All About Scotland.mp4", vocab: [
+      { word: "parliament", definition: "the group of people who make laws for a country" },
+      { word: "devolution", definition: "the transfer of power from central government to regional governments" },
+      { word: "referendum", definition: "a vote in which all people in a country can decide on one question" },
+      { word: "whisky", definition: "a strong alcoholic drink made from grain, strongly associated with Scotland" },
+      { word: "landscape", definition: "all the visible features of an area of land" }
+    ], questions: [
+      "What are the arguments for and against Scottish independence?",
+      "How important is national identity to you personally?"
+    ], transcriptSrc: "Transcripts/All About the UK/A2/All About Scotland.txt"},
+    { title: "All About Wales", src: "Audio/All About the UK/A2/All About Wales.mp4", vocab: [
+      { word: "bilingual", definition: "using or speaking two languages" },
+      { word: "rugby", definition: "a team sport played with an oval ball, very popular in Wales" },
+      { word: "heritage", definition: "the history and traditions that a country or group has" },
+      { word: "valley", definition: "a low area of land between hills or mountains" },
+      { word: "national identity", definition: "the feeling of belonging to a particular country or nation" }
+    ], questions: [
+      "Why do you think Wales has kept its own language despite being part of the UK?",
+      "What aspects of Welsh culture do you find most interesting?"
+    ], transcriptSrc: "Transcripts/All About the UK/A2/All About Wales.txt"},
+    { title: "Five Cities Worth Visiting in England", src: "Audio/All About the UK/A2/Five Cities Worth Visiting in England.mp4", vocab: [
+      { word: "architecture", definition: "the design and style of buildings" },
+      { word: "vibrant", definition: "full of energy and life" },
+      { word: "medieval", definition: "relating to the Middle Ages, roughly 500–1500 AD" },
+      { word: "cosmopolitan", definition: "including people and ideas from many different countries" },
+      { word: "attraction", definition: "a place or event that people visit because it is interesting" }
+    ], questions: [
+      "What makes a city interesting to tourists?",
+      "Have you visited any cities in England? What were they like?"
+    ], transcriptSrc: "Transcripts/All About the UK/A2/Five Cities Worth Visiting in England.txt"},
+    { title: "The British Royal Family", src: "Audio/All About the UK/A2/The British Royal Family.mp4", vocab: [
+      { word: "constitutional monarchy", definition: "a system where a king or queen rules within the limits of a constitution" },
+      { word: "succession", definition: "the process by which someone inherits a title or position" },
+      { word: "abdication", definition: "when a king or queen gives up their position" },
+      { word: "coronation", definition: "the ceremony at which a new king or queen is crowned" },
+      { word: "scandal", definition: "an event that causes public shock or outrage" }
+    ], questions: [
+      "What do you think are the advantages of having a constitutional monarchy?",
+      "How has the image of the British royal family changed in recent years?"
+    ], transcriptSrc: "Transcripts/All About the UK/A2/The British Royal Family.txt"}
+  ],
+  B1: [
+    { title: "The Differences between Catholics and Protestants", src: "Audio/All About the UK/B1/The Differences between Catholics and Protestants.mp4", vocab: [
+      { word: "doctrine", definition: "a set of beliefs or principles held by a religious group" },
+      { word: "schism", definition: "a division or split, especially within a religious group" },
+      { word: "secular", definition: "not connected to religion or a religious organisation" },
+      { word: "reconciliation", definition: "the process of restoring friendly relations between groups" },
+      { word: "ecumenism", definition: "the idea of promoting cooperation between different Christian churches" }
+    ], questions: [
+      "How much do you think religious differences affect politics in modern Britain?",
+      "Is it possible for religious groups with very different beliefs to live in harmony?"
+    ], transcriptSrc: "Transcripts/All About the UK/B1/The Differences between Catholics and Protestants.txt"},
+    { title: "All About Scotland", src: "Audio/All About the UK/B1/All About Scotland.mp4", vocab: [
+      { word: "autonomy", definition: "the right to govern yourself or make your own decisions" },
+      { word: "nationalism", definition: "a strong belief in the independence and identity of one's country or region" },
+      { word: "Gaelic", definition: "the traditional Celtic language spoken in parts of Scotland and Ireland" },
+      { word: "sovereignty", definition: "supreme power or authority, especially of a state" },
+      { word: "clan", definition: "a group of families sharing a common ancestor, especially in Scotland" }
+    ], questions: [
+      "What are the key arguments in the debate over Scottish independence?",
+      "How does a strong sense of national identity affect relations within a union like the UK?"
+    ], transcriptSrc: "Transcripts/All About the UK/B1/All About Scotland.txt"},
+    { title: "All About Wales", src: "Audio/All About the UK/B1/All About Wales.mp4", vocab: [
+      { word: "linguistic", definition: "relating to language or the study of language" },
+      { word: "revival", definition: "bringing something back into use or popularity" },
+      { word: "devolved", definition: "describing power transferred from central to regional government" },
+      { word: "emigration", definition: "leaving your own country to live in another" },
+      { word: "folklore", definition: "traditional stories, customs and beliefs of a community" }
+    ], questions: [
+      "How successful have efforts to revive the Welsh language been?",
+      "What role does folklore and tradition play in national identity?"
+    ], transcriptSrc: "Transcripts/All About the UK/B1/All About Wales.txt"},
+    { title: "Five Cities Worth Visiting in England", src: "Audio/All About the UK/B1/Five Cities Worth Visiting in England.mp4", vocab: [
+      { word: "urban regeneration", definition: "the process of improving run-down city areas" },
+      { word: "heritage site", definition: "a place of historical or cultural importance, often protected by law" },
+      { word: "multicultural", definition: "including people from many different cultural backgrounds" },
+      { word: "commerce", definition: "the activity of buying and selling goods and services" },
+      { word: "itinerary", definition: "a planned route or list of places to visit on a journey" }
+    ], questions: [
+      "What factors make a city an attractive tourist destination?",
+      "How does a city's history shape its modern identity?"
+    ], transcriptSrc: "Transcripts/All About the UK/B1/Five Cities Worth Visiting in England.txt"},
+    { title: "The British Royal Family", src: "Audio/All About the UK/B1/The British Royal Family.mp4", vocab: [
+      { word: "institution", definition: "an important established organisation in a society" },
+      { word: "controversy", definition: "public disagreement or argument about something" },
+      { word: "protocol", definition: "the system of rules about correct behaviour in official situations" },
+      { word: "patronage", definition: "support given by a senior or important person to an organisation or cause" },
+      { word: "celebrity", definition: "a famous person, especially in entertainment" }
+    ], questions: [
+      "What role does the monarchy play in modern British society?",
+      "Do you think the royal family is good value for money for the British public?"
+    ], transcriptSrc: "Transcripts/All About the UK/B1/The British Royal Family.txt"}
+  ],
+  B2: [
+    { title: "All About Catholics and Protestants", src: "Audio/All About the UK/B2/All About Catholics and Protestants.mp4", vocab: [
+      { word: "theological", definition: "relating to the study of religion and God" },
+      { word: "sectarianism", definition: "prejudice or discrimination based on religious affiliation" },
+      { word: "clergy", definition: "the ordained ministers of a religion, such as priests" },
+      { word: "reformation", definition: "the 16th century religious movement that led to the creation of Protestantism" },
+      { word: "papal authority", definition: "the power and leadership of the Pope over the Catholic Church" }
+    ], questions: [
+      "To what extent does religion still influence politics and culture in the UK?",
+      "How have interfaith relations evolved in Britain over the last century?"
+    ], transcriptSrc: "Transcripts/All About the UK/B2/All About Catholics and Protestants.txt"},
+    { title: "All About Scotland", src: "Audio/All About the UK/B2/All About Scotland.mp4", vocab: [
+      { word: "constitutional", definition: "relating to the rules and principles that govern a country" },
+      { word: "subsidy", definition: "money given by a government to help an industry or service" },
+      { word: "unionist", definition: "a person who supports the union of Scotland with the rest of the UK" },
+      { word: "infrastructure", definition: "the basic systems and structures a country needs, like roads and power" },
+      { word: "diaspora", definition: "people who have spread from their original country and live elsewhere" }
+    ], questions: [
+      "What are the economic implications of Scottish independence?",
+      "How does Scotland's relationship with Europe compare to England's?"
+    ], transcriptSrc: "Transcripts/All About the UK/B2/All About Scotland.txt"},
+    { title: "All About Wales", src: "Audio/All About the UK/B2/All About Wales.mp4", vocab: [
+      { word: "marginalisation", definition: "the process of treating a group as less important or powerful" },
+      { word: "assimilation", definition: "the process by which a group adopts the culture of a larger group" },
+      { word: "indigenous", definition: "originating or occurring naturally in a particular place" },
+      { word: "post-industrial", definition: "relating to a society that has moved away from heavy industry" },
+      { word: "cultural preservation", definition: "the effort to maintain and protect a culture's traditions and language" }
+    ], questions: [
+      "How has the decline of coal mining shaped modern Welsh identity?",
+      "What are the challenges of preserving a minority language in a globalised world?"
+    ], transcriptSrc: "Transcripts/All About the UK/B2/All About Wales.txt"},
+    { title: "Five Cities Worth Visiting in England", src: "Audio/All About the UK/B2/Five Cities Worth Visiting in England.mp4", vocab: [
+      { word: "gentrification", definition: "the process of renovating an area so that it attracts wealthier residents" },
+      { word: "renaissance", definition: "a revival of interest or activity in something" },
+      { word: "demographic", definition: "relating to the characteristics of a population" },
+      { word: "cultural quarter", definition: "an area of a city known for its arts, music or creative industries" },
+      { word: "municipal", definition: "relating to a town or city and its government" }
+    ], questions: [
+      "How does urban development affect the cultural identity of a city?",
+      "What are the social consequences of gentrification in city centres?"
+    ], transcriptSrc: "Transcripts/All About the UK/B2/Five Cities Worth Visiting in England.txt"},
+    { title: "The British Royal Family", src: "Audio/All About the UK/B2/The British Royal Family.mp4", vocab: [
+      { word: "constitutional reform", definition: "changes made to the fundamental rules governing a country" },
+      { word: "anachronism", definition: "something that belongs to a different time and seems out of place today" },
+      { word: "deference", definition: "respectful submission to the opinion or wishes of someone else" },
+      { word: "tabloid", definition: "a type of popular newspaper known for its sensational stories" },
+      { word: "allegiance", definition: "loyalty or commitment to a person, group or cause" }
+    ], questions: [
+      "Is the concept of monarchy compatible with modern democratic values?",
+      "How has media coverage of the royal family changed public attitudes towards the monarchy?"
+    ], transcriptSrc: "Transcripts/All About the UK/B2/The British Royal Family.txt"}
+  ]
+};
+
+window.renderUKLevel = function(level) {
+  var list = document.getElementById("uk-list");
+  if (!list) return;
+  list.innerHTML = "";
+  var episodes = ukEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "uk-transcript-" + level + "-" + idx;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    var contextKey = "ctx_uk_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
+    list.appendChild(card);
+  });
+};
+
+window.selectUKLevel = function(level) {
+  document.querySelectorAll("#uk-tabs .level-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.textContent === level);
+  });
+  renderUKLevel(level);
+};
+
 // Render B1 by default when section first loads
 document.addEventListener("DOMContentLoaded", function() {
   renderADMLevel("B1");
   renderInventionsLevel("A1");
+  renderUKLevel("A1");
 });
 
 // audio functions defined at page level below DOMContentLoaded
