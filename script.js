@@ -1245,8 +1245,8 @@ const admEpisodes = {
   ]
 };
 
-window.renderADMLevel = function renderADMLevel(level) {
-  var admList = document.getElementById("adm-list");
+window.renderADMLevel = function renderADMLevel(level, targetId) {
+  var admList = document.getElementById(targetId || "adm-list");
   if (!admList) return;
   admList.innerHTML = "";
   var episodes = admEpisodes[level] || [];
@@ -1353,8 +1353,8 @@ const inventionEpisodes = {
   ]
 };
 
-window.renderInventionsLevel = function(level) {
-  var list = document.getElementById("inventions-list");
+window.renderInventionsLevel = function(level, targetId) {
+  var list = document.getElementById(targetId || "inventions-list");
   if (!list) return;
   list.innerHTML = "";
   var episodes = inventionEpisodes[level] || [];
@@ -1599,8 +1599,8 @@ const ukEpisodes = {
   ]
 };
 
-window.renderUKLevel = function(level) {
-  var list = document.getElementById("uk-list");
+window.renderUKLevel = function(level, targetId) {
+  var list = document.getElementById(targetId || "uk-list");
   if (!list) return;
   list.innerHTML = "";
   var episodes = ukEpisodes[level] || [];
@@ -1634,12 +1634,968 @@ window.selectUKLevel = function(level) {
   renderUKLevel(level);
 };
 
-// Render B1 by default when section first loads
-document.addEventListener("DOMContentLoaded", function() {
-  renderADMLevel("B1");
-  renderInventionsLevel("A1");
-  renderUKLevel("A1");
-});
+const africaEpisodes = {
+  B1: [
+    { title: "Angola", src: "Audio/Africa/B1/Angola.mp4", vocab: [
+      { word: "colony", definition: "a country controlled by another, more powerful country" },
+      { word: "independence", definition: "freedom from being ruled by another country" },
+      { word: "civil war", definition: "a war between groups of people in the same country" },
+      { word: "authoritarian", definition: "a government that controls people strictly and limits freedom" },
+      { word: "corruption", definition: "dishonest behaviour by people in positions of power" },
+      { word: "resilient", definition: "able to recover quickly from difficult situations" }
+    ], questions: [
+      "Angola is very rich in oil and diamonds, but many people still live in poverty. Why do you think wealth is not always shared equally in a country?",
+      "Angola spent 27 years in a civil war before finding peace. How do you think a long war changes a country's development?"
+    ], transcriptSrc: "Transcripts/Africa/B1/Angola.txt"},
+    { title: "Botswana", src: "Audio/Africa/B1/Botswana.mp4", vocab: [
+      { word: "landlocked", definition: "completely surrounded by land, with no coastline" },
+      { word: "sparsely populated", definition: "having very few people living in a large area" },
+      { word: "democracy", definition: "a system where people vote to choose their government" },
+      { word: "currency", definition: "the money used in a particular country" },
+      { word: "wetland", definition: "an area of land that is always wet or flooded" },
+      { word: "concentration", definition: "a large number of things gathered in one place" }
+    ], questions: [
+      "Botswana used its diamond wealth to develop the country and fight corruption. What can other resource-rich countries learn from Botswana's example?",
+      "The Okavango Delta is a river that flows into a desert instead of the sea. What makes unusual natural places like this important for wildlife and tourism?"
+    ], transcriptSrc: "Transcripts/Africa/B1/Botswana.txt"},
+    { title: "Democratic Republic of Congo", src: "Audio/Africa/B1/Democratic Republic of Congo.mp4", vocab: [
+      { word: "rainforest", definition: "a thick, tropical forest with very heavy rainfall" },
+      { word: "dictator", definition: "a leader who has total power and rules unfairly" },
+      { word: "minerals", definition: "natural solid substances found in the earth, like gold or cobalt" },
+      { word: "infrastructure", definition: "basic systems a country needs, like roads and hospitals" },
+      { word: "armed groups", definition: "organised groups of people who carry weapons and fight" },
+      { word: "contrast", definition: "a clear difference between two things" }
+    ], questions: [
+      "The DRC has enormous natural wealth but most of its people are very poor. What do you think stops a country's resources from benefiting its own citizens?",
+      "Would you ever travel to a place that your government advises against visiting? What would make you consider going or not going?"
+    ], transcriptSrc: "Transcripts/Africa/B1/Democratic Republic of Congo.txt"},
+    { title: "Rwanda", src: "Audio/Africa/B1/Rwanda.mp4", vocab: [
+      { word: "genocide", definition: "the deliberate killing of a large group of people" },
+      { word: "reconciliation", definition: "the process of becoming friendly again after a conflict" },
+      { word: "landlocked", definition: "completely surrounded by land, with no coastline" },
+      { word: "opposition", definition: "people or groups who disagree with those in power" },
+      { word: "developing country", definition: "a country that is still building its economy and services" },
+      { word: "stable", definition: "not likely to change or have problems suddenly" }
+    ], questions: [
+      "Rwanda recovered remarkably after the 1994 genocide by focusing on unity and reconciliation. What do you think helps a society heal after a terrible tragedy?",
+      "Some people call Rwanda a managed democracy. Do you think strong leadership is more important than political freedom when rebuilding a broken country?"
+    ], transcriptSrc: "Transcripts/Africa/B1/Rwanda.txt"},
+    { title: "Somaliland", src: "Audio/Africa/B1/Somaliland.mp4", vocab: [
+      { word: "independent state", definition: "a place that governs itself separately from other countries" },
+      { word: "protectorate", definition: "a territory controlled and protected by a stronger country" },
+      { word: "recognition", definition: "official acceptance by other countries that a state exists" },
+      { word: "remittances", definition: "money sent home by people living and working abroad" },
+      { word: "livestock", definition: "farm animals such as goats, sheep, and camels" },
+      { word: "preserved", definition: "kept in good condition over a long period of time" }
+    ], questions: [
+      "Somaliland has been acting as an independent country for over 30 years but is not officially recognised by the UN. What problems might this cause for its people?",
+      "Somaliland is often called a hidden democracy because the world does not pay much attention to it. Why do you think some countries receive more global attention than others?"
+    ], transcriptSrc: "Transcripts/Africa/B1/Somaliland.txt"},
+    { title: "South Sudan", src: "Audio/Africa/B1/South Sudan.mp4", vocab: [
+      { word: "referendum", definition: "a public vote on one important question or decision" },
+      { word: "unanimous", definition: "when everyone agrees on the same thing" },
+      { word: "pipeline", definition: "a long pipe used to transport oil or gas over long distances" },
+      { word: "humanitarian aid", definition: "food, money, and supplies given to people in need" },
+      { word: "sanctions", definition: "punishments placed on a country to pressure it to change" },
+      { word: "fertile", definition: "land where crops and plants grow very well" }
+    ], questions: [
+      "South Sudan is incredibly rich in oil but remains one of the poorest countries in the world. What does this tell us about the relationship between natural resources and quality of life?",
+      "South Sudan is the world's youngest country. What challenges do you think a brand new nation faces that older countries do not?"
+    ], transcriptSrc: "Transcripts/Africa/B1/South Sudan.txt"},
+    { title: "Uganda", src: "Audio/Africa/B1/Uganda.mp4", vocab: [
+      { word: "endangered", definition: "at risk of dying out completely" },
+      { word: "equator", definition: "an imaginary line around the middle of the Earth" },
+      { word: "hospitable", definition: "friendly and welcoming to guests and strangers" },
+      { word: "species", definition: "a group of animals or plants of the same type" },
+      { word: "trekking", definition: "going on a long, difficult walk through nature" },
+      { word: "hemisphere", definition: "one half of the Earth, either north or south of the equator" }
+    ], questions: [
+      "Uganda is home to more than half of the world's mountain gorillas. Why is it important to protect endangered animals, and what role can tourism play in helping or harming them?",
+      "Uganda has over 40 languages and is on the equator with a very young population. How do you think geographical and demographic features shape a country's culture and future?"
+    ], transcriptSrc: "Transcripts/Africa/B1/Uganda.txt"}
+  ],
+  B2: [
+    { title: "Angola", src: "Audio/Africa/B2/Angola.mp4", vocab: [
+      { word: "hub", definition: "a central place of activity or the most important part of a network" },
+      { word: "authoritarian regime", definition: "a government that holds power through strict control, not democracy" },
+      { word: "flawed democracy", definition: "a system with elections but significant problems with fairness or freedom" },
+      { word: "GDP", definition: "the total value of goods and services a country produces in a year" },
+      { word: "expats", definition: "people who live outside their home country, often for work" },
+      { word: "landmines", definition: "hidden explosive devices buried in the ground, left over from wars" }
+    ], questions: [
+      "Angola's government has been criticised for human rights abuses, yet Western nations maintain close ties because of oil. To what extent should economic interests influence a country's foreign policy decisions?",
+      "Angola is described as a country of extremes with luxury and deep poverty existing side by side. What structural factors make it so difficult to translate natural resource wealth into widespread prosperity?"
+    ], transcriptSrc: "Transcripts/Africa/B2/Angola.txt"},
+    { title: "Botswana", src: "Audio/Africa/B2/Botswana.mp4", vocab: [
+      { word: "inland delta", definition: "a river system that spreads into a desert or land rather than the sea" },
+      { word: "UNESCO World Heritage Site", definition: "a place recognised internationally for outstanding natural or cultural value" },
+      { word: "conservation policy", definition: "official rules and plans to protect the natural environment" },
+      { word: "transition of power", definition: "the process of one government or leader peacefully replacing another" },
+      { word: "sparsely populated", definition: "having very few inhabitants relative to the size of the land area" },
+      { word: "savanna", definition: "a large flat area of land with grass and few trees, typical in Africa" }
+    ], questions: [
+      "Botswana has chosen a high-value, low-volume approach to tourism in order to protect its ecosystems. What are the trade-offs of this policy compared to encouraging mass tourism?",
+      "Botswana is often cited as a model of African development, having transformed from one of the world's poorest nations to a middle-income country. What combination of factors do you think made this transformation possible?"
+    ], transcriptSrc: "Transcripts/Africa/B2/Botswana.txt"},
+    { title: "Democratic Republic of Congo", src: "Audio/Africa/B2/Democratic Republic of Congo.mp4", vocab: [
+      { word: "hybrid regime", definition: "a political system that combines both democratic and authoritarian features" },
+      { word: "lingua franca", definition: "a language used for communication between people with different native languages" },
+      { word: "resource curse", definition: "the paradox where countries rich in natural resources often have worse development outcomes" },
+      { word: "geopolitics", definition: "the influence of geography and resources on international politics and power" },
+      { word: "cobalt", definition: "a mineral essential for producing batteries used in electric vehicles and electronics" },
+      { word: "humanitarian aid", definition: "assistance given to people in crisis, including food, medicine, and shelter" }
+    ], questions: [
+      "The DRC has been described as being at the centre of global geopolitics because of its mineral reserves. How does the world's demand for green technology create new forms of exploitation in resource-rich nations?",
+      "The DRC's situation is often called the resource curse. Do you think a country's natural wealth is more likely to be a blessing or a curse, and what determines which it becomes?"
+    ], transcriptSrc: "Transcripts/Africa/B2/Democratic Republic of Congo.txt"},
+    { title: "Rwanda", src: "Audio/Africa/B2/Rwanda.mp4", vocab: [
+      { word: "reconciliation", definition: "the process of restoring peaceful relations after conflict or division" },
+      { word: "authoritarian state", definition: "a government that maintains strict control over society with limited political freedom" },
+      { word: "fiber-optic infrastructure", definition: "a high-speed communications network using cables that carry light signals" },
+      { word: "peacekeeping missions", definition: "international operations to maintain peace in conflict zones" },
+      { word: "political opposition", definition: "parties and individuals who formally challenge the government in power" },
+      { word: "resilience", definition: "the capacity to recover quickly from severe difficulties or trauma" }
+    ], questions: [
+      "Rwanda under Kagame is described as an authoritarian state that delivers high efficiency. Is strong, centralised leadership ever justifiable as a means of rapid national development?",
+      "Rwanda has transformed its image from a site of genocide to a modern, ambitious nation in just three decades. What does this transformation reveal about the relationship between political will, national identity, and development?"
+    ], transcriptSrc: "Transcripts/Africa/B2/Rwanda.txt"},
+    { title: "Somaliland", src: "Audio/Africa/B2/Somaliland.mp4", vocab: [
+      { word: "de facto", definition: "existing in practice even if not officially recognised by law" },
+      { word: "diaspora", definition: "a group of people who have spread from their original homeland to other countries" },
+      { word: "strategic location", definition: "a position that gives important geographical or political advantages" },
+      { word: "conservative society", definition: "a community that holds traditional values and is resistant to rapid change" },
+      { word: "transfer of power", definition: "the process by which political leadership passes from one person or group to another" },
+      { word: "state religion", definition: "a religion that is officially endorsed and supported by the government" }
+    ], questions: [
+      "Somaliland functions as a stable democracy and has had peaceful transfers of power, yet it remains unrecognised by the international community. What does this suggest about how international recognition is granted and what it is really based on?",
+      "Somaliland's economy is heavily dependent on livestock exports and remittances from its diaspora. What are the vulnerabilities of such an economic model, and how might Somaliland diversify its economy despite its lack of formal recognition?"
+    ], transcriptSrc: "Transcripts/Africa/B2/Somaliland.txt"},
+    { title: "South Sudan", src: "Audio/Africa/B2/South Sudan.mp4", vocab: [
+      { word: "fragile state", definition: "a country with weak institutions unable to provide basic security or services" },
+      { word: "sub-Saharan Africa", definition: "the part of Africa located south of the Sahara Desert" },
+      { word: "unanimously", definition: "with complete agreement from everyone involved" },
+      { word: "corruption", definition: "the abuse of power or public trust for private gain" },
+      { word: "infrastructure", definition: "the fundamental physical systems of a country, such as roads and energy networks" },
+      { word: "humanitarian aid", definition: "emergency assistance provided to populations suffering from crisis or conflict" }
+    ], questions: [
+      "South Sudan gained independence with nearly unanimous public support but has since struggled with civil war and extreme poverty. What does this suggest about the gap between achieving independence and achieving a functional state?",
+      "South Sudan has oil but relies on Sudan's pipelines and ports to sell it. How does economic interdependence between hostile neighbours complicate the path to stability?"
+    ], transcriptSrc: "Transcripts/Africa/B2/South Sudan.txt"},
+    { title: "Uganda", src: "Audio/Africa/B2/Uganda.mp4", vocab: [
+      { word: "authoritarian regime", definition: "a government that exercises power through control and suppression of opposition" },
+      { word: "counter-terrorism", definition: "actions and strategies taken to prevent or respond to terrorist activity" },
+      { word: "petty crime", definition: "minor criminal offences such as pickpocketing or shoplifting" },
+      { word: "demographic", definition: "relating to the characteristics of a population, such as age or size" },
+      { word: "middle class", definition: "the social group between the wealthy and the poor, often with stable incomes" },
+      { word: "biodiversity", definition: "the variety of plant and animal life in a particular habitat or region" }
+    ], questions: [
+      "Uganda has been led by the same president since 1986, yet it is formally classified as a republic. At what point does a long-serving leader cross the line from legitimate governance into authoritarianism?",
+      "Uganda has more than half of the world's mountain gorillas and over 1,000 bird species, yet it remains a low-income country. How can a nation leverage its natural and ecological wealth to drive sustainable economic development?"
+    ], transcriptSrc: "Transcripts/Africa/B2/Uganda.txt"}
+  ]
+};
+
+window.renderAfricaLevel = function(level, targetId) {
+  var list = document.getElementById(targetId || "africa-list");
+  if (!list) return;
+  list.innerHTML = "";
+  var episodes = africaEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "africa-transcript-" + level + "-" + idx;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    var contextKey = "ctx_africa_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
+    list.appendChild(card);
+  });
+};
+
+window.selectAfricaLevel = function(level) {
+  document.querySelectorAll("#africa-tabs .level-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.textContent === level);
+  });
+  renderAfricaLevel(level);
+};
+
+const chinaEpisodes = {
+  B1: [
+    { title: "Beijing and Shanghai", src: "Audio/China/B1/Beijing and Shanghai.mp4", vocab: [
+      { word: "imperial", definition: "relating to an emperor or empire" },
+      { word: "authentic", definition: "real and traditional, not a copy" },
+      { word: "financial center", definition: "a city where banks and big businesses are based" },
+      { word: "skyline", definition: "the shape made by buildings against the sky" },
+      { word: "high-speed train", definition: "a very fast train that connects cities" },
+      { word: "boutique", definition: "a small, fashionable shop" }
+    ], questions: [
+      "If you could visit either Beijing or Shanghai, which would you choose and why?",
+      "What do you think is the best way to experience a city's culture when traveling — visiting historic sites or exploring modern neighbourhoods?"
+    ], transcriptSrc: "Transcripts/China/B1/Beijing and Shanghai.txt"},
+    { title: "China and Hong Kong", src: "Audio/China/B1/China and Hong Kong.mp4", vocab: [
+      { word: "colony", definition: "a place ruled by another, usually distant, country" },
+      { word: "handover", definition: "the act of giving control of something to someone else" },
+      { word: "currency", definition: "the type of money used in a country" },
+      { word: "dialect", definition: "a form of a language spoken in a particular region" },
+      { word: "identity", definition: "the qualities that make a person or group unique" },
+      { word: "Special Administrative Region", definition: "an area with its own rules within a larger country" }
+    ], questions: [
+      "Do you think a place can have two systems of government working at the same time? What are the challenges?",
+      "How does history shape the identity of a city or country? Can you think of other examples?"
+    ], transcriptSrc: "Transcripts/China/B1/China and Hong Kong.txt"},
+    { title: "China and Japan", src: "Audio/China/B1/China and Japan.mp4", vocab: [
+      { word: "tension", definition: "a feeling of stress or conflict between people or groups" },
+      { word: "invasion", definition: "when an army enters another country by force" },
+      { word: "massacre", definition: "the killing of a large number of people" },
+      { word: "civilians", definition: "ordinary people who are not soldiers" },
+      { word: "apology", definition: "a statement saying you are sorry for something wrong" },
+      { word: "shrine", definition: "a holy place where people go to honor someone" }
+    ], questions: [
+      "How important do you think it is for countries to formally apologize for historical crimes?",
+      "Why is it sometimes difficult for countries to move on from painful historical events, even many years later?"
+    ], transcriptSrc: "Transcripts/China/B1/China and Japan.txt"},
+    { title: "China and Taiwan", src: "Audio/China/B1/China and Taiwan.mp4", vocab: [
+      { word: "civil war", definition: "a war between groups of people in the same country" },
+      { word: "Nationalists", definition: "a political group that fought for national independence or power" },
+      { word: "Communists", definition: "a political group that believes the government should control the economy" },
+      { word: "province", definition: "a region that is part of a larger country" },
+      { word: "democracy", definition: "a system where people vote to choose their leaders" },
+      { word: "reunification", definition: "the act of joining two separate parts together again" }
+    ], questions: [
+      "Why do you think the question of Taiwan's status is so important for global politics today?",
+      "How does a shared history affect the relationship between two places that have taken very different paths?"
+    ], transcriptSrc: "Transcripts/China/B1/China and Taiwan.txt"},
+    { title: "China and Tibet", src: "Audio/China/B1/China and Tibet.mp4", vocab: [
+      { word: "buffer zone", definition: "an area that separates two opposing sides" },
+      { word: "uprising", definition: "when people rebel against a government or authority" },
+      { word: "exile", definition: "when someone is forced to live outside their home country" },
+      { word: "surveillance", definition: "close watch kept over a person or place" },
+      { word: "prosperous", definition: "successful and wealthy" },
+      { word: "preserve", definition: "to keep something safe from damage or change" }
+    ], questions: [
+      "Do you think economic development is more important than protecting a culture's traditions? Why or why not?",
+      "What does it mean to lose your cultural identity, and why might people fight to preserve it?"
+    ], transcriptSrc: "Transcripts/China/B1/China and Tibet.txt"},
+    { title: "Confucius and His Philosophy", src: "Audio/China/B1/Confucius and His Philosophy.mp4", vocab: [
+      { word: "philosophy", definition: "a system of ideas about how to live and think" },
+      { word: "ethics", definition: "the study of what is right and wrong behavior" },
+      { word: "filial piety", definition: "respect and care shown to parents and elders" },
+      { word: "hierarchy", definition: "a system where people are ranked from most to least important" },
+      { word: "self-improvement", definition: "the act of making yourself better through effort" },
+      { word: "harmony", definition: "a state of peaceful agreement and balance" }
+    ], questions: [
+      "How much do you think Confucius's ideas about respect for elders still influence modern society today?",
+      "Do you agree that respecting your family and respecting your country's leaders are connected? Why or why not?"
+    ], transcriptSrc: "Transcripts/China/B1/Confucius and his Philosophy.txt"},
+    { title: "Education in China", src: "Audio/China/B1/Education in China.mp4", vocab: [
+      { word: "intense", definition: "very serious and requiring a lot of effort" },
+      { word: "exam", definition: "a formal test to measure knowledge" },
+      { word: "social mobility", definition: "the ability to move to a higher or lower position in society" },
+      { word: "curriculum", definition: "the subjects taught in a school or course" },
+      { word: "tutoring", definition: "extra private lessons given by a teacher" },
+      { word: "pressure", definition: "a feeling of stress caused by high expectations" }
+    ], questions: [
+      "Do you think a single exam should determine a student's future? What are the advantages and disadvantages?",
+      "Is a very competitive education system good for a country? What might be the negative effects on students?"
+    ], transcriptSrc: "Transcripts/China/B1/Education in China.txt"},
+    { title: "Great Wall of China", src: "Audio/China/B1/Great Wall of China.mp4", vocab: [
+      { word: "landmark", definition: "a famous and important place or building" },
+      { word: "nomadic", definition: "describing people who move from place to place" },
+      { word: "dynasty", definition: "a series of rulers from the same family" },
+      { word: "preserved", definition: "kept in good condition over a long time" },
+      { word: "watchtower", definition: "a tall structure used to watch for enemies" },
+      { word: "myth", definition: "a story or idea that is believed but is not true" }
+    ], questions: [
+      "Why do you think massive building projects like the Great Wall are so important to a country's national identity?",
+      "If you visited the Great Wall, would you prefer a popular, well-restored section or a quieter, less visited part? Why?"
+    ], transcriptSrc: "Transcripts/China/B1/Great Wall of China.txt"},
+    { title: "Is China a Democracy or a Dictatorship", src: "Audio/China/B1/Is China a Democracy or a Dictatorship.mp4", vocab: [
+      { word: "authoritarian", definition: "a system where one leader or group has strict control" },
+      { word: "censorship", definition: "the control of what information people can see or share" },
+      { word: "opposition", definition: "a group that disagrees with or challenges those in power" },
+      { word: "capitalism", definition: "an economic system based on private business and profit" },
+      { word: "communism", definition: "a system where the government owns all property and resources" },
+      { word: "hybrid", definition: "something that is a mix of two different things" }
+    ], questions: [
+      "Is it possible for a country to have a successful economy without political freedom? What do you think?",
+      "Why might some people in China support their government's system, even without free elections?"
+    ], transcriptSrc: "Transcripts/China/B1/Is China a Democracy or a Dictatorship.txt"},
+    { title: "Is China Trying to Control the World", src: "Audio/China/B1/Is China Trying to Control the World.mp4", vocab: [
+      { word: "superpower", definition: "a very powerful and influential country" },
+      { word: "influence", definition: "the power to affect other people's decisions" },
+      { word: "infrastructure", definition: "basic systems a country needs, like roads and ports" },
+      { word: "soft power", definition: "using culture or economics to influence others, not force" },
+      { word: "trade route", definition: "a path used regularly to move goods between places" },
+      { word: "multipolar", definition: "a world with several powerful countries, not just one" }
+    ], questions: [
+      "Do you think it is fair for one country to use loans and investments to gain influence over others?",
+      "How does a country's history affect its ambitions and actions in the modern world?"
+    ], transcriptSrc: "Transcripts/China/B1/Is China Trying to Control the World.txt"},
+    { title: "One Child Policy", src: "Audio/China/B1/One Child Policy.mp4", vocab: [
+      { word: "policy", definition: "an official rule or plan made by a government" },
+      { word: "fine", definition: "money paid as a punishment for breaking a rule" },
+      { word: "aging population", definition: "when a country has many old people and few young ones" },
+      { word: "gender gap", definition: "a big difference in the number of males and females" },
+      { word: "maternity leave", definition: "time off work given to a mother after having a baby" },
+      { word: "spoiled", definition: "when a child is given too much and behaves badly" }
+    ], questions: [
+      "Do you think a government ever has the right to control how many children people can have? Why or why not?",
+      "What are the long-term effects on a society when the population gets older and fewer children are born?"
+    ], transcriptSrc: "Transcripts/China/B1/One Child Policy.txt"},
+    { title: "Religion in China", src: "Audio/China/B1/Religion in China.mp4", vocab: [
+      { word: "philosophy", definition: "a system of ideas about how to live and think" },
+      { word: "harmony", definition: "a state of peaceful balance and agreement" },
+      { word: "ancestor worship", definition: "the practice of honoring family members who have died" },
+      { word: "pluralistic", definition: "accepting and following several different beliefs at once" },
+      { word: "folk religion", definition: "traditional local religious practices not part of an official religion" },
+      { word: "incense", definition: "a substance that is burned to make a sweet smell, often in temples" }
+    ], questions: [
+      "Do you think it is possible to follow more than one religion or set of beliefs at the same time? Why or why not?",
+      "How important are traditional religious festivals and customs to modern families in your country?"
+    ], transcriptSrc: "Transcripts/China/B1/Religion in China.txt"},
+    { title: "Ten Facts About China", src: "Audio/China/B1/Ten Facts About China.mp4", vocab: [
+      { word: "civilisation", definition: "an advanced human society with culture and organization" },
+      { word: "dialect", definition: "a version of a language spoken in a specific region" },
+      { word: "invention", definition: "something new that someone has created or discovered" },
+      { word: "network", definition: "a connected system of routes or lines" },
+      { word: "mobile payment", definition: "paying for something using a smartphone" },
+      { word: "Lunar New Year", definition: "the most important Chinese festival, based on the moon calendar" }
+    ], questions: [
+      "Which of the ten facts about China surprised you the most, and why?",
+      "China is described as a mix of ancient history and modern technology — can you think of other countries that are similar?"
+    ], transcriptSrc: "Transcripts/China/B1/Ten Facts About China.txt"}
+  ],
+  B2: [
+    { title: "China and Hong Kong", src: "Audio/China/B2/China and Hong Kong.mp4", vocab: [
+      { word: "Special Administrative Region", definition: "a territory with a high degree of autonomy within a sovereign state" },
+      { word: "handover", definition: "the formal transfer of sovereignty or control to another authority" },
+      { word: "financial hub", definition: "a major centre of banking, trade, and investment activity" },
+      { word: "integration", definition: "the process of combining parts into a unified whole" },
+      { word: "common law", definition: "a legal system based on court decisions and precedent, not just written codes" },
+      { word: "leverage", definition: "power or advantage gained through a particular resource or relationship" }
+    ], questions: [
+      "To what extent do you think the One Country, Two Systems framework can continue to function effectively in Hong Kong?",
+      "What does Hong Kong's history as a British colony reveal about the lasting impact of colonialism on a place's identity?"
+    ], transcriptSrc: "Transcripts/China/B2/China and Hong Kong.txt"},
+    { title: "China and Japan", src: "Audio/China/B2/China and Japan.mp4", vocab: [
+      { word: "atrocities", definition: "extremely cruel and shocking acts, especially in war" },
+      { word: "deep-seated", definition: "firmly established and difficult to change" },
+      { word: "resentment", definition: "a feeling of bitterness caused by unfair treatment" },
+      { word: "insincere", definition: "not genuinely meaning what is said or expressed" },
+      { word: "nationalism", definition: "strong pride in one's country, sometimes used to unite people politically" },
+      { word: "grievance", definition: "a feeling of having been treated unfairly" }
+    ], questions: [
+      "How can two countries that have a deeply troubled history build a productive modern relationship?",
+      "To what extent do governments use historical grievances to serve present-day political purposes?"
+    ], transcriptSrc: "Transcripts/China/B2/China and Japan.txt"},
+    { title: "China and Taiwan", src: "Audio/China/B2/China and Taiwan.mp4", vocab: [
+      { word: "sovereignty", definition: "the full right of a state to govern itself without outside control" },
+      { word: "status quo", definition: "the current situation, kept as it is without major change" },
+      { word: "civil war", definition: "an armed conflict between groups within the same country" },
+      { word: "reunification", definition: "the restoration of a previously divided territory into one political unit" },
+      { word: "vibrant democracy", definition: "a lively, well-functioning democratic political system" },
+      { word: "unofficial ties", definition: "a relationship that exists without formal diplomatic recognition" }
+    ], questions: [
+      "Why is Taiwan's semiconductor industry considered so strategically important in global politics today?",
+      "Do you think the current status quo between China and Taiwan is sustainable in the long term? Why or why not?"
+    ], transcriptSrc: "Transcripts/China/B2/China and Taiwan.txt"},
+    { title: "China and Tibet", src: "Audio/China/B2/China and Tibet.mp4", vocab: [
+      { word: "autonomous region", definition: "a territory with some self-governing powers within a larger state" },
+      { word: "reincarnation", definition: "the belief that after death, a soul is reborn in a new body" },
+      { word: "secular", definition: "not connected to religious or spiritual matters" },
+      { word: "diluting", definition: "weakening or reducing the strength of something over time" },
+      { word: "resilient", definition: "able to recover from difficulties and adapt to change" },
+      { word: "infrastructure", definition: "the basic physical systems of a country, such as roads and railways" }
+    ], questions: [
+      "Can rapid economic modernization and the preservation of a unique cultural identity coexist? What tensions arise?",
+      "How should the international community respond when a government's development policies threaten a minority culture?"
+    ], transcriptSrc: "Transcripts/China/B2/China and Tibet.txt"},
+    { title: "Confucius and His Philosophy", src: "Audio/China/B2/Confucius and his Philosophy.mp4", vocab: [
+      { word: "ethical system", definition: "a framework of principles that guides moral behaviour" },
+      { word: "filial piety", definition: "the virtue of respect, obedience, and care towards one's parents and elders" },
+      { word: "hierarchical", definition: "organized according to rank, with higher and lower levels of authority" },
+      { word: "meritocracy", definition: "a system where people advance based on ability and achievement" },
+      { word: "superior person", definition: "in Confucian thought, a person of high moral character and virtue" },
+      { word: "social harmony", definition: "a state of peaceful, well-ordered relations within a society" }
+    ], questions: [
+      "To what extent do Confucian values still shape social and political life in East Asian societies today?",
+      "Is a strictly hierarchical view of relationships beneficial or limiting for individuals in modern society?"
+    ], transcriptSrc: "Transcripts/China/B2/Confucius and his Philosophy.txt"},
+    { title: "Dictatorship or Democracy", src: "Audio/China/B2/Dictatorship or Democracy.mp4", vocab: [
+      { word: "authoritarian state", definition: "a political system where power is concentrated and individual freedoms are restricted" },
+      { word: "self-censorship", definition: "the practice of restraining one's own speech out of fear of consequences" },
+      { word: "dissent", definition: "the expression of opposition to official or widely held views" },
+      { word: "Socialist Market Economy", definition: "China's economic model combining state control with free-market elements" },
+      { word: "surveillance", definition: "the systematic monitoring of people's activities, often by technology" },
+      { word: "term limits", definition: "legal restrictions on how long a person can hold a political office" }
+    ], questions: [
+      "Is it possible for a country to achieve long-term prosperity without political freedom and democratic accountability?",
+      "How does widespread self-censorship affect a society's ability to innovate, debate, and solve problems?"
+    ], transcriptSrc: "Transcripts/China/B2/Dictatorship or Democracy.txt"},
+    { title: "Education in China", src: "Audio/China/B2/Education in China.mp4", vocab: [
+      { word: "meritocracy", definition: "a system in which people succeed based on talent and hard work, not background" },
+      { word: "rote learning", definition: "learning by repetition and memorization rather than deep understanding" },
+      { word: "high-stakes", definition: "involving very serious consequences depending on the outcome" },
+      { word: "well-rounded", definition: "developed in a broad and balanced way, not limited to one area" },
+      { word: "civil service", definition: "the professional body of government employees selected through examination" },
+      { word: "Double Reduction policy", definition: "China's policy to cut homework loads and ban for-profit tutoring companies" }
+    ], questions: [
+      "Does a highly competitive exam-based education system produce better citizens and workers, or does it create deeper social problems?",
+      "How should a government balance the cultural value placed on academic achievement with the mental health of its students?"
+    ], transcriptSrc: "Transcripts/China/B2/Education in China.txt"},
+    { title: "Great Wall of China", src: "Audio/China/B2/Great Wall of China.mp4", vocab: [
+      { word: "fortification", definition: "a wall or structure built for military defence" },
+      { word: "nomadic", definition: "relating to groups that move from place to place without a permanent home" },
+      { word: "rammed earth", definition: "a building technique using compressed layers of soil and clay" },
+      { word: "preserved", definition: "maintained in its original or good condition over time" },
+      { word: "architectural masterpiece", definition: "a building or structure of outstanding creative and technical skill" },
+      { word: "restoration", definition: "the process of repairing something to its original condition" }
+    ], questions: [
+      "What does a massive construction project like the Great Wall reveal about the priorities and values of the society that built it?",
+      "How should governments balance the need to preserve historical monuments with the cost of maintaining them for future generations?"
+    ], transcriptSrc: "Transcripts/China/B2/The Great Wall of China.txt"},
+    { title: "Interesting Facts about China", src: "Audio/China/B2/Interesrting Facts about China.mp4", vocab: [
+      { word: "continuous civilisation", definition: "a society that has developed without major interruption over thousands of years" },
+      { word: "tonal language", definition: "a language where the pitch of a word changes its meaning" },
+      { word: "innovation", definition: "the introduction of new ideas, methods, or inventions" },
+      { word: "migration", definition: "the movement of large numbers of people from one place to another" },
+      { word: "ambassador", definition: "a person or thing that represents and promotes a place or idea" },
+      { word: "debunk", definition: "to show that a widely held belief or claim is false" }
+    ], questions: [
+      "What do China's Four Great Inventions reveal about the relationship between ancient innovation and modern life?",
+      "Why do you think the Chinese New Year triggers the largest annual human migration on Earth? What does this reveal about cultural values?"
+    ], transcriptSrc: "Transcripts/China/B2/Interesting Facts about China.txt"},
+    { title: "Is China Trying to Control the World", src: "Audio/China/B2/Is ChinaTrying to Control the World.mp4", vocab: [
+      { word: "Century of Humiliation", definition: "China's term for the period of foreign domination in the 19th and 20th centuries" },
+      { word: "economic statecraft", definition: "using economic tools such as trade and investment to achieve political goals" },
+      { word: "Belt and Road Initiative", definition: "China's massive global infrastructure investment and development strategy" },
+      { word: "leverage", definition: "power gained through a position of advantage, used to influence others" },
+      { word: "multipolar world", definition: "an international system with several competing centres of power" },
+      { word: "supply chain", definition: "the network of producers and suppliers involved in creating a product" }
+    ], questions: [
+      "To what extent do you think China's Belt and Road Initiative is a genuine development programme versus a tool for geopolitical influence?",
+      "Is the shift towards a multipolar world a positive development for global stability, or does it create new dangers?"
+    ], transcriptSrc: "Transcripts/China/B2/Is China Trying to Control the World.txt"},
+    { title: "One Child Policy", src: "Audio/China/B2/One Child Policy.mp4", vocab: [
+      { word: "population explosion", definition: "a sudden and rapid increase in the number of people in a place" },
+      { word: "gender imbalance", definition: "a significant difference in the ratio of males to females in a population" },
+      { word: "aging population", definition: "a demographic shift where the proportion of elderly people increases" },
+      { word: "4-2-1 problem", definition: "the burden on one child to support two parents and four grandparents" },
+      { word: "incentive", definition: "something that encourages or motivates a particular course of action" },
+      { word: "social fabric", definition: "the network of relationships and values that holds a community together" }
+    ], questions: [
+      "To what extent can a government's demographic policies have unintended long-term consequences that are difficult to reverse?",
+      "The birth rate in China is still falling even after restrictions were lifted. What does this suggest about the relationship between government policy and individual choice?"
+    ], transcriptSrc: "Transcripts/China/B2/One Child Policy.txt"},
+    { title: "Religion in China", src: "Audio/China/B2/Religion in China.mp4", vocab: [
+      { word: "atheism", definition: "the belief that no god or gods exist" },
+      { word: "suppressed", definition: "forcibly prevented from being expressed or practised" },
+      { word: "secular", definition: "not religious; concerned with worldly rather than spiritual matters" },
+      { word: "resurgence", definition: "a new increase in activity or popularity after a period of decline" },
+      { word: "folk religion", definition: "a set of unofficial spiritual beliefs and practices rooted in local tradition" },
+      { word: "Cultural Revolution", definition: "a period in China (1966-76) of radical political upheaval that suppressed traditional culture" }
+    ], questions: [
+      "Why might people in an officially secular or atheist state continue to practise spiritual traditions in their private lives?",
+      "How does a government's attempt to control religion reflect its broader relationship with civil society and individual freedoms?"
+    ], transcriptSrc: "Transcripts/China/B2/Religion in China.txt"}
+  ]
+};
+
+window.renderChinaLevel = function(level, targetId) {
+  var list = document.getElementById(targetId || "china-list");
+  if (!list) return;
+  list.innerHTML = "";
+  var episodes = chinaEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "china-transcript-" + level + "-" + idx;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    var contextKey = "ctx_china_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
+    list.appendChild(card);
+  });
+};
+
+window.selectChinaLevel = function(level) {
+  document.querySelectorAll("#china-tabs .level-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.textContent === level);
+  });
+  renderChinaLevel(level);
+};
+
+const indiaEpisodes = {
+  B2: [
+    { title: "10 Important Facts About India", src: "Audio/India/B2/10 Important Facts About India.mp4", vocab: [
+      { word: "populous", definition: "having a very large number of people living in a place" },
+      { word: "democracy", definition: "a system of government in which people choose their leaders by voting" },
+      { word: "dialect", definition: "a regional variety of a language with distinct vocabulary or pronunciation" },
+      { word: "phenomenon", definition: "a remarkable or significant event, development, or fact" },
+      { word: "biodiversity", definition: "the variety of plant and animal life found in a particular environment" },
+      { word: "ritual", definition: "a set of actions performed regularly as part of a social or cultural tradition" }
+    ], questions: [
+      "India is both the world's most populous country and its largest democracy — do you think these two facts make governing India easier or harder, and why?",
+      "Several of the facts about India involve things that originated there, such as zero, yoga, and major religions — which of these contributions do you think has had the greatest impact on the modern world?"
+    ], transcriptSrc: "Transcripts/India/B2/10 Important Facts About India.txt"},
+    { title: "Bollywood", src: "Audio/India/B2/Bollywood.mp4", vocab: [
+      { word: "diaspora", definition: "people who have left their home country and now live scattered across the world" },
+      { word: "spectacle", definition: "an impressive and visually striking event or display" },
+      { word: "intermission", definition: "a short break in the middle of a performance or film" },
+      { word: "iconic", definition: "widely recognized and regarded as a symbol of something" },
+      { word: "playback singer", definition: "a professional singer who records songs in a studio for actors to lip-sync to on screen" },
+      { word: "phenomenon", definition: "something remarkable that has a widespread cultural or social impact" }
+    ], questions: [
+      "Bollywood films are described as Masala movies that blend action, drama, comedy, and romance into one — do you prefer this style or films that focus on a single genre, and what are the advantages of each?",
+      "Bollywood has a major influence on fashion, language, and wedding traditions across India — can you think of a film industry or TV show from any country that has had a similar cultural influence on daily life?"
+    ], transcriptSrc: "Transcripts/India/B2/Bollywood.txt"},
+    { title: "Comparing Delhi and Mumbai", src: "Audio/India/B2/Comparing Delhi and Mumbai.mp4", vocab: [
+      { word: "cosmopolitan", definition: "familiar with and at ease in many different cultures; representing people from many parts of the world" },
+      { word: "colonial", definition: "relating to a period when one country ruled and controlled another" },
+      { word: "melting pot", definition: "a place where people of many different cultures, backgrounds, and nationalities mix together" },
+      { word: "infrastructure", definition: "the basic physical systems of a city or region, such as roads, transport, and buildings" },
+      { word: "monsoon", definition: "a seasonal period of very heavy rainfall, common in South and Southeast Asia" },
+      { word: "symmetrical", definition: "made up of exactly similar parts facing each other; having balance and proportion" }
+    ], questions: [
+      "Delhi is praised for its ancient history and street food, while Mumbai is celebrated for its coastal energy and modern vibe — which city sounds more appealing to you as a visitor, and what does that say about your travel preferences?",
+      "The hosts describe Mumbai as representing new India and Delhi as representing traditional India — do you think a country's capital city should reflect its history, its modern identity, or both?"
+    ], transcriptSrc: "Transcripts/India/B2/Comparing Delhi and Mumbai.txt"},
+    { title: "Four Religions in India", src: "Audio/India/B2/Four Religions in India.mp4", vocab: [
+      { word: "principle", definition: "a fundamental belief or rule that guides a person's behaviour or a system of thought" },
+      { word: "compassion", definition: "a deep feeling of sympathy for others, combined with a desire to help them" },
+      { word: "non-violence", definition: "the practice of not using physical force or harm, even when opposing something unjust" },
+      { word: "revolutionary", definition: "representing or causing a major and dramatic change, especially in thinking or society" },
+      { word: "reincarnation", definition: "the belief that after death, the soul is reborn into a new body" },
+      { word: "enlightenment", definition: "a state of deep spiritual understanding and freedom from ignorance or suffering" }
+    ], questions: [
+      "All four religions — Hinduism, Buddhism, Jainism, and Sikhism — share the idea that our actions have consequences and that we should strive to be better people; do you think this is a universal human value, or is it specific to these traditions?",
+      "Sikhism's principle of serving others through community kitchens, and Jainism's commitment to non-violence towards all living things are both very practical expressions of faith — which of these two principles do you find most challenging to apply in modern daily life, and why?"
+    ], transcriptSrc: "Transcripts/India/B2/Four Religions in India.txt"},
+    { title: "Gandhi and the British Rule in India", src: "Audio/India/B2/Gandhi and the British Rule in India.mp4", vocab: [
+      { word: "civil disobedience", definition: "the deliberate and non-violent refusal to obey laws or government demands as a form of protest" },
+      { word: "monopoly", definition: "exclusive control over the supply of a product or service, leaving others no choice but to comply" },
+      { word: "boycott", definition: "to refuse to buy, use, or participate in something as a form of protest or pressure" },
+      { word: "discrimination", definition: "the unjust treatment of different groups of people, especially based on race, gender, or social class" },
+      { word: "persistent", definition: "continuing firmly in a course of action despite difficulty or opposition" },
+      { word: "legacy", definition: "something handed down by a person from the past that continues to have an influence" }
+    ], questions: [
+      "Gandhi proved that a large empire could be challenged without the use of weapons, using civil disobedience and boycotts instead — do you think non-violent protest is still an effective strategy for achieving political change in today's world?",
+      "The Salt March was a symbolic act that drew global attention to an unjust law — can you think of a modern example where a simple symbolic action succeeded in drawing attention to an important issue?"
+    ], transcriptSrc: "Transcripts/India/B2/Gandhi and the British Rule in India.txt"},
+    { title: "Hinduism and Buddhism", src: "Audio/India/B2/Hinduism and Buddhism.mp4", vocab: [
+      { word: "karma", definition: "the belief that a person's actions in this life directly affect what happens to them in the future or in future lives" },
+      { word: "dharma", definition: "in Hinduism, one's duty or moral responsibility to act correctly according to one's role in life" },
+      { word: "moksha", definition: "in Hinduism, the ultimate liberation of the soul from the cycle of rebirth" },
+      { word: "nirvana", definition: "in Buddhism, a state of perfect peace and freedom, where all suffering and desire have ended" },
+      { word: "meditation", definition: "a mental practice of focused attention and stillness, used to calm the mind and develop awareness" },
+      { word: "attachment", definition: "a strong emotional connection to people or things that, in Buddhist thought, is seen as a source of suffering" }
+    ], questions: [
+      "Both Hinduism and Buddhism teach that the physical world is temporary and that inner peace is more important than material success — how does this contrast with the values promoted in modern consumer society?",
+      "The Buddha's teaching that suffering is caused by desire and attachment is central to Buddhism — do you agree with this idea, and can you give an example from everyday life where attachment to something led to unhappiness?"
+    ], transcriptSrc: "Transcripts/India/B2/Hinduism and Buddhism.txt"},
+    { title: "Kashmir", src: "Audio/India/B2/Kashmir.mp4", vocab: [
+      { word: "autonomy", definition: "the right or ability of a place or group to govern itself independently" },
+      { word: "partition", definition: "the division of a country or territory into separate political units, often causing conflict" },
+      { word: "sovereignty", definition: "supreme authority and independence over a territory or nation" },
+      { word: "militarized", definition: "having a strong military presence, with soldiers and security forces controlling an area" },
+      { word: "diplomacy", definition: "the practice of managing relations between countries through negotiation rather than conflict" },
+      { word: "resilience", definition: "the ability to recover from difficult situations and adapt in the face of hardship" }
+    ], questions: [
+      "Kashmir is described as a place of extreme contrasts — breathtaking natural beauty alongside one of the world's most militarized and contested political situations — how do you think ordinary people living there are affected by this ongoing conflict?",
+      "A large number of Kashmiris want neither India nor Pakistan, but full independence — do you think the desire for self-determination should always be respected, or are there situations where the interests of larger nations take priority?"
+    ], transcriptSrc: "Transcripts/India/B2/Kashmir.txt"},
+    { title: "Ladakh", src: "Audio/India/B2/Ladakh.mp4", vocab: [
+      { word: "remote", definition: "situated far from populated areas and difficult to reach" },
+      { word: "barren", definition: "an environment with little or no vegetation, often harsh and inhospitable" },
+      { word: "heritage", definition: "the traditions, buildings, and values that are passed down through generations from the past" },
+      { word: "frugal", definition: "using resources carefully and avoiding waste, especially when resources are limited" },
+      { word: "altitude", definition: "the height of a place above sea level, which affects temperature and oxygen levels" },
+      { word: "tight-knit", definition: "describing a community with very close, supportive relationships between its members" }
+    ], questions: [
+      "Ladakh is described as culturally Tibetan despite being politically part of India — do you think a region's cultural identity should influence how it is governed, or should political borders always take precedence?",
+      "Ladakh is experiencing growing tourism while its people try to protect their traditional way of life and fragile environment — what do you think are the biggest risks of rapid tourism development for remote communities like this one?"
+    ], transcriptSrc: "Transcripts/India/B2/Ladakh.txt"},
+    { title: "Main Gods in Hinduism", src: "Audio/India/B2/Main Gods in Hinduism.mp4", vocab: [
+      { word: "deity", definition: "a god or goddess worshipped as having divine power and control over aspects of the world" },
+      { word: "incarnation", definition: "a living being that embodies a god or spirit in physical form" },
+      { word: "sacred", definition: "regarded with great religious respect and devotion" },
+      { word: "mythology", definition: "a collection of traditional stories about gods, heroes, and the origins of the world" },
+      { word: "ritual", definition: "a ceremonial act or series of actions performed as part of religious practice" },
+      { word: "symbolism", definition: "the use of objects, figures, or colours to represent deeper spiritual or abstract ideas" }
+    ], questions: [
+      "Hinduism has an enormous variety of gods and goddesses, yet many Hindus believe they all represent different aspects of one ultimate reality — do you find this approach to religion more or less appealing than a faith with a single deity, and why?",
+      "Many Hindu deities are associated with specific powers or aspects of life, such as wisdom, wealth, or destruction — do you think representing abstract concepts as gods or figures makes them easier for people to understand and connect with?"
+    ], transcriptSrc: "Transcripts/India/B2/Main Gods in Hinduism.txt"},
+    { title: "Poverty in India", src: "Audio/India/B2/Poverty in India.mp4", vocab: [
+      { word: "fatalism", definition: "the belief that events are predetermined and that people cannot change their destiny" },
+      { word: "reincarnation", definition: "the belief that after death, the soul is reborn into a new body, linking present circumstances to past actions" },
+      { word: "social mobility", definition: "the ability of individuals or families to move up or down in social and economic status" },
+      { word: "affirmative action", definition: "policies that give advantages to groups who have historically faced discrimination, to promote equality" },
+      { word: "resilience", definition: "the capacity to endure hardship and continue functioning without losing psychological stability" },
+      { word: "paradox", definition: "a situation that seems contradictory or impossible, but may nonetheless be true" }
+    ], questions: [
+      "The episode suggests that beliefs in karma and dharma can provide a kind of spiritual comfort for people living in poverty — do you think religious or philosophical beliefs can be genuinely helpful in difficult circumstances, or can they also discourage people from demanding change?",
+      "India is described as having a strong extended family network that acts as a social safety net — do you think this kind of community support is more effective than government welfare programmes, or should it be the other way around?"
+    ], transcriptSrc: "Transcripts/India/B2/Poverty in India.txt"},
+    { title: "Special Places in India", src: "Audio/India/B2/Special Places in India.mp4", vocab: [
+      { word: "sacred", definition: "regarded with great religious reverence; considered holy by a particular faith or culture" },
+      { word: "pilgrimage", definition: "a journey made to a place of special religious or spiritual significance" },
+      { word: "symmetrical", definition: "having a design where both sides are perfectly balanced and mirror each other" },
+      { word: "monument", definition: "a building or structure created to honour a person or event and preserve their memory" },
+      { word: "foothills", definition: "the low hills at the base of a larger mountain range" },
+      { word: "serene", definition: "calm, peaceful, and untroubled, especially in a way that inspires a sense of quiet beauty" }
+    ], questions: [
+      "Varanasi is described as a place where death is treated as a public and natural part of life, rather than something hidden — how does this compare to the way death is treated in your own culture, and which approach do you find more meaningful?",
+      "The Taj Mahal was built purely as an expression of love and grief — do you think grand architectural monuments are still a meaningful way to honour someone, or have modern forms of remembrance taken their place?"
+    ], transcriptSrc: "Transcripts/India/B2/Special Places in India.txt"},
+    { title: "Technology and Innovation", src: "Audio/India/B2/Technology and Innovation.mp4", vocab: [
+      { word: "innovation", definition: "the introduction of new ideas, methods, or technologies that bring about significant improvement" },
+      { word: "frugal innovation", definition: "the process of creating effective, low-cost solutions by working within tight resource constraints" },
+      { word: "leapfrog", definition: "to bypass earlier stages of development and move directly to a more advanced technology or system" },
+      { word: "per capita", definition: "calculated by dividing a total figure by the number of people in a population" },
+      { word: "digital divide", definition: "the gap between those who have access to modern technology and the internet and those who do not" },
+      { word: "paradox", definition: "a seemingly contradictory situation that nevertheless contains an element of truth" }
+    ], questions: [
+      "India's digital payments system (UPI) is described as more advanced and widely used than those in many Western countries — what does this suggest about how developing nations can sometimes overtake wealthier ones in specific areas of technology?",
+      "India is simultaneously a space exploration power and a country with hundreds of millions of people in poverty — do you think governments in developing nations should prioritise investment in cutting-edge technology, or focus all resources on basic needs first?"
+    ], transcriptSrc: "Transcripts/India/B2/Technology and Innovation.txt"},
+    { title: "The Caste System", src: "Audio/India/B2/The Caste System.mp4", vocab: [
+      { word: "hierarchy", definition: "a system in which people or groups are ranked one above another according to status or authority" },
+      { word: "discrimination", definition: "the unjust or prejudicial treatment of different categories of people, especially on grounds of birth or social group" },
+      { word: "affirmative action", definition: "policies that favour members of disadvantaged groups in order to correct historical inequalities" },
+      { word: "marginalized", definition: "treated as unimportant or pushed to the edges of society, with little power or voice" },
+      { word: "urbanization", definition: "the process by which more people come to live in cities, often leading to social and cultural changes" },
+      { word: "stigma", definition: "a mark of disgrace or strong social disapproval associated with a particular identity or circumstance" }
+    ], questions: [
+      "India's reservation system sets aside university places and government jobs for lower-caste groups — do you think this kind of affirmative action is the most effective way to address centuries of inequality, or could it create new problems?",
+      "The episode notes that caste is much less visible in big cities than in rural areas, but still strongly influences who people marry — why do you think social attitudes about marriage are often the last thing to change, even when other forms of discrimination have decreased?"
+    ], transcriptSrc: "Transcripts/India/B2/The Caste System.txt"},
+    { title: "Weddings in India", src: "Audio/India/B2/Weddings in India.mp4", vocab: [
+      { word: "ritual", definition: "a series of ceremonial actions performed according to a set order, often with deep cultural or religious meaning" },
+      { word: "intricate", definition: "very detailed and complicated, requiring great skill and care to produce" },
+      { word: "choreographed", definition: "carefully planned and rehearsed, especially a sequence of dance or movement" },
+      { word: "spectacle", definition: "a visually impressive and elaborate display or event that attracts attention" },
+      { word: "prosperity", definition: "the state of being successful and financially comfortable; good fortune" },
+      { word: "vow", definition: "a solemn promise, especially one made during a formal ceremony such as a wedding" }
+    ], questions: [
+      "Indian weddings are described as multi-day events involving hundreds of guests and elaborate rituals — do you think large, traditional weddings strengthen family and community bonds, or do they place too much social and financial pressure on the families involved?",
+      "Many of the wedding rituals described — such as the Saptapadi vows and the Haldi ceremony — have been performed for centuries — do you think it is important to preserve these ancient traditions exactly as they are, or is it acceptable for them to evolve over time?"
+    ], transcriptSrc: "Transcripts/India/B2/Weddings in India.txt"},
+    { title: "Yoga and Meditation", src: "Audio/India/B2/Yoga and Meditation.mp4", vocab: [
+      { word: "holistic", definition: "treating or considering something as a whole, including physical, mental, and spiritual aspects together" },
+      { word: "consciousness", definition: "the state of being aware of and able to think about one's own existence, thoughts, and feelings" },
+      { word: "Sanskrit", definition: "an ancient language of India, considered sacred in Hinduism and used in many religious texts" },
+      { word: "philosophy", definition: "the study of fundamental questions about existence, knowledge, ethics, and the nature of reality" },
+      { word: "millennia", definition: "thousands of years; plural of millennium, referring to a period of one thousand years" },
+      { word: "liberation", definition: "freedom from a state of restriction, suffering, or constraint, especially in a spiritual context" }
+    ], questions: [
+      "Yoga has spread worldwide as a fitness trend, but its original purpose in India was spiritual and philosophical — do you think something is lost when a deeply cultural practice is adopted globally and stripped of its original meaning?",
+      "The episode suggests that ancient Indian thinkers were essentially the world's first psychologists, developing tools to manage the mind long before modern science — do you think traditional practices like meditation deserve the same level of trust as modern medicine for treating conditions like stress and anxiety?"
+    ], transcriptSrc: "Transcripts/India/B2/Yoga and Meditation.txt"}
+  ]
+};
+
+window.renderIndiaLevel = function(level, targetId) {
+  var list = document.getElementById(targetId || "india-list");
+  if (!list) return;
+  list.innerHTML = "";
+  var episodes = indiaEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "india-transcript-" + level + "-" + idx;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    var contextKey = "ctx_india_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
+    list.appendChild(card);
+  });
+};
+
+window.selectIndiaLevel = function(level) {
+  document.querySelectorAll("#india-tabs .level-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.textContent === level);
+  });
+  renderIndiaLevel(level);
+};
+
+const worldCupEpisodes = {
+  A2: [
+    { title: "Curacao", src: "Audio/World Cup/A2/Curacao.mp4", vocab: [
+      { word: "island", definition: "a piece of land with water all around it" },
+      { word: "tropical", definition: "hot and wet, near the equator" },
+      { word: "trade", definition: "buying and selling things with other places" },
+      { word: "tourism", definition: "when people visit a place for holidays" },
+      { word: "roots", definition: "where your family originally comes from" },
+      { word: "synagogue", definition: "a building where Jewish people pray" }
+    ], questions: [
+      "Would you like to visit Curacao? What would you most want to see or do there?",
+      "Curacao is a very small place but has a very strong football team. Why do you think small countries can sometimes do well in international sports?"
+    ], transcriptSrc: "Transcripts/World Cup/A2/Curacao.txt"},
+    { title: "Maradona", src: "Audio/World Cup/A2/Maradona.mp4", vocab: [
+      { word: "neighborhood", definition: "an area in a town where people live" },
+      { word: "talent", definition: "a natural ability to do something well" },
+      { word: "captain", definition: "the leader of a sports team" },
+      { word: "retire", definition: "to stop working or playing professionally" },
+      { word: "mourning", definition: "feeling very sad because someone has died" },
+      { word: "symbol", definition: "something that represents an idea or feeling" }
+    ], questions: [
+      "Maradona came from a very poor family but became world-famous. What do you think helped him succeed?",
+      "The Hand of God goal was scored using Maradona's hand. Do you think this was wrong? Why or why not?"
+    ], transcriptSrc: "Transcripts/World Cup/A2/Maradona.txt"},
+    { title: "Messi", src: "Audio/World Cup/A2/Messi.mp4", vocab: [
+      { word: "legend", definition: "a very famous and respected person" },
+      { word: "condition", definition: "a rule that must be agreed to" },
+      { word: "contract", definition: "an official written agreement" },
+      { word: "napkin", definition: "a small piece of paper or cloth for cleaning your mouth" },
+      { word: "humble", definition: "not thinking you are better than other people" },
+      { word: "overcome", definition: "to successfully deal with a problem" }
+    ], questions: [
+      "When Messi was thirteen, he had to leave his family and move to Spain. How do you think he felt? Could you do the same thing?",
+      "Messi scores goals and often points to the sky for his grandmother. Why do you think family support is important for success?"
+    ], transcriptSrc: "Transcripts/World Cup/A2/Messi.txt"},
+    { title: "Pele", src: "Audio/World Cup/A2/Pele.mp4", vocab: [
+      { word: "poor", definition: "not having much money" },
+      { word: "career", definition: "a person's working life or profession" },
+      { word: "tournament", definition: "a competition with many teams or players" },
+      { word: "score", definition: "to get a goal or a point in a game" },
+      { word: "ambassador", definition: "a person who represents and promotes something" },
+      { word: "bicycle kick", definition: "a kick where you jump and kick the ball over your head" }
+    ], questions: [
+      "Pele practiced football with a sock filled with newspapers because he was poor. Do you think difficult early experiences can make someone stronger?",
+      "Pele won the World Cup three times. Do you think he is the greatest football player of all time? Who else might be?"
+    ], transcriptSrc: "Transcripts/World Cup/A2/Pele.txt"}
+  ],
+  B1: [
+    { title: "Corruption in the World Cup", src: "Audio/World Cup/B1/Corruption in the World Cup.mp4", vocab: [
+      { word: "corruption", definition: "dishonest behavior by people in positions of power" },
+      { word: "prestige", definition: "the respect and admiration that comes with success or status" },
+      { word: "sportswashing", definition: "using a sporting event to improve a country's image and hide problems" },
+      { word: "bribe", definition: "money paid illegally to make someone do something for you" },
+      { word: "migrant worker", definition: "a person who moves to another country to find work" },
+      { word: "transparency", definition: "being open and honest about how decisions are made" }
+    ], questions: [
+      "Do you think large sporting events like the World Cup can ever be completely free of corruption? What changes would help?",
+      "The podcast mentions sportswashing. Can you think of other examples where sports or events have been used to improve a country's image?"
+    ], transcriptSrc: "Transcripts/World Cup/B1/Corruption in the World Cup.txt"},
+    { title: "History of the World Cup", src: "Audio/World Cup/B1/History of the World Cup.mp4", vocab: [
+      { word: "humble", definition: "small or simple in a way that shows there was little fame or money at the start" },
+      { word: "participate", definition: "to take part in an activity or event" },
+      { word: "milestone", definition: "an important event or achievement in a process" },
+      { word: "broadcast", definition: "to send out a programme on television or radio" },
+      { word: "evolve", definition: "to develop and change slowly over time" },
+      { word: "VAR", definition: "technology that helps referees check decisions by watching video replays" }
+    ], questions: [
+      "The World Cup is expanding to 48 teams in 2026. Do you think this is a good idea, or does it make the competition less special?",
+      "Technology like VAR has changed how football is played. Do you think technology makes sport better or does it take away some of the excitement?"
+    ], transcriptSrc: "Transcripts/World Cup/B1/History of World Cup.txt"},
+    { title: "Jamaica", src: "Audio/World Cup/B1/Jamaica.mp4", vocab: [
+      { word: "iconic", definition: "very famous and recognized by many people" },
+      { word: "creole language", definition: "a language that developed from a mix of two or more languages" },
+      { word: "powerhouse", definition: "a person, team, or country that is very strong and successful" },
+      { word: "colonized", definition: "when a powerful country takes control of another country" },
+      { word: "independence", definition: "the freedom to govern yourself without foreign control" },
+      { word: "hospitable", definition: "friendly and welcoming to guests" }
+    ], questions: [
+      "Jamaica is famous for both reggae music and fast runners. How do you think a country's culture can influence its sports success?",
+      "Jamaica's national motto is Out of Many, One People. What do you think this means, and does your country have a similar idea?"
+    ], transcriptSrc: "Transcripts/World Cup/B1/Jamaica.txt"},
+    { title: "Senegal", src: "Audio/World Cup/B1/Senegal.mp4", vocab: [
+      { word: "qualify", definition: "to earn the right to compete in a tournament" },
+      { word: "passion", definition: "a very strong feeling of love or enthusiasm for something" },
+      { word: "westernmost", definition: "furthest to the west" },
+      { word: "stable", definition: "not likely to change suddenly; steady and secure" },
+      { word: "hospitality", definition: "being friendly and generous to guests" },
+      { word: "algae", definition: "a simple plant-like organism that grows in or near water" }
+    ], questions: [
+      "Senegal beat France in the 2002 World Cup, which was a huge shock. Can you think of other moments in sport when an underdog beat a much stronger team?",
+      "The word Teranga means hospitality in Senegal. What words or ideas best describe the culture of your country?"
+    ], transcriptSrc: "Transcripts/World Cup/B1/Senegal.txt"}
+  ],
+  B2: [
+    { title: "Corruption in the World Cup", src: "Audio/World Cup/B2/Corruption in the World Cup.mp4", vocab: [
+      { word: "allegations", definition: "claims that someone has done something wrong, not yet proven in court" },
+      { word: "infrastructure", definition: "the basic systems a country needs, such as roads, stadiums, and utilities" },
+      { word: "modern slavery", definition: "a situation where people are forced to work in terrible conditions with no freedom" },
+      { word: "sportswashing", definition: "using high-profile sporting events to distract attention from human rights abuses and boost a government's reputation" },
+      { word: "skeptical", definition: "having doubts and not easily convinced that something is true" },
+      { word: "accountability", definition: "the obligation to explain and take responsibility for one's actions" }
+    ], questions: [
+      "The podcast describes the Qatar World Cup as an example of sportswashing. To what extent do you think sports and politics can or should be kept separate?",
+      "The migrant workers who built the Qatar stadiums suffered greatly, yet the tournament was widely enjoyed by fans. Does enjoying an event make you responsible for how it was created? Why or why not?"
+    ], transcriptSrc: "Transcripts/World Cup/B2/Corruption in the World Cup.txt"},
+    { title: "Curacao", src: "Audio/World Cup/B2/Curacao.mp4", vocab: [
+      { word: "dual nationality", definition: "the status of being a legal citizen of two different countries at the same time" },
+      { word: "tactical", definition: "relating to carefully planned methods used to achieve a goal" },
+      { word: "punch above its weight", definition: "to achieve more than would normally be expected given one's size or resources" },
+      { word: "linguist", definition: "a person who studies languages or speaks several languages very well" },
+      { word: "UNESCO World Heritage site", definition: "a place recognized by the United Nations as having outstanding cultural or natural importance" },
+      { word: "persecution", definition: "cruel and unfair treatment of a person or group, often because of their religion or beliefs" }
+    ], questions: [
+      "Curacao benefits from players with dual nationality choosing to represent the island. Do you think players should be free to choose which country they represent, or should there be stricter rules?",
+      "Willemstad is a UNESCO World Heritage site partly because of its unique cultural history. What places in your country do you think deserve this kind of international recognition, and why?"
+    ], transcriptSrc: "Transcripts/World Cup/B2/Curacao.txt"},
+    { title: "Jamaica", src: "Audio/World Cup/B2/Jamaica.mp4", vocab: [
+      { word: "electric", definition: "used to describe an atmosphere that is very exciting and full of energy" },
+      { word: "cultural footprint", definition: "the degree to which a place's culture has influenced the rest of the world" },
+      { word: "professionalizing", definition: "the process of improving standards to match those of professional organisations" },
+      { word: "indigenous", definition: "originating or occurring naturally in a particular place; native" },
+      { word: "melting pot", definition: "a place where many different cultures, ideas, and people mix together" },
+      { word: "laid-back", definition: "relaxed and not easily worried or stressed" }
+    ], questions: [
+      "Jamaica has had a huge cultural influence on the world through music, sport, and language, despite being a small island. What factors allow a small nation to have such an outsized global impact?",
+      "The podcast says Jamaica is a melting pot with a motto of Out of Many, One People. How does a history of colonialism and migration shape a country's national identity, both positively and negatively?"
+    ], transcriptSrc: "Transcripts/World Cup/B2/Jamaica.txt"},
+    { title: "Maradona", src: "Audio/World Cup/B2/Maradona.mp4", vocab: [
+      { word: "prodigy", definition: "a young person with exceptional talent or ability in a particular field" },
+      { word: "shanty town", definition: "a poor, makeshift settlement on the edge of a city, often with no running water or electricity" },
+      { word: "center of gravity", definition: "the point in an object around which its weight is balanced, affecting stability and movement" },
+      { word: "controversial", definition: "causing strong disagreement or public debate" },
+      { word: "drug addiction", definition: "a dependence on a substance that is very difficult to control or stop" },
+      { word: "flawed hero", definition: "a person admired for their achievements but who also has significant personal weaknesses or failures" }
+    ], questions: [
+      "Maradona is described as a flawed hero. Do you think we can separate an athlete's personal failings from their professional achievements? Should we?",
+      "Maradona's physical characteristics — his short height and low center of gravity — became advantages on the pitch. Can you think of other examples where an apparent disadvantage became a strength?"
+    ], transcriptSrc: "Transcripts/World Cup/B2/Maradona.txt"},
+    { title: "Pele", src: "Audio/World Cup/B2/Pele.mp4", vocab: [
+      { word: "irregular", definition: "not having a consistent or even shape, size, or pattern" },
+      { word: "debut", definition: "a person's first public appearance or performance in a role" },
+      { word: "two-footed", definition: "able to use both feet equally well when playing football" },
+      { word: "playmaker", definition: "a player who controls the flow of the game and creates goal-scoring opportunities for teammates" },
+      { word: "legacy", definition: "the long-lasting impact or achievements left behind by a person after they are gone" },
+      { word: "mind-blowing", definition: "so extraordinary or impressive that it is hard to fully comprehend" }
+    ], questions: [
+      "Pele learned to control a ball using a stuffed sock and a grapefruit. The podcast suggests this actually made him better. Do you think adversity and limited resources can sometimes produce greater skill than having everything available?",
+      "Pele is described as transforming football into The Beautiful Game and later became a global ambassador. What responsibilities do you think elite athletes have beyond their sport?"
+    ], transcriptSrc: "Transcripts/World Cup/B2/Pele.txt"},
+    { title: "World Cup History", src: "Audio/World Cup/B2/World Cup History.mp4", vocab: [
+      { word: "spectacle", definition: "an impressive and dramatic public event or display" },
+      { word: "centenary", definition: "the one-hundredth anniversary of an important event" },
+      { word: "double-edged sword", definition: "something that has both advantages and disadvantages" },
+      { word: "underdogs", definition: "competitors who are not expected to win" },
+      { word: "national identity", definition: "the shared sense of belonging and cultural characteristics that define a country's people" },
+      { word: "carbon-fiber", definition: "a very strong, lightweight material used in high-performance equipment" }
+    ], questions: [
+      "The podcast describes the World Cup as the one time where the whole world speaks the same language. Do you agree that sport has the power to unite people across cultural and political divides?",
+      "VAR technology makes refereeing more accurate but can interrupt the flow and emotion of the game. Where do you think the line should be drawn between using technology and preserving the human element in sport?"
+    ], transcriptSrc: "Transcripts/World Cup/B2/World Cup History.txt"}
+  ]
+};
+
+window.renderWorldCupLevel = function(level, targetId) {
+  var list = document.getElementById(targetId || "worldcup-list");
+  if (!list) return;
+  list.innerHTML = "";
+  var episodes = worldCupEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "worldcup-transcript-" + level + "-" + idx;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    var contextKey = "ctx_worldcup_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
+    list.appendChild(card);
+  });
+};
+
+window.selectWorldCupLevel = function(level) {
+  document.querySelectorAll("#worldcup-tabs .level-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.textContent === level);
+  });
+  renderWorldCupLevel(level);
+};
+
+// Render default levels when section first loads
+var _seriesConfig = [
+  { key: "adm",        name: "America's Defining Moments", levels: ["B1","B2"],          render: function(l,t){ renderADMLevel(l,t); } },
+  { key: "inventions", name: "Inventions and Inventors",   levels: ["A1","A2","B1"],      render: function(l,t){ renderInventionsLevel(l,t); } },
+  { key: "uk",         name: "All About the UK",           levels: ["A1","A2","B1","B2"], render: function(l,t){ renderUKLevel(l,t); } },
+  { key: "africa",     name: "Africa",                     levels: ["B1","B2"],           render: function(l,t){ renderAfricaLevel(l,t); } },
+  { key: "china",      name: "China",                      levels: ["B1","B2"],           render: function(l,t){ renderChinaLevel(l,t); } },
+  { key: "india",      name: "India",                      levels: ["B2"],                render: function(l,t){ renderIndiaLevel(l,t); } },
+  { key: "worldcup",   name: "The World Cup",              levels: ["A2","B1","B2"],      render: function(l,t){ renderWorldCupLevel(l,t); } },
+];
+
+window.selectSeriesLevel = function(level) {
+  var epList = document.getElementById("series-ep-list");
+  var row = document.getElementById("series-btn-row");
+  if (!epList || !row) return;
+  document.querySelectorAll("#series-level-tabs .level-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.textContent === level);
+  });
+  epList.innerHTML = "";
+  row.innerHTML = "";
+  _seriesConfig.forEach(function(s) {
+    if (s.levels.indexOf(level) === -1) return;
+    var btn = document.createElement("button");
+    btn.className = "level-tab";
+    btn.type = "button";
+    btn.textContent = s.name;
+    btn.setAttribute("data-series-key", s.key);
+    btn.onclick = (function(sc, lv, b) {
+      return function() { selectSeriesItem(sc.key, lv, b); };
+    }(s, level, btn));
+    row.appendChild(btn);
+  });
+};
+
+window.selectSeriesItem = function(key, level, btn) {
+  document.querySelectorAll("#series-btn-row .level-tab").forEach(function(b) {
+    b.classList.remove("active");
+  });
+  if (btn) btn.classList.add("active");
+  var series = null;
+  _seriesConfig.forEach(function(s) { if (s.key === key) series = s; });
+  if (!series) return;
+  series.render(level, "series-ep-list");
+};
+
+selectSeriesLevel("A1");
 
 // audio functions defined at page level below DOMContentLoaded
 

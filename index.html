@@ -281,40 +281,18 @@
 
     <section id="listening-series" class="section">
       <h2>Listening Series</h2>
-      <p>Full podcast series to follow from episode to episode.</p>
+      <p>Full podcast series to follow from episode to episode. Choose your level, then pick a series.</p>
 
-      <div class="card" style="margin-top:20px">
-        <h3>America's Defining Moments</h3>
-        <p style="color:#94A3B8;margin-bottom:16px">A podcast series exploring the key events that shaped the United States.</p>
-        <div id="adm-tabs" class="level-tabs" style="margin-bottom:16px">
-          <button class="level-tab active" type="button" onclick="selectADMLevel('B1')">B1</button>
-          <button class="level-tab" type="button" onclick="selectADMLevel('B2')">B2</button>
-        </div>
-        <div id="adm-list"></div>
+      <div id="series-level-tabs" class="level-tabs" style="margin-bottom:24px">
+        <button class="level-tab active" type="button" onclick="selectSeriesLevel('A1')">A1</button>
+        <button class="level-tab" type="button" onclick="selectSeriesLevel('A2')">A2</button>
+        <button class="level-tab" type="button" onclick="selectSeriesLevel('B1')">B1</button>
+        <button class="level-tab" type="button" onclick="selectSeriesLevel('B2')">B2</button>
       </div>
 
-      <div class="card" style="margin-top:20px">
-        <h3>Inventions and Inventors</h3>
-        <p style="color:#94A3B8;margin-bottom:16px">A podcast series exploring the greatest inventions in history and the people behind them.</p>
-        <div id="inventions-tabs" class="level-tabs" style="margin-bottom:16px">
-          <button class="level-tab active" type="button" onclick="selectInventionsLevel('A1')">A1</button>
-          <button class="level-tab" type="button" onclick="selectInventionsLevel('A2')">A2</button>
-          <button class="level-tab" type="button" onclick="selectInventionsLevel('B1')">B1</button>
-        </div>
-        <div id="inventions-list"></div>
-      </div>
+      <div id="series-btn-row" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px"></div>
 
-      <div class="card" style="margin-top:20px">
-        <h3>All About the UK</h3>
-        <p style="color:#94A3B8;margin-bottom:16px">A podcast series exploring the history, culture and people of the United Kingdom.</p>
-        <div id="uk-tabs" class="level-tabs" style="margin-bottom:16px">
-          <button class="level-tab active" type="button" onclick="selectUKLevel('A1')">A1</button>
-          <button class="level-tab" type="button" onclick="selectUKLevel('A2')">A2</button>
-          <button class="level-tab" type="button" onclick="selectUKLevel('B1')">B1</button>
-          <button class="level-tab" type="button" onclick="selectUKLevel('B2')">B2</button>
-        </div>
-        <div id="uk-list"></div>
-      </div>
+      <div id="series-ep-list"></div>
     </section>
 
     <section id="songs" class="section">
