@@ -2552,13 +2552,13 @@ window.selectWorldCupLevel = function(level) {
 
 // Render default levels when section first loads
 var _seriesConfig = [
-  { key: "adm",        name: "America's Defining Moments", levels: ["B1","B2"],          render: function(l,t){ renderADMLevel(l,t); } },
-  { key: "inventions", name: "Inventions and Inventors",   levels: ["A1","A2","B1"],      render: function(l,t){ renderInventionsLevel(l,t); } },
-  { key: "uk",         name: "All About the UK",           levels: ["A1","A2","B1","B2"], render: function(l,t){ renderUKLevel(l,t); } },
-  { key: "africa",     name: "Africa",                     levels: ["B1","B2"],           render: function(l,t){ renderAfricaLevel(l,t); } },
-  { key: "china",      name: "China",                      levels: ["B1","B2"],           render: function(l,t){ renderChinaLevel(l,t); } },
-  { key: "india",      name: "India",                      levels: ["B2"],                render: function(l,t){ renderIndiaLevel(l,t); } },
-  { key: "worldcup",   name: "The World Cup",              levels: ["A2","B1","B2"],      render: function(l,t){ renderWorldCupLevel(l,t); } },
+  { key: "adm",        name: "America's Defining Moments", levels: ["B1","B2"],          episodes: admEpisodes,       render: function(l,t){ renderADMLevel(l,t); } },
+  { key: "inventions", name: "Inventions and Inventors",   levels: ["A1","A2","B1"],      episodes: inventionEpisodes, render: function(l,t){ renderInventionsLevel(l,t); } },
+  { key: "uk",         name: "All About the UK",           levels: ["A1","A2","B1","B2"], episodes: ukEpisodes,        render: function(l,t){ renderUKLevel(l,t); } },
+  { key: "africa",     name: "Africa",                     levels: ["B1","B2"],           episodes: africaEpisodes,    render: function(l,t){ renderAfricaLevel(l,t); } },
+  { key: "china",      name: "China",                      levels: ["B1","B2"],           episodes: chinaEpisodes,     render: function(l,t){ renderChinaLevel(l,t); } },
+  { key: "india",      name: "India",                      levels: ["B2"],                episodes: indiaEpisodes,     render: function(l,t){ renderIndiaLevel(l,t); } },
+  { key: "worldcup",   name: "The World Cup",              levels: ["A2","B1","B2"],      episodes: worldCupEpisodes,  render: function(l,t){ renderWorldCupLevel(l,t); } },
 ];
 
 window.selectSeriesLevel = function(level) {
@@ -2576,6 +2576,8 @@ window.selectSeriesLevel = function(level) {
     btn.className = "level-tab";
     btn.type = "button";
     btn.textContent = s.name;
+    var count = (s.episodes[level] || []).length;
+    btn.textContent = s.name + " (" + count + " episode" + (count !== 1 ? "s" : "") + ")";
     btn.setAttribute("data-series-key", s.key);
     btn.onclick = (function(sc, lv, b) {
       return function() { selectSeriesItem(sc.key, lv, b); };
