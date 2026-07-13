@@ -2551,6 +2551,52 @@ window.selectWorldCupLevel = function(level) {
 };
 
 // Render default levels when section first loads
+function _getListened() {
+  try { return JSON.parse(localStorage.getItem("pse_progress") || "[]"); } catch(e) { return []; }
+}
+
+function _markListened(src) {
+  var listened = _getListened();
+  if (listened.indexOf(src) === -1) {
+    listened.push(src);
+    try { localStorage.setItem("pse_progress", JSON.stringify(listened)); } catch(e) {}
+  }
+}
+
+function _addListenedBadge(card) {
+  if (card.querySelector(".pse-listened")) return;
+  var badge = document.createElement("span");
+  badge.className = "pse-listened";
+  badge.textContent = " ✓";
+  badge.title = "You have listened to this episode";
+  badge.style.cssText = "color:#22c55e;font-weight:bold;font-size:16px;margin-left:4px";
+  var h3 = card.querySelector("h3");
+  if (h3) h3.appendChild(badge);
+  card.style.borderLeft = "3px solid #22c55e";
+}
+
+function _applyProgress(containerId) {
+  var listened = _getListened();
+  var container = document.getElementById(containerId);
+  if (!container) return;
+  container.querySelectorAll(".card").forEach(function(card) {
+    var srcEl = card.querySelector("audio source");
+    if (!srcEl) return;
+    var src = srcEl.getAttribute("src");
+    if (listened.indexOf(src) !== -1) _addListenedBadge(card);
+    var audio = card.querySelector("audio");
+    if (audio) {
+      audio.addEventListener("timeupdate", function onTime() {
+        if (audio.currentTime > 10) {
+          _markListened(src);
+          _addListenedBadge(card);
+          audio.removeEventListener("timeupdate", onTime);
+        }
+      });
+    }
+  });
+}
+
 var _seriesConfig = [
   { key: "adm",        name: "America's Defining Moments", levels: ["B1","B2"],          episodes: admEpisodes,       render: function(l,t){ renderADMLevel(l,t); } },
   { key: "inventions", name: "Inventions and Inventors",   levels: ["A1","A2","B1"],      episodes: inventionEpisodes, render: function(l,t){ renderInventionsLevel(l,t); } },
@@ -2612,6 +2658,7 @@ window.selectSeriesItem = function(key, level, btn) {
   inner.id = "series-ep-inner";
   epList.appendChild(inner);
   series.render(level, "series-ep-inner");
+  _applyProgress("series-ep-inner");
 };
 
 selectSeriesLevel("A1");
