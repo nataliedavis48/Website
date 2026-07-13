@@ -2592,7 +2592,24 @@ window.selectSeriesItem = function(key, level, btn) {
   var series = null;
   _seriesConfig.forEach(function(s) { if (s.key === key) series = s; });
   if (!series) return;
-  series.render(level, "series-ep-list");
+  var epList = document.getElementById("series-ep-list");
+  epList.innerHTML = "";
+  var backBtn = document.createElement("button");
+  backBtn.className = "level-tab";
+  backBtn.type = "button";
+  backBtn.style.cssText = "margin-bottom:20px;display:block";
+  backBtn.textContent = "← Back to series";
+  backBtn.onclick = function() {
+    epList.innerHTML = "";
+    document.querySelectorAll("#series-btn-row .level-tab").forEach(function(b) {
+      b.classList.remove("active");
+    });
+  };
+  epList.appendChild(backBtn);
+  var inner = document.createElement("div");
+  inner.id = "series-ep-inner";
+  epList.appendChild(inner);
+  series.render(level, "series-ep-inner");
 };
 
 selectSeriesLevel("A1");
