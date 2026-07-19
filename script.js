@@ -1259,7 +1259,7 @@ window.renderADMLevel = function renderADMLevel(level, targetId) {
     var contextKey = "ctx_adm_" + level + "_" + idx;
     window._chatContexts = window._chatContexts || {};
     window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
-    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
     card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
       + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
       + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
@@ -1367,7 +1367,7 @@ window.renderInventionsLevel = function(level, targetId) {
     var contextKey = "ctx_inv_" + level + "_" + idx;
     window._chatContexts = window._chatContexts || {};
     window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
-    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
     card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
       + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
       + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
@@ -1613,7 +1613,7 @@ window.renderUKLevel = function(level, targetId) {
     var contextKey = "ctx_uk_" + level + "_" + idx;
     window._chatContexts = window._chatContexts || {};
     window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
-    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
     card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
       + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
       + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
@@ -1809,7 +1809,7 @@ window.renderAfricaLevel = function(level, targetId) {
     var contextKey = "ctx_africa_" + level + "_" + idx;
     window._chatContexts = window._chatContexts || {};
     window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
-    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
     card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
       + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
       + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
@@ -2126,7 +2126,7 @@ window.renderChinaLevel = function(level, targetId) {
     var contextKey = "ctx_china_" + level + "_" + idx;
     window._chatContexts = window._chatContexts || {};
     window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
-    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
     card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
       + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
       + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
@@ -2331,7 +2331,7 @@ window.renderIndiaLevel = function(level, targetId) {
     var contextKey = "ctx_india_" + level + "_" + idx;
     window._chatContexts = window._chatContexts || {};
     window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
-    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
     card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
       + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
       + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
@@ -2529,7 +2529,7 @@ window.renderWorldCupLevel = function(level, targetId) {
     var contextKey = "ctx_worldcup_" + level + "_" + idx;
     window._chatContexts = window._chatContexts || {};
     window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
-    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
     card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
       + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
       + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
@@ -3085,7 +3085,7 @@ function showAudioFile(file) {
   var contextKey = "ctx_" + Date.now();
   window._chatContexts = window._chatContexts || {};
   window._chatContexts[contextKey] = { title: file.title, level: file.level, vocab: file.vocab, questions: file.questions || [] };
-  var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'>🎙️ Chat with Skipper</button>";
+  var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
   card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + file.title + "</h3>" + chatBtn + "</div>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
@@ -3149,7 +3149,7 @@ function openChatBot(contextKey) {
   panel.innerHTML = [
     "<div style='display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #2D3F55;background:#162030;border-radius:12px 12px 0 0'>",
       "<div>",
-        "<div style='font-weight:bold;font-size:14px;color:#fff'>🎙️ Skipper — AI English Tutor</div>",
+        "<div style='display:flex;align-items:center;gap:8px;font-weight:bold;font-size:14px;color:#fff'><img src='skipper icon.png' style='width:24px;height:24px;border-radius:6px'>Skipper — AI English Tutor</div>",
         "<div style='font-size:11px;color:#94A3B8;margin-top:2px'>" + (_chatFileContext.title || "Listening file") + "</div>",
       "</div>",
       "<button onclick='closeChatBot()' style='background:none;border:none;color:#94A3B8;font-size:20px;cursor:pointer;padding:4px 8px' title='Close'>✕</button>",
