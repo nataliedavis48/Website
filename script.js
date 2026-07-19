@@ -40,16 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const dailyDefinition = document.getElementById("daily-definition");
 
   const words = [
-    { word: "resilient", definition: "able to recover quickly from difficulties" },
-    { word: "predict", definition: "to say what you think will happen" },
-    { word: "improve", definition: "to become better" },
-    { word: "challenge", definition: "something difficult that tests you" }
+    { word: "resilient", definition: "able to recover quickly from difficulties", sentence: "After losing her job, she remained resilient and found an even better opportunity." },
+    { word: "predict", definition: "to say what you think will happen", sentence: "Scientists can now predict the weather with much greater accuracy than before." },
+    { word: "improve", definition: "to become better", sentence: "Regular practice will help you improve your English more quickly." },
+    { word: "challenge", definition: "something difficult that tests you", sentence: "Learning a new language is a real challenge, but it is also very rewarding." }
   ];
 
   if (dailyWord && dailyDefinition) {
     const today = new Date().getDate() % words.length;
-    dailyWord.textContent = words[today].word;
-    dailyDefinition.textContent = words[today].definition;
+    const todayWord = words[today];
+    dailyWord.textContent = todayWord.word;
+    dailyDefinition.textContent = todayWord.definition;
+    const sentenceEl = document.getElementById("daily-sentence");
+    if (sentenceEl) sentenceEl.textContent = '"' + todayWord.sentence + '"';
   }
   const articleList = document.getElementById("article-list");
 
@@ -3039,6 +3042,16 @@ function toggleLyrics(id, btn) {
 function speakWord(word) {
   if (!window.speechSynthesis) return;
   var utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-US";
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utterance);
+}
+
+function speakDailyWord() {
+  var word = document.getElementById("daily-word").textContent;
+  var sentence = document.getElementById("daily-sentence").textContent.replace(/^"|"$/g, "");
+  if (!window.speechSynthesis || !word) return;
+  var utterance = new SpeechSynthesisUtterance(word + ". " + sentence);
   utterance.lang = "en-US";
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
