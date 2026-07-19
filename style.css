@@ -83,22 +83,22 @@ body {
 .welcome-banner {
   background-color: #1E2D3D;
   border-bottom: 0.5px solid #2D3F55;
-  padding: 16px 40px;
+  padding: 24px 40px;
   text-align: center;
 }
 
 .welcome-banner p {
   color: #c8a96e;
   font-weight: bold;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 2;
   max-width: 800px;
   margin: 0 auto;
 }
 
 @media (max-width: 600px) {
   .welcome-banner p {
-    font-size: 13px;
+    font-size: 15px;
     padding: 0 16px;
     margin-top: 30px;
   }
