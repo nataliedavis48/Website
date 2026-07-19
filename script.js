@@ -11,10 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
         section.classList.remove("active");
       });
 
+      navButtons.forEach((b) => b.classList.remove("active"));
+
       const targetSection = document.getElementById(target);
       if (targetSection) {
         targetSection.classList.add("active");
       }
+
+      button.classList.add("active");
     });
   });
 
