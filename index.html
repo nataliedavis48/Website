@@ -153,7 +153,7 @@
   </div>
 
   <div class="welcome-banner">
-    <p>Welcome to Plain Sailing English — your go-to resource for busy professionals.<br>Level up your English with podcasts, articles, listening practice and vocabulary videos designed just for you.<br><a href="#" onclick="showSection('listening');return false;" style="color:#4A9EE8;text-decoration:none;font-weight:bold">🎙️ Chat with Skipper, our AI tutor, about the podcast you heard →</a></p>
+    <p>Welcome to Plain Sailing English — your go-to resource for busy professionals.<br>Level up your English with podcasts, articles, listening practice and vocabulary videos designed just for you.<br><a href="#" onclick="document.getElementById('skipper-modal').style.display='flex';return false;" style="color:#4A9EE8;text-decoration:none;font-weight:bold">🎙️ Chat with Skipper, our AI tutor, about the podcast you heard →</a></p>
   </div>
 
   <nav>
@@ -166,6 +166,33 @@
     <button class="nav-btn" type="button" data-section="grammar">Grammar Explained</button>
     <button class="nav-btn" type="button" data-section="podcast">Recommended Podcasts</button>
   </nav>
+
+  <!-- SKIPPER INFO MODAL -->
+  <div id="skipper-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;align-items:center;justify-content:center;padding:20px">
+    <div style="background:#1E2D3D;border:1px solid #4A9EE8;border-radius:12px;max-width:560px;width:100%;max-height:90vh;overflow-y:auto;padding:30px;position:relative">
+      <button onclick="document.getElementById('skipper-modal').style.display='none'" style="position:absolute;top:14px;right:16px;background:transparent;border:none;color:#94A3B8;font-size:1.4rem;cursor:pointer;line-height:1">×</button>
+      <h2 style="color:#4A9EE8;margin-top:0;margin-bottom:6px;text-align:center">🤖 Chat with Skipper</h2>
+      <p style="color:#94A3B8;text-align:center;margin-top:0;margin-bottom:24px">Skipper is your AI English tutor. Here's how to use it:</p>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:flex-start;gap:14px">
+          <span style="background:#4A9EE8;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">1</span>
+          <div><strong style="color:#e5e7eb">Listen to a podcast episode</strong><br><span style="color:#94A3B8;font-size:0.92rem">Pick any episode from the Listening Library or Listening Series.</span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px">
+          <span style="background:#4A9EE8;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">2</span>
+          <div><strong style="color:#e5e7eb">Open Skipper</strong><br><span style="color:#94A3B8;font-size:0.92rem">Go to <a href="https://claude.ai" target="_blank" rel="noopener" style="color:#4A9EE8">claude.ai</a> and start a new chat. You can use it free with a Claude account.</span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px">
+          <span style="background:#4A9EE8;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">3</span>
+          <div><strong style="color:#e5e7eb">Tell Skipper what you heard</strong><br><span style="color:#94A3B8;font-size:0.92rem">Say something like: <em style="color:#bfdbfe">"I just listened to a podcast about Africa. Can you ask me some questions about it to check my understanding?"</em></span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px">
+          <span style="background:#4A9EE8;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">4</span>
+          <div><strong style="color:#e5e7eb">Practise speaking and writing</strong><br><span style="color:#94A3B8;font-size:0.92rem">Ask Skipper to explain vocabulary, correct your sentences, or have a full conversation about the topic.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- LEVEL TEST MODAL -->
   <div id="level-test-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px">
