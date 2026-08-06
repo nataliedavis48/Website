@@ -139,7 +139,7 @@ if (articleList) {
 // --- LISTENING FILES --- add new audio files here ---
 const listeningFiles = [
   // A1
-  { title: "Inflation in Iran", level: "A1", category: "Current Affairs", src: "Audio/A1/Inflation in Iran.mp3", vocab: [
+  { title: "Inflation in Iran", level: "A1", category: "Current Affairs", month: "March 2026", src: "Audio/A1/Inflation in Iran.mp3", vocab: [
     { word: "money", definition: "coins and paper used to buy things" },
     { word: "price", definition: "how much something costs" },
     { word: "expensive", definition: "costs a lot of money" },
@@ -166,7 +166,7 @@ const listeningFiles = [
     "Is public transport good in your city? Why or why not?"
   ], transcriptSrc: "Transcripts/A1/Public-Transport.txt"},
   // A2
-  { title: "Fall of Assad", level: "A2", category: "Current Affairs", src: "Audio/A2/Fall of Assad.mpeg", vocab: [
+  { title: "Fall of Assad", level: "A2", category: "Current Affairs", month: "March 2026", src: "Audio/A2/Fall of Assad.mpeg", vocab: [
     { word: "leader", definition: "a person who is in charge of a country or group" },
     { word: "government", definition: "the group of people who control a country" },
     { word: "escape", definition: "to get away from a dangerous place" },
@@ -179,7 +179,7 @@ const listeningFiles = [
     "What do you think happens to a country when its leader leaves suddenly?",
     "Have you heard about Syria in the news? What do you know about it?"
   ]},
-  { title: "Iran Protests: Economic Discontent", level: "A2", category: "Current Affairs", src: "Audio/A2/Iran Protests_ Economic Discontent.mp3", vocab: [
+  { title: "Iran Protests: Economic Discontent", level: "A2", category: "Current Affairs", month: "March 2026", src: "Audio/A2/Iran Protests_ Economic Discontent.mp3", vocab: [
     { word: "protest", definition: "when people gather to show they are unhappy" },
     { word: "angry", definition: "feeling very unhappy about something" },
     { word: "price", definition: "how much something costs" },
@@ -244,7 +244,7 @@ const listeningFiles = [
     "How many hours of TV do you watch each day? What do you like to watch?",
     "Do you think watching TV is a good way to learn English? Why?"
   ], transcriptSrc: "Transcripts/A2/Pros-and-Cons-of-TV.txt"},
-  { title: "Is Europe Ready for War with Tehran?", level: "A2", category: "Current Affairs", src: "Audio/A2/Is Europe Ready for War with Tehran.mp4", vocab: [
+  { title: "Is Europe Ready for War with Tehran?", level: "A2", category: "Current Affairs", month: "March 2026", src: "Audio/A2/Is Europe Ready for War with Tehran.mp4", vocab: [
     { word: "war", definition: "a serious fight between countries using armies" },
     { word: "army", definition: "a large group of soldiers who fight for a country" },
     { word: "danger", definition: "a situation where someone might get hurt" },
@@ -257,7 +257,7 @@ const listeningFiles = [
     "Do you think war is ever the right answer? Why or why not?",
     "What can ordinary people do to help keep peace in the world?"
   ], transcriptSrc: "Transcripts/A2/Is-Europe-Ready-for-War-with-Tehran.txt"},
-  { title: "Peace Talks between Iran and USA", level: "A2", category: "Current Affairs", src: "Audio/A2/Peace Talks between Iran and USA.mp4", vocab: [
+  { title: "Peace Talks between Iran and USA", level: "A2", category: "Current Affairs", month: "April 2026", src: "Audio/A2/Peace Talks between Iran and USA.mp4", vocab: [
     { word: "talk", definition: "a conversation or discussion between people" },
     { word: "peace", definition: "a time when there is no war or fighting" },
     { word: "leader", definition: "a person who is in charge of a group or country" },
@@ -310,7 +310,7 @@ const listeningFiles = [
     "Why do you think crossing borders can be dangerous for some people?",
     "What challenges do you think investigators face when solving cross-border cases?"
   ], transcriptSrc: "Transcripts/B1/Cross-Border-Mysteries.txt"},
-  { title: "Fall of Assad", level: "B1", category: "Current Affairs", src: "Audio/B1/Fall of Assad.mpeg", vocab: [
+  { title: "Fall of Assad", level: "B1", category: "Current Affairs", month: "March 2026", src: "Audio/B1/Fall of Assad.mpeg", vocab: [
     { word: "regime", definition: "a government that controls a country strictly" },
     { word: "collapse", definition: "to suddenly fall down or fail completely" },
     { word: "rebel", definition: "a person who fights against the government" },
@@ -336,7 +336,7 @@ const listeningFiles = [
     "Why do you think some communities have hidden or forgotten their history?",
     "How important is it to preserve the history of minority communities? Why?"
   ], transcriptSrc: "Transcripts/B1/Hidden-Jewish-History-of-Somaliland.txt"},
-  { title: "Iran Protests and Potential Changes", level: "B1", category: "Current Affairs", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [
+  { title: "Iran Protests and Potential Changes", level: "B1", category: "Current Affairs", month: "March 2026", src: "Audio/B1/Iran Protests and Potential Changes.mp3", vocab: [
     { word: "protest", definition: "a public event where people show disagreement" },
     { word: "reform", definition: "a change made to improve a system" },
     { word: "demand", definition: "a strong request for something" },
@@ -349,7 +349,7 @@ const listeningFiles = [
     "What changes do you think the protesters in Iran were hoping for?",
     "Do you think protests can lead to real change in a country? Give an example."
   ], transcriptSrc: "Transcripts/B1/Iran-Protests-and-Potential-Changes.txt"},
-  { title: "Iran Protests: Economic Origins and Beyond", level: "B1", category: "Current Affairs", src: "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3", vocab: [
+  { title: "Iran Protests: Economic Origins and Beyond", level: "B1", category: "Current Affairs", month: "March 2026", src: "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3", vocab: [
     { word: "inflation", definition: "a rise in prices over time" },
     { word: "unemployment", definition: "the state of not having a job" },
     { word: "corruption", definition: "dishonest behaviour by people in power" },
@@ -414,7 +414,7 @@ const listeningFiles = [
     "Why do you think it is important for a country to be recognised by other nations?",
     "What do you think makes a region stable enough to become an independent country?"
   ], transcriptSrc: "Transcripts/B1/Somalilands-Quest-for-Recognition.txt"},
-  { title: "Understanding the Iran Protests", level: "B1", category: "Current Affairs", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [
+  { title: "Understanding the Iran Protests", level: "B1", category: "Current Affairs", month: "March 2026", src: "Audio/B1/Understanding the Iran Protests.mp3", vocab: [
     { word: "cause", definition: "the reason why something happens" },
     { word: "freedom", definition: "the right to do or say what you want" },
     { word: "youth", definition: "young people" },
@@ -444,7 +444,7 @@ const listeningFiles = [
     "Do you think a person who confesses their crime deserves more mercy? Why or why not?",
     "Is there a difference between justice and mercy? Can a person deserve both?"
   ], transcriptSrc: "Transcripts/B1/Moral.txt"},
-  { title: "US Iran Nuclear Tensions", level: "B1", category: "Current Affairs", src: "Audio/B1/US Iran Nuclear Tensions.mpeg", vocab: [
+  { title: "US Iran Nuclear Tensions", level: "B1", category: "Current Affairs", month: "March 2026", src: "Audio/B1/US Iran Nuclear Tensions.mpeg", vocab: [
     { word: "nuclear", definition: "relating to the energy released when atoms are split or joined" },
     { word: "tension", definition: "a state of worry or unfriendliness between groups" },
     { word: "sanctions", definition: "penalties applied to a country to force it to change" },
@@ -483,7 +483,7 @@ const listeningFiles = [
     "Do you think too much TV is bad for children? Why or why not?",
     "How has streaming changed the way people watch television?"
   ], transcriptSrc: "Transcripts/B1/Pros-and-Cons-of-TV.txt"},
-  { title: "Is Europe Ready for War with Tehran?", level: "B1", category: "Current Affairs", src: "Audio/B1/Is Europe Ready for War with Tehran.mp4", vocab: [
+  { title: "Is Europe Ready for War with Tehran?", level: "B1", category: "Current Affairs", month: "March 2026", src: "Audio/B1/Is Europe Ready for War with Tehran.mp4", vocab: [
     { word: "military", definition: "relating to an army or armed forces" },
     { word: "conflict", definition: "a serious fight or war between groups" },
     { word: "threat", definition: "a warning that harm may come" },
@@ -535,7 +535,7 @@ const listeningFiles = [
     "Why do you think some countries choose secret operations instead of public diplomacy?",
     "What risks do people face when they try to help someone in a dangerous country?"
   ], transcriptSrc: "Transcripts/B1/Rescuing the American Navigator in Iran.txt"},
-  { title: "Peace Talks Between Iran and USA", level: "B1", category: "Current Affairs", src: "Audio/B1/Peace Talks Between Iran and USA.mp4", vocab: [
+  { title: "Peace Talks Between Iran and USA", level: "B1", category: "Current Affairs", month: "April 2026", src: "Audio/B1/Peace Talks Between Iran and USA.mp4", vocab: [
     { word: "negotiation", definition: "a discussion aimed at reaching an agreement" },
     { word: "ceasefire", definition: "an agreement to stop fighting temporarily" },
     { word: "agreement", definition: "a decision reached by two or more parties" },
@@ -575,7 +575,7 @@ const listeningFiles = [
     "To what extent do you think television shapes public opinion and political views?",
     "Is streaming killing traditional television, or simply evolving it? Give your view."
   ], transcriptSrc: "Transcripts/B2/Pros-and-Cons-of-TV.txt"},
-  { title: "Is Europe Ready for War with Tehran?", level: "B2", category: "Current Affairs", src: "Audio/B2/Is Europe Ready for War with Tehran.mp4", vocab: [
+  { title: "Is Europe Ready for War with Tehran?", level: "B2", category: "Current Affairs", month: "March 2026", src: "Audio/B2/Is Europe Ready for War with Tehran.mp4", vocab: [
     { word: "deterrence", definition: "the use of threat to discourage an enemy from acting" },
     { word: "alliance", definition: "a union between countries for mutual benefit" },
     { word: "escalation", definition: "a rapid increase in the severity of a conflict" },
@@ -588,7 +588,7 @@ const listeningFiles = [
     "Do you think European countries have a responsibility to respond militarily to threats in the Middle East? Why or why not?",
     "What is the difference between deterrence and provocation in international relations?"
   ], transcriptSrc: "Transcripts/B2/Is-Europe-Ready-for-War-with-Tehran.txt"},
-  { title: "Peace Talks Between Iran and USA", level: "B2", category: "Current Affairs", src: "Audio/B2/Peace Talks between Iran and USA.mp4", vocab: [
+  { title: "Peace Talks Between Iran and USA", level: "B2", category: "Current Affairs", month: "April 2026", src: "Audio/B2/Peace Talks between Iran and USA.mp4", vocab: [
     { word: "diplomacy", definition: "managing relations between countries through negotiation" },
     { word: "nuclear", definition: "relating to the powerful energy released from atoms" },
     { word: "concession", definition: "something given up in order to reach an agreement" },
@@ -614,7 +614,7 @@ const listeningFiles = [
     "What do you think are the advantages and disadvantages of visiting an undiscovered travel destination?",
     "How can tourism help or harm a place that is not used to many visitors?"
   ], transcriptSrc: "Transcripts/B2/Exploring-Somaliland.txt"},
-  { title: "Fall of Assad", level: "B2", category: "Current Affairs", src: "Audio/B2/Fall of Assad.mpeg", vocab: [
+  { title: "Fall of Assad", level: "B2", category: "Current Affairs", month: "March 2026", src: "Audio/B2/Fall of Assad.mpeg", vocab: [
     { word: "authoritarian", definition: "demanding complete obedience to authority" },
     { word: "insurgency", definition: "an armed rebellion against a government" },
     { word: "geopolitical", definition: "relating to politics and geography of countries" },
@@ -640,7 +640,7 @@ const listeningFiles = [
     "When someone asks for your advice, how do you decide what to say?",
     "Is there a difference between giving advice to a close friend and to a colleague? How do you adjust your approach?"
   ], transcriptSrc: "Transcripts/B1/Giving-Advice.txt"},
-  { title: "Iran Protests and Potential Changes", level: "B2", category: "Current Affairs", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [
+  { title: "Iran Protests and Potential Changes", level: "B2", category: "Current Affairs", month: "March 2026", src: "Audio/B2/Iran Protests and Potential Changes.mp3", vocab: [
     { word: "disillusionment", definition: "disappointment when something is not as good as expected" },
     { word: "mobilize", definition: "to organize people for a purpose" },
     { word: "repression", definition: "the use of force to control people" },
@@ -770,7 +770,7 @@ const listeningFiles = [
     "To what extent does mass media perpetuate social inequality and cultural hegemony?",
     "How has the fragmentation of television audiences through streaming platforms affected public discourse and shared cultural experience?"
   ], transcriptSrc: "Transcripts/C1/Pros-and-Cons-of-TV.txt"},
-  { title: "Is Europe Ready for War with Tehran?", level: "C1", category: "Current Affairs", src: "Audio/C1/Is Europe Ready for War with Tehran.mp4", vocab: [
+  { title: "Is Europe Ready for War with Tehran?", level: "C1", category: "Current Affairs", month: "March 2026", src: "Audio/C1/Is Europe Ready for War with Tehran.mp4", vocab: [
     { word: "geopolitical", definition: "relating to politics as influenced by geography and power" },
     { word: "deterrence", definition: "the prevention of action through the threat of consequences" },
     { word: "non-proliferation", definition: "the prevention of the spread of nuclear weapons" },
@@ -783,7 +783,7 @@ const listeningFiles = [
     "To what extent has Europe's strategic autonomy been undermined by its dependence on NATO and US foreign policy?",
     "How does the concept of asymmetric warfare complicate traditional European military doctrine in the context of a conflict with Iran?"
   ], transcriptSrc: "Transcripts/C1/Is-Europe-Ready-for-War-with-Tehran.txt"},
-  { title: "Assad: Last Days in Power", level: "C1", category: "Current Affairs", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
+  { title: "Assad: Last Days in Power", level: "C1", category: "Current Affairs", month: "April 2026", src: "Audio/C1/Assad_ Last Days in Power.mpeg", vocab: [
     { word: "authoritarian", definition: "enforcing strict obedience at the expense of freedom" },
     { word: "disintegration", definition: "the process of losing unity and falling apart" },
     { word: "ramifications", definition: "complex and unwanted consequences of an action" },
@@ -822,7 +822,7 @@ const listeningFiles = [
     "How do cultural differences affect the way advice is given and received across different societies?",
     "Is it ever more judicious to withhold advice even when you can see someone making a serious mistake?"
   ]},
-  { title: "Iran's Turmoil and Economic Strife", level: "C1", category: "Current Affairs", src: "Audio/C1/Iran's Turmoil and Economic Strife.mp3", vocab: [
+  { title: "Iran's Turmoil and Economic Strife", level: "C1", category: "Current Affairs", month: "March 2026", src: "Audio/C1/Iran's Turmoil and Economic Strife.mp3", vocab: [
     { word: "turmoil", definition: "a state of great confusion or disorder" },
     { word: "hyperinflation", definition: "extremely rapid and uncontrolled price increases" },
     { word: "disenfranchisement", definition: "the state of being deprived of rights or power" },
@@ -958,7 +958,7 @@ const listeningFiles = [
     "How does mindfulness differ from simply having a daily routine?",
     "To what extent can changing your habits change your mindset?"
   ], transcriptSrc: "Transcripts/B2/Power of Mindful Habits.txt"},
-  { title: "Hezbollah's New Drones", level: "A2", category: "Current Affairs", src: "Audio/A2/Hezbollah's New Drones.mp4", vocab: [
+  { title: "Hezbollah's New Drones", level: "A2", category: "Current Affairs", month: "May 2026", src: "Audio/A2/Hezbollah's New Drones.mp4", vocab: [
     { word: "drone", definition: "an aircraft that flies without a pilot, controlled by remote" },
     { word: "attack", definition: "an act of using force against someone or something" },
     { word: "military", definition: "relating to soldiers and the armed forces" },
@@ -968,7 +968,7 @@ const listeningFiles = [
     "Why do you think drones have become important in modern conflicts?",
     "How do you think countries should respond to drone attacks?"
   ], transcriptSrc: "Transcripts/A2/Hezbollah's New Drones.txt"},
-  { title: "Hezbollah's New Drones", level: "B2", category: "Current Affairs", src: "Audio/B2/Hezbollah's New Drones.mp4", vocab: [
+  { title: "Hezbollah's New Drones", level: "B2", category: "Current Affairs", month: "May 2026", src: "Audio/B2/Hezbollah's New Drones.mp4", vocab: [
     { word: "tactical", definition: "relating to carefully planned actions to achieve a specific goal" },
     { word: "surveillance", definition: "careful observation of an area or group, especially by military or security forces" },
     { word: "escalation", definition: "an increase in the intensity or seriousness of a conflict" },
@@ -978,7 +978,7 @@ const listeningFiles = [
     "How has drone warfare changed the nature of modern conflict?",
     "To what extent do armed non-state groups change the balance of power in a region?"
   ], transcriptSrc: "Transcripts/B2/Hezbollah's New Drones.txt"},
-  { title: "The Super Revolutionaries of Iran", level: "B1", category: "Current Affairs", src: "Audio/B1/The Super Revolutionaries of Iran.mp4", vocab: [
+  { title: "The Super Revolutionaries of Iran", level: "B1", category: "Current Affairs", month: "May 2026", src: "Audio/B1/The Super Revolutionaries of Iran.mp4", vocab: [
     { word: "revolution", definition: "a complete change in the way a country is governed" },
     { word: "ideology", definition: "a set of beliefs or ideas that guide a political system" },
     { word: "regime", definition: "a government, especially one that uses strict control" },
@@ -988,7 +988,7 @@ const listeningFiles = [
     "What do you think motivates people to fight for political change?",
     "How can ordinary people influence the government of a country?"
   ], transcriptSrc: "Transcripts/B1/The Super Revolutionaries of Iran.txt"},
-  { title: "The Super Revolutionaries of Iran", level: "B2", category: "Current Affairs", src: "Audio/B2/The Super Revolutionaries of Iran.mp4", vocab: [
+  { title: "The Super Revolutionaries of Iran", level: "B2", category: "Current Affairs", month: "May 2026", src: "Audio/B2/The Super Revolutionaries of Iran.mp4", vocab: [
     { word: "theocracy", definition: "a system of government based on religious law and leadership" },
     { word: "dissident", definition: "a person who opposes official government policy" },
     { word: "repression", definition: "the use of force or authority to control people's freedom" },
@@ -3086,7 +3086,8 @@ function showAudioFile(file) {
   window._chatContexts = window._chatContexts || {};
   window._chatContexts[contextKey] = { title: file.title, level: file.level, vocab: file.vocab, questions: file.questions || [] };
   var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
-  card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + file.title + "</h3>" + chatBtn + "</div>"
+  var monthTag = file.month ? " <span style='color:#94A3B8;font-size:0.78em;font-weight:normal'>(" + file.month + ")</span>" : "";
+  card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + file.title + monthTag + "</h3>" + chatBtn + "</div>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
     + columnsHTML
@@ -3160,6 +3161,7 @@ function openChatBot(contextKey) {
       "</div>",
     "</div>",
     "<div id='chat-status' style='padding:4px 16px;font-size:11px;color:#94A3B8;min-height:20px'></div>",
+    "<div style='padding:2px 16px 4px;font-size:10px;color:#4A5568'>🎤 Voice works best in Chrome</div>",
     "<div style='padding:12px 16px;border-top:1px solid #2D3F55;display:flex;gap:8px;align-items:flex-end'>",
       "<textarea id='chat-input' placeholder='Type a message...' rows='2' style='flex:1;background:#162030;border:1px solid #4A5568;border-radius:8px;color:#fff;padding:8px 10px;font-size:13px;resize:none;font-family:inherit;outline:none'></textarea>",
       "<div style='display:flex;flex-direction:column;gap:6px'>",
@@ -3404,7 +3406,7 @@ function renderAudioLevel(level) {
   filtered.forEach(function(file, i) {
     var option = document.createElement("option");
     option.value = i;
-    option.textContent = file.title;
+    option.textContent = file.title + (file.month ? " (" + file.month + ")" : "");
     select.appendChild(option);
   });
 
