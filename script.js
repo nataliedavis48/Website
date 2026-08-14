@@ -2592,6 +2592,412 @@ function _applyProgress(containerId) {
   });
 }
 
+const japanEpisodes = {
+  B1: [
+    { title: "10 Facts About Japan", src: "Audio/Japan/B1/10 Facts About Japan.mp4", vocab: [
+      { word: "archipelago", definition: "a group of islands" },
+      { word: "punctuality", definition: "the habit of being on time" },
+      { word: "diverse", definition: "showing a great variety of different things" },
+      { word: "Washoku", definition: "traditional Japanese food, known for healthy seasonal ingredients" },
+      { word: "distinct", definition: "clearly different and recognisable from others" }
+    ], questions: [
+      "Which of the ten facts surprised you most about Japan?",
+      "Would you like to visit Japan? Which fact makes you most curious?"
+    ], transcriptSrc: "Transcripts/Japan/B1/10 Facts About Japan.txt"},
+    { title: "Characteristics of Japanese Society", src: "Audio/Japan/B1/Characteristics of Japanese Society.mp4", vocab: [
+      { word: "punctuality", definition: "the quality of consistently being on time" },
+      { word: "Omotenashi", definition: "the Japanese concept of selfless, anticipatory hospitality" },
+      { word: "harmony", definition: "peaceful cooperation and agreement within a group" },
+      { word: "longevity", definition: "a long life expectancy" },
+      { word: "considerate", definition: "thoughtful and caring about others' feelings and needs" }
+    ], questions: [
+      "Which characteristic of Japanese society would be hardest for you to adapt to?",
+      "Does your culture share any of these values with Japan?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Characteristics of Japanese Society.txt"},
+    { title: "Japan's Role in WW2", src: "Audio/Japan/B1/Japan's Role in WW2.mp4", vocab: [
+      { word: "expansion", definition: "growing and spreading into new areas or territories" },
+      { word: "propaganda", definition: "information used to promote a political cause or viewpoint" },
+      { word: "surrender", definition: "to give up and accept defeat" },
+      { word: "controversial", definition: "causing strong disagreement or debate" },
+      { word: "devastation", definition: "great destruction or serious damage" }
+    ], questions: [
+      "Why do you think Japan's cultural attitude made surrendering so difficult?",
+      "How did Japan transform itself politically and economically after World War 2?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Japan's Role in WW2.txt"},
+    { title: "Japanese vs European Education System", src: "Audio/Japan/B1/Japanese vs European Education System.mp4", vocab: [
+      { word: "distraction", definition: "something that takes your attention away from what you are doing" },
+      { word: "foundation", definition: "the basic structure or starting point for learning" },
+      { word: "reliable", definition: "consistently working well and able to be trusted" },
+      { word: "digital", definition: "using computers and electronic technology" },
+      { word: "concentrate", definition: "to focus all your attention on one thing" }
+    ], questions: [
+      "Do you think writing by hand helps students learn better than typing? Why?",
+      "What are the advantages and disadvantages of using tablets in the classroom?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Japanese vs European Education System.txt"},
+    { title: "Marrying Dolls", src: "Audio/Japan/B1/Marrying  Dolls.mp4", vocab: [
+      { word: "isolation", definition: "the state of being separated from other people" },
+      { word: "epidemic", definition: "a widespread problem that affects many people" },
+      { word: "companionship", definition: "the feeling of friendship and having someone with you" },
+      { word: "anxiety", definition: "a strong feeling of worry and nervousness" },
+      { word: "trend", definition: "a general direction in which something is changing or developing" }
+    ], questions: [
+      "Why do you think loneliness is becoming such a serious problem in modern societies?",
+      "Do you think this trend helps or harms society in the long run?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Marrying Dolls.txt"},
+    { title: "Planning a Trip to Japan", src: "Audio/Japan/B1/Planning a Trip to Japan.mp4", vocab: [
+      { word: "itinerary", definition: "a planned route or schedule for a journey" },
+      { word: "Shinkansen", definition: "Japan's famous high-speed bullet train network" },
+      { word: "scenery", definition: "the natural landscape and views of an area" },
+      { word: "highlight", definition: "the best or most exciting part of an experience" },
+      { word: "temple", definition: "a religious building used for worship and prayer" }
+    ], questions: [
+      "If you could visit one of the cities mentioned, which would you choose and why?",
+      "What is the most important thing you look for when planning a trip abroad?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Planning a Trip to Japan.txt"},
+    { title: "Religion in Japan", src: "Audio/Japan/B1/Religion in Japan.mp4", vocab: [
+      { word: "Shinto", definition: "Japan's native religion based on nature spirits called Kami" },
+      { word: "Buddhism", definition: "a religion from Asia associated with inner peace and the afterlife" },
+      { word: "syncretism", definition: "the practice of combining different religions or beliefs together" },
+      { word: "shrine", definition: "a sacred religious site dedicated to a spirit or god" },
+      { word: "Matsuri", definition: "a Japanese community festival celebrating local traditions" }
+    ], questions: [
+      "Are you surprised that most Japanese people don't consider themselves religious?",
+      "What role does religion play in your own culture and daily life?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Religion in Japan.txt"},
+    { title: "Suicides in Japan", src: "Audio/Japan/B1/Suicides in Japan.mp4", vocab: [
+      { word: "Karoshi", definition: "the Japanese term for death caused by overwork" },
+      { word: "stigma", definition: "a strong negative attitude toward something, causing shame" },
+      { word: "isolation", definition: "the state of being cut off from contact with other people" },
+      { word: "shame", definition: "a painful feeling of guilt or deep embarrassment" },
+      { word: "counselling", definition: "professional support and guidance for mental health" }
+    ], questions: [
+      "Why do you think seeking help for mental health is seen as weakness in some cultures?",
+      "What changes could workplaces make to better support the mental health of employees?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Suicides in Japan.txt"},
+    { title: "The Japanese Tea Ceremony", src: "Audio/Japan/B1/The Japanese Tea Ceremony.mp4", vocab: [
+      { word: "ritual", definition: "a ceremony performed in a specific and traditional way" },
+      { word: "Matcha", definition: "a powdered green tea used in the Japanese tea ceremony" },
+      { word: "philosophy", definition: "a system of beliefs and values that guides how we live" },
+      { word: "harmony", definition: "a peaceful balance between people and the natural world" },
+      { word: "tranquility", definition: "a state of calm, quiet peace" }
+    ], questions: [
+      "What can we learn from the philosophy and principles behind the tea ceremony?",
+      "Do you have any traditions in your culture that bring people together through food or drink?"
+    ], transcriptSrc: "Transcripts/Japan/B1/The Japanese Tea Ceremony.txt"},
+    { title: "The Japanese Work Culture", src: "Audio/Japan/B1/The Japanese Work Culture.mp4", vocab: [
+      { word: "loyalty", definition: "a strong commitment and faithfulness to a person or group" },
+      { word: "colleague", definition: "someone who works in the same organisation as you" },
+      { word: "overtime", definition: "time spent working beyond your normal working hours" },
+      { word: "guilt", definition: "a feeling of having done something wrong" },
+      { word: "work-life balance", definition: "having enough time for both work and personal activities" }
+    ], questions: [
+      "How important is socialising with work colleagues in your culture?",
+      "Do you think it is reasonable to feel guilty about taking holidays from work?"
+    ], transcriptSrc: "Transcripts/Japan/B1/The Japanese Work Culture.txt"},
+    { title: "The Role of Geishas", src: "Audio/Japan/B1/The Role of Geishas.mp4", vocab: [
+      { word: "misconception", definition: "a wrong idea or false belief about something" },
+      { word: "apprentice", definition: "someone learning a skill under the guidance of an expert" },
+      { word: "elegant", definition: "graceful, stylish, and beautiful in appearance" },
+      { word: "entertain", definition: "to perform and keep an audience interested and amused" },
+      { word: "discipline", definition: "the practice of training yourself to follow strict rules" }
+    ], questions: [
+      "Why do you think geishas are often misunderstood in Western culture?",
+      "How does Japan manage to keep ancient traditions alive in such a modern country?"
+    ], transcriptSrc: "Transcripts/Japan/B1/The Role of Geishas.txt"},
+    { title: "Tokyo and Kyoto", src: "Audio/Japan/B1/Tokyo and Kyoto.mp4", vocab: [
+      { word: "atmosphere", definition: "the feeling or mood that a place creates" },
+      { word: "shrine", definition: "a sacred religious site used for prayer and offerings" },
+      { word: "contrast", definition: "a noticeable and striking difference between two things" },
+      { word: "cuisine", definition: "the food and style of cooking of a particular place" },
+      { word: "traditional", definition: "following customs and practices passed down over time" }
+    ], questions: [
+      "Would you prefer to visit Tokyo or Kyoto? Give your reasons.",
+      "Is there a city in your country that strongly contrasts with the capital?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Tokyo and Kyoto.txt"},
+    { title: "Yakuza and Organized Crime", src: "Audio/Japan/B1/Yakuza and Organized Crime.mp4", vocab: [
+      { word: "hierarchy", definition: "a system where people are ranked according to their authority" },
+      { word: "loyalty", definition: "being committed and faithful to a group or person" },
+      { word: "reputation", definition: "the opinion that other people have of a person or group" },
+      { word: "illegal", definition: "forbidden by the law" },
+      { word: "tradition", definition: "a custom or practice passed down through generations" }
+    ], questions: [
+      "Why do you think organized crime groups have been tolerated in some societies?",
+      "How does the Yakuza's public image differ from criminal groups in other countries?"
+    ], transcriptSrc: "Transcripts/Japan/B1/Yakuza and Organized  Crime.txt"}
+  ]
+};
+
+window.renderJapanLevel = function(level, targetId) {
+  var list = document.getElementById(targetId || "japan-list");
+  if (!list) return;
+  list.innerHTML = "";
+  var episodes = japanEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "japan-transcript-" + level + "-" + idx;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    var contextKey = "ctx_japan_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
+    list.appendChild(card);
+  });
+};
+
+const stateStoriesEpisodes = {
+  B2: [
+    { title: "10 Facts About Pennsylvania", src: "Audio/State Stories/B2/10 Facts About Pennsylvania.mpeg", vocab: [
+      { word: "keystone", definition: "something essential that holds a larger structure together" },
+      { word: "populous", definition: "having a large number of people living in it" },
+      { word: "heritage", definition: "cultural traditions and values passed down through history" },
+      { word: "prestigious", definition: "respected and admired, especially for excellence" },
+      { word: "diverse", definition: "showing great variety across different areas or types" }
+    ], questions: [
+      "Why do you think Pennsylvania is called the 'Keystone State'?",
+      "Which fact about Pennsylvania surprised you most?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Pennsylvania.txt"},
+    { title: "A Comparison between the US and European Electoral Systems", src: "Audio/State Stories/B2/A Comparison between the US and European Electoral Systems.mpeg", vocab: [
+      { word: "Electoral College", definition: "the US system where electors formally choose the president" },
+      { word: "proportional representation", definition: "an electoral system where seats match the percentage of votes won" },
+      { word: "swing state", definition: "a state where either party could win, making it crucial in elections" },
+      { word: "coalition", definition: "a government formed by two or more parties working together" },
+      { word: "turnout", definition: "the percentage of eligible voters who actually vote in an election" }
+    ], questions: [
+      "Do you think the Electoral College is a fair system? Why or why not?",
+      "What are the main advantages and disadvantages of proportional representation?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/A Comparison between the US and European Electoral Systems.txt"},
+    { title: "A Comparison between US and Europe", src: "Audio/State Stories/B2/A Comparison between US and Europe.mpeg", vocab: [
+      { word: "progressive", definition: "supporting social change and reform" },
+      { word: "conservative", definition: "favouring traditional values and limited government involvement" },
+      { word: "universal healthcare", definition: "a system where all citizens receive medical care funded by the state" },
+      { word: "individual liberty", definition: "the freedom to act and make choices without government interference" },
+      { word: "welfare", definition: "government support and financial assistance for citizens in need" }
+    ], questions: [
+      "Which country's approach to healthcare do you think is fairer — the US or European models?",
+      "Do you think individual freedom or collective equality is more important in a society?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/A Comparison between US and Europe.txt"},
+    { title: "Alaska", src: "Audio/State Stories/B2/Alaska.mpeg", vocab: [
+      { word: "indigenous", definition: "native to and originating from a particular place" },
+      { word: "isolated", definition: "separated from other people or places" },
+      { word: "misconception", definition: "a wrong idea or false belief about something" },
+      { word: "glacier", definition: "a large slow-moving mass of ice formed over many years" },
+      { word: "territorial", definition: "relating to land controlled or owned by a government" }
+    ], questions: [
+      "Why do you think many people initially thought buying Alaska from Russia was a bad decision?",
+      "How important is it to preserve the languages and cultures of indigenous peoples?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Alaska.txt"},
+    { title: "American South West", src: "Audio/State Stories/B2/American South West.mpeg", vocab: [
+      { word: "canyon", definition: "a deep valley with steep rocky sides, often formed by a river" },
+      { word: "reservation", definition: "land officially set aside for Native American communities" },
+      { word: "heritage", definition: "cultural traditions and history passed down through generations" },
+      { word: "cuisine", definition: "the food and cooking style associated with a particular region" },
+      { word: "diverse", definition: "including a wide variety of different things or people" }
+    ], questions: [
+      "What do you find most interesting about the American Southwest?",
+      "How should countries balance tourism with protecting indigenous cultures and communities?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/American South West.txt"},
+    { title: "Appalachian Trail", src: "Audio/State Stories/B2/Appalachian Trail.mpeg", vocab: [
+      { word: "terrain", definition: "the physical features and landscape of an area of land" },
+      { word: "cumulative", definition: "growing in size or effect by gradually adding up over time" },
+      { word: "commitment", definition: "dedication and determination to complete something difficult" },
+      { word: "dehydration", definition: "a dangerous condition caused by not drinking enough water" },
+      { word: "wilderness", definition: "a natural area that is uninhabited and undeveloped" }
+    ], questions: [
+      "Would you consider hiking the full Appalachian Trail? What would be the biggest challenge?",
+      "What do you think people learn about themselves from long-distance challenges like this?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Appalachian Trail.txt"},
+    { title: "Christianity in the US", src: "Audio/State Stories/B2/Christianity in the US.mpeg", vocab: [
+      { word: "denomination", definition: "a recognised branch or group within a religion" },
+      { word: "reformation", definition: "the 16th-century movement that broke away from the Catholic Church" },
+      { word: "theology", definition: "the study of religious belief and the nature of God" },
+      { word: "pacifist", definition: "someone who believes that war and violence are always wrong" },
+      { word: "diverse", definition: "showing a wide variety of different beliefs or backgrounds" }
+    ], questions: [
+      "Were you aware of how diverse Christianity is across the United States?",
+      "Do you think religious diversity strengthens or divides a society?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Christianity in the US.txt"},
+    { title: "Differences between Republican and Democratic Parties", src: "Audio/State Stories/B2/Differences between Republican and Democratic Parties.mpeg", vocab: [
+      { word: "conservative", definition: "favouring traditional values and less government intervention" },
+      { word: "liberal", definition: "supporting social reform and greater government involvement" },
+      { word: "realignment", definition: "a significant shift in the political positions of a party over time" },
+      { word: "ideology", definition: "a system of political and social beliefs held by a group" },
+      { word: "bipartisan", definition: "involving agreement or cooperation between two opposing parties" }
+    ], questions: [
+      "What are the main differences between the Republican and Democratic parties today?",
+      "Do you think a two-party political system gives voters enough choice?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Differences between Republican and Democratic Parties.txt"},
+    { title: "Five Most Beautiful States for Nature Lovers", src: "Audio/State Stories/B2/Five Most Beautiful States for Nature Lovers.mpeg", vocab: [
+      { word: "itinerary", definition: "a planned route or schedule for a trip" },
+      { word: "diverse", definition: "showing great variety, especially in landscape or geography" },
+      { word: "summit", definition: "the highest point of a mountain" },
+      { word: "terrain", definition: "the physical features and landscape of an area" },
+      { word: "wilderness", definition: "a natural area largely untouched by human development" }
+    ], questions: [
+      "Which of the five states would you most like to visit, and why?",
+      "Do you think it is better to visit many places quickly or spend more time in fewer places?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Five Most Beautiful States for Nature Lovers.txt"},
+    { title: "Ivy League Universities", src: "Audio/State Stories/B2/Ivy League Universities.mpeg", vocab: [
+      { word: "prestigious", definition: "highly respected and admired, especially for achievement or excellence" },
+      { word: "exclusive", definition: "limited to a select group of people" },
+      { word: "conference", definition: "an organised group of teams or institutions that compete together" },
+      { word: "ranking", definition: "a list that orders people or things by quality or importance" },
+      { word: "tuition", definition: "the fees paid to attend a school or university" }
+    ], questions: [
+      "Do you think attending an Ivy League university guarantees success in life?",
+      "Is the reputation of a university more important than the quality of its teaching?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Ivy League Universities.txt"},
+    { title: "Mississippi River", src: "Audio/State Stories/B2/Mississippi River.mpeg", vocab: [
+      { word: "plantation", definition: "a large farm, historically worked by enslaved people" },
+      { word: "enslaved", definition: "forced to live and work without freedom or payment" },
+      { word: "transatlantic", definition: "crossing the Atlantic Ocean between continents" },
+      { word: "economy", definition: "the financial system of a country or region" },
+      { word: "strategic", definition: "carefully planned to give an advantage" }
+    ], questions: [
+      "How did the Mississippi River shape the history and economy of the American South?",
+      "Why is it important to understand the connection between geography and historical injustice?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Mississippi River.txt"},
+    { title: "Most Important Cities in the NorthEast", src: "Audio/State Stories/B2/Most Important Cities in the NorthEast.mpeg", vocab: [
+      { word: "metropolitan", definition: "relating to a large and important city and the surrounding area" },
+      { word: "financial hub", definition: "a city that is a major centre for banking and investment" },
+      { word: "historic", definition: "important in or connected with history" },
+      { word: "infrastructure", definition: "the basic systems and services that allow a city to function" },
+      { word: "diverse", definition: "made up of people or things from many different backgrounds" }
+    ], questions: [
+      "What makes the northeastern United States historically and economically significant?",
+      "Which northeastern city would you most like to visit and why?"
+    ]},
+    { title: "Most Important Cities in the SouthEast", src: "Audio/State Stories/B2/Most Important Cities in the SouthEast.mpeg", vocab: [
+      { word: "gateway", definition: "an entry point to a region or international market" },
+      { word: "metropolitan", definition: "relating to a large and important city" },
+      { word: "logistics", definition: "the planning and management of moving goods from one place to another" },
+      { word: "commerce", definition: "the buying and selling of goods and services" },
+      { word: "revenue", definition: "income earned by a business, city, or government" }
+    ], questions: [
+      "Why is Miami described as a gateway to Latin America?",
+      "What do you think attracts businesses and young professionals to cities like Atlanta and Charlotte?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Most Important Cities in the SouthEast.txt"},
+    { title: "Most Important Cities on the West Coast", src: "Audio/State Stories/B2/Most Important Cities on the West Coast.mpeg", vocab: [
+      { word: "innovation", definition: "the introduction of new ideas, methods, or technology" },
+      { word: "logistics", definition: "the planning and management of transporting goods efficiently" },
+      { word: "vibrant", definition: "lively, energetic, and full of activity" },
+      { word: "maritime", definition: "relating to the sea, seafaring, or trade by sea" },
+      { word: "tech industry", definition: "the sector of the economy focused on developing technology products" }
+    ], questions: [
+      "Why do you think Silicon Valley became the global centre of the technology industry?",
+      "How does the economic diversity of West Coast cities benefit the United States?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Most Important Cities on the West Coast.txt"},
+    { title: "New England", src: "Audio/State Stories/B2/New England.mpeg", vocab: [
+      { word: "foliage", definition: "the leaves on trees and plants, especially the autumn colours" },
+      { word: "colonial", definition: "relating to the period when an area was ruled by another country" },
+      { word: "picturesque", definition: "visually attractive and pleasant, like a beautiful painting" },
+      { word: "literary", definition: "relating to literature and the world of writing" },
+      { word: "maritime", definition: "relating to the sea, sailing, and seafaring" }
+    ], questions: [
+      "What is the significance of New England to early American history?",
+      "What does Robert Frost's poetry tell us about the landscape and character of New England?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/New England.txt"},
+    { title: "New Orleans", src: "Audio/State Stories/B2/New Orleans.mpeg", vocab: [
+      { word: "vibrant", definition: "lively, colourful, and full of energy" },
+      { word: "heritage", definition: "cultural traditions and history passed down through generations" },
+      { word: "jazz", definition: "a music genre originating in New Orleans, blending African and European styles" },
+      { word: "resilience", definition: "the ability to recover quickly after great difficulties" },
+      { word: "cuisine", definition: "the food and cooking style associated with a particular culture" }
+    ], questions: [
+      "What do you know about the culture and history of New Orleans?",
+      "How do you think cities recover and rebuild their identity after major natural disasters?"
+    ]},
+    { title: "Pennsylvania", src: "Audio/State Stories/B2/Pennsylvania.mpeg", vocab: [
+      { word: "democracy", definition: "a system of government where citizens vote for their leaders" },
+      { word: "simplicity", definition: "the quality of being plain, straightforward, and uncomplicated" },
+      { word: "craftsmanship", definition: "the skill and quality involved in making things by hand" },
+      { word: "iconic", definition: "widely recognised and seen as a symbol of something important" },
+      { word: "heritage", definition: "cultural traditions passed down through generations" }
+    ], questions: [
+      "Would you like to visit the Amish communities in Pennsylvania? Why or why not?",
+      "What can modern society learn from communities that choose simpler ways of living?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Planning a Trip to Pennsylvania.txt"},
+    { title: "Slavery and the Mississippi River", src: "Audio/State Stories/B2/Slavery and the Mississippi River.mpeg", vocab: [
+      { word: "enslaved", definition: "forced to live and work without freedom or payment" },
+      { word: "plantation", definition: "a large farm historically worked by enslaved people" },
+      { word: "transatlantic", definition: "crossing the Atlantic Ocean between continents" },
+      { word: "Underground Railroad", definition: "a secret network of safe houses that helped enslaved people escape to freedom" },
+      { word: "abolition", definition: "the official ending of a practice, especially slavery" }
+    ], questions: [
+      "Why is it important to understand the history of slavery when thinking about modern America?",
+      "What do you know about the Underground Railroad and the courage it required?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Slavery and the Mississippi River.txt"},
+    { title: "Spanish Names of Places", src: "Audio/State Stories/B2/Spanish Names of Places.mpeg", vocab: [
+      { word: "colonization", definition: "the process of settling in and taking control of a foreign land" },
+      { word: "missionary", definition: "a person who travels to spread religious beliefs in new areas" },
+      { word: "territory", definition: "an area of land under the control of a particular government" },
+      { word: "heritage", definition: "cultural traditions and history passed down through generations" },
+      { word: "linguistic", definition: "relating to language or the study of languages" }
+    ], questions: [
+      "Why do place names tell us so much about a region's history and culture?",
+      "How does the history of Spanish colonization still influence the American Southwest today?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Spanish Names of Places.txt"},
+    { title: "The Difference between the Senate and the House of Representatives", src: "Audio/State Stories/B2/The Difference between the Senate and the House of Representatives.mpeg", vocab: [
+      { word: "legislature", definition: "the group of elected officials who make and pass laws" },
+      { word: "bicameral", definition: "having two separate legislative chambers" },
+      { word: "senator", definition: "a member of the upper chamber of the US Congress" },
+      { word: "representative", definition: "an elected official who votes on behalf of a group of people" },
+      { word: "ratify", definition: "to formally approve and confirm an agreement or decision" }
+    ], questions: [
+      "What are the main differences in power and prestige between the Senate and the House?",
+      "Do you think having two separate legislative chambers makes government more or less effective?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/The Difference between the Senate and the House of Representatives.txt"},
+    { title: "Washington State", src: "Audio/State Stories/B2/Washington State.mpeg", vocab: [
+      { word: "temperate", definition: "having a mild climate without extreme heat or cold" },
+      { word: "maritime", definition: "influenced by proximity to the sea" },
+      { word: "volcanic", definition: "relating to or caused by volcanoes" },
+      { word: "coastal", definition: "near or along the coast of an ocean" },
+      { word: "vibrant", definition: "lively, energetic, and full of activity" }
+    ], questions: [
+      "What surprised you most about Washington State?",
+      "How does the geography of Washington State affect the lifestyle and culture of its residents?"
+    ], transcriptSrc: "Transcripts/State Stories/B2/Washington State.txt"}
+  ]
+};
+
+window.renderStateStoriesLevel = function(level, targetId) {
+  var list = document.getElementById(targetId || "statestories-list");
+  if (!list) return;
+  list.innerHTML = "";
+  var episodes = stateStoriesEpisodes[level] || [];
+  episodes.forEach(function(ep, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    var vocabHTML = ep.vocab.map(function(v) {
+      return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
+    }).join("");
+    var questionsHTML = "<div style='margin-top:16px'><h4>Discussion Questions</h4><ol>" + ep.questions.map(function(q) { return "<li style='margin-bottom:8px'>" + q + "</li>"; }).join("") + "</ol></div>";
+    var tId = "statestories-transcript-" + level + "-" + idx;
+    var transcriptHTML = ep.transcriptSrc
+      ? "<div style='margin-top:12px'><button class='level-tab' id='transcript-toggle-btn-" + tId + "' onclick='toggleADMTranscript(\"" + ep.transcriptSrc + "\",\"" + tId + "\")'>Show Transcript</button><div id='" + tId + "' style='display:none;margin-top:12px;white-space:pre-wrap;line-height:1.7'></div></div>"
+      : "";
+    var contextKey = "ctx_statestories_" + level + "_" + idx;
+    window._chatContexts = window._chatContexts || {};
+    window._chatContexts[contextKey] = { title: ep.title, level: level, vocab: ep.vocab, questions: ep.questions || [] };
+    var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
+    card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + ep.title + "</h3>" + chatBtn + "</div>"
+      + "<audio controls style='width:100%;margin:10px 0'><source src='" + ep.src + "'></audio>"
+      + "<h4>Vocabulary</h4><ul>" + vocabHTML + "</ul>"
+      + questionsHTML + transcriptHTML;
+    list.appendChild(card);
+  });
+};
+
 var _seriesConfig = [
   { key: "adm",        name: "America's Defining Moments", levels: ["B1","B2"],          episodes: admEpisodes,       render: function(l,t){ renderADMLevel(l,t); } },
   { key: "inventions", name: "Inventions and Inventors",   levels: ["A1","A2","B1"],      episodes: inventionEpisodes, render: function(l,t){ renderInventionsLevel(l,t); } },
@@ -2599,7 +3005,9 @@ var _seriesConfig = [
   { key: "africa",     name: "Africa",                     levels: ["B1","B2"],           episodes: africaEpisodes,    render: function(l,t){ renderAfricaLevel(l,t); } },
   { key: "china",      name: "China",                      levels: ["B1","B2"],           episodes: chinaEpisodes,     render: function(l,t){ renderChinaLevel(l,t); } },
   { key: "india",      name: "India",                      levels: ["B2"],                episodes: indiaEpisodes,     render: function(l,t){ renderIndiaLevel(l,t); } },
-  { key: "worldcup",   name: "The World Cup",              levels: ["A2","B1","B2"],      episodes: worldCupEpisodes,  render: function(l,t){ renderWorldCupLevel(l,t); } },
+  { key: "worldcup",    name: "The World Cup",              levels: ["A2","B1","B2"],      episodes: worldCupEpisodes,        render: function(l,t){ renderWorldCupLevel(l,t); } },
+  { key: "japan",       name: "Japan",                      levels: ["B1"],                episodes: japanEpisodes,           render: function(l,t){ renderJapanLevel(l,t); } },
+  { key: "statestories",name: "State Stories",              levels: ["B2"],                episodes: stateStoriesEpisodes,    render: function(l,t){ renderStateStoriesLevel(l,t); } },
 ];
 
 window.selectSeriesLevel = function(level) {
