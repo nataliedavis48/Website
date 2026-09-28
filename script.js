@@ -1018,7 +1018,7 @@ const listeningFiles = [
     "How does ideology shape the way a government exercises power?",
     "To what extent do internal divisions within a revolutionary movement affect its long-term success?"
   ], transcriptSrc: "Transcripts/B2/The Super Revolutionaries of Iran.txt"},
-  { title: "The Mentor Who Changed Everything", level: "B1", category: "Real Stories", src: "Audio/B1/The Mentor Who Changed Everything.wav", vocab: [
+  { title: "The Mentor Who Changed Everything", level: "B1", category: "Real Stories", src: "Audio/B1/The Mentor Who Changed Everything.mp3", vocab: [
     { word: "mentor", definition: "a more experienced person who guides and supports someone with less experience" },
     { word: "confidence", definition: "a feeling of trust in your own abilities" },
     { word: "look up to (someone)", definition: "to admire and respect someone" },
@@ -1028,7 +1028,7 @@ const listeningFiles = [
     "Have you ever had a mentor who helped shape your life? What did they teach you?",
     "Why do you think it's important to tell people how much they mean to you?"
   ], transcriptSrc: "Transcripts/B1/The Mentor Who Changed Everything.txt"},
-  { title: "The Secret Agent Who Changed History", level: "B1", category: "History", src: "Audio/B1/The Secret Agent Who Changed History.wav", vocab: [
+  { title: "The Secret Agent Who Changed History", level: "B1", category: "History", src: "Audio/B1/The Secret Agent Who Changed History.mp3", vocab: [
     { word: "undercover", definition: "working secretly, pretending to be someone else" },
     { word: "intelligence service", definition: "a government organization that gathers secret information" },
     { word: "gain someone's trust", definition: "to make someone believe you are honest and reliable" },
@@ -1038,7 +1038,7 @@ const listeningFiles = [
     "Why do you think Eli Cohen is remembered as a hero in Israel despite the risks he took?",
     "Do you think the reward of protecting your country justifies the danger a spy faces?"
   ], transcriptSrc: "Transcripts/B1/The Secret Agent Who Changed History.txt"},
-  { title: "The Spy Who Betrayed America: Aldrich Ames", level: "B1", category: "History", src: "Audio/B1/The Spy Who Betrayed America_Aldrich Ames.wav", vocab: [
+  { title: "The Spy Who Betrayed America: Aldrich Ames", level: "B1", category: "History", src: "Audio/B1/The Spy Who Betrayed America_Aldrich Ames.mp3", vocab: [
     { word: "classified", definition: "(of information) officially secret and not available to the public" },
     { word: "betrayal", definition: "the act of being disloyal or deceiving someone who trusts you" },
     { word: "mole", definition: "a spy working secretly inside an organization to pass on information" },
@@ -1053,6 +1053,9 @@ const listeningFiles = [
 window._listeningFiles = listeningFiles;
 
 window._fileDurations = {
+  "Audio/B1/The Mentor Who Changed Everything.mp3": 3.80,
+  "Audio/B1/The Secret Agent Who Changed History.mp3": 3.25,
+  "Audio/B1/The Spy Who Betrayed America_Aldrich Ames.mp3": 4.40,
   "Audio/A1/8 Tiny Japanese Habits that Make a Difference.mp4": 3.15,
   "Audio/A1/Inflation in Iran.mp3": 5.48,
   "Audio/A1/Public Transport.mpeg": 3.40,
@@ -3124,7 +3127,7 @@ window.renderStateStoriesLevel = function(level, targetId) {
 
 const islandTravelEpisodes = {
   B1: [
-    { title: "Big Island Secrets", src: "Audio/Island Travel/B1/Big Island Secrets.wav", vocab: [
+    { title: "Big Island Secrets", src: "Audio/Island Travel/B1/Big Island Secrets.mp3", vocab: [
       { word: "volcanic", definition: "relating to volcanoes and the processes that form them" },
       { word: "summit", definition: "the highest point of a mountain" },
       { word: "astronomical", definition: "relating to the scientific study of stars, planets, and space" },
@@ -3134,7 +3137,7 @@ const islandTravelEpisodes = {
       "Would you like to visit a place with such different climate zones in one small area? Why or why not?",
       "Why do you think scientists choose Mauna Kea for studying space?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Big Island Secrets.txt"},
-    { title: "Borneo: The Island of Wonders", src: "Audio/Island Travel/B1/Borneo_The Island of Wonders.wav", vocab: [
+    { title: "Borneo: The Island of Wonders", src: "Audio/Island Travel/B1/Borneo_The Island of Wonders.mp3", vocab: [
       { word: "biodiversity", definition: "the variety of plant and animal life in a particular habitat" },
       { word: "indigenous", definition: "originating naturally in a particular place; native" },
       { word: "habitat loss", definition: "the destruction of the natural environment where a species normally lives" },
@@ -3144,7 +3147,7 @@ const islandTravelEpisodes = {
       "Why do you think protecting rainforests like Borneo's is important for the whole planet?",
       "What did you find most surprising about Borneo's wildlife or culture?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Borneo_The Island of Wonders.txt"},
-    { title: "Easter Island's Greatest Mysteries Revealed", src: "Audio/Island Travel/B1/Easter Island's Greatest Mysteries Revealed.wav", vocab: [
+    { title: "Easter Island's Greatest Mysteries Revealed", src: "Audio/Island Travel/B1/Easter Island's Greatest Mysteries Revealed.mp3", vocab: [
       { word: "statue", definition: "a carved or sculpted figure of a person or animal" },
       { word: "ancestor", definition: "a family member who lived a long time ago" },
       { word: "collapse", definition: "to suddenly fail or fall apart" },
@@ -3154,7 +3157,7 @@ const islandTravelEpisodes = {
       "Why do you think the moai statues remain such a mystery today?",
       "What lesson do you think Easter Island's history teaches us about protecting the environment?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Easter Island's Greatest Mysteries Revealed.txt"},
-    { title: "Frozen Wonders: Svalbard's Amazing Secrets", src: "Audio/Island Travel/B1/Frozen Wonders Svalbard's Amazing Secrets.wav", vocab: [
+    { title: "Frozen Wonders Svalbard's Amazing Secrets", src: "Audio/Island Travel/B1/Frozen Wonders Svalbard's Amazing Secrets.mp3", vocab: [
       { word: "archipelago", definition: "a group of islands" },
       { word: "remote", definition: "far away from other places; isolated" },
       { word: "Arctic", definition: "relating to the region around the North Pole" },
@@ -3164,7 +3167,7 @@ const islandTravelEpisodes = {
       "Would you want to experience 24 hours of daylight or darkness? Why or why not?",
       "Why do you think the Global Seed Vault was built in such a remote location?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Frozen Wonders Svalbard's Amazing Secrets.txt"},
-    { title: "Greenland Uncovered", src: "Audio/Island Travel/B1/Greenland Uncovered.wav", vocab: [
+    { title: "Greenland Uncovered", src: "Audio/Island Travel/B1/Greenland Uncovered.mp3", vocab: [
       { word: "ice sheet", definition: "a thick layer of ice that covers a large area of land" },
       { word: "self-governing", definition: "able to manage your own affairs without control from another country" },
       { word: "terrain", definition: "the physical features of an area of land" },
@@ -3174,7 +3177,7 @@ const islandTravelEpisodes = {
       "Why do you think Greenland's melting ice is a concern for the whole world, not just the island itself?",
       "What surprised you most about life in Greenland?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Greenland Uncovered.txt"},
-    { title: "Madagascar's Amazing Secrets", src: "Audio/Island Travel/B1/Madagascar's Most Amazing Secrets Revealed.wav", vocab: [
+    { title: "Madagascar's Most Amazing Secrets Revealed", src: "Audio/Island Travel/B1/Madagascar's Most Amazing Secrets Revealed.mp3", vocab: [
       { word: "primate", definition: "a member of the group of mammals that includes humans, monkeys, and lemurs" },
       { word: "endemic", definition: "found only in one particular place and nowhere else" },
       { word: "deforestation", definition: "the cutting down and clearing of forests" },
@@ -3184,7 +3187,7 @@ const islandTravelEpisodes = {
       "Why do you think so many unique animals evolved only in Madagascar?",
       "What can be done to protect Madagascar's forests from disappearing?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Madagascar's Most Amazing Secrets Revealed.txt"},
-    { title: "Madagascar: Africa's Most Unique Island Nation", src: "Audio/Island Travel/B1/Madagascar_ Africa's Most Unique Island Nation.wav", vocab: [
+    { title: "Madagascar: Africa's Most Unique Island Nation", src: "Audio/Island Travel/B1/Madagascar_ Africa's Most Unique Island Nation.mp3", vocab: [
       { word: "sovereign nation", definition: "an independent country with its own government" },
       { word: "isolation", definition: "the state of being separate or apart from others" },
       { word: "evolve", definition: "to develop gradually over time" },
@@ -3194,7 +3197,7 @@ const islandTravelEpisodes = {
       "How did Madagascar's isolation from Africa shape its unique wildlife?",
       "What would you like to see if you visited Antananarivo?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Madagascar_Africa's Most Unique Island Nation.txt"},
-    { title: "Sicily's Hidden Secrets Revealed", src: "Audio/Island Travel/B1/Sicily's Hidden Secrets Revealed.wav", vocab: [
+    { title: "Sicily's Hidden Secrets Revealed", src: "Audio/Island Travel/B1/Sicily's Hidden Secrets Revealed.mp3", vocab: [
       { word: "strait", definition: "a narrow strip of water connecting two larger seas" },
       { word: "dialect", definition: "a form of a language spoken in a particular area" },
       { word: "erupt", definition: "(of a volcano) to suddenly release lava, ash, and gas" },
@@ -3204,7 +3207,7 @@ const islandTravelEpisodes = {
       "Why do you think so many different civilizations wanted to control Sicily?",
       "Which Sicilian dish mentioned would you most like to try?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Sicily's Hidden Secrets Revealed.txt"},
-    { title: "Socotra Island: Nature's Hidden Treasure", src: "Audio/Island Travel/B1/Socotra Island_Nature's Hidden Treasure.wav", vocab: [
+    { title: "Socotra Island: Nature's Hidden Treasure", src: "Audio/Island Travel/B1/Socotra Island_Nature's Hidden Treasure.mp3", vocab: [
       { word: "resin", definition: "a sticky substance produced by some trees, often used for dye or medicine" },
       { word: "harsh", definition: "difficult and unpleasant to live in; severe" },
       { word: "conservation", definition: "the protection of nature and wildlife" },
@@ -3214,7 +3217,7 @@ const islandTravelEpisodes = {
       "Why do you think Socotra's isolation created so many unique species?",
       "Do you think limited tourism is good or bad for a place like Socotra? Why?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Socotra Island_Nature's Hidden Treasure.txt"},
-    { title: "Tasmania Uncovered", src: "Audio/Island Travel/B1/Tasmania Uncovered.wav", vocab: [
+    { title: "Tasmania Uncovered", src: "Audio/Island Travel/B1/Tasmania Uncovered.mp3", vocab: [
       { word: "marsupial", definition: "a mammal that carries its young in a pouch, like a kangaroo" },
       { word: "wilderness", definition: "a wild, natural area that has not been affected much by humans" },
       { word: "convict", definition: "a person who has been found guilty of a crime and sent to prison" },
@@ -3224,7 +3227,7 @@ const islandTravelEpisodes = {
       "Why do you think Tasmania has such clean air compared to other places?",
       "Would you be interested in visiting Port Arthur to learn about its history? Why?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Tasmania Uncovered.txt"},
-    { title: "Tasmania's Amazing Island Secrets", src: "Audio/Island Travel/B1/Tasmania's Amazing Island Secrets.wav", vocab: [
+    { title: "Tasmania's Amazing Island Secrets", src: "Audio/Island Travel/B1/Tasmania's Amazing Island Secrets.mp3", vocab: [
       { word: "charming", definition: "pleasant and attractive" },
       { word: "heritage", definition: "traditions and culture passed down through generations" },
       { word: "preserve", definition: "to keep something in its original state; to protect from harm" },
@@ -3234,7 +3237,7 @@ const islandTravelEpisodes = {
       "Why do you think Tasmania has such strict environmental protection laws?",
       "What role do you think tourism should play in protecting a place like Tasmania?"
     ], transcriptSrc: "Transcripts/Island Travel/B1/Tasmania's Amazing Island Secrets.txt"},
-    { title: "Ten Fascinating Facts About Sri Lanka", src: "Audio/Island Travel/B1/Ten Fascinating Facts About Sri Lanka.wav", vocab: [
+    { title: "Ten Fascinating Facts About Sri Lanka", src: "Audio/Island Travel/B1/Ten Fascinating Facts About Sri Lanka.mp3", vocab: [
       { word: "multicultural", definition: "including people of many different cultures" },
       { word: "plantation", definition: "a large farm where crops such as tea or coffee are grown" },
       { word: "monsoon", definition: "a seasonal wind that brings heavy rain to South Asia" },
