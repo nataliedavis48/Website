@@ -10,6 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ---- NAV DROPDOWNS (Listening / Grammar & Vocab) ----
+  window.toggleNavDropdown = function (id) {
+    document.querySelectorAll(".nav-dropdown").forEach((d) => {
+      if (d.id === id) d.classList.toggle("open");
+      else d.classList.remove("open");
+    });
+  };
+
+  document.querySelectorAll(".nav-dropdown-menu .nav-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    document.querySelectorAll(".nav-dropdown.open").forEach((d) => {
+      if (!d.contains(e.target)) d.classList.remove("open");
+    });
+  });
+
   const quizForm = document.getElementById("quiz-form");
   if (quizForm) {
     quizForm.addEventListener("submit", function (e) {
@@ -1001,6 +1021,76 @@ const listeningFiles = [
 ];
 // -----------------------------------------------------
 window._listeningFiles = listeningFiles;
+
+window._fileDurations = {
+  "Audio/A1/8 Tiny Japanese Habits that Make a Difference.mp4": 3.15,
+  "Audio/A1/Inflation in Iran.mp3": 5.48,
+  "Audio/A1/Public Transport.mpeg": 3.40,
+  "Audio/A2/8 Tiny Japanese Habits that Make a Difference.mp4": 3.78,
+  "Audio/A2/Fall of Assad.mpeg": 3.92,
+  "Audio/A2/Hezbollah's New Drones.mp4": 3.33,
+  "Audio/A2/Iran Protests_ Economic Discontent.mp3": 4.67,
+  "Audio/A2/Iron Beam.mp3": 4.77,
+  "Audio/A2/Is Europe Ready for War with Tehran.mp4": 4.48,
+  "Audio/A2/Mossad's Secret Agent Yael.mp3": 6.88,
+  "Audio/A2/Peace Talks between Iran and USA.mp4": 2.85,
+  "Audio/A2/Pros and Cons of TV.mp4": 5.03,
+  "Audio/A2/Public Transport.mpeg": 4.25,
+  "Audio/A2/The Happiest Countries 2026.mp4": 4.00,
+  "Audio/B1/8 Tiny Japanese Habits that Make a Difference.mp4": 3.35,
+  "Audio/B1/Black Rain in Tehran.mpeg": 5.22,
+  "Audio/B1/Cluster Missiles.mp4": 3.13,
+  "Audio/B1/Creating a Routine for Mental Well-Being.mpeg": 4.38,
+  "Audio/B1/Cross-Border Mysteries_ Ahmad Shukrs Story.mp3": 3.23,
+  "Audio/B1/Daily Habits.mpeg": 3.52,
+  "Audio/B1/Fall of Assad.mpeg": 4.97,
+  "Audio/B1/Giving Advice.mpeg": 3.95,
+  "Audio/B1/Hidden Jewish History of Somaliland.mp3": 3.95,
+  "Audio/B1/Iran Protests and Potential Changes.mp3": 4.10,
+  "Audio/B1/Iran Protests_ Economic Origins and Beyond.mp3": 5.18,
+  "Audio/B1/Is Europe Ready for War with Tehran.mp4": 4.55,
+  "Audio/B1/Martha's Journey to Mental Wellness.mpeg": 4.63,
+  "Audio/B1/Oron Shaul.mpeg": 4.23,
+  "Audio/B1/Peace Talks Between Iran and USA.mp4": 3.02,
+  "Audio/B1/Pros and Cons of TV.mp4": 3.77,
+  "Audio/B1/Public Transport.mpeg": 4.33,
+  "Audio/B1/Rescuing the American Navigator in Iran.mpeg": 4.52,
+  "Audio/B1/Secrets of the Night.mp3": 4.62,
+  "Audio/B1/Somaliland's Quest for Recognition.mp3": 4.18,
+  "Audio/B1/The Happiest Countries 2026.mp4": 2.92,
+  "Audio/B1/The Super Revolutionaries of Iran.mp4": 3.93,
+  "Audio/B1/US Iran Nuclear Tensions.mpeg": 3.80,
+  "Audio/B1/Understanding the Iran Protests.mp3": 5.80,
+  "Audio/B1/moral.mp3": 3.87,
+  "Audio/B2/8 Tiny Japanese Habits that Make a Difference.mp4": 3.18,
+  "Audio/B2/Cluster Missiles.mp4": 3.13,
+  "Audio/B2/Exploring Somaliland_ A Hidden Gem.mp3": 4.38,
+  "Audio/B2/Fall of Assad.mpeg": 4.97,
+  "Audio/B2/Hezbollah's New Drones.mp4": 2.80,
+  "Audio/B2/Iran Protests and Potential Changes.mp3": 4.10,
+  "Audio/B2/Iron Beam_ The Future of Laser Weapons.mp3": 3.98,
+  "Audio/B2/Is Europe Ready for War with Tehran.mp4": 4.20,
+  "Audio/B2/Lost Jewish Connections of Somaliland.mp3": 4.13,
+  "Audio/B2/Mossad's Secret Agent Yael.mp3": 6.88,
+  "Audio/B2/Oron Shaul.mpeg": 4.52,
+  "Audio/B2/Peace Talks between Iran and USA.mp4": 2.67,
+  "Audio/B2/Power of Mindful Habits.mpeg": 4.40,
+  "Audio/B2/Pros and Cons of TV.mp4": 2.95,
+  "Audio/B2/Shulamit Cohen.mp4": 5.10,
+  "Audio/B2/Somaliland's Quest for Recognition.mp3": 4.18,
+  "Audio/B2/The Happiest Countries 2026.mp4": 3.22,
+  "Audio/B2/The Super Revolutionaries of Iran.mp4": 3.77,
+  "Audio/C1/Assad_ Last Days in Power.mpeg": 6.00,
+  "Audio/C1/Cluster Missiles.mp4": 3.22,
+  "Audio/C1/Giving Advice.mpeg": 3.95,
+  "Audio/C1/Iran's Turmoil and Economic Strife.mp3": 4.48,
+  "Audio/C1/Iron Beam_ The Future of Laser Weapons.mp3": 3.98,
+  "Audio/C1/Is Europe Ready for War with Tehran.mp4": 4.20,
+  "Audio/C1/Pros and Cons of TV.mp4": 3.60,
+  "Audio/C1/Rescuing an American Navigator in Iran.mpeg": 5.03,
+  "Audio/C1/Somaliland's Quest for Recognition.mp3": 4.18,
+  "Audio/C1/The Happiest Countries 2026.mp4": 3.63
+};
 
 // --- AMERICA'S DEFINING MOMENTS ---
 const admEpisodes = {
@@ -2567,7 +2657,6 @@ function _addListenedBadge(card) {
   badge.style.cssText = "color:#22c55e;font-weight:bold;font-size:16px;margin-left:4px";
   var h3 = card.querySelector("h3");
   if (h3) h3.appendChild(badge);
-  card.style.borderLeft = "3px solid #22c55e";
 }
 
 function _applyProgress(containerId) {
@@ -2591,6 +2680,11 @@ function _applyProgress(containerId) {
     }
   });
 }
+
+window._getListened = _getListened;
+window._markListened = _markListened;
+window._addListenedBadge = _addListenedBadge;
+window._applyProgress = _applyProgress;
 
 const japanEpisodes = {
   B1: [
@@ -3019,6 +3113,7 @@ window.selectSeriesLevel = function(level) {
   });
   epList.innerHTML = "";
   row.innerHTML = "";
+  row.setAttribute("data-level", level);
   _seriesConfig.forEach(function(s) {
     if (s.levels.indexOf(level) === -1) return;
     var btn = document.createElement("button");
@@ -3045,6 +3140,7 @@ window.selectSeriesItem = function(key, level, btn) {
   if (!series) return;
   var epList = document.getElementById("series-ep-list");
   epList.innerHTML = "";
+  epList.setAttribute("data-level", level);
   var backBtn = document.createElement("button");
   backBtn.className = "level-tab";
   backBtn.type = "button";
@@ -3146,7 +3242,7 @@ window.openFeaturedListening = function () {
   if (!spotlightArea) return;
 
   const featured = listeningFiles.find(
-    file => file.title === "Peace Talks Between Iran and USA" && file.level === "B1"
+    file => file.title === "The Happiest Countries 2026" && file.level === "B1"
   );
 
   if (!featured) return;
@@ -3156,9 +3252,10 @@ window.openFeaturedListening = function () {
   const featuredCard = document.createElement("div");
   featuredCard.className = "card";
   featuredCard.id = "featured-audio-display";
+  featuredCard.setAttribute("data-level", featured.level);
 
   featuredCard.innerHTML = `
-    <h3>Listening Spotlight</h3>
+    <h3><span class="level-badge">${featured.level}</span>Listening Spotlight</h3>
     <p>${featured.title}</p>
     <audio controls style="width:100%;margin:10px 0">
       <source src="${featured.src}" type="audio/mpeg">
@@ -3179,8 +3276,8 @@ window.openFeaturedListening = function () {
   `;
 
   spotlightArea.appendChild(featuredCard);
-  activateAudioTab("B2");
-  renderAudioLevel("B2");
+  activateAudioTab("B1");
+  renderAudioLevel("B1");
 };
 
 // ---- HOME LEVEL QUICK-LINKS ----
@@ -3366,16 +3463,16 @@ window.startLevelTest = function() {
   document.getElementById("modal-intro").style.display = "none";
   var qDiv = document.getElementById("modal-questions");
   qDiv.style.display = "block";
-  var html = "<h3 style='color:#4A9EE8;margin-bottom:20px'>Choose the best answer for each question.</h3>";
+  var html = "<h3 style='color:var(--accent);margin-bottom:20px'>Choose the best answer for each question.</h3>";
   levelTestQuestions.forEach(function(q, i) {
-    html += "<div style='margin-bottom:20px'><p style='color:#fff;margin-bottom:8px'><strong>" + (i+1) + ".</strong> " + q.q + "</p>";
+    html += "<div style='margin-bottom:20px'><p style='color:var(--text);margin-bottom:8px'><strong>" + (i+1) + ".</strong> " + q.q + "</p>";
     q.options.forEach(function(opt, j) {
-      html += "<label style='display:block;color:#94A3B8;margin-bottom:6px;cursor:pointer'><input type='radio' name='q" + i + "' value='" + j + "' style='margin-right:8px'>" + opt + "</label>";
+      html += "<label style='display:block;color:var(--muted);margin-bottom:6px;cursor:pointer'><input type='radio' name='q" + i + "' value='" + j + "' style='margin-right:8px'>" + opt + "</label>";
     });
     html += "</div>";
   });
   html += "<button class='level-tab' onclick='submitLevelTest()' style='margin-top:8px'>See My Level</button>";
-  html += "<button class='level-tab' onclick='closeModal()' style='background:transparent;border-color:#4A5568;color:#94A3B8;margin-left:12px'>Skip</button>";
+  html += "<button class='level-tab' onclick='closeModal()' style='background:transparent;border-color:var(--border);color:var(--muted);margin-left:12px'>Skip</button>";
   qDiv.innerHTML = html;
 };
 
@@ -3394,7 +3491,7 @@ window.submitLevelTest = function() {
   document.getElementById("modal-questions").style.display = "none";
   var result = document.getElementById("modal-result");
   result.style.display = "block";
-  result.innerHTML = "<h2 style='color:#4A9EE8;margin-bottom:12px'>Your Level: " + level + "</h2><p style='color:#94A3B8;margin-bottom:24px'>" + msg + "</p><button class='level-tab' onclick='goToLevel(\"" + level + "\")'>Go to my content</button>";
+  result.innerHTML = "<h2 style='color:var(--accent);margin-bottom:12px'>Your Level: " + level + "</h2><p style='color:var(--muted);margin-bottom:24px'>" + msg + "</p><button class='level-tab' onclick='goToLevel(\"" + level + "\")'>Go to my content</button>";
 };
 
 window.closeModal = function() {
@@ -3475,6 +3572,7 @@ function showAudioFile(file) {
   var card = document.createElement("div");
   card.className = "card";
   card.id = "audio-display";
+  card.setAttribute("data-level", file.level);
   var vocabHTML = file.vocab.map(function(v) {
     return "<li><strong>" + v.word + "</strong> <button class=\"speaker-btn\" onclick=\"speakWord('" + v.word + "')\">🔊</button> " + v.definition + "</li>";
   }).join("");
@@ -3495,12 +3593,13 @@ function showAudioFile(file) {
   window._chatContexts[contextKey] = { title: file.title, level: file.level, vocab: file.vocab, questions: file.questions || [] };
   var chatBtn = "<button onclick='openChatBot(\"" + contextKey + "\")' style='display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fa8,#4A9EE8);border:none;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:bold;white-space:nowrap;box-shadow:0 2px 8px rgba(74,158,232,0.4)'><img src=\"skipper icon.png\" alt=\"\" style=\"width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:4px\">Chat with Skipper</button>";
   var monthTag = file.month ? " <span style='color:#94A3B8;font-size:0.78em;font-weight:normal'>(" + file.month + ")</span>" : "";
-  card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'>" + file.title + monthTag + "</h3>" + chatBtn + "</div>"
+  card.innerHTML = "<div style='display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px'><h3 style='margin:0'><span class='level-badge'>" + file.level + "</span>" + file.title + monthTag + "</h3>" + chatBtn + "</div>"
     + "<p>Listen to the audio and click the speaker icon to hear each word pronounced.</p>"
     + "<audio controls style='width:100%;margin:10px 0'><source src='" + file.src + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"
     + columnsHTML
     + questionsHTML;
   audioList.appendChild(card);
+  _applyProgress("audio-list");
 }
 
 window.toggleTranscript = function toggleTranscript(src) {
@@ -3559,7 +3658,7 @@ function openChatBot(contextKey) {
     "<div style='display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #2D3F55;background:#162030;border-radius:12px 12px 0 0'>",
       "<div>",
         "<div style='display:flex;align-items:center;gap:8px;font-weight:bold;font-size:14px;color:#fff'><img src='skipper icon.png' style='width:24px;height:24px;border-radius:6px'>Skipper — AI English Tutor</div>",
-        "<div style='font-size:11px;color:#94A3B8;margin-top:2px'>" + (_chatFileContext.title || "Listening file") + "</div>",
+        "<div style='font-size:11px;color:#94A3B8;margin-top:2px'>" + (_chatFileContext.title || "Ask me anything") + "</div>",
       "</div>",
       "<button onclick='closeChatBot()' style='background:none;border:none;color:#94A3B8;font-size:20px;cursor:pointer;padding:4px 8px' title='Close'>✕</button>",
     "</div>",
@@ -3783,6 +3882,7 @@ window.toggleChatMic = toggleChatMic;
 // ---- END AI VOICE CHAT BOT ----
 
 var _currentCategory = "All";
+var _currentDuration = "All";
 
 window.selectCategory = function(cat) {
   _currentCategory = cat;
@@ -3793,28 +3893,53 @@ window.selectCategory = function(cat) {
   if (activeLevel) renderAudioLevel(activeLevel.getAttribute("data-audio-level"));
 };
 
+window.selectDuration = function(bucket) {
+  _currentDuration = bucket;
+  var activeLevel = document.querySelector("[data-audio-level].active");
+  if (activeLevel) renderAudioLevel(activeLevel.getAttribute("data-audio-level"));
+};
+
+function _durationBucket(minutes) {
+  if (minutes < 3.5) return "3";
+  if (minutes < 4.5) return "4";
+  if (minutes < 5.5) return "5";
+  return "6+";
+}
+
 function renderAudioLevel(level) {
   var audioList = document.getElementById("audio-list");
   if (!audioList) return;
   audioList.innerHTML = "";
   var files = window._listeningFiles || [];
-  var filtered = files.filter(function(f) {
+  var byLevelCategory = files.filter(function(f) {
     if (f.level !== level) return false;
     if (_currentCategory === "All") return true;
     return f.category === _currentCategory;
+  });
+
+  var durations = window._fileDurations || {};
+  var filtered = byLevelCategory.filter(function(f) {
+    if (_currentDuration === "All") return true;
+    var mins = durations[f.src];
+    if (mins === undefined) return false;
+    return _durationBucket(mins) === _currentDuration;
   });
 
   var select = document.createElement("select");
   select.style.marginTop = "16px";
   var defaultOption = document.createElement("option");
   defaultOption.value = "";
-  defaultOption.textContent = filtered.length === 0 ? "No files for this level yet" : "Select a listening file...";
+  defaultOption.textContent = byLevelCategory.length === 0
+    ? "No files for this level yet"
+    : (filtered.length === 0 ? "No files match this length..." : "Select a listening file...");
   select.appendChild(defaultOption);
 
+  var listened = _getListened();
   filtered.forEach(function(file, i) {
     var option = document.createElement("option");
     option.value = i;
-    option.textContent = file.title + (file.month ? " (" + file.month + ")" : "");
+    var heard = listened.indexOf(file.src) !== -1;
+    option.textContent = (heard ? "✓ " : "") + file.title + (file.month ? " (" + file.month + ")" : "");
     select.appendChild(option);
   });
 
@@ -3829,6 +3954,8 @@ window.selectAudioLevel = function(level) {
   document.querySelectorAll("[data-audio-level]").forEach(function(t) {
     t.classList.toggle("active", t.getAttribute("data-audio-level") === level);
   });
+  var categoryFilters = document.getElementById("category-filters");
+  if (categoryFilters) categoryFilters.setAttribute("data-level", level);
   var spotlightArea = document.getElementById("spotlight-area");
   if (spotlightArea) spotlightArea.innerHTML = "";
   renderAudioLevel(level);
